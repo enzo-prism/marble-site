@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>marble - minimal workout journal</title>
+    <meta
+      name="description"
+      content="marble is a minimal, offline workout journal for ios. log sets fast, review your training, and track trends without distractions."
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="#top">
+          <span class="logo-frame">
+            <img src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp" alt="marble logo" />
+          </span>
+          <span>marble</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#features">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </span>
+            features
+          </a>
+          <a href="#workflow">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M9 12h6" />
+                <path d="m13 9 3 3-3 3" />
+              </svg>
+            </span>
+            workflow
+          </a>
+          <a href="#insights">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 18h14" />
+                <path d="M6 14l4-4 4 3 5-6" />
+                <path d="M17 7h2v2" />
+              </svg>
+            </span>
+            insights
+          </a>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+          <span class="apple" aria-hidden="true"></span>
+          download on app store
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline aria-hidden="true">
+          <source src="https://res.cloudinary.com/dhqpqfw6w/video/upload/v1768601037/statue-video-hero_haxw1b.mp4" type="video/mp4" />
+        </video>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 class="animate" style="--delay: 0.1s">train. log. evolve.</h1>
+            <div class="cta-row animate" style="--delay: 0.3s">
+              <a class="btn btn-primary" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+                <span class="apple" aria-hidden="true"></span>
+                download on app store
+              </a>
+              <a class="btn btn-outline" href="#features">see features</a>
+            </div>
+            <div class="pill-row animate" style="--delay: 0.4s">
+              <span class="pill">
+                <span class="pill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </span>
+                fast log
+              </span>
+              <span class="pill">
+                <span class="pill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6c4.7-3.8 11.3-3.8 16 0" />
+                    <path d="M7.5 10.5c2.6-2.1 6.4-2.1 9 0" />
+                    <circle cx="12" cy="16.5" r="0.9" fill="currentColor" stroke="none" />
+                    <path d="M4 20l16-16" />
+                  </svg>
+                </span>
+                works offline
+              </span>
+              <span class="pill">
+                <span class="pill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M7 17l10-10" />
+                  </svg>
+                </span>
+                no ads
+              </span>
+              <span class="pill">
+                <span class="pill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 4l1.8 4.2L18 10l-4.2 1.8L12 16l-1.8-4.2L6 10l4.2-1.8z" />
+                    <path d="M6 17l.8 1.8L8.6 20l-1.8.8L6 22l-.8-1.8-1.8-.8 1.8-.8z" />
+                  </svg>
+                </span>
+                ai first design
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="badge">features</span>
+              <h2>just the essentials.</h2>
+            </div>
+          </div>
+          <div class="grid features-grid">
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768601387/log-set-image_gpgwxb.webp"
+                  alt="marble log set screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>log</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597592/journal_valiu7.webp"
+                  alt="marble journal view screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>journal</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597591/calendar_fpmxvx.webp"
+                  alt="marble calendar view screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>calendar</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597592/split_t7nydh.webp"
+                  alt="marble split view screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>plan your split</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/trends_ttyqa4.webp"
+                  alt="marble trends view screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>trends</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/supplements_dhjlum.webp"
+                  alt="marble supplements view screenshot"
+                  loading="lazy"
+                />
+              </div>
+              <h3>supplements</h3>
+            </article>
+            <article class="card feature-card">
+              <div class="feature-media logo">
+                <img
+                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
+                  alt="marble logo"
+                  loading="lazy"
+                />
+              </div>
+              <h3>offline</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contrast">
+        <div class="container split">
+          <div>
+            <span class="badge">design</span>
+            <h2>white / black / gray.</h2>
+            <div class="swatches">
+              <div class="swatch light">
+                <span>white</span>
+              </div>
+              <div class="swatch dark">
+                <span>black</span>
+              </div>
+              <div class="swatch gray">
+                <span>gray</span>
+              </div>
+            </div>
+          </div>
+          <div class="card contrast-card">
+            <div class="contrast-grid">
+              <div class="contrast-tile light">
+                <span class="label">light mode</span>
+              </div>
+              <div class="contrast-tile dark">
+                <span class="label">dark mode</span>
+              </div>
+              <div class="contrast-tile gray">
+                <span class="label">accents</span>
+              </div>
+              <div class="contrast-tile outline">
+                <span class="label">layout</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="badge">flow</span>
+              <h2>three steps.</h2>
+            </div>
+          </div>
+          <div class="workflow">
+            <article class="card step">
+              <div class="step-number">01</div>
+              <h3>log</h3>
+            </article>
+            <article class="card step">
+              <div class="step-number">02</div>
+              <h3>review</h3>
+            </article>
+            <article class="card step">
+              <div class="step-number">03</div>
+              <h3>trend</h3>
+            </article>
+          </div>
+          <div class="principles">
+            <div class="card principle">
+              <span class="value">offline</span>
+            </div>
+            <div class="card principle">
+              <span class="value">private</span>
+            </div>
+            <div class="card principle">
+              <span class="value">no ads</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="section insights">
+        <div class="container split">
+          <div>
+            <span class="badge">insights</span>
+            <h2>see the curve.</h2>
+            <div class="stat-grid">
+              <div class="card stat">
+                <span class="value">consistency</span>
+              </div>
+              <div class="card stat">
+                <span class="value">volume</span>
+              </div>
+              <div class="card stat">
+                <span class="value">prs</span>
+              </div>
+            </div>
+          </div>
+          <div class="card insights-card">
+            <div class="insights-header">
+              <span class="label">trend</span>
+            </div>
+            <div class="insights-image">
+              <img
+                src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/trends_ttyqa4.webp"
+                alt="marble trends view screenshot"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="section cta">
+        <div class="container">
+          <div class="card cta-card">
+            <div>
+              <h2>download marble.</h2>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+                <span class="apple" aria-hidden="true"></span>
+                download on app store
+              </a>
+              <span class="fine">ios only. offline.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <a href="https://apps.apple.com/us/app/marble-fit/id6757725234">app store</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "marble-site",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
