@@ -723,6 +723,11 @@ footer {
     display: none;
   }
 
+  .nav-inner {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
