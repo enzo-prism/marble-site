@@ -1,0 +1,11 @@
+{
+  "_comment": "Optional per-commit note overrides. Keys can be full SHA or unique short prefix.",
+  "_example": {
+    "a12120b": {
+      "summary": ["Bullet 1", "Bullet 2"],
+      "why": "One short paragraph explaining why (manual).",
+      "details": ["Optional paragraph 1", "Optional paragraph 2"]
+    }
+  }
+}
+

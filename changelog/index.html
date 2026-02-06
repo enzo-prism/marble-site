@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>marble | changelog</title>
+    <meta name="description" content="marble iOS app changelog, pulled from GitHub commits." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <meta property="og:title" content="marble | changelog" />
+    <meta property="og:description" content="latest updates to the marble iOS app." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/Opengraph.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/changelog/changelog.js" defer></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="/">
+          <span class="logo-frame">
+            <img
+              src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
+              alt="marble logo"
+            />
+          </span>
+          <span>marble</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#summary">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 7h13" />
+                <path d="M8 12h13" />
+                <path d="M8 17h13" />
+                <path d="M3.5 7h.5" />
+                <path d="M3.5 12h.5" />
+                <path d="M3.5 17h.5" />
+              </svg>
+            </span>
+            summary
+          </a>
+          <a href="#details">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+            </span>
+            details
+          </a>
+          <a href="https://github.com/enzo-prism/marble" target="_blank" rel="noreferrer">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 3h7v7" />
+                <path d="M10 14 21 3" />
+                <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" />
+              </svg>
+            </span>
+            github
+          </a>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+          <span class="apple" aria-hidden="true"></span>
+          download on app store
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero changelog-hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge">changelog</span>
+            <h1 class="animate" style="--delay: 0.1s">what's new.</h1>
+            <p class="animate" style="--delay: 0.2s">
+              latest updates to the marble iOS app, pulled from GitHub commits on <code>main</code>.
+            </p>
+            <div class="changelog-meta animate" style="--delay: 0.3s">
+              <span class="chip" id="changelog-last-updated">loading commits…</span>
+              <a class="chip" href="https://github.com/enzo-prism/marble/commits/main" target="_blank" rel="noreferrer">view on github</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="summary" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="badge">summary</span>
+              <h2>commit-by-commit.</h2>
+              <p>quick bullets per commit. open a commit for the full breakdown.</p>
+            </div>
+          </div>
+          <div id="changelog-summary" class="grid changelog-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="details" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="badge">details</span>
+              <h2>full notes.</h2>
+              <p>what changed, why, and the files involved (newest first).</p>
+            </div>
+          </div>
+          <div id="changelog-details" class="changelog-details" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <div class="footer-links">
+          <a href="/changelog/">changelog</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234">app store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
