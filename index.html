@@ -17,9 +17,10 @@
     <meta property="og:image" content="Opengraph.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="theme-color" content="#f7f6f2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -27,12 +28,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#top">skip to content</a>
     <div class="grain" aria-hidden="true"></div>
     <header class="nav">
       <div class="container nav-inner">
         <a class="logo" href="#top">
           <span class="logo-frame">
-            <img src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp" alt="marble logo" />
+            <img
+              src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
+              alt="marble logo"
+              width="22"
+              height="22"
+            />
           </span>
           <span>marble</span>
         </a>
@@ -78,6 +85,29 @@
             changelog
           </a>
         </nav>
+        <details class="nav-menu">
+          <summary class="btn nav-menu-button">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M5 7h14" />
+                <path d="M5 12h14" />
+                <path d="M5 17h14" />
+              </svg>
+            </span>
+            menu
+          </summary>
+          <nav class="nav-menu-panel" aria-label="site">
+            <a href="#features">features</a>
+            <a href="#workflow">workflow</a>
+            <a href="#insights">insights</a>
+            <a href="/changelog/">changelog</a>
+            <a href="#download">download</a>
+            <a class="btn btn-primary nav-menu-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+              <span class="apple" aria-hidden="true"></span>
+              download on app store
+            </a>
+          </nav>
+        </details>
         <a class="btn btn-primary nav-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
           <span class="apple" aria-hidden="true"></span>
           download on app store
@@ -85,7 +115,7 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero">
         <video class="hero-video" autoplay loop muted playsinline aria-hidden="true">
           <source src="https://res.cloudinary.com/dhqpqfw6w/video/upload/v1768602338/marble-video_fqhfqq.mp4" type="video/mp4" />
@@ -158,6 +188,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768601387/log-set-image_gpgwxb.webp"
                   alt="marble log set screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -168,6 +200,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597592/journal_valiu7.webp"
                   alt="marble journal view screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -178,6 +212,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597591/calendar_fpmxvx.webp"
                   alt="marble calendar view screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -188,6 +224,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597592/split_t7nydh.webp"
                   alt="marble split view screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -198,6 +236,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/trends_ttyqa4.webp"
                   alt="marble trends view screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -208,6 +248,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/supplements_dhjlum.webp"
                   alt="marble supplements view screenshot"
+                  width="390"
+                  height="844"
                   loading="lazy"
                 />
               </div>
@@ -218,6 +260,8 @@
                 <img
                   src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
                   alt="marble logo"
+                  width="64"
+                  height="64"
                   loading="lazy"
                 />
               </div>
@@ -324,6 +368,8 @@
               <img
                 src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/trends_ttyqa4.webp"
                 alt="marble trends view screenshot"
+                width="390"
+                height="844"
                 loading="lazy"
               />
             </div>

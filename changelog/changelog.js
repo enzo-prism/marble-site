@@ -186,7 +186,7 @@
       const a = el("a", {
         className: "chip",
         text: linkText || "view on github",
-        attrs: { href, target: "_blank", rel: "noreferrer" },
+        attrs: { href, target: "_blank", rel: "noreferrer noopener" },
       });
       card.appendChild(a);
     }
@@ -215,7 +215,7 @@
       el("a", {
         className: "chip",
         text: "view",
-        attrs: { href: url, target: "_blank", rel: "noreferrer" },
+        attrs: { href: url, target: "_blank", rel: "noreferrer noopener" },
       })
     );
 
@@ -285,14 +285,14 @@
       el("a", {
         className: "chip",
         text: "view on github",
-        attrs: { href: url, target: "_blank", rel: "noreferrer" },
+        attrs: { href: url, target: "_blank", rel: "noreferrer noopener" },
       })
     );
     actions.appendChild(
       el("a", {
         className: "chip",
         text: "app store",
-        attrs: { href: APP_STORE_URL, target: "_blank", rel: "noreferrer" },
+        attrs: { href: APP_STORE_URL, target: "_blank", rel: "noreferrer noopener" },
       })
     );
 
@@ -628,4 +628,3 @@
     setLastUpdated("unable to load commits");
   });
 })();
-
