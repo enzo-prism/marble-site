@@ -11,6 +11,7 @@
 
   const PER_PAGE = 100;
   const MAX_COMMITS = 500;
+  const INITIAL_DETAIL_LOAD_COUNT = 3;
 
   // Keep the list pretty fresh so the page feels "latest", while still limiting requests.
   const COMMIT_LIST_TTL_MS = 10 * 60 * 1000; // 10 minutes
@@ -64,6 +65,16 @@
       .split(/\n{2,}/g)
       .map((p) => p.replace(/\s+/g, " ").trim())
       .filter(Boolean);
+  }
+
+  function summaryBulletsFromCommitMessage(message) {
+    const subject = commitSubject(message);
+    const bodyParas = commitBodyParagraphs(message);
+    const bullets = bodyParas.slice(0, 3);
+
+    if (bullets.length) return bullets;
+    if (/^merge pull request/i.test(subject)) return ["Pull request merged into main."];
+    return ["Open the full note below for file-by-file changes and implementation details."];
   }
 
   function formatDate(iso) {
@@ -224,7 +235,9 @@
     top.appendChild(left);
 
     const bullets = el("ul", { className: "commit-bullets" });
-    bullets.appendChild(el("li", { className: "commit-placeholder", text: "loading details…" }));
+    for (const bullet of summaryBulletsFromCommitMessage(message)) {
+      bullets.appendChild(el("li", { text: bullet }));
+    }
 
     card.appendChild(top);
     card.appendChild(bullets);
@@ -537,6 +550,27 @@
     );
   }
 
+  function renderGlobalError({ title, message, href, linkText }) {
+    summaryRoot.appendChild(errorCard({ title, message, href, linkText }));
+    detailsRoot.appendChild(errorCard({ title, message, href, linkText }));
+  }
+
+  async function hydrateCommitDetail(commit, refs, overrides) {
+    if (!commit || !refs || refs.loading || refs.loaded) return;
+
+    refs.loading = true;
+    try {
+      const detail = await fetchCommitDetail(commit.sha);
+      const override = findOverride(overrides, commit.sha);
+      applyCommitDetails(refs, commit, detail, override);
+      refs.loaded = true;
+    } catch (err) {
+      applyCommitError(refs, commit, err);
+    } finally {
+      refs.loading = false;
+    }
+  }
+
   async function main() {
     setLastUpdated("loading commits…");
 
@@ -550,28 +584,24 @@
       const resetText = reset ? ` Rate limit resets at ${new Date(reset).toLocaleTimeString()}.` : "";
       const msg = `${err?.message || "Unable to load commits."}${resetText}`;
 
-      summaryRoot.appendChild(
-        errorCard({
-          title: "Could not load changelog",
-          message: msg,
-          href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
-          linkText: "view commits on github",
-        })
-      );
+      renderGlobalError({
+        title: "Could not load changelog",
+        message: msg,
+        href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
+        linkText: "view commits on github",
+      });
 
       setLastUpdated("unable to load commits");
       return;
     }
 
     if (!commits.length) {
-      summaryRoot.appendChild(
-        errorCard({
-          title: "No commits found",
-          message: "GitHub returned an empty commit list.",
-          href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
-          linkText: "view on github",
-        })
-      );
+      renderGlobalError({
+        title: "No commits found",
+        message: "GitHub returned an empty commit list.",
+        href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
+        linkText: "view on github",
+      });
       setLastUpdated("no commits found");
       return;
     }
@@ -581,6 +611,8 @@
 
     const refBySha = new Map();
 
+    const initialCommits = [];
+
     for (let i = 0; i < commits.length; i++) {
       const commit = commits[i];
       const sha = commit.sha;
@@ -588,43 +620,44 @@
       const s = summaryCardSkeleton(commit);
       summaryRoot.appendChild(s.card);
 
-      const d = detailsSkeleton(commit, { openByDefault: i < 3 });
+      const openByDefault = i < INITIAL_DETAIL_LOAD_COUNT;
+      const d = detailsSkeleton(commit, { openByDefault });
       detailsRoot.appendChild(d.root);
 
-      refBySha.set(sha, {
+      const refs = {
         summaryBullets: s.bullets,
         whyBody: d.whyBody,
         notesSection: d.notesSection,
         notesBody: d.notesBody,
         whatList: d.whatList,
         filesBody: d.filesBody,
+        root: d.root,
+        loaded: false,
+        loading: false,
+      };
+
+      d.root.addEventListener("toggle", () => {
+        if (d.root.open) hydrateCommitDetail(commit, refs, overrides);
       });
+
+      refBySha.set(sha, refs);
+
+      if (openByDefault) initialCommits.push(commit);
     }
 
-    await runLimited(commits, CONCURRENCY, async (commit) => {
-      const sha = commit.sha;
-      const refs = refBySha.get(sha);
-      if (!refs) return;
-
-      try {
-        const detail = await fetchCommitDetail(sha);
-        const override = findOverride(overrides, sha);
-        applyCommitDetails(refs, commit, detail, override);
-      } catch (err) {
-        applyCommitError(refs, commit, err);
-      }
+    await runLimited(initialCommits, Math.min(CONCURRENCY, INITIAL_DETAIL_LOAD_COUNT), async (commit) => {
+      const refs = refBySha.get(commit.sha);
+      await hydrateCommitDetail(commit, refs, overrides);
     });
   }
 
   main().catch((err) => {
-    summaryRoot.appendChild(
-      errorCard({
-        title: "Changelog failed to load",
-        message: err && err.message ? String(err.message) : "Unknown error",
-        href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
-        linkText: "view on github",
-      })
-    );
+    renderGlobalError({
+      title: "Changelog failed to load",
+      message: err && err.message ? String(err.message) : "Unknown error",
+      href: `${GITHUB_WEB_BASE}/commits/${encodeURIComponent(BRANCH)}`,
+      linkText: "view on github",
+    });
     setLastUpdated("unable to load commits");
   });
 })();
