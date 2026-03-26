@@ -147,6 +147,7 @@ footer {
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: -0.02em;
+  transition: transform 0.24s ease, color 0.24s ease;
 }
 
 .logo-frame {
@@ -159,12 +160,14 @@ footer {
   background: #ffffff;
   border: 1px solid var(--border);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, background 0.28s ease;
 }
 
 .logo img {
   width: 22px;
   height: 22px;
   object-fit: contain;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-links {
@@ -179,6 +182,13 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  padding: 10px 14px;
+  border-radius: 999px;
+  isolation: isolate;
+  --nav-icon-x: 0px;
+  --nav-icon-y: 0px;
+  --nav-icon-rotate: 0deg;
 }
 
 .nav-icon {
@@ -188,6 +198,7 @@ footer {
   width: 20px;
   height: 20px;
   color: currentColor;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-icon svg {
@@ -196,7 +207,42 @@ footer {
 }
 
 .nav-links a {
-  transition: color 0.2s ease;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(12, 12, 12, 0.05);
+  border: 1px solid rgba(12, 12, 12, 0.08);
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+  z-index: -1;
+}
+
+.nav-links a:nth-child(1) {
+  --nav-icon-y: -1px;
+  --nav-icon-rotate: -8deg;
+}
+
+.nav-links a:nth-child(2) {
+  --nav-icon-x: 1px;
+  --nav-icon-y: -1px;
+  --nav-icon-rotate: 8deg;
+}
+
+.nav-links a:nth-child(3) {
+  --nav-icon-x: 2px;
+  --nav-icon-y: -1px;
+  --nav-icon-rotate: 10deg;
+}
+
+.nav-links a:nth-child(4) {
+  --nav-icon-y: -2px;
+  --nav-icon-rotate: 14deg;
 }
 
 .nav-links a:hover {
@@ -222,6 +268,7 @@ footer {
 .apple {
   font-size: 1.05rem;
   line-height: 1;
+  transition: transform 0.22s ease;
 }
 
 .btn:hover {
@@ -266,11 +313,12 @@ footer {
   padding: 10px 12px;
   border-radius: 14px;
   color: var(--foreground);
-  transition: background 0.15s ease;
+  transition: background 0.18s ease, transform 0.18s ease;
 }
 
 .nav-menu-panel a:not(.btn):hover {
   background: rgba(12, 12, 12, 0.06);
+  transform: translateX(3px);
 }
 
 .nav-menu-panel a:focus-visible {
@@ -282,6 +330,52 @@ footer {
   width: 100%;
   justify-content: center;
   margin-top: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover {
+    transform: translateY(-1px);
+  }
+
+  .logo:hover .logo-frame {
+    transform: translateY(-2px) rotate(-6deg);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.14);
+  }
+
+  .logo:hover img {
+    transform: scale(1.06) rotate(6deg);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--foreground);
+    transform: translateY(-1px);
+  }
+
+  .nav-links a:hover::before,
+  .nav-links a:focus-visible::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .nav-links a:hover .nav-icon,
+  .nav-links a:focus-visible .nav-icon {
+    transform: translate(var(--nav-icon-x), var(--nav-icon-y)) rotate(var(--nav-icon-rotate)) scale(1.08);
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+  }
+
+  .nav-cta:hover .apple,
+  .nav-menu-cta:hover .apple {
+    transform: translateY(-1px) scale(1.08);
+  }
+
+  .nav-menu-button:hover {
+    transform: translateY(-1px);
+  }
 }
 
 .btn-primary {
@@ -1116,7 +1210,15 @@ footer {
     transform: none;
   }
 
-  .btn {
+  .btn,
+  .logo,
+  .logo-frame,
+  .logo img,
+  .nav-links a,
+  .nav-links a::before,
+  .nav-icon,
+  .nav-menu-panel a:not(.btn),
+  .apple {
     transition: none;
   }
 
