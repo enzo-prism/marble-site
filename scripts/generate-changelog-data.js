@@ -4,7 +4,8 @@ const path = require("path");
 
 const OWNER = "enzo-prism";
 const REPO = "marble";
-const BRANCH = process.env.CHANGELOG_BRANCH || "main";
+const BRANCH = process.env.CHANGELOG_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const REVISION = process.env.CHANGELOG_REVISION || process.env.VERCEL_GIT_COMMIT_SHA || "HEAD";
 const MAX_COMMITS = Number(process.env.CHANGELOG_MAX_COMMITS || 200);
 
 const rootDir = path.join(__dirname, "..");
@@ -92,7 +93,7 @@ function buildCommitRecord(commit) {
 function main() {
   const log = git([
     "log",
-    BRANCH,
+    REVISION,
     `--max-count=${MAX_COMMITS}`,
     "--date=iso-strict",
     "--pretty=format:%H%x1f%cI%x1f%B%x1e",

@@ -1,10 +1,60 @@
 {
-  "generatedAt": "2026-03-26T18:49:03.336Z",
+  "generatedAt": "2026-03-26T18:50:24.772Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 7,
+  "commitCount": 8,
   "commits": [
+    {
+      "sha": "ea818728fe0cb5446febdcb7982c947724924732",
+      "html_url": "https://github.com/enzo-prism/marble/commit/ea818728fe0cb5446febdcb7982c947724924732",
+      "commit": {
+        "message": "Bundle changelog data for reliable loads",
+        "author": {
+          "date": "2026-03-26T11:49:12-07:00"
+        },
+        "committer": {
+          "date": "2026-03-26T11:49:12-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "changelog/changelog.js",
+          "additions": 85,
+          "deletions": 35,
+          "changes": 120
+        },
+        {
+          "filename": "changelog/data.json",
+          "additions": 287,
+          "deletions": 0,
+          "changes": 287
+        },
+        {
+          "filename": "changelog/index.html",
+          "additions": 1,
+          "deletions": 2,
+          "changes": 3
+        },
+        {
+          "filename": "package.json",
+          "additions": 3,
+          "deletions": 1,
+          "changes": 4
+        },
+        {
+          "filename": "scripts/generate-changelog-data.js",
+          "additions": 116,
+          "deletions": 0,
+          "changes": 116
+        }
+      ],
+      "stats": {
+        "additions": 492,
+        "deletions": 38,
+        "total": 530
+      }
+    },
     {
       "sha": "67a20db5349df39fc886f7de2a1251f1451d1a59",
       "html_url": "https://github.com/enzo-prism/marble/commit/67a20db5349df39fc886f7de2a1251f1451d1a59",
