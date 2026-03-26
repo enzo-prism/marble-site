@@ -1,10 +1,68 @@
 {
-  "generatedAt": "2026-03-26T18:50:24.772Z",
+  "generatedAt": "2026-03-26T18:55:00.545Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 8,
+  "commitCount": 10,
   "commits": [
+    {
+      "sha": "a97e00d3356bc5e3e3ca31fbdaa993cd9e8c2dfa",
+      "html_url": "https://github.com/enzo-prism/marble/commit/a97e00d3356bc5e3e3ca31fbdaa993cd9e8c2dfa",
+      "commit": {
+        "message": "Keep changelog deployment static",
+        "author": {
+          "date": "2026-03-26T11:53:05-07:00"
+        },
+        "committer": {
+          "date": "2026-03-26T11:53:05-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "package.json",
+          "additions": 0,
+          "deletions": 1,
+          "changes": 1
+        }
+      ],
+      "stats": {
+        "additions": 0,
+        "deletions": 1,
+        "total": 1
+      }
+    },
+    {
+      "sha": "485142abb1cb3e9d02388f10360a15551b14ddad",
+      "html_url": "https://github.com/enzo-prism/marble/commit/485142abb1cb3e9d02388f10360a15551b14ddad",
+      "commit": {
+        "message": "Fix changelog build on Vercel",
+        "author": {
+          "date": "2026-03-26T11:51:11-07:00"
+        },
+        "committer": {
+          "date": "2026-03-26T11:51:11-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "changelog/data.json",
+          "additions": 52,
+          "deletions": 2,
+          "changes": 54
+        },
+        {
+          "filename": "scripts/generate-changelog-data.js",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 55,
+        "deletions": 4,
+        "total": 59
+      }
+    },
     {
       "sha": "ea818728fe0cb5446febdcb7982c947724924732",
       "html_url": "https://github.com/enzo-prism/marble/commit/ea818728fe0cb5446febdcb7982c947724924732",
