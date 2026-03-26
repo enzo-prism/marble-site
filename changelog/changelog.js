@@ -8,6 +8,7 @@
   const APP_STORE_URL = "https://apps.apple.com/us/app/marble-fit/id6757725234";
   const GITHUB_WEB_BASE = `https://github.com/${OWNER}/${REPO}`;
   const GITHUB_API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+  const LOCAL_CHANGELOG_URL = "/changelog/data.json";
 
   const PER_PAGE = 100;
   const MAX_COMMITS = 500;
@@ -165,6 +166,19 @@
       return data && typeof data === "object" ? data : {};
     } catch {
       return {};
+    }
+  }
+
+  async function fetchBundledCommits() {
+    try {
+      const res = await fetch(LOCAL_CHANGELOG_URL, { cache: "no-store" });
+      if (res.status === 404) return null;
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (!data || typeof data !== "object" || !Array.isArray(data.commits)) return null;
+      return data.commits.filter((commit) => commit && typeof commit.sha === "string");
+    } catch {
+      return null;
     }
   }
 
@@ -571,10 +585,80 @@
     }
   }
 
+  function hydrateBundledCommitDetail(commit, refs, overrides) {
+    if (!commit || !refs || refs.loading || refs.loaded) return;
+
+    refs.loading = true;
+    try {
+      const override = findOverride(overrides, commit.sha);
+      applyCommitDetails(refs, commit, commit, override);
+      refs.loaded = true;
+    } catch (err) {
+      applyCommitError(refs, commit, err);
+    } finally {
+      refs.loading = false;
+    }
+  }
+
+  function renderCommits(commits, overrides, { hydrateDetail, preloadOpenDetails }) {
+    const latestIso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
+    setLastUpdated(latestIso ? `latest commit: ${formatDate(latestIso)}` : "latest commit loaded");
+
+    const refBySha = new Map();
+    const initialCommits = [];
+
+    for (let i = 0; i < commits.length; i++) {
+      const commit = commits[i];
+      const sha = commit.sha;
+
+      const s = summaryCardSkeleton(commit);
+      summaryRoot.appendChild(s.card);
+
+      const openByDefault = i < INITIAL_DETAIL_LOAD_COUNT;
+      const d = detailsSkeleton(commit, { openByDefault });
+      detailsRoot.appendChild(d.root);
+
+      const refs = {
+        summaryBullets: s.bullets,
+        whyBody: d.whyBody,
+        notesSection: d.notesSection,
+        notesBody: d.notesBody,
+        whatList: d.whatList,
+        filesBody: d.filesBody,
+        root: d.root,
+        loaded: false,
+        loading: false,
+      };
+
+      d.root.addEventListener("toggle", () => {
+        if (d.root.open) hydrateDetail(commit, refs, overrides);
+      });
+
+      refBySha.set(sha, refs);
+
+      if (openByDefault) initialCommits.push(commit);
+    }
+
+    preloadOpenDetails(initialCommits, refBySha, overrides);
+  }
+
   async function main() {
     setLastUpdated("loading commits…");
 
     const overrides = await fetchOverrides();
+    const bundledCommits = await fetchBundledCommits();
+
+    if (bundledCommits && bundledCommits.length) {
+      renderCommits(bundledCommits, overrides, {
+        hydrateDetail: hydrateBundledCommitDetail,
+        preloadOpenDetails(initialCommits, refBySha) {
+          for (const commit of initialCommits) {
+            hydrateBundledCommitDetail(commit, refBySha.get(commit.sha), overrides);
+          }
+        },
+      });
+      return;
+    }
 
     let commits;
     try {
@@ -606,48 +690,14 @@
       return;
     }
 
-    const latestIso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
-    setLastUpdated(latestIso ? `latest commit: ${formatDate(latestIso)}` : "latest commit loaded");
-
-    const refBySha = new Map();
-
-    const initialCommits = [];
-
-    for (let i = 0; i < commits.length; i++) {
-      const commit = commits[i];
-      const sha = commit.sha;
-
-      const s = summaryCardSkeleton(commit);
-      summaryRoot.appendChild(s.card);
-
-      const openByDefault = i < INITIAL_DETAIL_LOAD_COUNT;
-      const d = detailsSkeleton(commit, { openByDefault });
-      detailsRoot.appendChild(d.root);
-
-      const refs = {
-        summaryBullets: s.bullets,
-        whyBody: d.whyBody,
-        notesSection: d.notesSection,
-        notesBody: d.notesBody,
-        whatList: d.whatList,
-        filesBody: d.filesBody,
-        root: d.root,
-        loaded: false,
-        loading: false,
-      };
-
-      d.root.addEventListener("toggle", () => {
-        if (d.root.open) hydrateCommitDetail(commit, refs, overrides);
-      });
-
-      refBySha.set(sha, refs);
-
-      if (openByDefault) initialCommits.push(commit);
-    }
-
-    await runLimited(initialCommits, Math.min(CONCURRENCY, INITIAL_DETAIL_LOAD_COUNT), async (commit) => {
-      const refs = refBySha.get(commit.sha);
-      await hydrateCommitDetail(commit, refs, overrides);
+    renderCommits(commits, overrides, {
+      hydrateDetail: hydrateCommitDetail,
+      async preloadOpenDetails(initialCommits, refBySha) {
+        await runLimited(initialCommits, Math.min(CONCURRENCY, INITIAL_DETAIL_LOAD_COUNT), async (commit) => {
+          const refs = refBySha.get(commit.sha);
+          await hydrateCommitDetail(commit, refs, overrides);
+        });
+      },
     });
   }
 

@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2026-03-26T18:49:03.336Z",
+  "owner": "enzo-prism",
+  "repo": "marble",
+  "branch": "main",
+  "commitCount": 7,
+  "commits": [
+    {
+      "sha": "67a20db5349df39fc886f7de2a1251f1451d1a59",
+      "html_url": "https://github.com/enzo-prism/marble/commit/67a20db5349df39fc886f7de2a1251f1451d1a59",
+      "commit": {
+        "message": "Improve changelog loading resilience",
+        "author": {
+          "date": "2026-03-26T11:42:18-07:00"
+        },
+        "committer": {
+          "date": "2026-03-26T11:42:18-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "changelog/changelog.js",
+          "additions": 72,
+          "deletions": 39,
+          "changes": 111
+        }
+      ],
+      "stats": {
+        "additions": 72,
+        "deletions": 39,
+        "total": 111
+      }
+    },
+    {
+      "sha": "19fc88e3b8dc9719b0c5cbb913a4f9aceea8a7c6",
+      "html_url": "https://github.com/enzo-prism/marble/commit/19fc88e3b8dc9719b0c5cbb913a4f9aceea8a7c6",
+      "commit": {
+        "message": "Remove AI first design hero pill",
+        "author": {
+          "date": "2026-03-26T11:35:34-07:00"
+        },
+        "committer": {
+          "date": "2026-03-26T11:35:34-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "index.html",
+          "additions": 0,
+          "deletions": 9,
+          "changes": 9
+        }
+      ],
+      "stats": {
+        "additions": 0,
+        "deletions": 9,
+        "total": 9
+      }
+    },
+    {
+      "sha": "edd47a36764bfc0d5343dc03e2d19e45bd0ec819",
+      "html_url": "https://github.com/enzo-prism/marble/commit/edd47a36764bfc0d5343dc03e2d19e45bd0ec819",
+      "commit": {
+        "message": "Add changelog page",
+        "author": {
+          "date": "2026-02-06T07:58:24-08:00"
+        },
+        "committer": {
+          "date": "2026-02-06T07:58:24-08:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "changelog/changelog.js",
+          "additions": 4,
+          "deletions": 5,
+          "changes": 9
+        },
+        {
+          "filename": "changelog/index.html",
+          "additions": 32,
+          "deletions": 6,
+          "changes": 38
+        },
+        {
+          "filename": "index.html",
+          "additions": 49,
+          "deletions": 3,
+          "changes": 52
+        },
+        {
+          "filename": "styles.css",
+          "additions": 98,
+          "deletions": 2,
+          "changes": 100
+        }
+      ],
+      "stats": {
+        "additions": 183,
+        "deletions": 16,
+        "total": 199
+      }
+    },
+    {
+      "sha": "df2ed2d3585539cf62f65c19645c2dfe1991bf7a",
+      "html_url": "https://github.com/enzo-prism/marble/commit/df2ed2d3585539cf62f65c19645c2dfe1991bf7a",
+      "commit": {
+        "message": "Add changelog page route",
+        "author": {
+          "date": "2026-02-06T07:38:24-08:00"
+        },
+        "committer": {
+          "date": "2026-02-06T07:38:24-08:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".gitignore",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "changelog/changelog.js",
+          "additions": 631,
+          "deletions": 0,
+          "changes": 631
+        },
+        {
+          "filename": "changelog/index.html",
+          "additions": 136,
+          "deletions": 0,
+          "changes": 136
+        },
+        {
+          "filename": "changelog/overrides.json",
+          "additions": 11,
+          "deletions": 0,
+          "changes": 11
+        },
+        {
+          "filename": "index.html",
+          "additions": 13,
+          "deletions": 1,
+          "changes": 14
+        },
+        {
+          "filename": "server.js",
+          "additions": 53,
+          "deletions": 14,
+          "changes": 67
+        },
+        {
+          "filename": "styles.css",
+          "additions": 283,
+          "deletions": 0,
+          "changes": 283
+        }
+      ],
+      "stats": {
+        "additions": 1129,
+        "deletions": 15,
+        "total": 1144
+      }
+    },
+    {
+      "sha": "c8dcc0309fa133dc6bfee5c329bcb9b9d36877a4",
+      "html_url": "https://github.com/enzo-prism/marble/commit/c8dcc0309fa133dc6bfee5c329bcb9b9d36877a4",
+      "commit": {
+        "message": "add social preview and favicons",
+        "author": {
+          "date": "2026-01-16T14:31:05-08:00"
+        },
+        "committer": {
+          "date": "2026-01-16T14:31:05-08:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Favicon large.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Opengraph.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "favicon small.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "index.html",
+          "additions": 12,
+          "deletions": 3,
+          "changes": 15
+        }
+      ],
+      "stats": {
+        "additions": 12,
+        "deletions": 3,
+        "total": 15
+      }
+    },
+    {
+      "sha": "c13c5e388224e7046ca801e3e5cca9b6416cd498",
+      "html_url": "https://github.com/enzo-prism/marble/commit/c13c5e388224e7046ca801e3e5cca9b6416cd498",
+      "commit": {
+        "message": "adjust mobile nav spacing",
+        "author": {
+          "date": "2026-01-16T14:24:33-08:00"
+        },
+        "committer": {
+          "date": "2026-01-16T14:24:33-08:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "styles.css",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 5,
+        "deletions": 0,
+        "total": 5
+      }
+    },
+    {
+      "sha": "9526c5722711d8dcb063b1d4d70b9435a1094351",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9526c5722711d8dcb063b1d4d70b9435a1094351",
+      "commit": {
+        "message": "build marble marketing site",
+        "author": {
+          "date": "2026-01-16T14:18:20-08:00"
+        },
+        "committer": {
+          "date": "2026-01-16T14:18:20-08:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 30,
+          "deletions": 0,
+          "changes": 30
+        },
+        {
+          "filename": "index.html",
+          "additions": 341,
+          "deletions": 0,
+          "changes": 341
+        },
+        {
+          "filename": "package.json",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "server.js",
+          "additions": 48,
+          "deletions": 0,
+          "changes": 48
+        },
+        {
+          "filename": "styles.css",
+          "additions": 742,
+          "deletions": 0,
+          "changes": 742
+        }
+      ],
+      "stats": {
+        "additions": 1168,
+        "deletions": 0,
+        "total": 1168
+      }
+    }
+  ]
+}

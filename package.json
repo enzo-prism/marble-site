@@ -2,6 +2,8 @@
   "name": "marble-site",
   "private": true,
   "scripts": {
-    "dev": "node server.js"
+    "build": "node scripts/generate-changelog-data.js",
+    "dev": "node server.js",
+    "update:changelog": "node scripts/generate-changelog-data.js"
   }
 }
