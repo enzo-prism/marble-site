@@ -26,6 +26,12 @@
 
   if (!summaryRoot || !detailsRoot) return;
 
+  function trackAnalyticsEvent(name, data) {
+    if (!name) return;
+    if (!window.marbleAnalytics || typeof window.marbleAnalytics.track !== "function") return;
+    window.marbleAnalytics.track(name, data);
+  }
+
   const dtf = new Intl.DateTimeFormat(undefined, {
     year: "numeric",
     month: "short",
@@ -240,7 +246,14 @@
       el("a", {
         className: "chip",
         text: "view",
-        attrs: { href: url, target: "_blank", rel: "noreferrer noopener" },
+        attrs: {
+          href: url,
+          target: "_blank",
+          rel: "noreferrer noopener",
+          "data-analytics-event": "GitHub Click",
+          "data-analytics-location": "changelog_summary_card",
+          "data-analytics-target": "commit",
+        },
       })
     );
 
@@ -312,14 +325,28 @@
       el("a", {
         className: "chip",
         text: "view on github",
-        attrs: { href: url, target: "_blank", rel: "noreferrer noopener" },
+        attrs: {
+          href: url,
+          target: "_blank",
+          rel: "noreferrer noopener",
+          "data-analytics-event": "GitHub Click",
+          "data-analytics-location": "changelog_commit_actions",
+          "data-analytics-target": "commit",
+        },
       })
     );
     actions.appendChild(
       el("a", {
         className: "chip",
         text: "app store",
-        attrs: { href: APP_STORE_URL, target: "_blank", rel: "noreferrer noopener" },
+        attrs: {
+          href: APP_STORE_URL,
+          target: "_blank",
+          rel: "noreferrer noopener",
+          "data-analytics-event": "App Store Click",
+          "data-analytics-location": "changelog_commit_actions",
+          "data-analytics-target": "app_store",
+        },
       })
     );
 
@@ -631,7 +658,13 @@
       };
 
       d.root.addEventListener("toggle", () => {
-        if (d.root.open) hydrateDetail(commit, refs, overrides);
+        if (d.root.open) {
+          trackAnalyticsEvent("Commit Detail Opened", {
+            location: "changelog_details",
+            target: "commit",
+          });
+          hydrateDetail(commit, refs, overrides);
+        }
       });
 
       refBySha.set(sha, refs);

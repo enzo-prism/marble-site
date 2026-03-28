@@ -22,10 +22,37 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+
+      window.va("beforeSend", function (event) {
+        if (!event || typeof event !== "object" || typeof event.url !== "string") return event;
+
+        try {
+          const url = new URL(event.url);
+          url.hash = "";
+          return { ...event, url: url.toString() };
+        } catch {
+          return event;
+        }
+      });
+
+      if (!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.defer = true;
+        analyticsScript.src = "/_vercel/insights/script.js";
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/scripts/analytics.js" defer></script>
     <script src="/changelog/changelog.js" defer></script>
   </head>
-  <body>
+  <body data-page="changelog">
     <a class="skip-link" href="#top">skip to content</a>
     <div class="grain" aria-hidden="true"></div>
     <header class="nav">
@@ -42,7 +69,7 @@
           <span>marble</span>
         </a>
         <nav class="nav-links">
-          <a href="#summary">
+          <a href="#summary" data-analytics-event="Section Navigate" data-analytics-location="changelog_nav" data-analytics-target="summary">
             <span class="nav-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M8 7h13" />
@@ -55,7 +82,7 @@
             </span>
             summary
           </a>
-          <a href="#details">
+          <a href="#details" data-analytics-event="Section Navigate" data-analytics-location="changelog_nav" data-analytics-target="details">
             <span class="nav-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="8.5" />
@@ -64,7 +91,14 @@
             </span>
             details
           </a>
-          <a href="https://github.com/enzo-prism/marble" target="_blank" rel="noreferrer noopener">
+          <a
+            href="https://github.com/enzo-prism/marble"
+            target="_blank"
+            rel="noreferrer noopener"
+            data-analytics-event="GitHub Click"
+            data-analytics-location="changelog_nav"
+            data-analytics-target="repo"
+          >
             <span class="nav-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 3h7v7" />
@@ -75,7 +109,7 @@
             github
           </a>
         </nav>
-        <details class="nav-menu">
+        <details class="nav-menu" data-analytics-location="changelog_header">
           <summary class="btn nav-menu-button">
             <span class="nav-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
@@ -88,16 +122,37 @@
           </summary>
           <nav class="nav-menu-panel" aria-label="changelog">
             <a href="/">home</a>
-            <a href="#summary">summary</a>
-            <a href="#details">details</a>
-            <a href="https://github.com/enzo-prism/marble" target="_blank" rel="noreferrer noopener">github</a>
-            <a class="btn btn-primary nav-menu-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+            <a href="#summary" data-analytics-event="Section Navigate" data-analytics-location="changelog_menu" data-analytics-target="summary">summary</a>
+            <a href="#details" data-analytics-event="Section Navigate" data-analytics-location="changelog_menu" data-analytics-target="details">details</a>
+            <a
+              href="https://github.com/enzo-prism/marble"
+              target="_blank"
+              rel="noreferrer noopener"
+              data-analytics-event="GitHub Click"
+              data-analytics-location="changelog_menu"
+              data-analytics-target="repo"
+            >
+              github
+            </a>
+            <a
+              class="btn btn-primary nav-menu-cta"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+              data-analytics-event="App Store Click"
+              data-analytics-location="changelog_menu"
+              data-analytics-target="app_store"
+            >
               <span class="apple" aria-hidden="true"></span>
               download on app store
             </a>
           </nav>
         </details>
-        <a class="btn btn-primary nav-cta" href="https://apps.apple.com/us/app/marble-fit/id6757725234">
+        <a
+          class="btn btn-primary nav-cta"
+          href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+          data-analytics-event="App Store Click"
+          data-analytics-location="changelog_header"
+          data-analytics-target="app_store"
+        >
           <span class="apple" aria-hidden="true"></span>
           download on app store
         </a>
@@ -115,7 +170,17 @@
             </p>
             <div class="changelog-meta animate" style="--delay: 0.3s">
               <span class="chip" id="changelog-last-updated" aria-live="polite">loading commits…</span>
-              <a class="chip" href="https://github.com/enzo-prism/marble/commits/main" target="_blank" rel="noreferrer noopener">view on github</a>
+              <a
+                class="chip"
+                href="https://github.com/enzo-prism/marble/commits/main"
+                target="_blank"
+                rel="noreferrer noopener"
+                data-analytics-event="GitHub Click"
+                data-analytics-location="changelog_hero"
+                data-analytics-target="commits"
+              >
+                view on github
+              </a>
             </div>
           </div>
         </div>
@@ -153,7 +218,7 @@
         <span>marble</span>
         <div class="footer-links">
           <a href="/changelog/">changelog</a>
-          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234">app store</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234" data-analytics-event="App Store Click" data-analytics-location="changelog_footer" data-analytics-target="app_store">app store</a>
         </div>
       </div>
     </footer>
