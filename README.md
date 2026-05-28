@@ -27,4 +27,5 @@ this project is static. deploy with vercel as a static site or any static host.
 
 ## assets
 
-images and video are served from cloudinary.
+- feature thumbnails and the hero video are served from cloudinary.
+- device-framed product screenshots live in `images/` (exported from the app's snapshot tests, resized to 660px wide).

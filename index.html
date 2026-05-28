@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>marble</title>
+    <title>marble — minimal workout journal for ios</title>
     <meta
       name="description"
-      content="minimal workout journal for ios."
+      content="marble is a quiet, offline workout and supplement journal for ios. log sets in seconds, track streaks, and watch your trends. no account, no cloud, no ads."
     />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon%20small.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="Favicon%20large.png" />
@@ -53,6 +53,7 @@
     </script>
     <link rel="stylesheet" href="styles.css" />
     <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/reveal.js" defer></script>
   </head>
   <body data-page="home">
     <a class="skip-link" href="#top">skip to content</a>
@@ -81,6 +82,15 @@
               </svg>
             </span>
             features
+          </a>
+          <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="screens">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="3" width="10" height="18" rx="2.5" />
+                <path d="M11 18h2" />
+              </svg>
+            </span>
+            screens
           </a>
           <a href="#workflow" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="workflow">
             <span class="nav-icon" aria-hidden="true">
@@ -125,6 +135,7 @@
           </summary>
           <nav class="nav-menu-panel" aria-label="site">
             <a href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="features">features</a>
+            <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="screens">screens</a>
             <a href="#workflow" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="workflow">workflow</a>
             <a href="#insights" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="insights">insights</a>
             <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_menu" data-analytics-target="changelog">changelog</a>
@@ -161,7 +172,12 @@
         </video>
         <div class="container hero-grid">
           <div class="hero-copy">
+            <span class="badge animate" style="--delay: 0.05s">workout journal · ios</span>
             <h1 class="animate" style="--delay: 0.1s">train. log. evolve.</h1>
+            <p class="animate" style="--delay: 0.2s">
+              a quiet, offline journal for your training and supplements. log a set in seconds, keep the
+              streak alive, and let the trends show the work.
+            </p>
             <div class="cta-row animate" style="--delay: 0.3s">
               <a
                 class="btn btn-primary"
@@ -207,15 +223,33 @@
               </span>
             </div>
           </div>
+          <div class="hero-device animate" style="--delay: 0.45s">
+            <div class="device device-tilt">
+              <div class="device-screen">
+                <span class="device-island" aria-hidden="true"></span>
+                <img
+                  src="images/journal-light.png"
+                  alt="marble journal screen showing today's logged sets"
+                  width="660"
+                  height="1431"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+            </div>
+            <span class="hero-float hero-float-a" aria-hidden="true">185 lb × 5 · RPE 8</span>
+            <span class="hero-float hero-float-b" aria-hidden="true"><span class="dot"></span>streak 5 days</span>
+          </div>
         </div>
       </section>
 
-      <section id="features" class="section">
+      <section id="features" class="section" data-reveal>
         <div class="container">
           <div class="section-head">
             <div>
               <span class="badge">features</span>
               <h2>just the essentials.</h2>
+              <p>everything you need to log a workout and nothing you don't. no setup, no feed, no noise.</p>
             </div>
           </div>
           <div class="grid features-grid">
@@ -230,6 +264,7 @@
                 />
               </div>
               <h3>log</h3>
+              <p class="feature-desc">weight, reps, RPE, and rest in a few taps. repeat your last set with one.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media">
@@ -242,6 +277,7 @@
                 />
               </div>
               <h3>journal</h3>
+              <p class="feature-desc">every set grouped by day, with favorites and a ready-to-log card for today.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media">
@@ -254,6 +290,7 @@
                 />
               </div>
               <h3>calendar</h3>
+              <p class="feature-desc">a month at a glance with streaks, day markers, and per-day summaries.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media">
@@ -266,6 +303,7 @@
                 />
               </div>
               <h3>plan your split</h3>
+              <p class="feature-desc">map a weekly plan, monday through sunday, with planned sets per day.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media">
@@ -278,6 +316,7 @@
                 />
               </div>
               <h3>trends</h3>
+              <p class="feature-desc">consistency, weekly volume, and PRs from 7 days to all-time.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media">
@@ -290,6 +329,7 @@
                 />
               </div>
               <h3>supplements</h3>
+              <p class="feature-desc">quick-add doses and keep an intake history right next to training.</p>
             </article>
             <article class="card feature-card">
               <div class="feature-media logo">
@@ -302,16 +342,86 @@
                 />
               </div>
               <h3>offline</h3>
+              <p class="feature-desc">stored entirely on-device. no account, no cloud, no ads, ever.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section contrast">
+      <section id="screens" class="section screens" data-reveal>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="badge">screens</span>
+              <h2>a closer look.</h2>
+              <p>real screens from the app — the same monochrome layout everywhere you go.</p>
+            </div>
+          </div>
+          <div class="screen-gallery">
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <span class="device-island" aria-hidden="true"></span>
+                  <img
+                    src="images/calendar-light.png"
+                    alt="marble calendar with a five-day streak and day markers"
+                    width="660"
+                    height="1431"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <figcaption class="screen-caption">
+                <h3>calendar</h3>
+                <p>streaks, day markers, and a quick summary of every session.</p>
+              </figcaption>
+            </figure>
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <span class="device-island" aria-hidden="true"></span>
+                  <img
+                    src="images/supplements-light.png"
+                    alt="marble supplements log with quick-add and daily history"
+                    width="660"
+                    height="1431"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <figcaption class="screen-caption">
+                <h3>supplements</h3>
+                <p>quick-add doses and a clean history grouped by day.</p>
+              </figcaption>
+            </figure>
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <span class="device-island" aria-hidden="true"></span>
+                  <img
+                    src="images/split-light.png"
+                    alt="marble weekly split plan from monday to sunday"
+                    width="660"
+                    height="1431"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <figcaption class="screen-caption">
+                <h3>split</h3>
+                <p>a weekly plan you can shape day by day.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contrast" data-reveal>
         <div class="container split">
           <div>
             <span class="badge">design</span>
             <h2>white / black / gray.</h2>
+            <p>a calm monochrome palette that reads clearly in light and dark — your data stays the loudest thing on screen.</p>
             <div class="swatches">
               <div class="swatch light">
                 <span>white</span>
@@ -325,25 +435,43 @@
             </div>
           </div>
           <div class="card contrast-card">
-            <div class="contrast-grid">
-              <div class="contrast-tile light">
-                <span class="label">light mode</span>
+            <div class="contrast-devices">
+              <div>
+                <div class="device">
+                  <div class="device-screen">
+                    <span class="device-island" aria-hidden="true"></span>
+                    <img
+                      src="images/journal-light.png"
+                      alt="marble journal in light mode"
+                      width="660"
+                      height="1431"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <span class="device-caption">light</span>
               </div>
-              <div class="contrast-tile dark">
-                <span class="label">dark mode</span>
-              </div>
-              <div class="contrast-tile gray">
-                <span class="label">accents</span>
-              </div>
-              <div class="contrast-tile outline">
-                <span class="label">layout</span>
+              <div>
+                <div class="device device-dark">
+                  <div class="device-screen">
+                    <span class="device-island" aria-hidden="true"></span>
+                    <img
+                      src="images/journal-dark.png"
+                      alt="marble journal in dark mode"
+                      width="660"
+                      height="1431"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <span class="device-caption">dark</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="workflow" class="section">
+      <section id="workflow" class="section" data-reveal>
         <div class="container">
           <div class="section-head">
             <div>
@@ -355,14 +483,17 @@
             <article class="card step">
               <div class="step-number">01</div>
               <h3>log</h3>
+              <p>capture a set the moment you finish it.</p>
             </article>
             <article class="card step">
               <div class="step-number">02</div>
               <h3>review</h3>
+              <p>scan the day and the calendar at a glance.</p>
             </article>
             <article class="card step">
               <div class="step-number">03</div>
               <h3>trend</h3>
+              <p>watch consistency and volume climb over time.</p>
             </article>
           </div>
           <div class="principles">
@@ -379,41 +510,45 @@
         </div>
       </section>
 
-      <section id="insights" class="section insights">
+      <section id="insights" class="section insights" data-reveal>
         <div class="container split">
           <div>
             <span class="badge">insights</span>
             <h2>see the curve.</h2>
+            <p>every set rolls up into charts you can actually read. filter from the last 7 days out to all-time.</p>
             <div class="stat-grid">
               <div class="card stat">
-                <span class="value">consistency</span>
+                <span class="label">consistency</span>
+                <span class="value">active days</span>
               </div>
               <div class="card stat">
-                <span class="value">volume</span>
+                <span class="label">volume</span>
+                <span class="value">weekly load</span>
               </div>
               <div class="card stat">
-                <span class="value">prs</span>
+                <span class="label">records</span>
+                <span class="value">best week</span>
               </div>
             </div>
           </div>
           <div class="card insights-card">
-            <div class="insights-header">
-              <span class="label">trend</span>
-            </div>
-            <div class="insights-image">
-              <img
-                src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597593/trends_ttyqa4.webp"
-                alt="marble trends view screenshot"
-                width="390"
-                height="844"
-                loading="lazy"
-              />
+            <div class="device">
+              <div class="device-screen">
+                <span class="device-island" aria-hidden="true"></span>
+                <img
+                  src="images/trends-light.png"
+                  alt="marble trends screen with consistency and weekly volume charts"
+                  width="660"
+                  height="1431"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="download" class="section cta">
+      <section id="download" class="section cta" data-reveal>
         <div class="container">
           <div class="card cta-card">
             <div>
