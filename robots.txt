@@ -1,0 +1,42 @@
+# robots.txt for https://marble.fit
+# Static marketing site — everything is public and welcome to crawl.
+
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers are explicitly welcome (Generative Engine Optimization).
+# See /llms.txt for a concise, structured summary intended for language models.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://marble.fit/sitemap.xml
