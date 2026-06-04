@@ -1,44 +1,41 @@
 # marble.fit
 
-> marble is the offline workout and supplement journal for iOS — designed for the conquerors. Log a set in seconds, hold the streak, and watch your training trends climb. No account, no cloud, no ads.
+> marble is a minimal workout journal for iPhone. Offline. Private. No ads.
 
-marble (also known as marble.fit) is a free iPhone app for tracking strength training and supplement intake. It is built for the ones who show up: intentionally minimal, private, and relentless. All data is stored on-device, every feature works fully offline, and it requires no account or sign-up. The brand fuses a monochrome marble palette (white / black / gray) with a terminal/cyberpunk aesthetic — antiquity meets the command line, a tool that treats discipline like code. The tagline is "designed for the conquerors," aimed at a young, ambitious strength-training audience.
+marble tracks sets, supplements, streaks, and trends. All data stays on-device.
 
 ## Key facts
 
 - Name: marble (App Store name: marble.fit)
-- Platform: iOS only (iPhone)
+- Platform: iPhone
 - Price: Free
-- Privacy: 100% on-device storage — no account, no cloud sync, no ads, no personal-data tracking
-- Offline: works fully offline
-- Category: Health & Fitness — workout tracker, gym log, lifting journal, supplement tracker
+- Privacy: on-device, no account, no ads
+- Offline: yes
+- Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
 
 ## Features
 
-- Fast logging: capture weight, reps, RPE, and rest in a few taps; repeat your last set with one tap.
-- Journal: every set grouped by day, with a ready-to-log card for today.
-- Calendar: a month at a glance with training-day markers, streaks, and per-day summaries.
-- Split planner: map a weekly plan from Monday to Sunday with planned sets per day, built into the calendar.
-- Trends: consistency, weekly volume, momentum, and personal records from the last 7 days out to all-time.
-- Supplements: quick-add doses and keep an intake history right next to your training.
-- Reminders: custom notifications scheduled on-device so you never miss a session.
-
-The app has four tabs — Journal, Calendar, Supplements, and Trends — and is strictly monochrome with light and dark modes.
+- Fast set logging
+- Daily journal
+- Calendar and streaks
+- Weekly split planner
+- Trends and records
+- Supplement tracking
+- Local reminders
 
 ## Links
 
-- [Home](https://marble.fit/): the marble marketing site.
-- [Download on the App Store](https://apps.apple.com/us/app/marble-fit/id6757725234): install marble for iPhone (free).
-- [Changelog](https://marble.fit/changelog/): latest release notes and updates.
-- [Source on GitHub](https://github.com/enzo-prism/marble): the app's public repository.
-- [Privacy policy](https://enzo-prism.github.io/marble/privacy): how marble handles data (it stays on-device).
+- [Home](https://marble.fit/)
+- [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
+- [Changelog](https://marble.fit/changelog/)
+- [GitHub](https://github.com/enzo-prism/marble)
+- [Privacy](https://enzo-prism.github.io/marble/privacy)
 
 ## Frequently asked questions
 
-- Is marble free? Yes — marble is free to download on the App Store.
-- Does marble work offline? Yes. Every feature works offline and your data is stored entirely on your device.
-- Do I need an account? No. There is no sign-up, login, or cloud sync; you can start logging immediately.
-- Which devices are supported? marble is an iOS app for iPhone.
-- Does marble show ads or sell my data? No. There are no ads and nothing leaves your device.
-- What can I track? Strength-training sets (weight, reps, RPE, rest), weekly splits, streaks, trends, and supplement intake.
+- Free? Yes.
+- Offline? Yes.
+- Account? No.
+- Devices? iPhone.
+- Ads? No.
