@@ -31,7 +31,7 @@
     <meta name="twitter:description" content="the latest updates and release notes for the marble iOS workout journal app." />
     <meta name="twitter:image" content="https://marble.fit/Opengraph.png" />
     <meta name="twitter:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
-    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="theme-color" content="#0a0908" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -71,7 +71,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -215,10 +215,13 @@
       <section class="hero changelog-hero">
         <div class="container hero-grid">
           <div class="hero-copy">
+            <p class="terminal-line hero-eyebrow">
+              <span class="prompt">marble@iron</span>:<span class="path">~/marble</span>$ git log --oneline<span class="cursor" aria-hidden="true"></span>
+            </p>
             <span class="badge">changelog</span>
-            <h1 class="animate" style="--delay: 0.1s">what's new.</h1>
+            <h1 class="animate" style="--delay: 0.1s">the log.</h1>
             <p class="animate" style="--delay: 0.2s">
-              latest updates to the marble iOS app, pulled from GitHub commits on <code>main</code>.
+              Every update to marble, pulled straight from the commits on <code>main</code>.
             </p>
             <div class="changelog-meta animate" style="--delay: 0.3s">
               <span class="chip" id="changelog-last-updated" aria-live="polite">loading commits…</span>
@@ -243,8 +246,8 @@
           <div class="section-head">
             <div>
               <span class="badge">summary</span>
-              <h2>commit-by-commit.</h2>
-              <p>quick bullets per commit. open a commit for the full breakdown.</p>
+              <h2>commit by commit.</h2>
+              <p>Quick bullets per commit. Open one for the full breakdown.</p>
             </div>
           </div>
           <div id="changelog-summary" class="grid changelog-grid" aria-live="polite"></div>
@@ -257,7 +260,7 @@
             <div>
               <span class="badge">details</span>
               <h2>full notes.</h2>
-              <p>what changed, why, and the files involved (newest first).</p>
+              <p>What changed, why, and the files involved — newest first.</p>
             </div>
           </div>
           <div id="changelog-details" class="changelog-details" aria-live="polite"></div>

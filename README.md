@@ -2,6 +2,8 @@
 
 single-page marketing site for the marble fitness app.
 
+**Brand:** "the warrior's terminal" — a black-marble + terminal/cyberpunk aesthetic (greek-god monument meets hacker), tagline **"designed for the conquerors."** Type registers: Cinzel (carved-stone headlines), IBM Plex Mono (terminal/UI/data), IBM Plex Sans (body). Dark obsidian field, marble-white text, a single phosphor-green accent for the terminal layer.
+
 ## quick start
 
 ```bash

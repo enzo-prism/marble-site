@@ -1,8 +1,8 @@
 # marble.fit
 
-> marble is a quiet, offline-first workout and supplement journal for iOS. Log a set in seconds, keep a streak alive, and watch your training trends — no account, no cloud, no ads.
+> marble is the offline workout and supplement journal for iOS — designed for the conquerors. Log a set in seconds, hold the streak, and watch your training trends climb. No account, no cloud, no ads.
 
-marble (also known as marble.fit) is a free iPhone app for tracking strength training and supplement intake. It is intentionally minimal and private: all data is stored on-device, every feature works fully offline, and it requires no account or sign-up. The design is a calm, monochrome palette (white / black / gray) so your data stays the loudest thing on screen.
+marble (also known as marble.fit) is a free iPhone app for tracking strength training and supplement intake. It is built for the ones who show up: intentionally minimal, private, and relentless. All data is stored on-device, every feature works fully offline, and it requires no account or sign-up. The brand fuses a monochrome marble palette (white / black / gray) with a terminal/cyberpunk aesthetic — antiquity meets the command line, a tool that treats discipline like code. The tagline is "designed for the conquerors," aimed at a young, ambitious strength-training audience.
 
 ## Key facts
 
@@ -17,12 +17,14 @@ marble (also known as marble.fit) is a free iPhone app for tracking strength tra
 ## Features
 
 - Fast logging: capture weight, reps, RPE, and rest in a few taps; repeat your last set with one tap.
-- Journal: every set grouped by day, with favorites and a ready-to-log card for today.
-- Calendar: a month at a glance with streaks, day markers, and per-day summaries.
-- Split planner: map a weekly plan from Monday to Sunday with planned sets per day.
-- Trends: consistency, weekly volume, and personal records from the last 7 days out to all-time.
+- Journal: every set grouped by day, with a ready-to-log card for today.
+- Calendar: a month at a glance with training-day markers, streaks, and per-day summaries.
+- Split planner: map a weekly plan from Monday to Sunday with planned sets per day, built into the calendar.
+- Trends: consistency, weekly volume, momentum, and personal records from the last 7 days out to all-time.
 - Supplements: quick-add doses and keep an intake history right next to your training.
-- Empire (gamification): a playful reward layer where every set banks "talents," a streak powers a daily tribute, and lifetime training volume builds a collection of monuments — earned through training, never bought.
+- Reminders: custom notifications scheduled on-device so you never miss a session.
+
+The app has four tabs — Journal, Calendar, Supplements, and Trends — and is strictly monochrome with light and dark modes.
 
 ## Links
 
