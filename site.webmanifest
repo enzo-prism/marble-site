@@ -1,0 +1,13 @@
+{
+  "name": "marble — minimal workout journal",
+  "short_name": "marble",
+  "description": "A minimal workout journal for iPhone. Sets, supplements, streaks, and trends. Offline. Private. No ads.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a0908",
+  "theme_color": "#0a0908",
+  "icons": [
+    { "src": "/favicon%20small.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/Favicon%20large.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
+  ]
+}

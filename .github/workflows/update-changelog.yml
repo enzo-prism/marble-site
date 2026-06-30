@@ -1,0 +1,43 @@
+name: Update changelog snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site repo
+        uses: actions/checkout@v4
+
+      - name: Check out app repo
+        uses: actions/checkout@v4
+        with:
+          repository: enzo-prism/marble
+          path: app-repo
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Regenerate changelog snapshot
+        run: MARBLE_APP_REPO=${{ github.workspace }}/app-repo node scripts/generate-changelog-data.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain changelog/data.json)" ]; then
+            git add changelog/data.json
+            git commit -m "chore: refresh changelog snapshot"
+            git push
+          else
+            echo "No changelog changes"
+          fi
