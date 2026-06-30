@@ -3,8 +3,8 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.marble.fit" }],
-      "destination": "https://marble.fit/$1",
+      "has": [{ "type": "host", "value": "www.marble-fit.app" }],
+      "destination": "https://marble-fit.app/$1",
       "permanent": true
     }
   ]

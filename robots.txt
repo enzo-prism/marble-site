@@ -1,4 +1,4 @@
-# robots.txt for https://marble.fit
+# robots.txt for https://marble-fit.app
 # Static marketing site — everything is public and welcome to crawl.
 
 User-agent: *
@@ -39,4 +39,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://marble.fit/sitemap.xml
+Sitemap: https://marble-fit.app/sitemap.xml

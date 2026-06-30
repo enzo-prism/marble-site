@@ -26,7 +26,7 @@ then open: http://127.0.0.1:5173
 
 ## seo / geo
 
-The canonical domain is **https://marble.fit**. Search/LLM discovery files live at the repo root and are served as-is:
+The canonical domain is **https://marble-fit.app** (the live, registered domain). Search/LLM discovery files live at the repo root and are served as-is:
 
 - `robots.txt` allows all crawlers (including AI/LLM bots) and points to the sitemap
 - `sitemap.xml` lists the home and changelog URLs (update `lastmod` when content changes)
@@ -40,7 +40,9 @@ If you change the domain, update the absolute URLs in `index.html`, `changelog/i
 
 this project is static. deploy with vercel as a static site or any static host.
 
-`vercel.json` 301-redirects `www.marble.fit` → the apex `marble.fit` so the canonical host is unambiguous. In the Vercel dashboard, add both `marble.fit` and `www.marble.fit` to the project and set `marble.fit` as primary.
+`vercel.json` 301-redirects `www.marble-fit.app` → the apex `marble-fit.app` so the canonical host is unambiguous. In the Vercel dashboard, `marble-fit.app` is the primary domain.
+
+> Note: the site originally canonicalized to `marble.fit`, which was never registered/never resolved. All absolute URLs now point to `marble-fit.app` (the working domain). If `marble.fit` is registered later, attach it + `www.marble.fit` in Vercel, set the apex as primary, and flip the absolute URLs in `index.html`, `changelog/index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, and `vercel.json`.
 
 ## assets
 

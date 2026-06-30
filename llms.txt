@@ -26,9 +26,9 @@ marble tracks sets, supplements, streaks, and trends. All data stays on-device.
 
 ## Links
 
-- [Home](https://marble.fit/)
+- [Home](https://marble-fit.app/)
 - [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
-- [Changelog](https://marble.fit/changelog/)
+- [Changelog](https://marble-fit.app/changelog/)
 - [GitHub](https://github.com/enzo-prism/marble)
 - [Privacy](https://enzo-prism.github.io/marble/privacy)
 
