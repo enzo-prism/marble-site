@@ -158,7 +158,9 @@ const API_HEADERS = {
 };
 
 async function githubJson(url) {
-  const res = await fetch(url, { headers: API_HEADERS });
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const headers = token ? { ...API_HEADERS, Authorization: `Bearer ${token}` } : API_HEADERS;
+  const res = await fetch(url, { headers });
   if (res.status === 403 || res.status === 429) {
     const remaining = res.headers.get("x-ratelimit-remaining");
     throw new Error(
