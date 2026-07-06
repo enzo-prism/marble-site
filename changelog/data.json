@@ -1,10 +1,1040 @@
 {
-  "generatedAt": "2026-06-30T16:26:35.166Z",
+  "generatedAt": "2026-07-06T12:49:49.650Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 73,
+  "commitCount": 84,
   "commits": [
+    {
+      "sha": "915e26e7c9c5aa9748b4a53a70f583074ead0f6e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/915e26e7c9c5aa9748b4a53a70f583074ead0f6e",
+      "commit": {
+        "message": "Docs: record 1.9 (build 33) VALID on TestFlight\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-02T08:39:08-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T08:39:08-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 5,
+          "deletions": 4,
+          "changes": 9
+        }
+      ],
+      "stats": {
+        "additions": 5,
+        "deletions": 4,
+        "total": 9
+      }
+    },
+    {
+      "sha": "94e97f40bdb58c48f28d1c9611ce171cdd2ac1b1",
+      "html_url": "https://github.com/enzo-prism/marble/commit/94e97f40bdb58c48f28d1c9611ce171cdd2ac1b1",
+      "commit": {
+        "message": "Merge pull request #7 from enzo-prism/feature/lifter-analytics\n\nTrends: lifter analytics — estimated 1RM, muscle-group sets, rep ranges, effort",
+        "author": {
+          "date": "2026-07-02T08:19:58-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T08:19:58-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 14,
+          "deletions": 3,
+          "changes": 17
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 6,
+          "deletions": 1,
+          "changes": 7
+        },
+        {
+          "filename": "Tests/UI/TrendsSmokeUITests.swift",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "Tests/Unit/ExerciseProgressBuilderTests.swift",
+          "additions": 36,
+          "deletions": 0,
+          "changes": 36
+        },
+        {
+          "filename": "Tests/Unit/LifterAnalyticsTests.swift",
+          "additions": 173,
+          "deletions": 0,
+          "changes": 173
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Trends/ExerciseProgressBuilder.swift",
+          "additions": 6,
+          "deletions": 3,
+          "changes": 9
+        },
+        {
+          "filename": "marble/Features/Trends/LifterAnalytics.swift",
+          "additions": 236,
+          "deletions": 0,
+          "changes": 236
+        },
+        {
+          "filename": "marble/Features/Trends/LifterAnalyticsSections.swift",
+          "additions": 360,
+          "deletions": 0,
+          "changes": 360
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsDerivedData.swift",
+          "additions": 54,
+          "deletions": 1,
+          "changes": 55
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 26,
+          "deletions": 0,
+          "changes": 26
+        }
+      ],
+      "stats": {
+        "additions": 953,
+        "deletions": 12,
+        "total": 965
+      }
+    },
+    {
+      "sha": "8fae376f5d1cafd5406ea3ff739ef390e25a8879",
+      "html_url": "https://github.com/enzo-prism/marble/commit/8fae376f5d1cafd5406ea3ff739ef390e25a8879",
+      "commit": {
+        "message": "Trends: lifter analytics — estimated 1RM, muscle-group sets, rep ranges, effort\n\nBuilt from two research passes: what powerlifters, bodybuilders, and\ngeneral trainees actually track (evidence-based coaching outlets plus the\nfeature sets and user sentiment around Strong/Hevy/Boostcamp) and Apple's\nchart design guidance (HIG Charts/Charting Data, WWDC22 110340/110342).\nEverything derives from already-logged sets — no schema changes.\n\nEstimated 1RM (the most-valued strength metric): per-day best Epley\nestimate for the selected exercise, kg-normalized and displayed in the\nlifter's most recent unit, sets over 12 reps excluded outright (the\nformulas fall apart there; same cutoff Strong uses). Line chart with the\nall-time best marked by the existing PR dot and the takeaway value in the\nsection header. Deliberately not RPE-adjusted: difficulty defaults to 8,\nso adjustment would silently inflate estimates for users who ignore the\ndial.\n\nMuscle Groups: sets per muscle group over the selected range as horizontal\nbars (orientation differentiates category comparisons from the time-series\ncharts — the WWDC22 pattern), with per-week averages once the range spans\ntwo weeks; activity categories (run/recover/power/bar/other) excluded.\nMaps onto the volume-landmark framework bodybuilders steer weekly volume\nwith.\n\nRep Ranges: 1–5 / 6–12 / 13+ distribution, respecting the exercise filter,\nframed neutrally. Effort: average RPE per day/week with a dashed mean —\nthe fatigue/adaptation cue no mainstream tracker charts; the data\n(TrendDailySummary.averageRPE) was already derived, never surfaced.\n\nBug fix: ExerciseProgressBuilder.buildLiftBests compared weights\nnumerically across units (200 lb beat 100 kg); both bests now compare in\nkilograms like the PersonalRecords engine. Regression-tested.\n\nDesign/a11y: bars zero-based, lines on padded dynamic domains (HIG rule\nper mark type); new TrendsPalette.strength accent (steel blue), effort\nreuses the warm red; legends hidden; chart-level labels + derived summary\nvalues plus per-mark unit-bearing values; annotation texts hidden from\nVoiceOver. Audit note: section titles parked at the tab-bar glass boundary\ntrip the audit's contrast sampler falsely — Trends.Section.* is\nwhitelisted with rationale (the real pair is pinned by ThemeContrastTests).\n\nTests: 193 unit (11 new across LifterAnalyticsTests + the lift-bests\nregression); TrendsSmoke pins the four new chart ids; TrendsSelection +\naudit green. Bumps CURRENT_PROJECT_VERSION to 33.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-02T08:12:56-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T08:12:56-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 14,
+          "deletions": 3,
+          "changes": 17
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 6,
+          "deletions": 1,
+          "changes": 7
+        },
+        {
+          "filename": "Tests/UI/TrendsSmokeUITests.swift",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "Tests/Unit/ExerciseProgressBuilderTests.swift",
+          "additions": 36,
+          "deletions": 0,
+          "changes": 36
+        },
+        {
+          "filename": "Tests/Unit/LifterAnalyticsTests.swift",
+          "additions": 173,
+          "deletions": 0,
+          "changes": 173
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Trends/ExerciseProgressBuilder.swift",
+          "additions": 6,
+          "deletions": 3,
+          "changes": 9
+        },
+        {
+          "filename": "marble/Features/Trends/LifterAnalytics.swift",
+          "additions": 236,
+          "deletions": 0,
+          "changes": 236
+        },
+        {
+          "filename": "marble/Features/Trends/LifterAnalyticsSections.swift",
+          "additions": 360,
+          "deletions": 0,
+          "changes": 360
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsDerivedData.swift",
+          "additions": 54,
+          "deletions": 1,
+          "changes": 55
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 26,
+          "deletions": 0,
+          "changes": 26
+        }
+      ],
+      "stats": {
+        "additions": 953,
+        "deletions": 12,
+        "total": 965
+      }
+    },
+    {
+      "sha": "d0189fc582dd816b4d17a8f43db8850ec2ea7cc7",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d0189fc582dd816b4d17a8f43db8850ec2ea7cc7",
+      "commit": {
+        "message": "Docs: record 1.9 (build 32) VALID on TestFlight\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-02T07:34:07-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T07:34:07-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 4,
+          "deletions": 2,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 4,
+        "deletions": 2,
+        "total": 6
+      }
+    },
+    {
+      "sha": "7bcb0c1474f4e02ed34ce49e915ba2af1c371163",
+      "html_url": "https://github.com/enzo-prism/marble/commit/7bcb0c1474f4e02ed34ce49e915ba2af1c371163",
+      "commit": {
+        "message": "Merge pull request #6 from enzo-prism/perf/all-generations\n\nPerformance: range-scoped Trends queries, O(1) memo signatures, memoized Supplements",
+        "author": {
+          "date": "2026-07-02T07:29:34-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T07:29:34-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 11,
+          "deletions": 2,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 18,
+          "deletions": 6,
+          "changes": 24
+        },
+        {
+          "filename": "Tests/Unit/DerivationPerformanceTests.swift",
+          "additions": 77,
+          "deletions": 0,
+          "changes": 77
+        },
+        {
+          "filename": "Tests/Unit/TrendsDerivedDataTests.swift",
+          "additions": 56,
+          "deletions": 0,
+          "changes": 56
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 9,
+          "deletions": 2,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Calendar/ProgressMediaSection.swift",
+          "additions": 18,
+          "deletions": 4,
+          "changes": 22
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 43,
+          "deletions": 6,
+          "changes": 49
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 79,
+          "deletions": 9,
+          "changes": 88
+        },
+        {
+          "filename": "marble/Models/ProgressMediaAttachment.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Models/SetEntry.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Models/SupplementEntry.swift",
+          "additions": 3,
+          "deletions": 1,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Persistence/Queries/LatestUpdateQueries.swift",
+          "additions": 34,
+          "deletions": 0,
+          "changes": 34
+        }
+      ],
+      "stats": {
+        "additions": 364,
+        "deletions": 36,
+        "total": 400
+      }
+    },
+    {
+      "sha": "5a89950ccb4bbeed2a41abd3cbce61ea6d42e1de",
+      "html_url": "https://github.com/enzo-prism/marble/commit/5a89950ccb4bbeed2a41abd3cbce61ea6d42e1de",
+      "commit": {
+        "message": "Performance: range-scope Trends queries, O(1) memo signatures, memoize Supplements\n\nA performance pass for every supported iPhone generation (A13 floor),\naudited line-by-line against the WWDC25 Instruments checklist and the\nSwiftData query docs. Every change is behavior-preserving; an equivalence\ntest proves it.\n\nRange-scoped Trends queries (the long-standing backlog item): TrendsView\nis now a thin shell owning the selected range, and TrendsContentView\nrebuilds its @Query predicates from init (performedAt/takenAt >= range\nstart) — the documented dynamic-query pattern. Ranged modes fetch only the\nrows the charts can show, served by the existing date indexes; \"All\" keeps\nthe unbounded fetch because that's what it promises. TrendsDerivedData\nalready filtered by range internally, so pre-scoped input derives\nidentically (pinned by testPreScopedInputMatchesUnscopedDerivation).\n\nO(1) freshness probes: the Journal/Trends/Calendar render-memo signatures\nwalked the entire fetched array (entries.reduce(max updatedAt)) on every\nbody evaluation — every scrub frame, toast, and sheet paid an O(n) model\nwalk. New LatestUpdateQueries provides one-row fetchLimit=1 descriptors\n(sorted updatedAt desc, backed by new updatedAt indexes on SetEntry,\nSupplementEntry, and ProgressMediaAttachment — additive, lightweight\nmigration); signatures now read probe.first?.updatedAt.\n\nDay-scoped media query: ProgressMediaSection builds an attachedToDate\nday-window predicate at init (new index) instead of fetching every\nattachment ever and filtering per body pass, three times.\n\nSupplements memoization: day grouping + section sort now compute once per\ndata change via RenderMemo (the Journal pattern); the redundant per-day\nre-sort is gone — the query already delivers newest-first.\n\nDeliberately untouched, with reasons in the audit: Journal/Calendar\nfull-history queries (cutting them changes behavior — pagination is a UX\ndecision, not a perf fix), chart mark construction (series are\npre-bucketed to small point counts; Apple publishes no vectorization\nthreshold), and the launch path / formatters / image downsampling / OCR\nthreading (audited as already optimal).\n\nTests: 182 unit (equivalence test + 3 measure() tripwires in\nDerivationPerformanceTests pinning 5k-row derivation costs — Trends build\n~48ms, PR badges ~38ms, grouping ~9ms on the CI simulator, valid as\nrelative baselines per Apple's simulator-testing guidance). All UI suites\n+ accessibility audit green in isolation. Bumps CURRENT_PROJECT_VERSION\nto 32.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-02T07:21:28-07:00"
+        },
+        "committer": {
+          "date": "2026-07-02T07:21:28-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 11,
+          "deletions": 2,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 18,
+          "deletions": 6,
+          "changes": 24
+        },
+        {
+          "filename": "Tests/Unit/DerivationPerformanceTests.swift",
+          "additions": 77,
+          "deletions": 0,
+          "changes": 77
+        },
+        {
+          "filename": "Tests/Unit/TrendsDerivedDataTests.swift",
+          "additions": 56,
+          "deletions": 0,
+          "changes": 56
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 9,
+          "deletions": 2,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Calendar/ProgressMediaSection.swift",
+          "additions": 18,
+          "deletions": 4,
+          "changes": 22
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 43,
+          "deletions": 6,
+          "changes": 49
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 79,
+          "deletions": 9,
+          "changes": 88
+        },
+        {
+          "filename": "marble/Models/ProgressMediaAttachment.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Models/SetEntry.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Models/SupplementEntry.swift",
+          "additions": 3,
+          "deletions": 1,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Persistence/Queries/LatestUpdateQueries.swift",
+          "additions": 34,
+          "deletions": 0,
+          "changes": 34
+        }
+      ],
+      "stats": {
+        "additions": 364,
+        "deletions": 36,
+        "total": 400
+      }
+    },
+    {
+      "sha": "f490033764d74d8155a2d2677d9fc5d055b7f5ed",
+      "html_url": "https://github.com/enzo-prism/marble/commit/f490033764d74d8155a2d2677d9fc5d055b7f5ed",
+      "commit": {
+        "message": "Docs: record 1.9 (build 31) VALID on TestFlight\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-01T21:08:51-07:00"
+        },
+        "committer": {
+          "date": "2026-07-01T21:08:51-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 10,
+          "deletions": 9,
+          "changes": 19
+        }
+      ],
+      "stats": {
+        "additions": 10,
+        "deletions": 9,
+        "total": 19
+      }
+    },
+    {
+      "sha": "1a2d415ffca8aa74548476d4f902e3490c99ed95",
+      "html_url": "https://github.com/enzo-prism/marble/commit/1a2d415ffca8aa74548476d4f902e3490c99ed95",
+      "commit": {
+        "message": "Merge pull request #5 from enzo-prism/feature/import-overhaul\n\nOverhaul workout import: structured detail, auto-sync, honest auth, Garmin depth",
+        "author": {
+          "date": "2026-07-01T21:05:01-07:00"
+        },
+        "committer": {
+          "date": "2026-07-01T21:05:01-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 30,
+          "deletions": 5,
+          "changes": 35
+        },
+        {
+          "filename": "README.md",
+          "additions": 13,
+          "deletions": 1,
+          "changes": 14
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 21,
+          "deletions": 4,
+          "changes": 25
+        },
+        {
+          "filename": "Tests/UI/ImportFlowUITests.swift",
+          "additions": 62,
+          "deletions": 0,
+          "changes": 62
+        },
+        {
+          "filename": "Tests/Unit/HealthAutoImportServiceTests.swift",
+          "additions": 119,
+          "deletions": 0,
+          "changes": 119
+        },
+        {
+          "filename": "Tests/Unit/ImportProviderMappingTests.swift",
+          "additions": 38,
+          "deletions": 0,
+          "changes": 38
+        },
+        {
+          "filename": "Tests/Unit/WorkoutImporterTests.swift",
+          "additions": 58,
+          "deletions": 0,
+          "changes": 58
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/ImportedOriginBadge.swift",
+          "additions": 32,
+          "deletions": 0,
+          "changes": 32
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 9,
+          "deletions": 1,
+          "changes": 10
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Import/HealthAutoImportService.swift",
+          "additions": 113,
+          "deletions": 0,
+          "changes": 113
+        },
+        {
+          "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
+          "additions": 209,
+          "deletions": 62,
+          "changes": 271
+        },
+        {
+          "filename": "marble/Features/Import/ImportView.swift",
+          "additions": 323,
+          "deletions": 73,
+          "changes": 396
+        },
+        {
+          "filename": "marble/Features/Import/ImportViewModel.swift",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Features/Import/ImportedWorkoutDetailView.swift",
+          "additions": 270,
+          "deletions": 0,
+          "changes": 270
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImportMapper.swift",
+          "additions": 4,
+          "deletions": 8,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImportRecord.swift",
+          "additions": 41,
+          "deletions": 1,
+          "changes": 42
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImporter.swift",
+          "additions": 17,
+          "deletions": 1,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Features/Journal/SetDetailView.swift",
+          "additions": 53,
+          "deletions": 0,
+          "changes": 53
+        },
+        {
+          "filename": "marble/Models/ImportedWorkout.swift",
+          "additions": 57,
+          "deletions": 1,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Models/SetEntry.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Persistence/TestFixtures.swift",
+          "additions": 51,
+          "deletions": 0,
+          "changes": 51
+        }
+      ],
+      "stats": {
+        "additions": 1549,
+        "deletions": 161,
+        "total": 1710
+      }
+    },
+    {
+      "sha": "d4d1105e0df9293dc02df7f274531eccaf72552a",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d4d1105e0df9293dc02df7f274531eccaf72552a",
+      "commit": {
+        "message": "Overhaul workout import: structured detail, auto-sync, honest auth, Garmin depth\n\nThe import feature captured shallow summaries, stuffed calories/heart-rate\ninto note strings, misread HealthKit authorization, and left imports\nindistinguishable in the journal. This rebuilds it end to end against the\ncurrent HealthKit API surface (iOS 27-beta zone APIs excluded).\n\nStructured detail: ImportedWorkout gains kind, origin brand, source app,\ndevice, distance, duration, calories, avg/max heart rate, elevation gain,\nand indoor/outdoor — all additive optional fields (lightweight migration) —\nand every imported SetEntry links back via SetEntry.importedWorkout.\nExtraction prefers HKWorkout.statistics(for:) with a time-window fallback\n(bridged sources like Garmin never associate their samples), runs in a\ncapped task group instead of serially, and maps far more activity types\n(rowing, elliptical, HIIT, stairs, multisport, ball sports, wheelchair\npaces; core training reads as strength). Notes shrink to the provenance\nline.\n\nNew surfaces: a read-only workout detail sheet (stats grid, provenance,\nlive heart-rate sparkline via HKStatisticsCollectionQuery — gated on >=8\npoints because Garmin bridges HR sparsely) reachable from fetched records\nand the new \"Recently Imported\" history section; provenance badges on\nimported sets in the journal (ImportedOriginBadge); an \"Imported Workout\"\nsection in set detail.\n\nAuto-import: HealthAutoImportService — opt-in toggle; each foreground\nactivation runs an incremental HKAnchoredObjectQuery with a persisted\nHKQueryAnchor bounded by the enable date. The anchor advances only after a\nsuccessful save; the dedup ledger makes replays harmless. No background-\ndelivery entitlement: sync-on-open matches how Garmin's own Health sync\nbehaves.\n\nAuthorization honesty: status now derives from\ngetRequestStatusForAuthorization (the old code gated on the write-side\nsharing status and could show \"Access denied\" to users who granted read\naccess — reads are opaque by design). Zero-result loads point at\nSettings > Apps > Health > Data Access & Devices instead.\n\nGarmin: the bridge card shows live status (count + latest bridged workout),\nnumbered setup steps, the open-Garmin-first hint, and a working deep link\n(gcm-ciq://, ConnectIQ's registered scheme, with fallbacks).\n\nTests: 178 unit (new HealthAutoImportServiceTests, importer detail/link\ntests, metadata parsing, expanded mapping); ImportFlowUITests grew to 3\nflows over a fixture-seeded Garmin run. Reconfirmed gotcha: a container\naccessibilityIdentifier clobbers child identifiers (Import.GarminBridge\nmoved off the VStack). Bumps CURRENT_PROJECT_VERSION to 31.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-01T20:57:15-07:00"
+        },
+        "committer": {
+          "date": "2026-07-01T20:57:15-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 30,
+          "deletions": 5,
+          "changes": 35
+        },
+        {
+          "filename": "README.md",
+          "additions": 13,
+          "deletions": 1,
+          "changes": 14
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 21,
+          "deletions": 4,
+          "changes": 25
+        },
+        {
+          "filename": "Tests/UI/ImportFlowUITests.swift",
+          "additions": 62,
+          "deletions": 0,
+          "changes": 62
+        },
+        {
+          "filename": "Tests/Unit/HealthAutoImportServiceTests.swift",
+          "additions": 119,
+          "deletions": 0,
+          "changes": 119
+        },
+        {
+          "filename": "Tests/Unit/ImportProviderMappingTests.swift",
+          "additions": 38,
+          "deletions": 0,
+          "changes": 38
+        },
+        {
+          "filename": "Tests/Unit/WorkoutImporterTests.swift",
+          "additions": 58,
+          "deletions": 0,
+          "changes": 58
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/ImportedOriginBadge.swift",
+          "additions": 32,
+          "deletions": 0,
+          "changes": 32
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 9,
+          "deletions": 1,
+          "changes": 10
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Import/HealthAutoImportService.swift",
+          "additions": 113,
+          "deletions": 0,
+          "changes": 113
+        },
+        {
+          "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
+          "additions": 209,
+          "deletions": 62,
+          "changes": 271
+        },
+        {
+          "filename": "marble/Features/Import/ImportView.swift",
+          "additions": 323,
+          "deletions": 73,
+          "changes": 396
+        },
+        {
+          "filename": "marble/Features/Import/ImportViewModel.swift",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Features/Import/ImportedWorkoutDetailView.swift",
+          "additions": 270,
+          "deletions": 0,
+          "changes": 270
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImportMapper.swift",
+          "additions": 4,
+          "deletions": 8,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImportRecord.swift",
+          "additions": 41,
+          "deletions": 1,
+          "changes": 42
+        },
+        {
+          "filename": "marble/Features/Import/WorkoutImporter.swift",
+          "additions": 17,
+          "deletions": 1,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Features/Journal/SetDetailView.swift",
+          "additions": 53,
+          "deletions": 0,
+          "changes": 53
+        },
+        {
+          "filename": "marble/Models/ImportedWorkout.swift",
+          "additions": 57,
+          "deletions": 1,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Models/SetEntry.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Persistence/TestFixtures.swift",
+          "additions": 51,
+          "deletions": 0,
+          "changes": 51
+        }
+      ],
+      "stats": {
+        "additions": 1549,
+        "deletions": 161,
+        "total": 1710
+      }
+    },
+    {
+      "sha": "c23e69deeffcac1f3602e8fefd7e46e3e3048bfb",
+      "html_url": "https://github.com/enzo-prism/marble/commit/c23e69deeffcac1f3602e8fefd7e46e3e3048bfb",
+      "commit": {
+        "message": "Merge pull request #4 from enzo-prism/design/ios26-ux-polish\n\niOS 26 design/UX polish: in-app rest pill, zoom morph, toolbar + haptics pass",
+        "author": {
+          "date": "2026-07-01T14:45:13-07:00"
+        },
+        "committer": {
+          "date": "2026-07-01T14:45:13-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 12,
+          "deletions": 4,
+          "changes": 16
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "Tests/UI/RestTimerPillUITests.swift",
+          "additions": 35,
+          "deletions": 0,
+          "changes": 35
+        },
+        {
+          "filename": "Tests/Unit/RestActivityControllerTests.swift",
+          "additions": 47,
+          "deletions": 0,
+          "changes": 47
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/MarbleHaptics.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 9,
+          "deletions": 1,
+          "changes": 10
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 13,
+          "deletions": 1,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestActivityController.swift",
+          "additions": 80,
+          "deletions": 25,
+          "changes": 105
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestTimerPillView.swift",
+          "additions": 83,
+          "deletions": 0,
+          "changes": 83
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 21,
+          "deletions": 2,
+          "changes": 23
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Testing/TestHooks.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        }
+      ],
+      "stats": {
+        "additions": 362,
+        "deletions": 46,
+        "total": 408
+      }
+    },
+    {
+      "sha": "f23fe0893d0c7f6b70fde41fcb91750056d38d67",
+      "html_url": "https://github.com/enzo-prism/marble/commit/f23fe0893d0c7f6b70fde41fcb91750056d38d67",
+      "commit": {
+        "message": "iOS 26 design/UX polish: in-app rest pill, zoom morph, toolbar + haptics pass\n\nThe big one: the rest timer finally has an in-app surface. A tab-bar bottom\naccessory (tabViewBottomAccessory, iOS 26.1+) shows a live countdown pill with\nan End button whenever a rest is running — previously the countdown existed\nonly as a Lock Screen / Dynamic Island Live Activity. RestActivityController\nis now @Observable and publishes activeRest; the Live Activity and the pill\nhang off one state machine, so the pill also works when Live Activities are\nuser-disabled. Expired rests are pruned on scene re-activation. The accessory\nis not installed under UI testing (even disabled it perturbs the tab bar's\naccessibility layout and fails audits); RestTimerPillUITests opts back in via\nMARBLE_ENABLE_REST_PILL and launches with a real \"now\" since the countdown\nruns on the wall clock.\n\nAlso, per current Apple HIG / iOS 26 guidance (WWDC26-era docs; iOS 27-only\nAPIs excluded):\n- Journal's Import sheet zoom-morphs out of its toolbar button. The\n  matchedTransitionSource sits on the ToolbarItem — attaching it to the\n  button inside corrupts toolbar accessibility elementization and hung\n  Add Set flows (a broader per-tab \"+\" zoom was built, measured, dropped).\n- ToolbarSpacer(.fixed) gives the primary \"+\" its own glass capsule on\n  Journal/Trends/Supplements; the icon-only Supplements manage button gains\n  its missing accessibility label.\n- Add Set gets an explicit Cancel button (.cancellationAction) and Save moves\n  to .confirmationAction, matching system form sheets.\n- Haptics: new MarbleHaptics.selection() (UISelectionFeedbackGenerator) on\n  distance preset chips, the trend range picker, and calendar day selection.\n  Supplements quick-add/delete/undo now match the Journal standard — haptics\n  plus explicit saveOrRollback with failure toasts.\n\nVerification: 168 unit tests green (new RestActivityControllerTests cover\npublish/replace/cancel/prune); make ui + make audit green except two\nJournalFlow keyboard-dismiss cases that fail identically on clean main on\nthis host (Return-key AX flake — environmental, stash-verified). Bumps\nCURRENT_PROJECT_VERSION to 30 for the next TestFlight upload.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-01T14:38:03-07:00"
+        },
+        "committer": {
+          "date": "2026-07-01T14:38:03-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 12,
+          "deletions": 4,
+          "changes": 16
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "Tests/UI/RestTimerPillUITests.swift",
+          "additions": 35,
+          "deletions": 0,
+          "changes": 35
+        },
+        {
+          "filename": "Tests/Unit/RestActivityControllerTests.swift",
+          "additions": 47,
+          "deletions": 0,
+          "changes": 47
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/MarbleHaptics.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 9,
+          "deletions": 1,
+          "changes": 10
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 13,
+          "deletions": 1,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestActivityController.swift",
+          "additions": 80,
+          "deletions": 25,
+          "changes": 105
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestTimerPillView.swift",
+          "additions": 83,
+          "deletions": 0,
+          "changes": 83
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 21,
+          "deletions": 2,
+          "changes": 23
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Testing/TestHooks.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        }
+      ],
+      "stats": {
+        "additions": 362,
+        "deletions": 46,
+        "total": 408
+      }
+    },
     {
       "sha": "cf23e306c532f7fc1ffbff7ad1afdc6e21b9ed4e",
       "html_url": "https://github.com/enzo-prism/marble/commit/cf23e306c532f7fc1ffbff7ad1afdc6e21b9ed4e",
