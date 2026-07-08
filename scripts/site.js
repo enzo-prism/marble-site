@@ -50,9 +50,18 @@
   const quotes = Array.from(document.querySelectorAll(".quote-stack .quote"));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  for (let i = quotes.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
+  }
+
+  if (quotes.length > 0) {
+    quotes.forEach((quote) => quote.classList.remove("is-active"));
+    quotes[0].classList.add("is-active");
+  }
+
   if (quotes.length > 1 && !reducedMotion.matches) {
-    let index = quotes.findIndex((quote) => quote.classList.contains("is-active"));
-    if (index < 0) index = 0;
+    let index = 0;
 
     setInterval(() => {
       quotes[index].classList.remove("is-active");
