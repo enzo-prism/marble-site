@@ -286,16 +286,16 @@ img {
 }
 
 .hero-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  margin: 0 auto 30px;
-  box-shadow: 0 8px 24px rgba(19, 18, 16, 0.16);
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  margin: 0 auto 44px;
+  box-shadow: 0 4px 14px rgba(19, 18, 16, 0.12);
 }
 
 .quote-stack {
   display: grid;
-  max-width: 720px;
+  max-width: 540px;
   margin: 0 auto;
 }
 
@@ -303,7 +303,7 @@ img {
   grid-area: 1 / 1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease, visibility 1s;
+  transition: opacity 1.2s ease, visibility 1.2s;
 }
 
 .quote.is-active {
@@ -313,40 +313,42 @@ img {
 
 .quote p {
   font-family: var(--font-serif);
-  font-size: clamp(1.45rem, 3.4vw, 2.15rem);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  line-height: 1.6;
+  letter-spacing: 0.002em;
   text-wrap: balance;
 }
 
 .quote cite {
   display: block;
-  margin-top: 18px;
+  margin-top: 16px;
   font-style: normal;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--faint);
 }
 
+.quote cite::before {
+  content: "\2014\2002";
+  opacity: 0.6;
+}
+
 .hero-tagline {
-  max-width: 520px;
-  margin: 34px auto 0;
-  font-size: 1rem;
+  max-width: 420px;
+  margin: 48px auto 0;
+  font-size: 0.92rem;
   font-weight: 400;
   line-height: 1.6;
-  letter-spacing: -0.006em;
+  letter-spacing: 0.01em;
   color: var(--muted);
 }
 
-.hero-tagline strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
 .hero-cta {
-  margin-top: 30px;
+  margin-top: 26px;
   display: flex;
   flex-direction: column;
   align-items: center;
