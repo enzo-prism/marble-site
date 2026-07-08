@@ -295,6 +295,7 @@ img {
 
 .quote-stack {
   display: grid;
+  align-items: center;
   max-width: 540px;
   margin: 0 auto;
 }
@@ -955,7 +956,8 @@ a.chip:hover {
 
   .pillar {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
+    padding: 32px 0;
   }
 
   .pillar:nth-child(even) .pillar-media {
@@ -963,7 +965,7 @@ a.chip:hover {
   }
 
   .pillar-media .device {
-    max-width: 240px;
+    max-width: 220px;
   }
 
   .detail-grid,
@@ -973,13 +975,178 @@ a.chip:hover {
 }
 
 @media (max-width: 560px) {
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  /* slimmer, quieter chrome */
+  .nav-inner {
+    padding: 10px 0;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .nav-actions .btn-small {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* tighter vertical rhythm — the page should scroll, not stretch */
+  .hero {
+    padding: 52px 0 40px;
+  }
+
+  .hero-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+
+  .quote-stack {
+    max-width: 320px;
+  }
+
+  .hero-tagline {
+    margin-top: 34px;
+    font-size: 0.9rem;
+  }
+
+  .hero-cta {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .hero-device {
+    margin-top: 40px;
+  }
+
+  .hero-device .device {
+    max-width: 234px;
+  }
+
+  .section {
+    padding: 52px 0;
+    scroll-margin-top: 64px;
+  }
+
+  .section-intro {
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .pillar {
+    padding: 26px 0;
+    gap: 22px;
+  }
+
+  .pillar h3 {
+    font-size: 1.25rem;
+  }
+
+  .pillar-copy > p {
+    font-size: 0.95rem;
+  }
+
+  .pillar-points {
+    margin-top: 16px;
+  }
+
+  .pillar-points li {
+    padding: 9px 0;
+    font-size: 0.88rem;
+  }
+
+  .pillar-media .device {
+    max-width: 206px;
+  }
+
+  /* edge-to-edge swipe strip, no scrollbar */
+  .screens-strip {
+    margin: 0 calc(-24px - env(safe-area-inset-right)) 0 calc(-24px - env(safe-area-inset-left));
+    padding: 4px calc(24px + env(safe-area-inset-right)) 8px calc(24px + env(safe-area-inset-left));
+    gap: 16px;
+    scrollbar-width: none;
+  }
+
+  .screens-strip::-webkit-scrollbar {
+    display: none;
   }
 
   .screen-item {
-    width: 172px;
+    width: 152px;
+  }
+
+  .screen-item figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+  }
+
+  .detail {
+    padding: 14px 0;
+  }
+
+  .detail p {
+    font-size: 0.88rem;
+  }
+
+  .privacy p {
+    font-size: 1.25rem;
+  }
+
+  .privacy .fine {
+    margin-top: 16px;
+    text-wrap: balance;
+  }
+
+  .faq-item summary {
+    padding: 16px 2px;
+    font-size: 0.95rem;
+  }
+
+  .faq-item > p {
+    font-size: 0.92rem;
+    padding: 0 2px 18px;
+  }
+
+  .footer {
+    padding: 24px 0 40px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .commit-summary {
+    padding: 14px 16px;
+  }
+
+  .commit-body {
+    padding: 14px 16px 18px;
   }
 }
 
