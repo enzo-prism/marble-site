@@ -1,28 +1,35 @@
 # marble.fit
 
-> marble is a minimal workout journal for iPhone. Offline. Private. No ads.
+> marble is a fast, minimal workout journal for iPhone. Offline. Private. Free. No ads.
 
-marble tracks sets, supplements, streaks, and trends. All data stays on-device.
+marble logs sets, supplements, streaks, and trends — and turns your own numbers into honest coaching: estimated 1RM trends with progression verdicts, a real PR feed, weekly goals with flex weeks, and a private monthly report computed on-device. All data stays on the iPhone.
 
 ## Key facts
 
 - Name: marble (App Store name: marble.fit)
 - Platform: iPhone
-- Price: Free
-- Privacy: on-device, no account, no ads
-- Offline: yes
+- Price: Free (no subscription, no unlocks)
+- Privacy: on-device, no account, no ads, no tracking
+- Offline: yes (local-only storage; analysis computed on-device)
 - Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
 
 ## Features
 
-- Fast set logging
-- Daily journal
-- Calendar and streaks
-- Weekly split planner
-- Trends and records
-- Supplement tracking
-- Local reminders
+- Fast set logging (weight, reps, RPE, rest) with Save + Next and last-set recall
+- Estimated 1RM trends with plain verdicts: progressing, holding, adapted
+- Personal record feed, rep-record tables, and PR-in-reach cues while logging
+- Weekly goal with a forgiving streak: bank a flex week every 4 hit weeks
+- Private monthly training report with fair month-over-month comparisons
+- Muscle-group coverage as weekly hard sets against the 10–20 set guide
+- Apple Health import (Apple Watch and Garmin workouts)
+- Optional Apple Health export with effort scores toward Apple's Training Load
+- Handwritten workout scanning (on-device text recognition)
+- Siri and Shortcuts logging (Spotlight, Action button, voice)
+- Calendar with streaks; weekly split planner; supplement tracking
+- Rest timer Live Activity with Dynamic Island support
+- Local reminders that cancel themselves once you've trained
+- Light and dark mode
 
 ## Links
 
@@ -34,8 +41,9 @@ marble tracks sets, supplements, streaks, and trends. All data stays on-device.
 
 ## Frequently asked questions
 
-- Free? Yes.
-- Offline? Yes.
-- Account? No.
-- Devices? iPhone.
-- Ads? No.
+- Is marble free? Yes — every feature, nothing to unlock.
+- Does it work offline? Yes — everything is stored on the iPhone.
+- Is an account required? No.
+- Which devices? iPhone (Apple Watch and Garmin workouts import via Apple Health).
+- Ads or tracking? No ads, no tracking, no selling.
+- Where does the coaching come from? The user's own logged sets, computed on-device.

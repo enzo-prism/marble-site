@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>marble — minimal workout journal for iOS</title>
+    <title>marble — minimal workout journal for iPhone</title>
     <meta
       name="description"
-      content="marble is a minimal workout journal for iPhone. Log sets, supplements, streaks, and trends. Offline. Private. No ads."
+      content="marble is a fast, minimal workout journal for iPhone. Log sets in seconds, track supplements and streaks, and get honest coaching from your own numbers — offline, private, free."
     />
     <link rel="canonical" href="https://marble-fit.app/" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
-    <meta name="keywords" content="workout journal, workout tracker, gym log, lifting tracker, supplement tracker, offline fitness app, iOS workout app, minimal gym app, discipline" />
+    <meta name="keywords" content="workout journal, workout tracker, gym log, lifting tracker, estimated 1RM, personal records, supplement tracker, offline fitness app, iOS workout app, minimal gym app" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon%20small.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="Favicon%20large.png" />
     <link rel="apple-touch-icon" sizes="256x256" href="Favicon%20large.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta property="og:title" content="marble — minimal workout journal for iOS" />
+    <meta property="og:title" content="marble — minimal workout journal for iPhone" />
     <meta
       property="og:description"
-      content="A minimal workout journal for iPhone. Sets, supplements, streaks, and trends. Offline. Private. No ads."
+      content="A fast, offline workout journal for iPhone. Sets, PRs, streaks, and trends — coached by your own numbers. Free. No ads."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://marble-fit.app/" />
@@ -32,14 +32,29 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="marble — minimal workout journal for iOS" />
+    <meta name="twitter:title" content="marble — minimal workout journal for iPhone" />
     <meta
       name="twitter:description"
-      content="A minimal workout journal for iPhone. Sets, supplements, streaks, and trends. Offline. Private. No ads."
+      content="A fast, offline workout journal for iPhone. Sets, PRs, streaks, and trends — coached by your own numbers. Free. No ads."
     />
     <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
     <meta name="twitter:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
-    <meta name="theme-color" content="#0a0908" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("marble-theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,7 +64,7 @@
             "@id": "https://marble-fit.app/#organization",
             "name": "marble",
             "url": "https://marble-fit.app/",
-            "logo": "https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp",
+            "logo": "https://marble-fit.app/Favicon%20large.png",
             "founder": { "@type": "Person", "name": "Lorenzo Quaid Sison" }
           },
           {
@@ -72,21 +87,29 @@
             "downloadUrl": "https://apps.apple.com/us/app/marble-fit/id6757725234",
             "installUrl": "https://apps.apple.com/us/app/marble-fit/id6757725234",
             "inLanguage": "en",
-            "description": "marble is a minimal workout journal for iPhone. Log sets, supplements, streaks, and trends. Offline, private, and ad-free.",
+            "description": "marble is a fast, offline workout journal for iPhone. Log sets in seconds, track supplements and streaks, and get honest coaching computed from your own training — estimated 1RM trends, a real PR feed, weekly goals, and a private monthly report.",
             "image": "https://marble-fit.app/Opengraph.png",
             "screenshot": [
-              "https://marble-fit.app/images/journal.png",
-              "https://marble-fit.app/images/calendar.png",
-              "https://marble-fit.app/images/trends.png",
-              "https://marble-fit.app/images/split.png",
-              "https://marble-fit.app/images/supplements.png"
+              "https://marble-fit.app/images/journal-light.png",
+              "https://marble-fit.app/images/trends-light.png",
+              "https://marble-fit.app/images/calendar-light.png",
+              "https://marble-fit.app/images/split-light.png",
+              "https://marble-fit.app/images/supplements-light.png"
             ],
             "featureList": [
-              "Fast set logging",
-              "Daily journal",
+              "Fast set logging with weight, reps, RPE, and rest",
+              "Estimated 1RM trends with progression verdicts",
+              "Personal record feed and rep-record tables",
+              "PR-in-reach cues while logging",
+              "Weekly goal with flex-week streaks",
+              "Private on-device monthly training report",
+              "Muscle-group coverage against the 10–20 set guide",
+              "Apple Health import for Apple Watch and Garmin workouts",
+              "Training Load export with effort scores",
+              "Handwritten workout scanning",
+              "Siri and Shortcuts logging",
               "Calendar and streaks",
               "Weekly split planner",
-              "Trends and records",
               "Supplement tracking",
               "Local reminders",
               "Offline, on-device storage"
@@ -107,7 +130,7 @@
                 "name": "Is marble free?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes."
+                  "text": "Yes. Every feature is free — there is nothing to unlock."
                 }
               },
               {
@@ -115,23 +138,23 @@
                 "name": "Does marble work offline?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Data stays on your device."
+                  "text": "Yes. Everything is stored on your iPhone. No account, no server, no sync to anyone else's cloud."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Do I need an account to use marble?",
+                "name": "Where does the coaching come from?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No."
+                  "text": "From your own logged sets. Estimated 1RM trends, PR detection, and the monthly report are all computed on your device."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Which devices does marble support?",
+                "name": "Does marble work with Apple Watch or Garmin?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "iPhone."
+                  "text": "Yes — both arrive through Apple Health. marble imports their workouts, and can send your strength sessions back with an effort score so they count toward Apple's Training Load."
                 }
               },
               {
@@ -139,7 +162,7 @@
                 "name": "Does marble show ads or sell my data?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No ads. No selling."
+                  "text": "No ads, no tracking, no selling. marble is local-only."
                 }
               }
             ]
@@ -147,13 +170,6 @@
         ]
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
     <script>
       window.va =
         window.va ||
@@ -182,547 +198,355 @@
     </script>
     <link rel="stylesheet" href="styles.css" />
     <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/site.js" defer></script>
   </head>
   <body data-page="home">
     <a class="skip-link" href="#top">skip to content</a>
-    <div class="grain" aria-hidden="true"></div>
     <header class="nav">
       <div class="container nav-inner">
-        <a class="logo" href="#top">
-          <span class="logo-frame">
-            <img
-              src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
-              alt="marble logo"
-              width="22"
-              height="22"
-            />
-          </span>
+        <a class="brand" href="#top">
+          <img src="Favicon%20large.png" alt="" width="26" height="26" />
           <span>marble</span>
         </a>
-        <nav class="nav-links">
-          <a href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="features">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
-                <rect x="14" y="3" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
-                <rect x="3" y="14" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
-                <rect x="14" y="14" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5" />
-              </svg>
-            </span>
-            features
-          </a>
-          <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="screens">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="7" y="3" width="10" height="18" rx="2.5" />
-                <path d="M11 18h2" />
-              </svg>
-            </span>
-            screens
-          </a>
-          <a href="#workflow" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="workflow">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="8.5" />
-                <path d="M9 12h6" />
-                <path d="m13 9 3 3-3 3" />
-              </svg>
-            </span>
-            workflow
-          </a>
-          <a href="#insights" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="insights">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 18h14" />
-                <path d="M6 14l4-4 4 3 5-6" />
-                <path d="M17 7h2v2" />
-              </svg>
-            </span>
-            insights
-          </a>
-          <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_nav" data-analytics-target="changelog">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="8.5" />
-                <path d="M12 7v5l3 2" />
-              </svg>
-            </span>
-            changelog
-          </a>
+        <nav class="nav-links" aria-label="site">
+          <a href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="features">Features</a>
+          <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="screens">Screens</a>
+          <a href="#faq" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="faq">FAQ</a>
+          <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_nav" data-analytics-target="changelog">Changelog</a>
         </nav>
-        <details class="nav-menu" data-analytics-location="home_header">
-          <summary class="btn nav-menu-button">
-            <span class="nav-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-                <path d="M5 7h14" />
-                <path d="M5 12h14" />
-                <path d="M5 17h14" />
-              </svg>
-            </span>
-            menu
-          </summary>
-          <nav class="nav-menu-panel" aria-label="site">
-            <a href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="features">features</a>
-            <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="screens">screens</a>
-            <a href="#workflow" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="workflow">workflow</a>
-            <a href="#insights" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="insights">insights</a>
-            <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_menu" data-analytics-target="changelog">changelog</a>
-            <a href="#faq" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="faq">faq</a>
-            <a href="#download" data-analytics-event="Section Navigate" data-analytics-location="home_menu" data-analytics-target="download">download</a>
-            <a
-              class="btn btn-primary nav-menu-cta"
-              href="https://apps.apple.com/us/app/marble-fit/id6757725234"
-              data-analytics-event="App Store Click"
-              data-analytics-location="home_menu"
-              data-analytics-target="app_store"
-            >
-              <span class="apple" aria-hidden="true"></span>
-              app store
-            </a>
-          </nav>
-        </details>
-        <a
-          class="btn btn-primary nav-cta"
-          href="https://apps.apple.com/us/app/marble-fit/id6757725234"
-          data-analytics-event="App Store Click"
-          data-analytics-location="home_header"
-          data-analytics-target="app_store"
-        >
-          <span class="apple" aria-hidden="true"></span>
-          app store
-        </a>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="home_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
+          </button>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+            data-analytics-event="App Store Click"
+            data-analytics-location="home_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
+        </div>
       </div>
     </header>
 
     <main id="top" tabindex="-1">
       <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline aria-hidden="true">
-          <source src="https://res.cloudinary.com/dhqpqfw6w/video/upload/v1768602338/marble-video_fqhfqq.mp4" type="video/mp4" />
-        </video>
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="terminal-line hero-eyebrow">
-              <span class="prompt">marble@iron</span>:<span class="path">~</span>$ ./forge --no-excuses<span class="cursor" aria-hidden="true"></span>
-            </p>
-            <span class="badge">workout journal · ios</span>
-            <h1>designed for the <span class="glow">conquerors.</span></h1>
-            <p>
-              Log sets. Track supplements. Stay consistent. Offline on iPhone.
-            </p>
-            <div class="cta-row">
-              <a
-                class="btn btn-primary"
-                href="https://apps.apple.com/us/app/marble-fit/id6757725234"
-                data-analytics-event="App Store Click"
-                data-analytics-location="home_hero"
-                data-analytics-target="app_store"
-              >
-                <span class="apple" aria-hidden="true"></span>
-                app store
-              </a>
-              <a class="btn btn-outline" href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_hero" data-analytics-target="features">features</a>
-            </div>
-            <div class="pill-row">
-              <span class="pill">
-                <span class="pill-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                    <circle cx="12" cy="12" r="8" />
-                    <path d="M12 7v5l3 2" />
-                  </svg>
-                </span>
-                fast log
-              </span>
-              <span class="pill">
-                <span class="pill-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 6c4.7-3.8 11.3-3.8 16 0" />
-                    <path d="M7.5 10.5c2.6-2.1 6.4-2.1 9 0" />
-                    <circle cx="12" cy="16.5" r="0.9" fill="currentColor" stroke="none" />
-                    <path d="M4 20l16-16" />
-                  </svg>
-                </span>
-                works offline
-              </span>
-              <span class="pill">
-                <span class="pill-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="8.5" />
-                    <path d="M7 17l10-10" />
-                  </svg>
-                </span>
-                no ads
-              </span>
-            </div>
+        <div class="container">
+          <img class="hero-icon" src="Favicon%20large.png" alt="marble app icon" width="64" height="64" />
+          <div class="quote-stack" aria-live="off">
+            <blockquote class="quote is-active">
+              <p>&ldquo;We are what we repeatedly do. Excellence, then, is not an act, but a habit.&rdquo;</p>
+              <cite>Will Durant</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>&ldquo;It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable.&rdquo;</p>
+              <cite>Socrates</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>&ldquo;Difficulties strengthen the mind, as labor does the body.&rdquo;</p>
+              <cite>Seneca</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>&ldquo;The impediment to action advances action. What stands in the way becomes the way.&rdquo;</p>
+              <cite>Marcus Aurelius</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>&ldquo;Long-term consistency beats short-term intensity.&rdquo;</p>
+              <cite>Bruce Lee</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>&ldquo;Take care of your body. It&rsquo;s the only place you have to live.&rdquo;</p>
+              <cite>Jim Rohn</cite>
+            </blockquote>
+          </div>
+          <h1 class="hero-tagline">
+            <strong>marble</strong> is the minimal workout journal for iPhone — log sets in
+            seconds, and let your own numbers do the coaching.
+          </h1>
+          <div class="hero-cta">
+            <a
+              class="btn"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+              data-analytics-event="App Store Click"
+              data-analytics-location="home_hero"
+              data-analytics-target="app_store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="fine">Free &middot; Offline &middot; No accounts &middot; No ads</span>
           </div>
           <div class="hero-device">
-            <div class="device device-tilt">
+            <div class="device">
               <div class="device-screen">
-                <span class="device-island" aria-hidden="true"></span>
-                <video
-                  class="device-video"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  poster="images/journal.png"
+                <img
+                  src="images/journal-light.png"
+                  data-light="images/journal-light.png"
+                  data-dark="images/journal-dark.png"
+                  alt="the marble journal — today's sets with weight, reps, RPE, and rest"
                   width="660"
-                  height="1431"
-                  aria-label="a tour of the marble app — journal, calendar, trends, and supplements"
-                >
-                  <source src="images/tour.mp4" type="video/mp4" />
-                </video>
+                  height="1430"
+                />
               </div>
             </div>
-            <span class="hero-float hero-float-a" aria-hidden="true"><span class="tick">▸</span>set logged · 225×5 @ rpe9</span>
-            <span class="hero-float hero-float-b" aria-hidden="true"><span class="dot"></span>streak · unbroken</span>
           </div>
         </div>
       </section>
 
       <section id="features" class="section">
         <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="badge">features</span>
-              <h2>no dead weight.</h2>
-              <p>Log. Review. Repeat.</p>
+          <header class="section-intro">
+            <h2>Built for the work.</h2>
+            <p>Three ideas, done carefully: fast logging, honest analysis, and consistency that survives real life.</p>
+          </header>
+
+          <article class="pillar">
+            <div class="pillar-copy">
+              <p class="pillar-kicker">Log</p>
+              <h3>A set in seconds.</h3>
+              <p>
+                Weight, reps, RPE, rest — captured before the plates stop spinning. marble
+                remembers your last set so repeating it is one tap, and a rest timer waits in
+                the Dynamic Island.
+              </p>
+              <ul class="pillar-points">
+                <li><strong>Save + Next</strong> keeps you moving through a session.</li>
+                <li><strong>Siri and the Action button</strong> log a set without opening the app.</li>
+                <li><strong>Scan</strong> turns a handwritten page into logged sets, on-device.</li>
+              </ul>
             </div>
-          </div>
-          <div class="grid features-grid">
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/addset.png"
-                  alt="marble log-set screen with weight, reps, RPE, and rest"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
+            <div class="pillar-media">
+              <div class="device">
+                <div class="device-screen">
+                  <img
+                    src="images/addset-light.png"
+                    data-light="images/addset-light.png"
+                    data-dark="images/addset-dark.png"
+                    alt="the marble log-set screen with last-time recall and Save + Next"
+                    width="660"
+                    height="1430"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <h3>log</h3>
-              <p class="feature-desc">Sets in seconds.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/journal.png"
-                  alt="marble journal view screenshot"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
+            </div>
+          </article>
+
+          <article class="pillar">
+            <div class="pillar-copy">
+              <p class="pillar-kicker">Trends</p>
+              <h3>Coached by your own numbers.</h3>
+              <p>
+                Every chart is computed from your logged sets, on your iPhone. No wearable
+                scores, no black boxes — just an honest read on whether each lift is moving.
+              </p>
+              <ul class="pillar-points">
+                <li><strong>Estimated 1RM trends</strong> with a plain verdict: progressing, holding, or adapted.</li>
+                <li><strong>A real PR feed</strong> — and a cue when a record is in reach today.</li>
+                <li><strong>A monthly report</strong> with fair month-over-month comparisons, written privately on your phone.</li>
+              </ul>
+            </div>
+            <div class="pillar-media">
+              <div class="device">
+                <div class="device-screen">
+                  <img
+                    src="images/trends-light.png"
+                    data-light="images/trends-light.png"
+                    data-dark="images/trends-dark.png"
+                    alt="marble trends — weekly goal, monthly comparison, and consistency chart"
+                    width="660"
+                    height="1430"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <h3>journal</h3>
-              <p class="feature-desc">Every session, by day.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/calendar.png"
-                  alt="marble calendar view screenshot"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
+            </div>
+          </article>
+
+          <article class="pillar">
+            <div class="pillar-copy">
+              <p class="pillar-kicker">Consistency</p>
+              <h3>Streaks that forgive.</h3>
+              <p>
+                Set a weekly goal and build a streak that bends without breaking. Hit four
+                weeks in a row and marble banks a flex week that absorbs a miss — comebacks
+                are celebrated, not shamed.
+              </p>
+              <ul class="pillar-points">
+                <li><strong>Calendar</strong> shows every training day at a glance.</li>
+                <li><strong>Weekly split</strong> maps your plan, Monday to Sunday.</li>
+                <li><strong>One quiet reminder</strong> that cancels itself once you&rsquo;ve trained.</li>
+              </ul>
+            </div>
+            <div class="pillar-media">
+              <div class="device">
+                <div class="device-screen">
+                  <img
+                    src="images/calendar-light.png"
+                    data-light="images/calendar-light.png"
+                    data-dark="images/calendar-dark.png"
+                    alt="marble calendar with a 35-day streak and training-day markers"
+                    width="660"
+                    height="1430"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <h3>calendar</h3>
-              <p class="feature-desc">Streaks and markers.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/split.png"
-                  alt="marble weekly split plan screenshot"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
-              </div>
-              <h3>split</h3>
-              <p class="feature-desc">Your week, mapped.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/trends.png"
-                  alt="marble trends view screenshot"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
-              </div>
-              <h3>trends</h3>
-              <p class="feature-desc">Volume. PRs. Momentum.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media">
-                <img
-                  src="images/supplements.png"
-                  alt="marble supplements view screenshot"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
-              </div>
-              <h3>supplements</h3>
-              <p class="feature-desc">Dose history.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z" />
-                  <path d="M10 20a2 2 0 0 0 4 0" />
-                </svg>
-              </div>
-              <h3>reminders</h3>
-              <p class="feature-desc">Local alerts.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="feature-media logo">
-                <img
-                  src="https://res.cloudinary.com/dhqpqfw6w/image/upload/v1768597764/marble-logo_fawyst.webp"
-                  alt="marble logo"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                />
-              </div>
-              <h3>offline</h3>
-              <p class="feature-desc">On-device only.</p>
-            </article>
-          </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="screens" class="section screens">
+      <section id="screens" class="section">
         <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="badge">screens</span>
-              <h2>up close.</h2>
-              <p>Real app screens.</p>
-            </div>
-          </div>
-          <div class="screen-gallery">
+          <header class="section-intro">
+            <h2>Every screen, both moods.</h2>
+            <p>Real screens from the current build. Flip the theme toggle above — the app and this site share the same light and dark.</p>
+          </header>
+          <div class="screens-strip" tabindex="0" aria-label="app screenshots">
             <figure class="screen-item">
               <div class="device">
                 <div class="device-screen">
-                  <span class="device-island" aria-hidden="true"></span>
-                  <img
-                    src="images/calendar.png"
-                    alt="marble calendar with training-day markers and streaks"
-                    width="660"
-                    height="1431"
-                    loading="lazy"
-                  />
+                  <img src="images/journal-light.png" data-light="images/journal-light.png" data-dark="images/journal-dark.png" alt="journal screen" width="660" height="1430" loading="lazy" />
                 </div>
               </div>
-              <figcaption class="screen-caption">
-                <h3>calendar</h3>
-                <p>Streaks and sessions.</p>
-              </figcaption>
+              <figcaption>Journal</figcaption>
             </figure>
             <figure class="screen-item">
               <div class="device">
                 <div class="device-screen">
-                  <span class="device-island" aria-hidden="true"></span>
-                  <img
-                    src="images/supplements.png"
-                    alt="marble supplements log with quick-add and daily history"
-                    width="660"
-                    height="1431"
-                    loading="lazy"
-                  />
+                  <img src="images/addset-light.png" data-light="images/addset-light.png" data-dark="images/addset-dark.png" alt="log set screen" width="660" height="1430" loading="lazy" />
                 </div>
               </div>
-              <figcaption class="screen-caption">
-                <h3>supplements</h3>
-                <p>Doses by day.</p>
-              </figcaption>
+              <figcaption>Log Set</figcaption>
             </figure>
             <figure class="screen-item">
               <div class="device">
                 <div class="device-screen">
-                  <span class="device-island" aria-hidden="true"></span>
-                  <img
-                    src="images/split.png"
-                    alt="marble weekly split plan from monday to sunday"
-                    width="660"
-                    height="1431"
-                    loading="lazy"
-                  />
+                  <img src="images/calendar-light.png" data-light="images/calendar-light.png" data-dark="images/calendar-dark.png" alt="calendar screen" width="660" height="1430" loading="lazy" />
                 </div>
               </div>
-              <figcaption class="screen-caption">
-                <h3>split</h3>
-                <p>Plan the week.</p>
-              </figcaption>
+              <figcaption>Calendar</figcaption>
+            </figure>
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <img src="images/split-light.png" data-light="images/split-light.png" data-dark="images/split-dark.png" alt="weekly split screen" width="660" height="1430" loading="lazy" />
+                </div>
+              </div>
+              <figcaption>Split</figcaption>
+            </figure>
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <img src="images/supplements-light.png" data-light="images/supplements-light.png" data-dark="images/supplements-dark.png" alt="supplements screen" width="660" height="1430" loading="lazy" />
+                </div>
+              </div>
+              <figcaption>Supplements</figcaption>
+            </figure>
+            <figure class="screen-item">
+              <div class="device">
+                <div class="device-screen">
+                  <img src="images/trends-light.png" data-light="images/trends-light.png" data-dark="images/trends-dark.png" alt="trends screen" width="660" height="1430" loading="lazy" />
+                </div>
+              </div>
+              <figcaption>Trends</figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      <section class="section contrast">
-        <div class="container split">
-          <div>
-            <span class="badge">design</span>
-            <h2>white / black / gray.</h2>
-            <p>Light. Dark. Nothing extra.</p>
-            <div class="swatches">
-              <div class="swatch light" data-hex="#F4F1EA">
-                <span>white</span>
-              </div>
-              <div class="swatch dark" data-hex="#0A0908">
-                <span>black</span>
-              </div>
-              <div class="swatch gray" data-hex="#1D1B19">
-                <span>gray</span>
-              </div>
-            </div>
-          </div>
-          <div class="card contrast-card">
-            <div class="contrast-devices">
-              <div>
-                <div class="device">
-                  <div class="device-screen">
-                    <span class="device-island" aria-hidden="true"></span>
-                    <img
-                      src="images/calendar-light.png"
-                      alt="marble calendar in light mode"
-                      width="660"
-                      height="1431"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <span class="device-caption">light</span>
-              </div>
-              <div>
-                <div class="device device-dark">
-                  <div class="device-screen">
-                    <span class="device-island" aria-hidden="true"></span>
-                    <img
-                      src="images/calendar-dark.png"
-                      alt="marble calendar in dark mode"
-                      width="660"
-                      height="1431"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <span class="device-caption">dark</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="workflow" class="section">
+      <section class="section">
         <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="badge">flow</span>
-              <h2>three moves.</h2>
+          <header class="section-intro">
+            <h2>And the details.</h2>
+          </header>
+          <div class="detail-grid">
+            <div class="detail">
+              <h3>Apple Health</h3>
+              <p>Imports Apple Watch and Garmin workouts automatically.</p>
             </div>
-          </div>
-          <div class="workflow">
-            <article class="card step">
-              <div class="step-number">01</div>
-              <h3>log</h3>
-              <p>Capture the set.</p>
-            </article>
-            <article class="card step">
-              <div class="step-number">02</div>
-              <h3>review</h3>
-              <p>Read the pattern.</p>
-            </article>
-            <article class="card step">
-              <div class="step-number">03</div>
-              <h3>ascend</h3>
-              <p>Keep climbing.</p>
-            </article>
-          </div>
-          <div class="principles">
-            <div class="card principle">
-              <span class="value">offline</span>
+            <div class="detail">
+              <h3>Training Load</h3>
+              <p>Sends sessions back to Health with your effort score.</p>
             </div>
-            <div class="card principle">
-              <span class="value">private</span>
+            <div class="detail">
+              <h3>Supplements</h3>
+              <p>Creatine, protein, and other habits — one tap each.</p>
             </div>
-            <div class="card principle">
-              <span class="value">no ads</span>
+            <div class="detail">
+              <h3>Muscle coverage</h3>
+              <p>Weekly hard sets, measured against the 10&ndash;20 set guide.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="insights" class="section insights">
-        <div class="container split">
-          <div>
-            <span class="badge">insights</span>
-            <h2>watch it climb.</h2>
-            <p>Charts without noise.</p>
-            <div class="stat-grid">
-              <div class="card stat">
-                <span class="label">consistency</span>
-                <span class="value">active days</span>
-              </div>
-              <div class="card stat">
-                <span class="label">volume</span>
-                <span class="value">weekly load</span>
-              </div>
-              <div class="card stat">
-                <span class="label">records</span>
-                <span class="value">best week</span>
-              </div>
+            <div class="detail">
+              <h3>Rep records</h3>
+              <p>Your best weight at every rep count, per exercise.</p>
             </div>
-          </div>
-          <div class="card insights-card hud">
-            <div class="device">
-              <div class="device-screen">
-                <span class="device-island" aria-hidden="true"></span>
-                <img
-                  src="images/trends.png"
-                  alt="marble trends screen with consistency, weekly volume, and momentum"
-                  width="660"
-                  height="1431"
-                  loading="lazy"
-                />
-              </div>
+            <div class="detail">
+              <h3>Progression hints</h3>
+              <p>When every set tops 8 reps at manageable effort, marble names the next load.</p>
+            </div>
+            <div class="detail">
+              <h3>Light &amp; dark</h3>
+              <p>One quiet design, both moods.</p>
+            </div>
+            <div class="detail">
+              <h3>Free</h3>
+              <p>Every feature. No subscription, nothing to unlock.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="faq" class="section faq">
+      <section class="section privacy">
         <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="badge">faq</span>
-              <h2>answers.</h2>
-              <p>Free. Offline. Private.</p>
-            </div>
-          </div>
+          <p>No accounts. No ads. No tracking. Every set you log lives on your iPhone — and nowhere else.</p>
+          <span class="fine">Fully offline &middot; On-device analysis &middot; Nothing to sign up for</span>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <header class="section-intro">
+            <h2>Questions.</h2>
+          </header>
           <div class="faq-list">
-            <details class="card faq-item">
-              <summary>free?</summary>
-              <p>yes.</p>
+            <details class="faq-item">
+              <summary>Is marble free?</summary>
+              <p>Yes. Every feature is free — there&rsquo;s nothing to unlock.</p>
             </details>
-            <details class="card faq-item">
-              <summary>offline?</summary>
-              <p>yes. on-device.</p>
+            <details class="faq-item">
+              <summary>Does marble work offline?</summary>
+              <p>Yes. Everything is stored on your iPhone. No account, no server, no sync to anyone else&rsquo;s cloud.</p>
             </details>
-            <details class="card faq-item">
-              <summary>account?</summary>
-              <p>no.</p>
+            <details class="faq-item">
+              <summary>Where does the coaching come from?</summary>
+              <p>From your own logged sets. Estimated 1RM trends, PR detection, and the monthly report are all computed on your device.</p>
             </details>
-            <details class="card faq-item">
-              <summary>devices?</summary>
-              <p>iPhone.</p>
+            <details class="faq-item">
+              <summary>Does marble work with Apple Watch or Garmin?</summary>
+              <p>Yes — both arrive through Apple Health. marble imports their workouts, and can send your strength sessions back with an effort score so they count toward Apple&rsquo;s Training Load.</p>
             </details>
-            <details class="card faq-item">
-              <summary>ads?</summary>
-              <p>no ads. no selling.</p>
+            <details class="faq-item">
+              <summary>Does marble show ads or sell my data?</summary>
+              <p>No ads, no tracking, no selling. marble is local-only.</p>
             </details>
           </div>
         </div>
@@ -730,23 +554,21 @@
 
       <section id="download" class="section cta">
         <div class="container">
-          <div class="card cta-card hud">
-            <div>
-              <h2>start logging.</h2>
-            </div>
-            <div class="cta-actions">
-              <a
-                class="btn btn-primary"
-                href="https://apps.apple.com/us/app/marble-fit/id6757725234"
-                data-analytics-event="App Store Click"
-                data-analytics-location="home_download"
-                data-analytics-target="app_store"
-              >
-                <span class="apple" aria-hidden="true"></span>
-                app store
-              </a>
-              <span class="fine">free · ios only · offline</span>
-            </div>
+          <h2>Start the record.</h2>
+          <div class="hero-cta">
+            <a
+              class="btn"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+              data-analytics-event="App Store Click"
+              data-analytics-location="home_download"
+              data-analytics-target="app_store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="fine">Free &middot; iPhone &middot; Offline</span>
           </div>
         </div>
       </section>
@@ -756,8 +578,8 @@
       <div class="container footer-inner">
         <span>marble</span>
         <div class="footer-links">
-          <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_footer" data-analytics-target="changelog">changelog</a>
-          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234" data-analytics-event="App Store Click" data-analytics-location="home_footer" data-analytics-target="app_store">app store</a>
+          <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_footer" data-analytics-target="changelog">Changelog</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234" data-analytics-event="App Store Click" data-analytics-location="home_footer" data-analytics-target="app_store">App Store</a>
         </div>
       </div>
     </footer>

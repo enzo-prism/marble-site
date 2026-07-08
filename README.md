@@ -2,7 +2,7 @@
 
 single-page marketing site for the marble fitness app.
 
-**Brand:** "the warrior's terminal" — a black-marble + terminal/cyberpunk aesthetic (greek-god monument meets hacker), tagline **"designed for the conquerors."** Type registers: Cinzel (carved-stone headlines), IBM Plex Mono (terminal/UI/data), IBM Plex Sans (body). Dark obsidian field, marble-white text, a single phosphor-green accent for the terminal layer.
+**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only (SF-style sans for UI, New York/Georgia serif for the rotating hero quotes and pull statements); no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, a nav toggle overrides it (persisted in `localStorage` as `marble-theme`), and every app screenshot swaps between its `-light`/`-dark` variant with the theme (`data-light`/`data-dark` attrs, wired in `scripts/site.js`).
 
 ## quick start
 
@@ -46,5 +46,5 @@ this project is static. deploy with vercel as a static site or any static host.
 
 ## assets
 
-- feature thumbnails and the hero video are served from cloudinary.
-- device-framed product screenshots live in `images/` (exported from the app's snapshot tests, resized to 660px wide).
+- fully self-hosted: no cloudinary, no google fonts, no external requests (besides vercel analytics).
+- product screenshots live in `images/` as `<screen>-light.png` / `<screen>-dark.png` pairs (660px wide), captured from the iOS simulator with the app's screenshot fixture (`MARBLE_FIXTURE_MODE=screenshots` + `SIMCTL_CHILD_` env prefix + `simctl status_bar` override). Recapture both variants together when app screens change.
