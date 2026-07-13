@@ -1,10 +1,1052 @@
 {
-  "generatedAt": "2026-07-06T12:49:49.650Z",
+  "generatedAt": "2026-07-13T12:08:04.143Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 84,
+  "commitCount": 95,
   "commits": [
+    {
+      "sha": "68d77a7bfa8b1bc334bf78cb9ad2a0f930f5389a",
+      "html_url": "https://github.com/enzo-prism/marble/commit/68d77a7bfa8b1bc334bf78cb9ad2a0f930f5389a",
+      "commit": {
+        "message": "docs: record TestFlight build 39",
+        "author": {
+          "date": "2026-07-12T22:19:21-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T22:19:21-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 19,
+          "deletions": 10,
+          "changes": 29
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 22,
+        "deletions": 12,
+        "total": 34
+      }
+    },
+    {
+      "sha": "3e6d4b6fd0b1588abec85997589c69b98f5ac7d1",
+      "html_url": "https://github.com/enzo-prism/marble/commit/3e6d4b6fd0b1588abec85997589c69b98f5ac7d1",
+      "commit": {
+        "message": "feat: surface sprint goals in journal",
+        "author": {
+          "date": "2026-07-12T22:14:57-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T22:14:57-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 5,
+          "deletions": 2,
+          "changes": 7
+        },
+        {
+          "filename": "SPRINT_WORKOUTS.md",
+          "additions": 30,
+          "deletions": 3,
+          "changes": 33
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 6,
+          "deletions": 2,
+          "changes": 8
+        },
+        {
+          "filename": "Tests/UI/JournalFlowUITests.swift",
+          "additions": 33,
+          "deletions": 0,
+          "changes": 33
+        },
+        {
+          "filename": "Tests/Unit/MarbleBackupTests.swift",
+          "additions": 82,
+          "deletions": 0,
+          "changes": 82
+        },
+        {
+          "filename": "Tests/Unit/SprintGoalMigrationTests.swift",
+          "additions": 63,
+          "deletions": 0,
+          "changes": 63
+        },
+        {
+          "filename": "Tests/Unit/SprintPrescriptionTests.swift",
+          "additions": 253,
+          "deletions": 0,
+          "changes": 253
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/QuickLogCardView.swift",
+          "additions": 14,
+          "deletions": 2,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 26,
+          "deletions": 3,
+          "changes": 29
+        },
+        {
+          "filename": "marble/Components/SprintGoalResultView.swift",
+          "additions": 193,
+          "deletions": 0,
+          "changes": 193
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 19,
+          "deletions": 1,
+          "changes": 20
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 94,
+          "deletions": 5,
+          "changes": 99
+        },
+        {
+          "filename": "marble/Features/Journal/SetDetailView.swift",
+          "additions": 35,
+          "deletions": 0,
+          "changes": 35
+        },
+        {
+          "filename": "marble/Intents/MarbleAppIntents.swift",
+          "additions": 18,
+          "deletions": 0,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Models/SprintGoalSnapshot.swift",
+          "additions": 263,
+          "deletions": 0,
+          "changes": 263
+        },
+        {
+          "filename": "marble/Persistence/MarbleBackup.swift",
+          "additions": 71,
+          "deletions": 2,
+          "changes": 73
+        },
+        {
+          "filename": "marble/Persistence/MarbleSchema.swift",
+          "additions": 13,
+          "deletions": 2,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Persistence/ModelContainer.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Persistence/SeedData.swift",
+          "additions": 11,
+          "deletions": 0,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Persistence/TestFixtures.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Theme/Theme.swift",
+          "additions": 18,
+          "deletions": 0,
+          "changes": 18
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 1259,
+        "deletions": 28,
+        "total": 1287
+      }
+    },
+    {
+      "sha": "4af119530ec030782ad572c723df9fc877253e88",
+      "html_url": "https://github.com/enzo-prism/marble/commit/4af119530ec030782ad572c723df9fc877253e88",
+      "commit": {
+        "message": "Document build 38 TestFlight release",
+        "author": {
+          "date": "2026-07-12T21:34:47-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T21:34:47-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 3,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 22,
+          "deletions": 15,
+          "changes": 37
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 10,
+          "deletions": 5,
+          "changes": 15
+        }
+      ],
+      "stats": {
+        "additions": 42,
+        "deletions": 23,
+        "total": 65
+      }
+    },
+    {
+      "sha": "56e56da2b3d01483f7d62bbe4a96bcb0caacb0f7",
+      "html_url": "https://github.com/enzo-prism/marble/commit/56e56da2b3d01483f7d62bbe4a96bcb0caacb0f7",
+      "commit": {
+        "message": "Redesign exercise library and editor",
+        "author": {
+          "date": "2026-07-12T21:30:55-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T21:30:55-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "EXERCISE_LIBRARY.md",
+          "additions": 73,
+          "deletions": 0,
+          "changes": 73
+        },
+        {
+          "filename": "README.md",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "SPRINT_WORKOUTS.md",
+          "additions": 11,
+          "deletions": 5,
+          "changes": 16
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 10,
+          "deletions": 5,
+          "changes": 15
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 55,
+          "deletions": 0,
+          "changes": 55
+        },
+        {
+          "filename": "Tests/UI/JournalFlowUITests.swift",
+          "additions": 78,
+          "deletions": 27,
+          "changes": 105
+        },
+        {
+          "filename": "Tests/Unit/ExerciseEditorDraftTests.swift",
+          "additions": 141,
+          "deletions": 0,
+          "changes": 141
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Journal/ExerciseEditorDraft.swift",
+          "additions": 319,
+          "deletions": 0,
+          "changes": 319
+        },
+        {
+          "filename": "marble/Features/Journal/ExerciseEditorView.swift",
+          "additions": 550,
+          "deletions": 838,
+          "changes": 1388
+        },
+        {
+          "filename": "marble/Features/Journal/ExerciseLibraryPresentation.swift",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": "marble/Features/Journal/ExercisePickerView.swift",
+          "additions": 123,
+          "deletions": 152,
+          "changes": 275
+        },
+        {
+          "filename": "marble/Features/Journal/ManageExercisesView.swift",
+          "additions": 158,
+          "deletions": 126,
+          "changes": 284
+        },
+        {
+          "filename": "marble/Features/Journal/SprintPrescriptionEditorView.swift",
+          "additions": 16,
+          "deletions": 14,
+          "changes": 30
+        },
+        {
+          "filename": "marble/Features/Workout/DataManagementView.swift",
+          "additions": 13,
+          "deletions": 0,
+          "changes": 13
+        }
+      ],
+      "stats": {
+        "additions": 1595,
+        "deletions": 1171,
+        "total": 2766
+      }
+    },
+    {
+      "sha": "d284a897c1b6f68eb640811f9c49dbf1d3eb6529",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d284a897c1b6f68eb640811f9c49dbf1d3eb6529",
+      "commit": {
+        "message": "Document Marble 2.0 build 37 TestFlight release",
+        "author": {
+          "date": "2026-07-12T19:23:09-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T19:23:09-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "README.md",
+          "additions": 7,
+          "deletions": 6,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 9,
+          "deletions": 8,
+          "changes": 17
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 3,
+          "deletions": 3,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 25,
+        "deletions": 23,
+        "total": 48
+      }
+    },
+    {
+      "sha": "db9fa00a058889eca72425784b09088212ee8f5e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/db9fa00a058889eca72425784b09088212ee8f5e",
+      "commit": {
+        "message": "Add reusable sprint workout prescriptions",
+        "author": {
+          "date": "2026-07-12T19:17:38-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T19:17:38-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 13,
+          "deletions": 3,
+          "changes": 16
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 8,
+          "deletions": 2,
+          "changes": 10
+        },
+        {
+          "filename": "SPRINT_WORKOUTS.md",
+          "additions": 53,
+          "deletions": 0,
+          "changes": 53
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 7,
+          "deletions": 2,
+          "changes": 9
+        },
+        {
+          "filename": "Tests/Unit/MarbleBackupTests.swift",
+          "additions": 58,
+          "deletions": 3,
+          "changes": 61
+        },
+        {
+          "filename": "Tests/Unit/PersistenceRecoveryTests.swift",
+          "additions": 17,
+          "deletions": 0,
+          "changes": 17
+        },
+        {
+          "filename": "Tests/Unit/SprintPrescriptionTests.swift",
+          "additions": 99,
+          "deletions": 0,
+          "changes": 99
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/DurationPicker.swift",
+          "additions": 9,
+          "deletions": 3,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Components/RestPicker.swift",
+          "additions": 6,
+          "deletions": 1,
+          "changes": 7
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 119,
+          "deletions": 11,
+          "changes": 130
+        },
+        {
+          "filename": "marble/Features/Journal/ExerciseEditorView.swift",
+          "additions": 173,
+          "deletions": 13,
+          "changes": 186
+        },
+        {
+          "filename": "marble/Features/Journal/ExercisePickerView.swift",
+          "additions": 15,
+          "deletions": 2,
+          "changes": 17
+        },
+        {
+          "filename": "marble/Features/Journal/ManageExercisesView.swift",
+          "additions": 17,
+          "deletions": 1,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Features/Journal/SprintGoalCardView.swift",
+          "additions": 51,
+          "deletions": 0,
+          "changes": 51
+        },
+        {
+          "filename": "marble/Features/Journal/SprintPrescriptionEditorView.swift",
+          "additions": 150,
+          "deletions": 0,
+          "changes": 150
+        },
+        {
+          "filename": "marble/Features/Split/PlannedSetRowView.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 19,
+          "deletions": 3,
+          "changes": 22
+        },
+        {
+          "filename": "marble/Models/SprintPrescription.swift",
+          "additions": 158,
+          "deletions": 0,
+          "changes": 158
+        },
+        {
+          "filename": "marble/Persistence/MarbleBackup.swift",
+          "additions": 55,
+          "deletions": 3,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Persistence/MarbleSchema.swift",
+          "additions": 14,
+          "deletions": 4,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Persistence/ModelContainer.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Persistence/SeedData.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 1059,
+        "deletions": 56,
+        "total": 1115
+      }
+    },
+    {
+      "sha": "03333484c77499ade6f009c8bc1ac58a55269585",
+      "html_url": "https://github.com/enzo-prism/marble/commit/03333484c77499ade6f009c8bc1ac58a55269585",
+      "commit": {
+        "message": "Document Marble 2.0 build 36 TestFlight release",
+        "author": {
+          "date": "2026-07-10T09:55:15-07:00"
+        },
+        "committer": {
+          "date": "2026-07-10T09:55:15-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 8,
+          "deletions": 8,
+          "changes": 16
+        },
+        {
+          "filename": "README.md",
+          "additions": 11,
+          "deletions": 9,
+          "changes": 20
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 23,
+          "deletions": 19,
+          "changes": 42
+        }
+      ],
+      "stats": {
+        "additions": 42,
+        "deletions": 36,
+        "total": 78
+      }
+    },
+    {
+      "sha": "9eaea8f183162eb1ffba6527b3eff73b097cbebc",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9eaea8f183162eb1ffba6527b3eff73b097cbebc",
+      "commit": {
+        "message": "Fix SwiftData launch migration for build 36",
+        "author": {
+          "date": "2026-07-10T09:50:18-07:00"
+        },
+        "committer": {
+          "date": "2026-07-10T09:50:18-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Makefile",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Unit/PersistenceRecoveryTests.swift",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Persistence/MarbleSchema.swift",
+          "additions": 11,
+          "deletions": 14,
+          "changes": 25
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 128,
+          "deletions": 0,
+          "changes": 128
+        }
+      ],
+      "stats": {
+        "additions": 154,
+        "deletions": 19,
+        "total": 173
+      }
+    },
+    {
+      "sha": "f3b4140678c6e45b7707f777e2b049042166511d",
+      "html_url": "https://github.com/enzo-prism/marble/commit/f3b4140678c6e45b7707f777e2b049042166511d",
+      "commit": {
+        "message": "Ship workout sessions, focused trends, and data backups",
+        "author": {
+          "date": "2026-07-09T16:54:14-07:00"
+        },
+        "committer": {
+          "date": "2026-07-09T16:54:14-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 21,
+          "deletions": 26,
+          "changes": 47
+        },
+        {
+          "filename": "Makefile",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "README.md",
+          "additions": 19,
+          "deletions": 20,
+          "changes": 39
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 26,
+          "deletions": 54,
+          "changes": 80
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 19,
+          "deletions": 25,
+          "changes": 44
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 25,
+          "deletions": 4,
+          "changes": 29
+        },
+        {
+          "filename": "Tests/UI/JournalFlowUITests.swift",
+          "additions": 7,
+          "deletions": 5,
+          "changes": 12
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 16,
+          "deletions": 4,
+          "changes": 20
+        },
+        {
+          "filename": "Tests/UI/NotificationsFlowUITests.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/UI/SmokeNavigationUITests.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/UI/SplitFlowUITests.swift",
+          "additions": 3,
+          "deletions": 1,
+          "changes": 4
+        },
+        {
+          "filename": "Tests/UI/TrendsSelectionUITests.swift",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/UI/TrendsSmokeUITests.swift",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "Tests/UI/WorkoutFlowUITests.swift",
+          "additions": 59,
+          "deletions": 0,
+          "changes": 59
+        },
+        {
+          "filename": "Tests/Unit/MarbleBackupTests.swift",
+          "additions": 80,
+          "deletions": 0,
+          "changes": 80
+        },
+        {
+          "filename": "Tests/Unit/PersistenceRecoveryTests.swift",
+          "additions": 51,
+          "deletions": 0,
+          "changes": 51
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionTests.swift",
+          "additions": 44,
+          "deletions": 0,
+          "changes": 44
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/QuickLogCoordinator.swift",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 22,
+          "deletions": 2,
+          "changes": 24
+        },
+        {
+          "filename": "marble/Features/Import/HealthKit/HealthSessionExporter.swift",
+          "additions": 25,
+          "deletions": 6,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Split/SplitDayEditorView.swift",
+          "additions": 26,
+          "deletions": 7,
+          "changes": 33
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsFocusView.swift",
+          "additions": 117,
+          "deletions": 0,
+          "changes": 117
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 32,
+          "deletions": 13,
+          "changes": 45
+        },
+        {
+          "filename": "marble/Features/Workout/DataManagementView.swift",
+          "additions": 193,
+          "deletions": 0,
+          "changes": 193
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 350,
+          "deletions": 0,
+          "changes": 350
+        },
+        {
+          "filename": "marble/Models/WorkoutSession.swift",
+          "additions": 66,
+          "deletions": 0,
+          "changes": 66
+        },
+        {
+          "filename": "marble/Persistence/MarbleBackup.swift",
+          "additions": 522,
+          "deletions": 0,
+          "changes": 522
+        },
+        {
+          "filename": "marble/Persistence/MarbleSchema.swift",
+          "additions": 15,
+          "deletions": 2,
+          "changes": 17
+        },
+        {
+          "filename": "marble/Persistence/ModelContainer.swift",
+          "additions": 21,
+          "deletions": 9,
+          "changes": 30
+        },
+        {
+          "filename": "marble/Persistence/ModelContextSaving.swift",
+          "additions": 12,
+          "deletions": 0,
+          "changes": 12
+        }
+      ],
+      "stats": {
+        "additions": 1811,
+        "deletions": 186,
+        "total": 1997
+      }
+    },
+    {
+      "sha": "25a1c52c2138fafdef4e0a736ed2841c7b33a47b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/25a1c52c2138fafdef4e0a736ed2841c7b33a47b",
+      "commit": {
+        "message": "Docs: record 2.0 (build 34) VALID on TestFlight + submitted for App Review\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-07T09:12:02-07:00"
+        },
+        "committer": {
+          "date": "2026-07-07T09:12:02-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 7,
+          "deletions": 5,
+          "changes": 12
+        }
+      ],
+      "stats": {
+        "additions": 7,
+        "deletions": 5,
+        "total": 12
+      }
+    },
+    {
+      "sha": "d8b82d74cad58d1784fd92454d01348e15c40468",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d8b82d74cad58d1784fd92454d01348e15c40468",
+      "commit": {
+        "message": "Trends 2.0: coaching layer — progression verdicts, PR feed, weekly goal, monthly report\n\nTurns Trends from a describe-the-past screen into a coach-the-lifter one.\nAll math is deterministic and unit-tested; every interpretive line shows\nits evidence and is phrased as information, never a command.\n\n- Your Lifts strength dashboard: per-lift e1RM sparkline + verdict\n  (Progressing / Holding / Adapted / Building baseline) from an\n  RPE-matched least-squares trend over the last 8 sessions; tap filters.\n- Real PRs finally reach Trends: a Records feed of genuine record-breaking\n  sets (baselines and first-3-session noise excluded, kg-normalized), a\n  quiet per-rep-count records table on filtered exercises, and a pre-set\n  \"you're N from a PR\" proximity cue on the logging card. Old \"PRs\" cards\n  renamed Range Bests. Fixed latent bug: best-weight card compared raw\n  numbers across lb/kg.\n- Double-progression hint when last session topped 8+ reps on every\n  matched-load set at RPE <= 8.5, with plate-math next-load suggestion.\n- Muscle Groups upgraded to weekly hard sets vs the 10-20 guide band,\n  fractional 0.5 indirect counting (press->triceps/delts, pull->biceps),\n  per-muscle recency, and zero-set reminder rows for recently trained\n  muscles.\n- Weekly Goal card: user target (1-7 sessions/wk), week streak with\n  banked flex weeks (earned every 4 hit weeks, cap 2, spent on misses),\n  celebrated comeback state, lifetime totals; one adaptive .passive\n  notification on the last winnable evening, cancelled once trained.\n- Monthly report card + sheet: sessions/sets/volume/PRs with fair\n  same-point-vs-last-month deltas, muscle focus, and on-device insights\n  (FoundationModels @Generable, availability-gated, deterministic\n  fallback phrasing — the model never does arithmetic).\n- Apple Health write-back (opt-in, Import screen): completed training\n  days export as strength workouts with workoutEffortScore from session\n  RPE, feeding Apple's Training Load; imported entries never round-trip.\n\nVersion 2.0 (34). Unit suite 231 (38 new); Trends smoke/selection UI\ntests and full a11y audit green (audit fixes: 44pt target on the goal\nmenu, wrap-safe stat texts, emoji removed from state line — emoji glyphs\noverflow the caption line box and read as clipped).\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-07T08:39:36-07:00"
+        },
+        "committer": {
+          "date": "2026-07-07T08:39:36-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 8,
+          "deletions": 1,
+          "changes": 9
+        },
+        {
+          "filename": "Tests/UI/TrendsSelectionUITests.swift",
+          "additions": 4,
+          "deletions": 12,
+          "changes": 16
+        },
+        {
+          "filename": "Tests/Unit/DerivationPerformanceTests.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "Tests/Unit/LifterCoachingTests.swift",
+          "additions": 305,
+          "deletions": 0,
+          "changes": 305
+        },
+        {
+          "filename": "Tests/Unit/MonthlyReportTests.swift",
+          "additions": 107,
+          "deletions": 0,
+          "changes": 107
+        },
+        {
+          "filename": "Tests/Unit/PersonalRecordProximityTests.swift",
+          "additions": 69,
+          "deletions": 0,
+          "changes": 69
+        },
+        {
+          "filename": "Tests/Unit/TrainingConsistencyTests.swift",
+          "additions": 150,
+          "deletions": 0,
+          "changes": 150
+        },
+        {
+          "filename": "Tests/Unit/TrendsDerivedDataTests.swift",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 8,
+          "deletions": 8,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Components/PersonalBestCardView.swift",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Components/PersonalRecords.swift",
+          "additions": 61,
+          "deletions": 0,
+          "changes": 61
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "marble/Features/Import/HealthKit/HealthSessionExporter.swift",
+          "additions": 147,
+          "deletions": 0,
+          "changes": 147
+        },
+        {
+          "filename": "marble/Features/Import/ImportView.swift",
+          "additions": 30,
+          "deletions": 0,
+          "changes": 30
+        },
+        {
+          "filename": "marble/Features/Notifications/NotificationsView.swift",
+          "additions": 32,
+          "deletions": 0,
+          "changes": 32
+        },
+        {
+          "filename": "marble/Features/Notifications/WeeklyGoalReminder.swift",
+          "additions": 115,
+          "deletions": 0,
+          "changes": 115
+        },
+        {
+          "filename": "marble/Features/Trends/CoachingSections.swift",
+          "additions": 565,
+          "deletions": 0,
+          "changes": 565
+        },
+        {
+          "filename": "marble/Features/Trends/LifterAnalyticsSections.swift",
+          "additions": 44,
+          "deletions": 27,
+          "changes": 71
+        },
+        {
+          "filename": "marble/Features/Trends/LifterCoaching.swift",
+          "additions": 575,
+          "deletions": 0,
+          "changes": 575
+        },
+        {
+          "filename": "marble/Features/Trends/MonthlyReport.swift",
+          "additions": 235,
+          "deletions": 0,
+          "changes": 235
+        },
+        {
+          "filename": "marble/Features/Trends/MonthlyReportSheet.swift",
+          "additions": 167,
+          "deletions": 0,
+          "changes": 167
+        },
+        {
+          "filename": "marble/Features/Trends/TrainingConsistency.swift",
+          "additions": 155,
+          "deletions": 0,
+          "changes": 155
+        },
+        {
+          "filename": "marble/Features/Trends/TrainingInsights.swift",
+          "additions": 131,
+          "deletions": 0,
+          "changes": 131
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsDerivedData.swift",
+          "additions": 68,
+          "deletions": 14,
+          "changes": 82
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 67,
+          "deletions": 5,
+          "changes": 72
+        }
+      ],
+      "stats": {
+        "additions": 3072,
+        "deletions": 67,
+        "total": 3139
+      }
+    },
     {
       "sha": "915e26e7c9c5aa9748b4a53a70f583074ead0f6e",
       "html_url": "https://github.com/enzo-prism/marble/commit/915e26e7c9c5aa9748b4a53a70f583074ead0f6e",
