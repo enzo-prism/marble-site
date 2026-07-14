@@ -61,6 +61,8 @@ html {
 
 body {
   min-height: 100vh;
+  /* dvh tracks the retracting iOS URL bar; 100vh above stays as the fallback */
+  min-height: 100dvh;
   font-family: var(--font-sans);
   color: var(--ink);
   background: var(--bg);
@@ -156,16 +158,27 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 14px 0;
+  /* vertical longhands only — a `padding` shorthand here would override the
+     horizontal gutter (and safe-area insets) .container sets on this element */
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .brand {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -0.01em;
+}
+
+/* 44px-tall hit area, vertical only so it stays clear of the nav controls */
+.brand::after {
+  content: "";
+  position: absolute;
+  inset: -10px 0;
 }
 
 .brand img {
@@ -186,8 +199,10 @@ img {
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: var(--ink);
+@media (hover: hover) {
+  .nav-links a:hover {
+    color: var(--ink);
+  }
 }
 
 .nav-actions {
@@ -218,13 +233,19 @@ img {
   transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(19, 18, 16, 0.18);
+/* hover effects only where hovering is real — on touch, :hover latches after a
+   tap and the control stays stuck in its lifted state until you tap elsewhere */
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(19, 18, 16, 0.18);
+  }
 }
 
+/* the press is the only tap feedback there is: -webkit-tap-highlight-color is
+   transparent, and :hover no longer fires on touch */
 .btn:active {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 
 .btn-small {
@@ -240,6 +261,7 @@ img {
 }
 
 .theme-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -253,10 +275,35 @@ img {
   transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.theme-toggle:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .theme-toggle:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
+/* Grow the hit areas of the two nav controls to ~44px without growing the
+   control itself, so the chrome stays slim. The button expands vertically
+   only — sideways growth would eat the gap between the two hit areas. */
+.nav-actions .btn-small {
+  position: relative;
+}
+
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+}
+
+.nav-actions .btn-small::after {
+  content: "";
+  position: absolute;
+  inset: -3px 0;
 }
 
 .theme-toggle svg {
@@ -640,7 +687,7 @@ img {
 
 .footer {
   border-top: 1px solid var(--line-soft);
-  padding: 32px 0 52px;
+  padding: 32px 0 calc(52px + env(safe-area-inset-bottom));
 }
 
 .footer-inner {
@@ -659,11 +706,21 @@ img {
 }
 
 .footer-links a {
+  position: relative;
   transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
-  color: var(--ink);
+/* the 22px row gap absorbs this, so the two hit areas never overlap */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  inset: -11px 0;
+}
+
+@media (hover: hover) {
+  .footer-links a:hover {
+    color: var(--ink);
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -713,9 +770,21 @@ img {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-a.chip:hover {
-  color: var(--ink);
-  border-color: var(--ink);
+@media (hover: hover) {
+  a.chip:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+}
+
+a.chip {
+  position: relative;
+}
+
+a.chip::after {
+  content: "";
+  position: absolute;
+  inset: -5px 0;
 }
 
 .card {
@@ -970,14 +1039,17 @@ a.chip:hover {
 
   .detail-grid,
   .changelog-grid {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) not 1fr — a bare 1fr floors the track at min-content, so a
+       long unbreakable token (commit filenames) widens the page past the viewport */
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 560px) {
   /* slimmer, quieter chrome */
   .nav-inner {
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     gap: 12px;
   }
 
@@ -993,7 +1065,7 @@ a.chip:hover {
   }
 
   .nav-actions {
-    gap: 8px;
+    gap: 12px;
   }
 
   .nav-actions .btn-small {
@@ -1128,7 +1200,7 @@ a.chip:hover {
   }
 
   .footer {
-    padding: 24px 0 40px;
+    padding: 24px 0 calc(40px + env(safe-area-inset-bottom));
   }
 
   .footer-inner {
