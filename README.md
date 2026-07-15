@@ -20,6 +20,7 @@ then open: http://127.0.0.1:5173
 
 - `index.html` single-page markup
 - `changelog/` changelog page + bundled commit data
+- `privacy/` privacy policy for the app and website
 - `styles.css` styles and layout
 - `server.js` tiny static server for local preview
 - `package.json` dev script only
@@ -29,7 +30,7 @@ then open: http://127.0.0.1:5173
 The canonical domain is **https://marble-fit.app** (the live, registered domain). Search/LLM discovery files live at the repo root and are served as-is:
 
 - `robots.txt` allows all crawlers (including AI/LLM bots) and points to the sitemap
-- `sitemap.xml` lists the home and changelog URLs (update `lastmod` when content changes)
+- `sitemap.xml` lists the home, changelog, and privacy URLs (update `lastmod` when content changes)
 - `llms.txt` a concise, structured product summary for language models (GEO)
 
 Each page also ships a canonical link, Open Graph + Twitter Card tags (absolute image URLs), and JSON-LD structured data (`MobileApplication`, `WebSite`/`Organization`, `FAQPage` on the home page; `WebPage` + `BreadcrumbList` on the changelog). The home page FAQ section mirrors the `FAQPage` schema, so keep the two in sync if you edit either.
