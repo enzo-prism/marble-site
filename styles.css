@@ -15,7 +15,7 @@
   --surface: #ffffff;
   --ink: #131210;
   --muted: #6f6b64;
-  --faint: #97928a;
+  --faint: #6f6b64;
   --line: rgba(19, 18, 16, 0.14);
   --line-soft: rgba(19, 18, 16, 0.07);
 
@@ -37,7 +37,7 @@
   --surface: #131211;
   --ink: #f4f1ea;
   --muted: #a49f96;
-  --faint: #7c766c;
+  --faint: #aaa59b;
   --line: rgba(244, 241, 234, 0.16);
   --line-soft: rgba(244, 241, 234, 0.08);
 
@@ -351,7 +351,7 @@ img {
   grid-area: 1 / 1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1.2s ease, visibility 1.2s;
+  transition: opacity 0.45s ease;
 }
 
 .quote.is-active {
@@ -413,6 +413,19 @@ img {
   margin-top: clamp(48px, 6vw, 72px);
   display: flex;
   justify-content: center;
+}
+
+.store-shot {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #f5f5f5;
+  box-shadow: var(--shadow);
+}
+
+.hero-device .store-shot {
+  max-width: 420px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -524,6 +537,10 @@ img {
   justify-content: center;
 }
 
+.pillar-media .store-shot {
+  max-width: 380px;
+}
+
 .pillar-media .device {
   max-width: 264px;
 }
@@ -531,12 +548,10 @@ img {
 /* screens strip ------------------------------------------------------ */
 
 .screens-strip {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(20px, 3vw, 32px);
-  overflow-x: auto;
   padding: 8px 4px 24px;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
 }
 
 .screens-strip::-webkit-scrollbar {
@@ -549,19 +564,12 @@ img {
 }
 
 .screen-item {
-  flex: 0 0 auto;
-  width: 196px;
-  scroll-snap-align: start;
+  min-width: 0;
   margin: 0;
 }
 
-.screen-item .device {
-  border-radius: 36px;
-  padding: 6px;
-}
-
-.screen-item .device-screen {
-  border-radius: 30px;
+.screen-item .store-shot {
+  border-radius: 20px;
 }
 
 .screen-item figcaption {
@@ -1037,6 +1045,22 @@ a.chip::after {
     max-width: 220px;
   }
 
+  .pillar-media .store-shot {
+    max-width: 360px;
+  }
+
+  .screens-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .screen-item {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+
   .detail-grid,
   .changelog-grid {
     /* minmax(0, …) not 1fr — a bare 1fr floors the track at min-content, so a
@@ -1112,6 +1136,10 @@ a.chip::after {
     max-width: 234px;
   }
 
+  .hero-device .store-shot {
+    max-width: 320px;
+  }
+
   .section {
     padding: 52px 0;
     scroll-margin-top: 64px;
@@ -1151,6 +1179,10 @@ a.chip::after {
     max-width: 206px;
   }
 
+  .pillar-media .store-shot {
+    max-width: 320px;
+  }
+
   /* edge-to-edge swipe strip, no scrollbar */
   .screens-strip {
     margin: 0 calc(-24px - env(safe-area-inset-right)) 0 calc(-24px - env(safe-area-inset-left));
@@ -1164,7 +1196,7 @@ a.chip::after {
   }
 
   .screen-item {
-    width: 152px;
+    flex-basis: min(78vw, 292px);
   }
 
   .screen-item figcaption {

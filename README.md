@@ -2,7 +2,7 @@
 
 single-page marketing site for the marble fitness app.
 
-**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only (SF-style sans for UI, New York/Georgia serif for the rotating hero quotes and pull statements); no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, a nav toggle overrides it (persisted in `localStorage` as `marble-theme`), and every app screenshot swaps between its `-light`/`-dark` variant with the theme (`data-light`/`data-dark` attrs, wired in `scripts/site.js`).
+**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only (SF-style sans for UI, New York/Georgia serif for the rotating hero quotes and pull statements); no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
 
 ## quick start
 
@@ -48,4 +48,5 @@ this project is static. deploy with vercel as a static site or any static host.
 ## assets
 
 - fully self-hosted: no cloudinary, no google fonts, no external requests (besides vercel analytics).
-- product screenshots live in `images/` as `<screen>-light.png` / `<screen>-dark.png` pairs (660px wide), captured from the iOS simulator with the app's screenshot fixture (`MARBLE_FIXTURE_MODE=screenshots` + `SIMCTL_CHILD_` env prefix + `simctl status_bar` override). Recapture both variants together when app screens change.
+- current App Store marketing screenshots live in the versioned `images/app-store-2.1/` directory as complete 1320 × 2868 compositions, with responsive 660 × 1434 derivatives in `images/app-store-2.1/660w/`. Render them directly with `.store-shot`; do not place them inside the legacy `.device` frame or theme-swap them.
+- legacy raw light/dark captures remain in `images/` for historical reference. They use `<screen>-light.png` / `<screen>-dark.png` pairs and can still be theme-swapped through `data-light` / `data-dark` when used.
