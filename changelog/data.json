@@ -1,10 +1,564 @@
 {
-  "generatedAt": "2026-07-13T12:08:04.143Z",
+  "generatedAt": "2026-07-20T11:46:39.987Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 95,
+  "commitCount": 105,
   "commits": [
+    {
+      "sha": "96736a1657b4fa979cc07ba6e2f66ba823b07eea",
+      "html_url": "https://github.com/enzo-prism/marble/commit/96736a1657b4fa979cc07ba6e2f66ba823b07eea",
+      "commit": {
+        "message": "Bump Marble 2.1 to build 40",
+        "author": {
+          "date": "2026-07-15T13:46:41-07:00"
+        },
+        "committer": {
+          "date": "2026-07-15T13:46:41-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 4,
+        "deletions": 4,
+        "total": 8
+      }
+    },
+    {
+      "sha": "1825d8e44a4b0f041acf6ffeff704eed3d224d38",
+      "html_url": "https://github.com/enzo-prism/marble/commit/1825d8e44a4b0f041acf6ffeff704eed3d224d38",
+      "commit": {
+        "message": "Clean up Release concurrency warnings",
+        "author": {
+          "date": "2026-07-15T13:12:27-07:00"
+        },
+        "committer": {
+          "date": "2026-07-15T13:12:27-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "marble/Components/PersonalRecords.swift",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Features/Import/HealthAutoImportService.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Import/HealthKit/HealthSessionExporter.swift",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Notifications/WeeklyGoalReminder.swift",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestActivityController.swift",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Trends/CoachingSections.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 15,
+        "deletions": 12,
+        "total": 27
+      }
+    },
+    {
+      "sha": "cd69999d23a59e4d84a17fa6c235c44fb1a8d61f",
+      "html_url": "https://github.com/enzo-prism/marble/commit/cd69999d23a59e4d84a17fa6c235c44fb1a8d61f",
+      "commit": {
+        "message": "Prepare Marble 2.1 App Store release assets",
+        "author": {
+          "date": "2026-07-15T13:03:01-07:00"
+        },
+        "committer": {
+          "date": "2026-07-15T13:03:01-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/README.md",
+          "additions": 24,
+          "deletions": 0,
+          "changes": 24
+        },
+        {
+          "filename": "AppStore/metadata/app-info/en-US.json",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "AppStore/metadata/version/2.1/en-US.json",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "AppStore/review/2.1.md",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "AppStore/screenshots/2.1/manifest.json",
+          "additions": 71,
+          "deletions": 0,
+          "changes": 71
+        },
+        {
+          "filename": "Tests/UI/AppStoreScreenshotUITests.swift",
+          "additions": 88,
+          "deletions": 0,
+          "changes": 88
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Unit/SeedDataTests.swift",
+          "additions": 37,
+          "deletions": 0,
+          "changes": 37
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 156,
+          "deletions": 17,
+          "changes": 173
+        },
+        {
+          "filename": "marble/Features/Calendar/ProgressMediaSection.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Trends/TrendTooltipView.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 6,
+          "deletions": 5,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Workout/DataManagementView.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 44,
+          "deletions": 32,
+          "changes": 76
+        },
+        {
+          "filename": "marble/Persistence/TestFixtures.swift",
+          "additions": 113,
+          "deletions": 6,
+          "changes": 119
+        },
+        {
+          "filename": "marble/Testing/TestHooks.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "scripts/compose_app_store_screenshots.swift",
+          "additions": 185,
+          "deletions": 0,
+          "changes": 185
+        }
+      ],
+      "stats": {
+        "additions": 779,
+        "deletions": 65,
+        "total": 844
+      }
+    },
+    {
+      "sha": "7d4121794ce816c7fa2b60ee9d122123acdf9fc6",
+      "html_url": "https://github.com/enzo-prism/marble/commit/7d4121794ce816c7fa2b60ee9d122123acdf9fc6",
+      "commit": {
+        "message": "Normalize weights in the volume and progress charts\n\nTwo Trends engines compared and summed raw weights across lb and kg. Both are\nlive in 1.9 (29) today and in the 2.0 build 34 awaiting review.\n\nMixed units are the DEFAULT state, not an edge case: WorkoutImportMapper stamps\nevery imported set `.kg` while AddSetView defaults manual logging to `.lb`, so\nany lifter who imports from Apple Health and also logs by hand has both on one\nexercise.\n\nTrendsDerivedData.weightedVolume summed `weight * reps` raw. Ten sets of\n200 lb x 5 rendered a bar 2.2x taller than ten sets of 100 kg x 5 and took the\n\"best volume week\" PR dot — while being 9% LESS actual work.\nMonthlyReport.volume already normalized; this applies the same rule.\n\nExerciseProgressBuilder scored the chart on raw weight. Going 100 kg x 5 ->\n185 lb x 5 is getting WEAKER (220.5 -> 185 lb) but drew as a rise from 100 to\n185, an apparent +85% gain. The same file's buildLiftBests already normalized,\nso LiftBestsHighlightView (rendered directly above the chart) said \"100 kg\"\nwhile the chart peak said \"185 lb\" — one screen contradicting itself.\n\nWeighted series are now scored in kilograms, like distanceBestSet already\nscores in meters, then converted back to the lifter's most recently used unit\nfor display — the contract LifterAnalytics.oneRepMaxSeries uses. Weights logged\nin the display unit are passed through verbatim rather than round-tripped,\nbecause lb -> kg -> lb is lossy (185 -> 185.00000000000003).\n\nThis is the 3rd and 4th time this bug class has shipped, and every prior fix\npatched the neighbouring function instead of sweeping the file. The four new\ntests pin the invariant. Verified they FAIL without the fix:\n  - \"185.0 is not less than 100.0\"           (chart inverted)\n  - \"185 lb x 5\" is not \"100 kg x 5\"         (wrong day's best)\n  - \"1102.311310924388\" is not \"500.0\"       (2.2x phantom volume)\n\nNot fixed here (separate, non-charting): the inverted dominantWeightUnit\ntie-break in PersonalRecords.swift:314-322.",
+        "author": {
+          "date": "2026-07-15T11:22:20-07:00"
+        },
+        "committer": {
+          "date": "2026-07-15T11:22:20-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/ExerciseProgressBuilderTests.swift",
+          "additions": 118,
+          "deletions": 0,
+          "changes": 118
+        },
+        {
+          "filename": "Tests/Unit/TrendsDerivedDataTests.swift",
+          "additions": 32,
+          "deletions": 0,
+          "changes": 32
+        },
+        {
+          "filename": "marble/Features/Trends/ExerciseProgressBuilder.swift",
+          "additions": 41,
+          "deletions": 3,
+          "changes": 44
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsDerivedData.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 195,
+        "deletions": 4,
+        "total": 199
+      }
+    },
+    {
+      "sha": "64f3b413a21e53a53252024e53e6331bc10c7f54",
+      "html_url": "https://github.com/enzo-prism/marble/commit/64f3b413a21e53a53252024e53e6331bc10c7f54",
+      "commit": {
+        "message": "Sync docs with reality: build 39, the 2.1 train, and real test counts\n\nREADME had no build 39 entry at all and still called build 38 the latest\nTestFlight upload — 68d77a7 updated RELEASE_HANDOFF/TESTING but not README.\n\nTest counts were stale everywhere: 3e6d4b6 took the unit suite to 263 and the\nfollow-up docs commit carried 254 forward, so \"last verified: 254 passed\"\ndescribed a run predating the tests above it. Re-ran `make unit`: 264 pass,\n0 failures. Also records that `make ui` runs 36 of 38 UI cases (it skips the\n2 audit cases, which `make audit` runs).\n\nAttributes each suite to the date it was actually verified rather than letting\none header vouch for runs that did not happen, and notes the migration gate's\nvacuous-pass caveat.\n\nHistorical per-build entries keep their original numbers — 254 was correct at\nbuild 38.",
+        "author": {
+          "date": "2026-07-14T11:18:42-07:00"
+        },
+        "committer": {
+          "date": "2026-07-14T11:18:42-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 16,
+          "deletions": 5,
+          "changes": 21
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 26,
+          "deletions": 10,
+          "changes": 36
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 20,
+          "deletions": 12,
+          "changes": 32
+        }
+      ],
+      "stats": {
+        "additions": 62,
+        "deletions": 27,
+        "total": 89
+      }
+    },
+    {
+      "sha": "8f540b15fa5e4c33c1add0a124e1edeab38e7de7",
+      "html_url": "https://github.com/enzo-prism/marble/commit/8f540b15fa5e4c33c1add0a124e1edeab38e7de7",
+      "commit": {
+        "message": "Bump marketing version to 2.1\n\nApp Store 2.0 is pinned to build 34 and its release notes describe exactly\nthat build's Trends coaching layer. Builds 35-39 (workout sessions, sprint\nprescriptions, the exercise library redesign, JSON backups) are not in those\nnotes and cannot ship under a version string 2.0 is about to consume.\n\nOpens the 2.1 train for that work. CURRENT_PROJECT_VERSION stays at 39; the\nrelease flow bumps it via `make asc-next-build` at upload time.\n\nThis is a local project setting and does not touch the in-flight 2.0 review.",
+        "author": {
+          "date": "2026-07-14T11:15:15-07:00"
+        },
+        "committer": {
+          "date": "2026-07-14T11:15:15-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 4,
+        "deletions": 4,
+        "total": 8
+      }
+    },
+    {
+      "sha": "b2824f7dbc7c5f137dd15a30fd1cdbbe63fc3d0f",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b2824f7dbc7c5f137dd15a30fd1cdbbe63fc3d0f",
+      "commit": {
+        "message": "Preserve the marble-ad composition source\n\nThe authored HyperFrames composition for the marble.fit ad lived only in the\nworking tree: index.html, frame.md, STORYBOARD.md, AUDIO_PLAN.md, the beat\ngrid, brand SVGs, the music cut, and the contract test. None of it was in git\nanywhere, and nothing referenced it, so a `git clean -fdx` would have erased it.\n\nRender caches (.hyperframes/, .thumbnails/, .waveform-cache/, snapshots/) are\nexcluded as regenerable. Note ~/mach1-prism/marble-ad is a DIFFERENT project\nwith a disjoint file set — it does not back this up.\n\nIsolated in its own commit: `main` has never tracked marketing/, so this is\ntrivially revertable if the composition should live outside the app repo.",
+        "author": {
+          "date": "2026-07-14T11:14:51-07:00"
+        },
+        "committer": {
+          "date": "2026-07-14T11:14:51-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "marketing/marble-ad/AUDIO_PLAN.md",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marketing/marble-ad/STORYBOARD.md",
+          "additions": 59,
+          "deletions": 0,
+          "changes": 59
+        },
+        {
+          "filename": "marketing/marble-ad/assets/logos/apple-health.svg",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "marketing/marble-ad/assets/logos/garmin.svg",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": "marketing/marble-ad/assets/logos/strava.svg",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "marketing/marble-ad/assets/marble-bed.wav",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/music/marble-audio-data.js",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marketing/marble-ad/assets/music/time-flies-marble-cut.m4a",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/screens/addset-dark.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/screens/app-icon.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/screens/calendar-dark.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/screens/journal-dark.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/assets/screens/trends-dark.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marketing/marble-ad/beats/assets/music/time-flies-marble-cut.m4a.json",
+          "additions": 390,
+          "deletions": 0,
+          "changes": 390
+        },
+        {
+          "filename": "marketing/marble-ad/frame.md",
+          "additions": 40,
+          "deletions": 0,
+          "changes": 40
+        },
+        {
+          "filename": "marketing/marble-ad/hyperframes.json",
+          "additions": 7,
+          "deletions": 0,
+          "changes": 7
+        },
+        {
+          "filename": "marketing/marble-ad/index.html",
+          "additions": 827,
+          "deletions": 0,
+          "changes": 827
+        },
+        {
+          "filename": "marketing/marble-ad/package.json",
+          "additions": 13,
+          "deletions": 0,
+          "changes": 13
+        },
+        {
+          "filename": "marketing/marble-ad/scripts/render-to-ssd.mjs",
+          "additions": 93,
+          "deletions": 0,
+          "changes": 93
+        },
+        {
+          "filename": "marketing/marble-ad/tests/composition-contract.test.mjs",
+          "additions": 46,
+          "deletions": 0,
+          "changes": 46
+        }
+      ],
+      "stats": {
+        "additions": 1497,
+        "deletions": 0,
+        "total": 1497
+      }
+    },
+    {
+      "sha": "3a84db78152292ae6a73c327e2567fe4f4acaeb1",
+      "html_url": "https://github.com/enzo-prism/marble/commit/3a84db78152292ae6a73c327e2567fe4f4acaeb1",
+      "commit": {
+        "message": "Ignore scratch dirs and preserve the workflow papercuts log\n\n`marketing/` and `work/` were untracked AND unignored, so any `git add -A`\nwould sweep 8MB of render caches and screenshots into a commit. Ignore the\nregenerable caches and the scratch dir outright.\n\n`work/codex-workflow-papercuts.md` was the one durable thing in there — dated\noperational findings with suggested fixes, existing nowhere else. Promote it\nto WORKFLOW_PAPERCUTS.md alongside AGENTS.md.",
+        "author": {
+          "date": "2026-07-14T11:14:08-07:00"
+        },
+        "committer": {
+          "date": "2026-07-14T11:14:08-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".gitignore",
+          "additions": 13,
+          "deletions": 0,
+          "changes": 13
+        },
+        {
+          "filename": "WORKFLOW_PAPERCUTS.md",
+          "additions": 43,
+          "deletions": 0,
+          "changes": 43
+        }
+      ],
+      "stats": {
+        "additions": 56,
+        "deletions": 0,
+        "total": 56
+      }
+    },
+    {
+      "sha": "4a8a0dbfebcebfe25d325a535be82dc9feeaeb87",
+      "html_url": "https://github.com/enzo-prism/marble/commit/4a8a0dbfebcebfe25d325a535be82dc9feeaeb87",
+      "commit": {
+        "message": "Add populated-store migration test rescued from a stray worktree\n\nSeeds a realistic populated V1 store via TestFixtures, migrates it through\nthe current schema, and asserts every entity count survives with no .corrupt\nsidecar. The existing migration tests use near-empty stores, so nothing\ncovered the shape of store that produced the build-35 launch crash.\n\nRecovered from an uncommitted change in a detached worktree\n(~/work/marble-crash-repro); it existed in no git object and would have been\nlost on `git worktree remove --force`.",
+        "author": {
+          "date": "2026-07-14T11:13:41-07:00"
+        },
+        "committer": {
+          "date": "2026-07-14T11:13:41-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/PersistenceRecoveryTests.swift",
+          "additions": 34,
+          "deletions": 0,
+          "changes": 34
+        }
+      ],
+      "stats": {
+        "additions": 34,
+        "deletions": 0,
+        "total": 34
+      }
+    },
+    {
+      "sha": "120b3b907467cb6f82221c9e0b8b94c8e2da7d76",
+      "html_url": "https://github.com/enzo-prism/marble/commit/120b3b907467cb6f82221c9e0b8b94c8e2da7d76",
+      "commit": {
+        "message": "Polish sprint goal journal rows",
+        "author": {
+          "date": "2026-07-12T22:23:46-07:00"
+        },
+        "committer": {
+          "date": "2026-07-12T22:23:46-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/UI/JournalFlowUITests.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 9,
+          "deletions": 2,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Components/SprintGoalResultView.swift",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        }
+      ],
+      "stats": {
+        "additions": 12,
+        "deletions": 4,
+        "total": 16
+      }
+    },
     {
       "sha": "68d77a7bfa8b1bc334bf78cb9ad2a0f930f5389a",
       "html_url": "https://github.com/enzo-prism/marble/commit/68d77a7bfa8b1bc334bf78cb9ad2a0f930f5389a",
