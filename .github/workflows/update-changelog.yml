@@ -3,7 +3,11 @@ name: Update changelog snapshot
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 9 * * 1"
+    - cron: "17 */6 * * *"
+
+concurrency:
+  group: update-changelog-snapshot
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -28,7 +32,7 @@ jobs:
           node-version: 24
 
       - name: Regenerate changelog snapshot
-        run: MARBLE_APP_REPO=${{ github.workspace }}/app-repo node scripts/generate-changelog-data.js
+        run: MARBLE_APP_REPO=${{ github.workspace }}/app-repo CHANGELOG_REVISION=HEAD CHANGELOG_STRICT=1 node scripts/generate-changelog-data.js
 
       - name: Commit and push if changed
         run: |

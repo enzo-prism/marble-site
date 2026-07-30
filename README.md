@@ -2,7 +2,7 @@
 
 single-page marketing site for the marble fitness app.
 
-**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only (SF-style sans for UI, New York/Georgia serif for the rotating hero quotes and pull statements); no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
+**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only; no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
 
 ## quick start
 
@@ -15,6 +15,7 @@ then open: http://127.0.0.1:5173
 ## scripts
 
 - `pnpm run dev` starts a lightweight local static server
+- `pnpm run validate` checks local links, assets, metadata, structured data, accessibility labels, and required product copy
 
 ## structure
 
@@ -23,7 +24,7 @@ then open: http://127.0.0.1:5173
 - `privacy/` privacy policy for the app and website
 - `styles.css` styles and layout
 - `server.js` tiny static server for local preview
-- `package.json` dev script only
+- `package.json` local preview, validation, and changelog scripts
 
 ## seo / geo
 
@@ -47,6 +48,7 @@ this project is static. deploy with vercel as a static site or any static host.
 
 ## assets
 
-- fully self-hosted: no cloudinary, no google fonts, no external requests (besides vercel analytics).
+- media is fully self-hosted: no Cloudinary or Google Fonts. The changelog makes a lightweight GitHub API freshness check and the site uses Vercel Analytics.
 - current App Store marketing screenshots live in the versioned `images/app-store-2.1/` directory as complete 1320 × 2868 compositions, with responsive 660 × 1434 derivatives in `images/app-store-2.1/660w/`. Render them directly with `.store-shot`; do not place them inside the legacy `.device` frame or theme-swap them.
+- the `images/app-store-2.2/` directory holds approved in-app previews used only inside the clearly labeled “Coming in Marble 2.2” section.
 - legacy raw light/dark captures remain in `images/` for historical reference. They use `<screen>-light.png` / `<screen>-dark.png` pairs and can still be theme-swapped through `data-light` / `data-dark` when used.

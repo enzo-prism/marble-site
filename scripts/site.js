@@ -24,7 +24,22 @@
 
     document.querySelectorAll("img[data-light][data-dark]").forEach((img) => {
       const next = theme === "dark" ? img.dataset.dark : img.dataset.light;
+      const nextSrcset =
+        theme === "dark" ? img.dataset.darkSrcset : img.dataset.lightSrcset;
+      if (nextSrcset) {
+        img.setAttribute("srcset", nextSrcset);
+      } else {
+        img.removeAttribute("srcset");
+      }
       if (img.getAttribute("src") !== next) img.setAttribute("src", next);
+    });
+
+    document.querySelectorAll(".theme-toggle").forEach((button) => {
+      button.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Use light mode" : "Use dark mode"
+      );
+      button.setAttribute("aria-pressed", String(theme === "dark"));
     });
   }
 
@@ -46,27 +61,4 @@
       applyTheme(next);
     });
   });
-
-  const quotes = Array.from(document.querySelectorAll(".quote-stack .quote"));
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  for (let i = quotes.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
-  }
-
-  if (quotes.length > 0) {
-    quotes.forEach((quote) => quote.classList.remove("is-active"));
-    quotes[0].classList.add("is-active");
-  }
-
-  if (quotes.length > 1 && !reducedMotion.matches) {
-    let index = 0;
-
-    setInterval(() => {
-      quotes[index].classList.remove("is-active");
-      index = (index + 1) % quotes.length;
-      quotes[index].classList.add("is-active");
-    }, 8000);
-  }
 })();

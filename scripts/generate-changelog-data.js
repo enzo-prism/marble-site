@@ -7,8 +7,8 @@ const path = require("path");
 // links point at SHAs that actually exist in enzo-prism/marble.
 const OWNER = "enzo-prism";
 const REPO = "marble";
-const BRANCH = process.env.CHANGELOG_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || "main";
-const REVISION = process.env.CHANGELOG_REVISION || process.env.VERCEL_GIT_COMMIT_SHA || "HEAD";
+const BRANCH = process.env.CHANGELOG_BRANCH || "main";
+const REVISION = process.env.CHANGELOG_REVISION || BRANCH;
 const MAX_COMMITS = Number(process.env.CHANGELOG_MAX_COMMITS || 200);
 
 const rootDir = path.join(__dirname, "..");
@@ -18,6 +18,7 @@ const outFile = path.join(rootDir, "changelog", "data.json");
 // repo wins; if none is usable we fall back to the GitHub REST API.
 const APP_REPO_CANDIDATES = [
   process.env.MARBLE_APP_REPO,
+  "/Users/enzo/marble-app",
   "/Users/enzo/Projects/marble",
   path.join(__dirname, "..", "..", "marble"),
 ];
@@ -246,16 +247,29 @@ async function main() {
     commits,
   };
 
+  try {
+    const existing = JSON.parse(fs.readFileSync(outFile, "utf8"));
+    const sameSnapshot =
+      existing?.owner === payload.owner &&
+      existing?.repo === payload.repo &&
+      existing?.branch === payload.branch &&
+      JSON.stringify(existing?.commits) === JSON.stringify(payload.commits);
+    if (sameSnapshot) {
+      process.stdout.write(`Changelog snapshot is already current (${commits.length} commits)\n`);
+      return;
+    }
+  } catch {
+    // Missing or invalid output is replaced below.
+  }
+
   fs.writeFileSync(outFile, `${JSON.stringify(payload, null, 2)}\n`);
   process.stdout.write(`Wrote ${commits.length} commits to ${outFile}\n`);
 }
 
 main().catch((err) => {
-  // Never break the build. Leave the existing changelog/data.json untouched,
-  // warn, and exit cleanly. The snapshot is committed and regenerated manually.
   process.stderr.write(
     `[generate-changelog-data] WARNING: could not regenerate changelog data: ${err && err.message ? err.message : err}\n`
   );
   process.stderr.write(`[generate-changelog-data] Leaving existing ${outFile} untouched.\n`);
-  process.exit(0);
+  process.exit(process.env.CHANGELOG_STRICT === "1" ? 1 : 0);
 });

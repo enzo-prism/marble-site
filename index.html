@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
-    <meta name="keywords" content="workout journal, workout tracker, gym log, lifting tracker, estimated 1RM, personal records, supplement tracker, offline fitness app, iOS workout app, minimal gym app" />
+    <meta name="keywords" content="workout journal, workout tracker, gym log, lifting tracker, typed workout import, sprint stopwatch, estimated 1RM, personal records, bodyweight tracker, supplement tracker, offline fitness app, iOS workout app, minimal gym app" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon%20small.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="Favicon%20large.png" />
     <link rel="apple-touch-icon" sizes="256x256" href="Favicon%20large.png" />
@@ -145,7 +145,7 @@
                 "name": "Does marble work offline?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Everything is stored on your iPhone. No account, no server, no sync to anyone else's cloud."
+                  "text": "Core logging, analysis, and storage work offline on your iPhone. Optional external imports use Apple Health or their connected service."
                 }
               },
               {
@@ -169,7 +169,15 @@
                 "name": "Does marble show ads or sell my data?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No ads, no tracking, no selling. marble is local-only."
+                  "text": "The app has no ads, Marble account, Marble server, or third-party tracking, and Marble does not sell your data. This website uses anonymous, aggregated Vercel Analytics."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is coming in marble 2.2?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Marble 2.2 adds typed workout import, richer iPhone widgets and controls, tenths-precision sprint timing, bodyweight context, and Daily Highlights. Marble 2.1 remains the version currently available on the App Store."
                 }
               }
             ]
@@ -216,6 +224,7 @@
           <span>marble</span>
         </a>
         <nav class="nav-links" aria-label="site">
+          <a href="#marble-2-2" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="marble_2_2">2.2 Preview</a>
           <a href="#features" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="features">Features</a>
           <a href="#screens" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="screens">Screens</a>
           <a href="#faq" data-analytics-event="Section Navigate" data-analytics-location="home_nav" data-analytics-target="faq">FAQ</a>
@@ -252,65 +261,34 @@
     </header>
 
     <main id="top" tabindex="-1">
-      <section class="hero">
-        <div class="container">
-          <img class="hero-icon" src="Favicon%20large.png" alt="marble app icon" width="44" height="44" />
-          <div class="quote-stack" aria-live="off">
-            <blockquote class="quote is-active">
-              <p>&ldquo;The fight is won or lost far away from witnesses.&rdquo;</p>
-              <cite>Muhammad Ali</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;The harder the conflict, the more glorious the triumph.&rdquo;</p>
-              <cite>Thomas Paine</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Fire tries gold, misfortune tries brave men.&rdquo;</p>
-              <cite>Seneca</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Nothing great is produced suddenly.&rdquo;</p>
-              <cite>Epictetus</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;The credit belongs to the man who is actually in the arena.&rdquo;</p>
-              <cite>Theodore Roosevelt</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Never give in.&rdquo;</p>
-              <cite>Winston Churchill</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;To strive, to seek, to find, and not to yield.&rdquo;</p>
-              <cite>Alfred Tennyson</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Stiffen the sinews, summon up the blood.&rdquo;</p>
-              <cite>William Shakespeare</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Courage is resistance to fear, mastery of fear&mdash;not absence of fear.&rdquo;</p>
-              <cite>Mark Twain</cite>
-            </blockquote>
-            <blockquote class="quote">
-              <p>&ldquo;Try again. Fail again. Fail better.&rdquo;</p>
-              <cite>Samuel Beckett</cite>
-            </blockquote>
-          </div>
-          <h1 class="hero-tagline">The minimal workout journal for iPhone.</h1>
-          <div class="hero-cta">
-            <a
-              class="btn"
-              href="https://apps.apple.com/us/app/marble-fit/id6757725234"
-              data-analytics-event="App Store Click"
-              data-analytics-location="home_hero"
-              data-analytics-target="app_store"
-            >
-              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
-              </svg>
-              Download on the App Store
-            </a>
+      <section class="hero hero-product">
+        <div class="container hero-product-grid">
+          <div class="hero-copy">
+            <img class="hero-icon" src="Favicon%20large.png" alt="marble app icon" width="44" height="44" />
+            <p class="release-label">marble 2.1 &middot; available now</p>
+            <h1>The minimal workout journal for iPhone.</h1>
+            <p class="hero-lede">Log fast. Train with focus. Understand your progress, privately and on your device.</p>
+            <div class="hero-actions">
+              <a
+                class="btn"
+                href="https://apps.apple.com/us/app/marble-fit/id6757725234"
+                data-analytics-event="App Store Click"
+                data-analytics-location="home_hero"
+                data-analytics-target="app_store"
+              >
+                <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+                </svg>
+                Download on the App Store
+              </a>
+              <a
+                class="text-link"
+                href="#marble-2-2"
+                data-analytics-event="Section Navigate"
+                data-analytics-location="home_hero"
+                data-analytics-target="marble_2_2"
+              >See what&rsquo;s coming in 2.2 <span aria-hidden="true">&darr;</span></a>
+            </div>
             <span class="fine">Free &middot; Offline &middot; Private</span>
           </div>
           <div class="hero-device">
@@ -319,12 +297,170 @@
               src="images/app-store-2.1/660w/01-journal.png"
               srcset="images/app-store-2.1/660w/01-journal.png 660w, images/app-store-2.1/01-journal.png 1320w"
               sizes="(max-width: 560px) 320px, 420px"
-              alt="Marble workout journal showing sample runs, planks, calf raises, and squats with matching emoji icons"
+              alt="Marble 2.1 workout journal showing sample runs, planks, calf raises, and squats with matching emoji icons"
               width="1320"
               height="2868"
               fetchpriority="high"
             />
           </div>
+        </div>
+      </section>
+
+      <section id="marble-2-2" class="section release-preview">
+        <div class="container">
+          <header class="release-intro">
+            <p class="release-label">Coming in Marble 2.2</p>
+            <h2>Your training, closer at hand.</h2>
+            <p>Type whole workouts, time every sprint, follow strength in context, and reach Marble from more places across iPhone. Still quiet, fast, and private.</p>
+          </header>
+
+          <article class="feature-story feature-story-import">
+            <div class="feature-story-copy">
+              <p class="pillar-kicker">Typed workout import</p>
+              <h3>Paste your workout. Marble logs it.</h3>
+              <p>Type or paste a workout in your own words. Marble reads it on-device, turns it into structured sets, and lets you review every exercise, weight, rep, and rest before anything reaches your journal.</p>
+              <ul class="feature-tags" aria-label="Typed workout import benefits">
+                <li>Nothing uploaded</li>
+                <li>Review before saving</li>
+                <li>Matches your exercise library</li>
+              </ul>
+            </div>
+            <div class="feature-story-media">
+              <div class="import-demo" role="img" aria-label="A typed workout note becoming structured, reviewable sets">
+                <div class="import-demo-panel import-demo-source">
+                  <span class="demo-label">Workout note</span>
+                  <p>Bench 3 × 5 @ 185 lb<br />Pull ups 3 × 8<br />rest 90s</p>
+                </div>
+                <span class="import-demo-arrow" aria-hidden="true">&rarr;</span>
+                <div class="import-demo-panel import-demo-result">
+                  <span class="demo-label">Ready to review</span>
+                  <div class="import-set-row"><strong>Bench Press</strong><span>3 sets &middot; 185 lb × 5</span></div>
+                  <div class="import-set-row"><strong>Pull Ups</strong><span>3 sets &middot; 8 reps</span></div>
+                  <div class="import-demo-footer"><span>Rest 1m 30s</span><span class="demo-status">On-device</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story">
+            <div class="feature-story-copy">
+              <p class="pillar-kicker">Native iPhone surfaces</p>
+              <h3>Your workout, one glance away.</h3>
+              <p>See your weekly goal on the Home Screen or Lock Screen. Open quick logging from Control Center, the Lock Screen, or the Action button. Rest stays visible in the Dynamic Island, with controls to add 30 seconds or end early.</p>
+              <ul class="feature-tags" aria-label="iPhone integrations">
+                <li>Widgets</li>
+                <li>Siri and Shortcuts</li>
+                <li>Control Center</li>
+                <li>Live Activities</li>
+              </ul>
+            </div>
+            <div class="feature-story-media">
+              <div class="surfaces-demo" role="img" aria-label="Marble weekly goal widget, rest timer, and quick log controls">
+                <img
+                  class="widget-preview"
+                  src="images/app-store-2.2/weekly-goal-widget.png"
+                  alt="Marble weekly goal widget showing training progress and streak"
+                  width="1092"
+                  height="510"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="live-activity-preview">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <strong>Rest</strong>
+                  <span>1:18</span>
+                  <span class="live-action">+30</span>
+                  <span class="live-action">End</span>
+                </div>
+                <div class="quick-control-preview">
+                  <span class="quick-control-icon" aria-hidden="true">＋</span>
+                  <span><strong>Log a set</strong><small>Control Center</small></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story">
+            <div class="feature-story-copy">
+              <p class="pillar-kicker">Sprint training</p>
+              <h3>Sprints, measured to the tenth.</h3>
+              <p>Build reusable sprint plans with exact distances, repetitions, and target times. Enter decimal seconds or use the built-in stopwatch, then see every rep, goal hit, best time, and average in one clear finish.</p>
+              <ul class="feature-tags" aria-label="Sprint training features">
+                <li>Tenths precision</li>
+                <li>Multiple plans</li>
+                <li>Sprint PRs</li>
+                <li>Progress trends</li>
+              </ul>
+            </div>
+            <div class="feature-story-media">
+              <div class="sprint-demo" role="img" aria-label="A four-rep 100 meter sprint session with tenths timing and results">
+                <div class="sprint-demo-head">
+                  <span><strong>100 m speed</strong><small>4 reps &middot; target 12.2–12.6s</small></span>
+                  <span class="stopwatch-readout">12.4</span>
+                </div>
+                <ol class="sprint-reps">
+                  <li><span>Rep 1</span><strong>12.5s</strong><em>Hit</em></li>
+                  <li><span>Rep 2</span><strong>12.2s</strong><em>PR</em></li>
+                  <li><span>Rep 3</span><strong>12.4s</strong><em>Hit</em></li>
+                  <li><span>Rep 4</span><strong>12.8s</strong><em class="miss">Over</em></li>
+                </ol>
+                <div class="sprint-summary"><span><small>Best</small><strong>12.2s</strong></span><span><small>Average</small><strong>12.5s</strong></span><span><small>Goal hits</small><strong>3 / 4</strong></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story">
+            <div class="feature-story-copy">
+              <p class="pillar-kicker">Body and relative strength</p>
+              <h3>Strength, in context.</h3>
+              <p>Log bodyweight manually or bring it in through Apple Health. Follow the trend over time, then see each lift&rsquo;s estimated strength scaled against a nearby weigh-in with a per-lift DOTS score.</p>
+              <ul class="feature-tags" aria-label="Body and strength features">
+                <li>Bodyweight trends</li>
+                <li>Apple Health import</li>
+                <li>Per-lift relative strength</li>
+              </ul>
+            </div>
+            <div class="feature-story-media">
+              <div class="body-demo" role="img" aria-label="Bodyweight trend and relative strength metrics">
+                <div class="body-demo-head"><span><small>Bodyweight</small><strong>181.4 lb</strong></span><span class="body-delta">−2.6 lb this month</span></div>
+                <svg class="body-chart" viewBox="0 0 520 180" role="presentation" aria-hidden="true">
+                  <path class="body-chart-grid" d="M18 32H502M18 90H502M18 148H502" />
+                  <path class="body-chart-line" d="M20 46 C72 42, 92 70, 140 66 S218 92, 260 86 S336 112, 382 104 S452 132, 500 122" />
+                  <circle cx="500" cy="122" r="6" />
+                </svg>
+                <div class="body-metrics"><span><small>Bench e1RM</small><strong>247 lb</strong></span><span><small>DOTS</small><strong>72.6</strong></span><span><small>Trend</small><strong>Progressing</strong></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story">
+            <div class="feature-story-copy">
+              <p class="pillar-kicker">Daily Highlights</p>
+              <h3>End the day with what moved.</h3>
+              <p>In the evening, Daily Highlights turns that day&rsquo;s training into a quiet recap. It surfaces truthful wins, including real records, faster runs, meaningful lift progress, or simply the work completed. Choose when it appears. Everything stays on your device.</p>
+              <ul class="feature-tags" aria-label="Daily Highlights features">
+                <li>Custom evening window</li>
+                <li>No false PRs</li>
+                <li>Private by design</li>
+              </ul>
+            </div>
+            <div class="feature-story-media">
+              <img
+                class="store-shot daily-highlights-shot"
+                src="images/app-store-2.2/660w/daily-highlights-light.png"
+                data-light="images/app-store-2.2/660w/daily-highlights-light.png"
+                data-dark="images/app-store-2.2/660w/daily-highlights-dark.png"
+                sizes="(max-width: 860px) 360px, 420px"
+                alt="Marble Daily Highlights showing a new Bench Press weight best, sets, exercises, volume, and a quiet quote"
+                width="660"
+                height="1431"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <p class="release-note"><strong>Marble 2.1 is available now.</strong> Marble 2.2 is coming soon.</p>
         </div>
       </section>
 
@@ -477,7 +613,7 @@
           <div class="detail-grid">
             <div class="detail">
               <h3>Apple Health</h3>
-              <p>Imports Apple Watch and Garmin workouts automatically.</p>
+              <p>Optionally imports Apple Watch and Garmin workouts through Health.</p>
             </div>
             <div class="detail">
               <h3>Training Load</h3>
@@ -513,8 +649,8 @@
 
       <section class="section privacy">
         <div class="container">
-          <p>No accounts. No ads. No tracking. Every set you log lives on your iPhone — and nowhere else.</p>
-          <span class="fine">Fully offline &middot; On-device analysis &middot; Nothing to sign up for</span>
+          <p>No Marble account, ads, server, or third-party tracking. Your core training data stays on your device.</p>
+          <span class="fine">Offline core &middot; On-device analysis &middot; Nothing to sign up for</span>
         </div>
       </section>
 
@@ -530,7 +666,7 @@
             </details>
             <details class="faq-item">
               <summary>Does marble work offline?</summary>
-              <p>Yes. Everything is stored on your iPhone. No account, no server, no sync to anyone else&rsquo;s cloud.</p>
+              <p>Core logging, analysis, and storage work offline on your iPhone. Optional external imports use Apple Health or their connected service.</p>
             </details>
             <details class="faq-item">
               <summary>Where does the coaching come from?</summary>
@@ -542,7 +678,11 @@
             </details>
             <details class="faq-item">
               <summary>Does marble show ads or sell my data?</summary>
-              <p>No ads, no tracking, no selling. marble is local-only.</p>
+              <p>The app has no ads, Marble account, Marble server, or third-party tracking, and Marble does not sell your data. This website uses anonymous, aggregated Vercel Analytics.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What is coming in marble 2.2?</summary>
+              <p>Marble 2.2 adds typed workout import, richer iPhone widgets and controls, tenths-precision sprint timing, bodyweight context, and Daily Highlights. Marble 2.1 remains the version currently available on the App Store.</p>
             </details>
           </div>
         </div>
@@ -576,6 +716,7 @@
         <div class="footer-links">
           <a href="/privacy/">Privacy</a>
           <a href="/changelog/" data-analytics-event="Changelog Click" data-analytics-location="home_footer" data-analytics-target="changelog">Changelog</a>
+          <a href="https://github.com/enzo-prism/marble/issues">Support</a>
           <a href="https://apps.apple.com/us/app/marble-fit/id6757725234" data-analytics-event="App Store Click" data-analytics-location="home_footer" data-analytics-target="app_store">App Store</a>
         </div>
       </div>

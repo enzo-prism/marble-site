@@ -9,8 +9,8 @@ marble logs sets, supplements, streaks, and trends — and turns your own number
 - Name: marble (App Store name: marble.fit)
 - Platform: iPhone
 - Price: Free (no subscription, no unlocks)
-- Privacy: on-device, no account, no ads, no tracking
-- Offline: yes (local-only storage; analysis computed on-device)
+- Privacy: core training data stays on-device; no Marble account, ads, server, or third-party tracking
+- Offline: core logging, storage, and analysis work offline; optional external imports use Apple Health or their connected service
 - Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
 
@@ -31,19 +31,30 @@ marble logs sets, supplements, streaks, and trends — and turns your own number
 - Local reminders that cancel themselves once you've trained
 - Light and dark mode
 
+## Coming in marble 2.2
+
+- Typed or pasted workout import with an on-device review step
+- Weekly-goal widgets, Control Center and Lock Screen controls, richer rest Live Activities
+- Reusable sprint plans with tenths-precision timing and a built-in stopwatch
+- Bodyweight trends with optional Apple Health import and per-lift relative-strength context
+- Private Daily Highlights with truthful end-of-day training recaps
+
+marble 2.1 is the version currently available on the App Store. marble 2.2 is coming soon.
+
 ## Links
 
 - [Home](https://marble-fit.app/)
 - [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
 - [Changelog](https://marble-fit.app/changelog/)
 - [GitHub](https://github.com/enzo-prism/marble)
-- [Privacy](https://enzo-prism.github.io/marble/privacy)
+- [Privacy](https://marble-fit.app/privacy/)
+- [Support](https://github.com/enzo-prism/marble/issues)
 
 ## Frequently asked questions
 
 - Is marble free? Yes — every feature, nothing to unlock.
-- Does it work offline? Yes — everything is stored on the iPhone.
+- Does it work offline? Core logging, storage, and analysis do. Optional external imports use Apple Health or their connected service.
 - Is an account required? No.
 - Which devices? iPhone (Apple Watch and Garmin workouts import via Apple Health).
-- Ads or tracking? No ads, no tracking, no selling.
+- Ads or tracking? The app has no ads or third-party tracking and does not sell data. The website uses anonymous, aggregated Vercel Analytics.
 - Where does the coaching come from? The user's own logged sets, computed on-device.

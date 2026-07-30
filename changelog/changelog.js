@@ -14,9 +14,11 @@
   const MAX_COMMITS = 500;
   const INITIAL_DETAIL_LOAD_COUNT = 3;
 
-  // Keep the list pretty fresh so the page feels "latest", while still limiting requests.
-  const COMMIT_LIST_TTL_MS = 10 * 60 * 1000; // 10 minutes
+  // One small head request normally proves the bundled snapshot is current.
+  const HEAD_CHECK_TTL_MS = 15 * 60 * 1000; // 15 minutes
+  const COMMIT_LIST_TTL_MS = 15 * 60 * 1000; // 15 minutes
   const COMMIT_DETAIL_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+  const API_REQUEST_TIMEOUT_MS = 8 * 1000;
 
   const CONCURRENCY = 4;
 
@@ -134,7 +136,14 @@
     };
     if (cached && cached.etag) headers["If-None-Match"] = cached.etag;
 
-    const res = await fetch(url, { headers });
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), API_REQUEST_TIMEOUT_MS);
+    let res;
+    try {
+      res = await fetch(url, { headers, signal: controller.signal });
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
 
     if (res.status === 304 && cached && cached.data !== undefined) {
       writeCache(cacheKey, { ...cached, ts: now });
@@ -186,6 +195,17 @@
     } catch {
       return null;
     }
+  }
+
+  async function fetchCurrentHead() {
+    const url = `${GITHUB_API_BASE}/commits?sha=${encodeURIComponent(BRANCH)}&per_page=1`;
+    const cacheKey = `marble:changelog:head:${OWNER}/${REPO}:${BRANCH}`;
+    const { data } = await fetchJsonCached({ url, cacheKey, ttlMs: HEAD_CHECK_TTL_MS });
+    const head = Array.isArray(data) ? data[0] : null;
+    if (!head || typeof head.sha !== "string") {
+      throw new Error("GitHub returned no current commit.");
+    }
+    return head;
   }
 
   function findOverride(overrides, sha) {
@@ -477,20 +497,44 @@
     return wrap;
   }
 
+  async function fetchCommitPage(page, revision = BRANCH) {
+    const url = `${GITHUB_API_BASE}/commits?sha=${encodeURIComponent(revision)}&per_page=${PER_PAGE}&page=${page}`;
+    const cacheKey = `marble:changelog:commits:${OWNER}/${REPO}:${revision}:page:${page}`;
+    const { data } = await fetchJsonCached({ url, cacheKey, ttlMs: COMMIT_LIST_TTL_MS });
+    return Array.isArray(data) ? data : [];
+  }
+
   async function fetchAllCommits() {
     const commits = [];
     const maxPages = Math.ceil(MAX_COMMITS / PER_PAGE);
 
     for (let page = 1; page <= maxPages; page++) {
-      const url = `${GITHUB_API_BASE}/commits?sha=${encodeURIComponent(BRANCH)}&per_page=${PER_PAGE}&page=${page}`;
-      const cacheKey = `marble:changelog:commits:${OWNER}/${REPO}:${BRANCH}:page:${page}`;
-      const { data } = await fetchJsonCached({ url, cacheKey, ttlMs: COMMIT_LIST_TTL_MS });
-      if (!Array.isArray(data)) break;
-      commits.push(...data);
-      if (data.length < PER_PAGE) break;
+      const batch = await fetchCommitPage(page);
+      commits.push(...batch);
+      if (batch.length < PER_PAGE) break;
     }
 
     return commits.slice(0, MAX_COMMITS);
+  }
+
+  async function fetchNewerCommits(bundledHeadSha, currentHeadSha) {
+    const newer = [];
+    const maxPages = Math.ceil(MAX_COMMITS / PER_PAGE);
+
+    for (let page = 1; page <= maxPages; page++) {
+      const batch = await fetchCommitPage(page, currentHeadSha);
+      const bundledHeadIndex = batch.findIndex((commit) => commit?.sha === bundledHeadSha);
+
+      if (bundledHeadIndex >= 0) {
+        newer.push(...batch.slice(0, bundledHeadIndex));
+        return { newer, foundBundledHead: true };
+      }
+
+      newer.push(...batch);
+      if (batch.length < PER_PAGE) break;
+    }
+
+    return { newer: newer.slice(0, MAX_COMMITS), foundBundledHead: false };
   }
 
   async function fetchCommitDetail(sha) {
@@ -627,9 +671,21 @@
     }
   }
 
-  function renderCommits(commits, overrides, { hydrateDetail, preloadOpenDetails }) {
+  async function hydrateAvailableCommitDetail(commit, refs, overrides) {
+    if (Array.isArray(commit?.files)) {
+      hydrateBundledCommitDetail(commit, refs, overrides);
+      return;
+    }
+    await hydrateCommitDetail(commit, refs, overrides);
+  }
+
+  function renderCommits(
+    commits,
+    overrides,
+    { hydrateDetail, preloadOpenDetails, lastUpdatedLabel = "latest commit" }
+  ) {
     const latestIso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
-    setLastUpdated(latestIso ? `latest commit: ${formatDate(latestIso)}` : "latest commit loaded");
+    setLastUpdated(latestIso ? `${lastUpdatedLabel}: ${formatDate(latestIso)}` : lastUpdatedLabel);
 
     const refBySha = new Map();
     const initialCommits = [];
@@ -682,6 +738,48 @@
     const bundledCommits = await fetchBundledCommits();
 
     if (bundledCommits && bundledCommits.length) {
+      try {
+        const currentHead = await fetchCurrentHead();
+
+        if (currentHead.sha === bundledCommits[0].sha) {
+          renderCommits(bundledCommits, overrides, {
+            hydrateDetail: hydrateBundledCommitDetail,
+            preloadOpenDetails(initialCommits, refBySha) {
+              for (const commit of initialCommits) {
+                hydrateBundledCommitDetail(commit, refBySha.get(commit.sha), overrides);
+              }
+            },
+          });
+          return;
+        }
+
+        const { newer, foundBundledHead } = await fetchNewerCommits(
+          bundledCommits[0].sha,
+          currentHead.sha
+        );
+        const commits = foundBundledHead
+          ? [...newer, ...bundledCommits].slice(0, MAX_COMMITS)
+          : newer;
+
+        if (commits.length) {
+          renderCommits(commits, overrides, {
+            hydrateDetail: hydrateAvailableCommitDetail,
+            async preloadOpenDetails(initialCommits, refBySha) {
+              await runLimited(
+                initialCommits,
+                Math.min(CONCURRENCY, INITIAL_DETAIL_LOAD_COUNT),
+                async (commit) => {
+                  await hydrateAvailableCommitDetail(commit, refBySha.get(commit.sha), overrides);
+                }
+              );
+            },
+          });
+          return;
+        }
+      } catch {
+        // The committed snapshot remains usable when GitHub is unavailable.
+      }
+
       renderCommits(bundledCommits, overrides, {
         hydrateDetail: hydrateBundledCommitDetail,
         preloadOpenDetails(initialCommits, refBySha) {
@@ -689,6 +787,7 @@
             hydrateBundledCommitDetail(commit, refBySha.get(commit.sha), overrides);
           }
         },
+        lastUpdatedLabel: "saved snapshot (live check unavailable)",
       });
       return;
     }
