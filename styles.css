@@ -517,7 +517,7 @@ img {
 
 .feature-story {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: clamp(40px, 8vw, 104px);
   padding: clamp(56px, 8vw, 92px) 0;
@@ -565,6 +565,12 @@ img {
   display: flex;
   min-width: 0;
   justify-content: center;
+}
+
+.feature-product-shot {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 32px;
 }
 
 .import-demo,
@@ -872,6 +878,65 @@ img {
 .daily-highlights-shot {
   width: 100%;
   max-width: 420px;
+}
+
+.release-screens {
+  padding: clamp(56px, 8vw, 92px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.release-screens-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+.release-screens-header h3 {
+  margin-top: 8px;
+  font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+  letter-spacing: -0.04em;
+}
+
+.release-screens-header > p {
+  max-width: 45ch;
+  color: var(--muted);
+}
+
+.release-screens-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(210px, 248px);
+  gap: clamp(16px, 2.5vw, 28px);
+  padding: 6px 6px 18px;
+  margin: 0 -6px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+}
+
+.release-screens-strip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.release-screen-item {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.release-screen-item .store-shot {
+  border-radius: 28px;
+}
+
+.release-screen-item figcaption {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
 }
 
 .release-note {
@@ -1738,6 +1803,25 @@ a.chip::after {
 
   .daily-highlights-shot {
     max-width: 340px;
+  }
+
+  .feature-product-shot {
+    max-width: 340px;
+  }
+
+  .release-screens {
+    padding: 42px 0;
+  }
+
+  .release-screens-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .release-screens-strip {
+    grid-auto-columns: 218px;
   }
 
   .section {
