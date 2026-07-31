@@ -1,10 +1,166 @@
 {
-  "generatedAt": "2026-07-30T15:42:53.993Z",
+  "generatedAt": "2026-07-31T19:52:36.075Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 150,
+  "commitCount": 153,
   "commits": [
+    {
+      "sha": "fce923187a2828ff8ac5aa0c39157beaf41ae072",
+      "html_url": "https://github.com/enzo-prism/marble/commit/fce923187a2828ff8ac5aa0c39157beaf41ae072",
+      "commit": {
+        "message": "Record 2.2 (build 54) VALID on TestFlight\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-30T12:54:57-07:00"
+        },
+        "committer": {
+          "date": "2026-07-30T12:54:57-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 10,
+          "deletions": 2,
+          "changes": 12
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 15,
+        "deletions": 7,
+        "total": 22
+      }
+    },
+    {
+      "sha": "bd6318a0dc9b55c74d9bb62bac8803aa24fc283e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/bd6318a0dc9b55c74d9bb62bac8803aa24fc283e",
+      "commit": {
+        "message": "Refresh README current state: timing + notation waves, shipped-build markers\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-30T12:39:07-07:00"
+        },
+        "committer": {
+          "date": "2026-07-30T12:39:07-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 17,
+          "deletions": 4,
+          "changes": 21
+        }
+      ],
+      "stats": {
+        "additions": 17,
+        "deletions": 4,
+        "total": 21
+      }
+    },
+    {
+      "sha": "18e599a0b66af644cb5f21b947972fcfe4f36193",
+      "html_url": "https://github.com/enzo-prism/marble/commit/18e599a0b66af644cb5f21b947972fcfe4f36193",
+      "commit": {
+        "message": "Import review timing: date & time control, per-set overrides, discard protection\n\nBoth import review screens (Scan + Typed Workout) gain a shared\nImportDateSection (compact date picker capped at now, progressive \"Include\nTime\" toggle) and per-set date & time overrides via ParsedSetDraft.performedAt\n(context menu + leading swipe activate an indented override sub-row; explicit\ntrailing Delete re-added since .swipeActions suppresses onDelete's). The\nimporter stamps each SetEntry with set.performedAt ?? workoutDate and the\nImportedWorkout ledger date is the earliest effective set date. addSet\ntemplates copy the override; dead removeExercises(at:) dropped. Both sheets\nget HIG dismissal protection (interactiveDismissDisabled + \"Discard this\nimport?\" dialog). No schema change (still V6).\n\nGates: typecheck clean, 648 unit tests green (1 skipped), make audit green.\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>",
+        "author": {
+          "date": "2026-07-30T12:07:30-07:00"
+        },
+        "committer": {
+          "date": "2026-07-30T12:07:30-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 24,
+          "deletions": 0,
+          "changes": 24
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 12,
+          "deletions": 1,
+          "changes": 13
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTimingTests.swift",
+          "additions": 83,
+          "deletions": 0,
+          "changes": 83
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanViewModelTests.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Import/Scan/ImportTimingViews.swift",
+          "additions": 200,
+          "deletions": 0,
+          "changes": 200
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanDraft.swift",
+          "additions": 7,
+          "deletions": 1,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 9,
+          "deletions": 2,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanView.swift",
+          "additions": 45,
+          "deletions": 11,
+          "changes": 56
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanViewModel.swift",
+          "additions": 2,
+          "deletions": 5,
+          "changes": 7
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 56,
+          "deletions": 12,
+          "changes": 68
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        }
+      ],
+      "stats": {
+        "additions": 447,
+        "deletions": 33,
+        "total": 480
+      }
+    },
     {
       "sha": "1656e6dd812c2733bb9ec839ae3be6c6f20c9058",
       "html_url": "https://github.com/enzo-prism/marble/commit/1656e6dd812c2733bb9ec839ae3be6c6f20c9058",
@@ -582,9 +738,9 @@
         },
         {
           "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 299,
-          "deletions": 45,
-          "changes": 344
+          "additions": 300,
+          "deletions": 46,
+          "changes": 346
         },
         {
           "filename": "marble/Features/Journal/ExerciseEditorDraft.swift",
@@ -732,9 +888,9 @@
         }
       ],
       "stats": {
-        "additions": 3691,
-        "deletions": 358,
-        "total": 4049
+        "additions": 3692,
+        "deletions": 359,
+        "total": 4051
       }
     },
     {
@@ -868,9 +1024,9 @@
       "files": [
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 48,
-          "deletions": 12,
-          "changes": 60
+          "additions": 49,
+          "deletions": 13,
+          "changes": 62
         },
         {
           "filename": "ROADMAP.md",
@@ -886,9 +1042,9 @@
         }
       ],
       "stats": {
-        "additions": 52,
-        "deletions": 12,
-        "total": 64
+        "additions": 53,
+        "deletions": 13,
+        "total": 66
       }
     },
     {
@@ -930,9 +1086,9 @@
         },
         {
           "filename": "ROADMAP.md",
-          "additions": 72,
-          "deletions": 35,
-          "changes": 107
+          "additions": 73,
+          "deletions": 36,
+          "changes": 109
         },
         {
           "filename": "TESTING.md",
@@ -2316,9 +2472,9 @@
         }
       ],
       "stats": {
-        "additions": 2199,
-        "deletions": 485,
-        "total": 2684
+        "additions": 2200,
+        "deletions": 486,
+        "total": 2686
       }
     },
     {
@@ -2360,9 +2516,9 @@
         },
         {
           "filename": "ROADMAP.md",
-          "additions": 72,
-          "deletions": 35,
-          "changes": 107
+          "additions": 73,
+          "deletions": 36,
+          "changes": 109
         },
         {
           "filename": "TESTING.md",
@@ -3746,9 +3902,9 @@
         }
       ],
       "stats": {
-        "additions": 2199,
-        "deletions": 485,
-        "total": 2684
+        "additions": 2200,
+        "deletions": 486,
+        "total": 2686
       }
     },
     {
@@ -4532,9 +4688,9 @@
         },
         {
           "filename": "marble/Models/SprintGoalSnapshot.swift",
-          "additions": 51,
-          "deletions": 18,
-          "changes": 69
+          "additions": 50,
+          "deletions": 17,
+          "changes": 67
         },
         {
           "filename": "marble/Models/SprintPrescription.swift",
@@ -4574,9 +4730,9 @@
         }
       ],
       "stats": {
-        "additions": 3089,
-        "deletions": 208,
-        "total": 3297
+        "additions": 3088,
+        "deletions": 207,
+        "total": 3295
       }
     },
     {
@@ -4780,9 +4936,9 @@
         },
         {
           "filename": "marble/Models/SprintGoalSnapshot.swift",
-          "additions": 51,
-          "deletions": 18,
-          "changes": 69
+          "additions": 50,
+          "deletions": 17,
+          "changes": 67
         },
         {
           "filename": "marble/Models/SprintPrescription.swift",
@@ -4816,9 +4972,9 @@
         }
       ],
       "stats": {
-        "additions": 1678,
-        "deletions": 140,
-        "total": 1818
+        "additions": 1677,
+        "deletions": 139,
+        "total": 1816
       }
     },
     {
@@ -6314,9 +6470,9 @@
         },
         {
           "filename": "README.md",
-          "additions": 45,
-          "deletions": 42,
-          "changes": 87
+          "additions": 46,
+          "deletions": 43,
+          "changes": 89
         },
         {
           "filename": "RELEASE_HANDOFF.md",
@@ -6440,9 +6596,9 @@
         }
       ],
       "stats": {
-        "additions": 1188,
-        "deletions": 298,
-        "total": 1486
+        "additions": 1189,
+        "deletions": 299,
+        "total": 1488
       }
     },
     {
@@ -6584,9 +6740,9 @@
         },
         {
           "filename": "Tests/Unit/WeeklyGoalWidgetStateTests.swift",
-          "additions": 51,
-          "deletions": 31,
-          "changes": 82
+          "additions": 50,
+          "deletions": 30,
+          "changes": 80
         },
         {
           "filename": "marble.entitlements",
@@ -6638,9 +6794,9 @@
         }
       ],
       "stats": {
-        "additions": 511,
-        "deletions": 189,
-        "total": 700
+        "additions": 510,
+        "deletions": 188,
+        "total": 698
       }
     },
     {
@@ -6722,9 +6878,9 @@
         },
         {
           "filename": "README.md",
-          "additions": 21,
-          "deletions": 1,
-          "changes": 22
+          "additions": 22,
+          "deletions": 2,
+          "changes": 24
         },
         {
           "filename": "RELEASE_HANDOFF.md",
@@ -6746,9 +6902,9 @@
         }
       ],
       "stats": {
-        "additions": 137,
-        "deletions": 3,
-        "total": 140
+        "additions": 138,
+        "deletions": 4,
+        "total": 142
       }
     },
     {
@@ -7378,9 +7534,9 @@
       "files": [
         {
           "filename": "README.md",
-          "additions": 15,
-          "deletions": 4,
-          "changes": 19
+          "additions": 16,
+          "deletions": 5,
+          "changes": 21
         },
         {
           "filename": "RELEASE_HANDOFF.md",
@@ -7396,9 +7552,9 @@
         }
       ],
       "stats": {
-        "additions": 61,
-        "deletions": 26,
-        "total": 87
+        "additions": 62,
+        "deletions": 27,
+        "total": 89
       }
     },
     {
@@ -7960,9 +8116,9 @@
         },
         {
           "filename": "marble/Features/Journal/ExerciseEditorView.swift",
-          "additions": 604,
-          "deletions": 892,
-          "changes": 1496
+          "additions": 550,
+          "deletions": 838,
+          "changes": 1388
         },
         {
           "filename": "marble/Features/Journal/ExerciseLibraryPresentation.swift",
@@ -7972,15 +8128,15 @@
         },
         {
           "filename": "marble/Features/Journal/ExercisePickerView.swift",
-          "additions": 125,
-          "deletions": 154,
-          "changes": 279
+          "additions": 123,
+          "deletions": 152,
+          "changes": 275
         },
         {
           "filename": "marble/Features/Journal/ManageExercisesView.swift",
-          "additions": 161,
-          "deletions": 129,
-          "changes": 290
+          "additions": 158,
+          "deletions": 126,
+          "changes": 284
         },
         {
           "filename": "marble/Features/Journal/SprintPrescriptionEditorView.swift",
@@ -7996,9 +8152,9 @@
         }
       ],
       "stats": {
-        "additions": 1654,
-        "deletions": 1230,
-        "total": 2884
+        "additions": 1595,
+        "deletions": 1171,
+        "total": 2766
       }
     },
     {
@@ -8230,9 +8386,9 @@
         },
         {
           "filename": "README.md",
-          "additions": 10,
-          "deletions": 8,
-          "changes": 18
+          "additions": 11,
+          "deletions": 9,
+          "changes": 20
         },
         {
           "filename": "RELEASE_HANDOFF.md",
@@ -8242,9 +8398,9 @@
         }
       ],
       "stats": {
-        "additions": 41,
-        "deletions": 35,
-        "total": 76
+        "additions": 42,
+        "deletions": 36,
+        "total": 78
       }
     },
     {
@@ -8330,9 +8486,9 @@
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 25,
-          "deletions": 53,
-          "changes": 78
+          "additions": 26,
+          "deletions": 54,
+          "changes": 80
         },
         {
           "filename": "TESTING.md",
@@ -8504,9 +8660,9 @@
         }
       ],
       "stats": {
-        "additions": 1810,
-        "deletions": 185,
-        "total": 1995
+        "additions": 1811,
+        "deletions": 186,
+        "total": 1997
       }
     },
     {
@@ -8956,15 +9112,15 @@
       "files": [
         {
           "filename": "README.md",
-          "additions": 10,
-          "deletions": 1,
-          "changes": 11
+          "additions": 11,
+          "deletions": 2,
+          "changes": 13
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 17,
-          "deletions": 5,
-          "changes": 22
+          "additions": 18,
+          "deletions": 6,
+          "changes": 24
         },
         {
           "filename": "Tests/Unit/DerivationPerformanceTests.swift",
@@ -9040,9 +9196,9 @@
         }
       ],
       "stats": {
-        "additions": 362,
-        "deletions": 34,
-        "total": 396
+        "additions": 364,
+        "deletions": 36,
+        "total": 400
       }
     },
     {
@@ -9060,15 +9216,15 @@
       "files": [
         {
           "filename": "README.md",
-          "additions": 10,
-          "deletions": 1,
-          "changes": 11
+          "additions": 11,
+          "deletions": 2,
+          "changes": 13
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 17,
-          "deletions": 5,
-          "changes": 22
+          "additions": 18,
+          "deletions": 6,
+          "changes": 24
         },
         {
           "filename": "Tests/Unit/DerivationPerformanceTests.swift",
@@ -9144,9 +9300,9 @@
         }
       ],
       "stats": {
-        "additions": 362,
-        "deletions": 34,
-        "total": 396
+        "additions": 364,
+        "deletions": 36,
+        "total": 400
       }
     },
     {
@@ -9262,9 +9418,9 @@
         },
         {
           "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
-          "additions": 210,
-          "deletions": 63,
-          "changes": 273
+          "additions": 209,
+          "deletions": 62,
+          "changes": 271
         },
         {
           "filename": "marble/Features/Import/ImportView.swift",
@@ -9328,9 +9484,9 @@
         }
       ],
       "stats": {
-        "additions": 1550,
-        "deletions": 162,
-        "total": 1712
+        "additions": 1549,
+        "deletions": 161,
+        "total": 1710
       }
     },
     {
@@ -9420,9 +9576,9 @@
         },
         {
           "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
-          "additions": 210,
-          "deletions": 63,
-          "changes": 273
+          "additions": 209,
+          "deletions": 62,
+          "changes": 271
         },
         {
           "filename": "marble/Features/Import/ImportView.swift",
@@ -9486,9 +9642,9 @@
         }
       ],
       "stats": {
-        "additions": 1550,
-        "deletions": 162,
-        "total": 1712
+        "additions": 1549,
+        "deletions": 161,
+        "total": 1710
       }
     },
     {
@@ -9512,9 +9668,9 @@
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 23,
-          "deletions": 6,
-          "changes": 29
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
         },
         {
           "filename": "TESTING.md",
@@ -9608,9 +9764,9 @@
         }
       ],
       "stats": {
-        "additions": 361,
-        "deletions": 45,
-        "total": 406
+        "additions": 362,
+        "deletions": 46,
+        "total": 408
       }
     },
     {
@@ -9634,9 +9790,9 @@
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 23,
-          "deletions": 6,
-          "changes": 29
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
         },
         {
           "filename": "TESTING.md",
@@ -9730,9 +9886,9 @@
         }
       ],
       "stats": {
-        "additions": 361,
-        "deletions": 45,
-        "total": 406
+        "additions": 362,
+        "deletions": 46,
+        "total": 408
       }
     },
     {
@@ -9838,9 +9994,9 @@
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 27,
-          "deletions": 30,
-          "changes": 57
+          "additions": 28,
+          "deletions": 31,
+          "changes": 59
         },
         {
           "filename": "TESTING.md",
@@ -9922,9 +10078,9 @@
         }
       ],
       "stats": {
-        "additions": 956,
-        "deletions": 68,
-        "total": 1024
+        "additions": 957,
+        "deletions": 69,
+        "total": 1026
       }
     },
     {
@@ -10380,9 +10536,9 @@
         },
         {
           "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 59,
-          "deletions": 31,
-          "changes": 90
+          "additions": 56,
+          "deletions": 28,
+          "changes": 84
         },
         {
           "filename": "marble/Features/Import/ImportView.swift",
@@ -10434,9 +10590,9 @@
         }
       ],
       "stats": {
-        "additions": 473,
-        "deletions": 159,
-        "total": 632
+        "additions": 470,
+        "deletions": 156,
+        "total": 626
       }
     },
     {
@@ -10636,9 +10792,9 @@
         },
         {
           "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 59,
-          "deletions": 31,
-          "changes": 90
+          "additions": 56,
+          "deletions": 28,
+          "changes": 84
         },
         {
           "filename": "marble/Features/Import/ImportView.swift",
@@ -10690,9 +10846,9 @@
         }
       ],
       "stats": {
-        "additions": 473,
-        "deletions": 159,
-        "total": 632
+        "additions": 470,
+        "deletions": 156,
+        "total": 626
       }
     },
     {
@@ -10974,15 +11130,15 @@
         },
         {
           "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 134,
-          "deletions": 44,
-          "changes": 178
+          "additions": 128,
+          "deletions": 38,
+          "changes": 166
         }
       ],
       "stats": {
-        "additions": 207,
-        "deletions": 99,
-        "total": 306
+        "additions": 201,
+        "deletions": 93,
+        "total": 294
       }
     },
     {
@@ -11154,15 +11310,15 @@
         },
         {
           "filename": "README.md",
-          "additions": 20,
-          "deletions": 4,
-          "changes": 24
+          "additions": 21,
+          "deletions": 5,
+          "changes": 26
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 134,
-          "deletions": 38,
-          "changes": 172
+          "additions": 135,
+          "deletions": 39,
+          "changes": 174
         },
         {
           "filename": "TESTING.md",
@@ -11388,9 +11544,9 @@
         }
       ],
       "stats": {
-        "additions": 1058,
-        "deletions": 158,
-        "total": 1216
+        "additions": 1060,
+        "deletions": 160,
+        "total": 1220
       }
     },
     {
@@ -11806,9 +11962,9 @@
         },
         {
           "filename": "RELEASE_HANDOFF.md",
-          "additions": 114,
-          "deletions": 52,
-          "changes": 166
+          "additions": 120,
+          "deletions": 58,
+          "changes": 178
         },
         {
           "filename": "TESTING.md",
@@ -11818,9 +11974,9 @@
         }
       ],
       "stats": {
-        "additions": 165,
-        "deletions": 67,
-        "total": 232
+        "additions": 171,
+        "deletions": 73,
+        "total": 244
       }
     },
     {
@@ -11960,9 +12116,9 @@
         },
         {
           "filename": "marble/Persistence/ModelContainer.swift",
-          "additions": 88,
-          "deletions": 26,
-          "changes": 114
+          "additions": 87,
+          "deletions": 25,
+          "changes": 112
         },
         {
           "filename": "marble/Persistence/ProgressMediaStore.swift",
@@ -11990,9 +12146,9 @@
         }
       ],
       "stats": {
-        "additions": 586,
-        "deletions": 59,
-        "total": 645
+        "additions": 585,
+        "deletions": 58,
+        "total": 643
       }
     },
     {
@@ -16078,9 +16234,9 @@
         },
         {
           "filename": "marble/Components/QuickLogCardView.swift",
-          "additions": 126,
-          "deletions": 52,
-          "changes": 178
+          "additions": 121,
+          "deletions": 47,
+          "changes": 168
         },
         {
           "filename": "marble/Components/RPEPicker.swift",
@@ -16216,9 +16372,9 @@
         }
       ],
       "stats": {
-        "additions": 2493,
-        "deletions": 513,
-        "total": 3006
+        "additions": 2488,
+        "deletions": 508,
+        "total": 2996
       }
     },
     {
@@ -16952,15 +17108,15 @@
         },
         {
           "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 48,
-          "deletions": 10,
-          "changes": 58
+          "additions": 49,
+          "deletions": 11,
+          "changes": 60
         },
         {
           "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 329,
-          "deletions": 89,
-          "changes": 418
+          "additions": 327,
+          "deletions": 87,
+          "changes": 414
         },
         {
           "filename": "marble/Features/Journal/ExerciseEditorView.swift",
@@ -16970,9 +17126,9 @@
         },
         {
           "filename": "marble/Features/Journal/ExercisePickerView.swift",
-          "additions": 152,
-          "deletions": 27,
-          "changes": 179
+          "additions": 151,
+          "deletions": 26,
+          "changes": 177
         },
         {
           "filename": "marble/Features/Journal/JournalView.swift",
@@ -17066,9 +17222,9 @@
         }
       ],
       "stats": {
-        "additions": 3296,
-        "deletions": 374,
-        "total": 3670
+        "additions": 3294,
+        "deletions": 372,
+        "total": 3666
       }
     },
     {
@@ -17604,9 +17760,9 @@
         },
         {
           "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 50,
-          "deletions": 52,
-          "changes": 102
+          "additions": 48,
+          "deletions": 50,
+          "changes": 98
         },
         {
           "filename": "marble/Features/Journal/ExercisePickerView.swift",
@@ -17658,9 +17814,9 @@
         }
       ],
       "stats": {
-        "additions": 899,
-        "deletions": 109,
-        "total": 1008
+        "additions": 897,
+        "deletions": 107,
+        "total": 1004
       }
     },
     {
@@ -17960,9 +18116,9 @@
         },
         {
           "filename": "marble/Features/Trends/ExerciseProgressView.swift",
-          "additions": 80,
-          "deletions": 78,
-          "changes": 158
+          "additions": 77,
+          "deletions": 75,
+          "changes": 152
         },
         {
           "filename": "marble/Features/Trends/TrendsChartOverlay.swift",
@@ -17972,9 +18128,9 @@
         },
         {
           "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 136,
-          "deletions": 207,
-          "changes": 343
+          "additions": 134,
+          "deletions": 205,
+          "changes": 339
         },
         {
           "filename": "scripts/run_snapshot_suite.sh",
@@ -17984,9 +18140,9 @@
         }
       ],
       "stats": {
-        "additions": 564,
-        "deletions": 369,
-        "total": 933
+        "additions": 559,
+        "deletions": 364,
+        "total": 923
       }
     },
     {
@@ -18340,9 +18496,9 @@
         },
         {
           "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 59,
-          "deletions": 227,
-          "changes": 286
+          "additions": 60,
+          "deletions": 228,
+          "changes": 288
         },
         {
           "filename": "marble/Features/Journal/RestTimerView.swift",
@@ -18352,9 +18508,9 @@
         }
       ],
       "stats": {
-        "additions": 198,
-        "deletions": 330,
-        "total": 528
+        "additions": 199,
+        "deletions": 331,
+        "total": 530
       }
     },
     {
@@ -20126,9 +20282,9 @@
         },
         {
           "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 256,
-          "deletions": 101,
-          "changes": 357
+          "additions": 255,
+          "deletions": 100,
+          "changes": 355
         },
         {
           "filename": "marble/Features/Journal/JournalView.swift",
@@ -20150,9 +20306,9 @@
         }
       ],
       "stats": {
-        "additions": 603,
-        "deletions": 157,
-        "total": 760
+        "additions": 602,
+        "deletions": 156,
+        "total": 758
       }
     },
     {
@@ -20860,9 +21016,9 @@
         },
         {
           "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 223,
-          "deletions": 58,
-          "changes": 281
+          "additions": 221,
+          "deletions": 56,
+          "changes": 277
         },
         {
           "filename": "marble/Models/Enums.swift",
@@ -20884,9 +21040,9 @@
         },
         {
           "filename": "marble/Persistence/SeedData.swift",
-          "additions": 41,
-          "deletions": 14,
-          "changes": 55
+          "additions": 38,
+          "deletions": 11,
+          "changes": 49
         },
         {
           "filename": "marble/Persistence/TestFixtures.swift",
@@ -20902,9 +21058,9 @@
         }
       ],
       "stats": {
-        "additions": 8076,
-        "deletions": 111,
-        "total": 8187
+        "additions": 8071,
+        "deletions": 106,
+        "total": 8177
       }
     },
     {
@@ -21426,9 +21582,9 @@
         },
         {
           "filename": "marble/Components/QuickLogAccessory.swift",
-          "additions": 30,
-          "deletions": 80,
-          "changes": 110
+          "additions": 25,
+          "deletions": 75,
+          "changes": 100
         },
         {
           "filename": "marble/ContentView.swift",
@@ -21468,9 +21624,9 @@
         }
       ],
       "stats": {
-        "additions": 96,
-        "deletions": 97,
-        "total": 193
+        "additions": 91,
+        "deletions": 92,
+        "total": 183
       }
     },
     {
@@ -22626,15 +22782,15 @@
       "files": [
         {
           "filename": "AGENTS.md",
-          "additions": 56,
-          "deletions": 12,
-          "changes": 68
+          "additions": 54,
+          "deletions": 10,
+          "changes": 64
         }
       ],
       "stats": {
-        "additions": 56,
-        "deletions": 12,
-        "total": 68
+        "additions": 54,
+        "deletions": 10,
+        "total": 64
       }
     },
     {
@@ -24200,9 +24356,9 @@
         },
         {
           "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 108,
-          "deletions": 31,
-          "changes": 139
+          "additions": 110,
+          "deletions": 33,
+          "changes": 143
         },
         {
           "filename": "marble/Persistence/ModelContainer.swift",
@@ -24266,9 +24422,9 @@
         }
       ],
       "stats": {
-        "additions": 3489,
-        "deletions": 185,
-        "total": 3674
+        "additions": 3491,
+        "deletions": 187,
+        "total": 3678
       }
     },
     {
