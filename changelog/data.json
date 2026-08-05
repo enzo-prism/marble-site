@@ -1,10 +1,134 @@
 {
-  "generatedAt": "2026-07-31T19:52:36.075Z",
+  "generatedAt": "2026-08-05T09:05:24.049Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 153,
+  "commitCount": 155,
   "commits": [
+    {
+      "sha": "2dfd2d819c22b1fa606ebc9901498edd1f7ae0d9",
+      "html_url": "https://github.com/enzo-prism/marble/commit/2dfd2d819c22b1fa606ebc9901498edd1f7ae0d9",
+      "commit": {
+        "message": "Merge pull request #15 from enzo-prism/k3/text-import-enhancements\n\nText import: app-export paste support, zero silent loss, live parse feedback",
+        "author": {
+          "date": "2026-08-05T00:22:03-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T00:22:03-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 274,
+          "deletions": 0,
+          "changes": 274
+        },
+        {
+          "filename": "Tests/Unit/WorkoutParseEvalCorpus.swift",
+          "additions": 100,
+          "deletions": 0,
+          "changes": 100
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 89,
+          "deletions": 0,
+          "changes": 89
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 15,
+          "deletions": 3,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 365,
+          "deletions": 39,
+          "changes": 404
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 85,
+          "deletions": 0,
+          "changes": 85
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 98,
+          "deletions": 3,
+          "changes": 101
+        }
+      ],
+      "stats": {
+        "additions": 1026,
+        "deletions": 45,
+        "total": 1071
+      }
+    },
+    {
+      "sha": "622bb25e772ab4787bcce19fe1b93a48e095119c",
+      "html_url": "https://github.com/enzo-prism/marble/commit/622bb25e772ab4787bcce19fe1b93a48e095119c",
+      "commit": {
+        "message": "Text import: app-export paste support, zero silent loss, live parse feedback\n\nPlain-text workout import upgrades, all deterministic-parser first:\n\nPaste compatibility (Hevy / Strong / Notes):\n- \"Set N: W x R\" rows attach to the current exercise, keeping weight AND\n  reps; a preceding name line (\"Squat\", \"Exercise: Bench Press (Barbell)\")\n  becomes the exercise instead of the title.\n- Bare set lines (\"185 x 8\") continue the previous exercise instead of\n  being dropped.\n\nZero silent loss:\n- Dropped-line diagnostics: parseDetailed reports every source line nothing\n  claimed; the review screen lists them under \"Couldn't read N lines\" with\n  inline edit + re-parse, so a paste never loses work silently.\n- \"1,025 lb\" reads as one load (digit-grouping commas), never a 1.\n- \"3xAMRAP\" / \"2x failure\" keep their set count with nil reps instead of\n  vanishing; \"EMOM 10 min: 5 burpees\" expands to one set per minute.\n- Spelled-out / \"sets of <word>\" prose lines are flagged as prose and\n  surfaced for review instead of being mangled into plausible-looking\n  wrong exercises.\n- Relative dates (\"yesterday\", \"today\") set the session date and leave\n  the exercise name; emoji bullets and unspaced names (\"squat5x5\") parse\n  cleanly instead of polluting the library.\n\nLive feedback + user defaults:\n- Input step re-parses per keystroke with the cheap deterministic parser\n  and marks each line recognized / not recognized before Preview.\n- Unitless weights default to the user's preferredWeightUnit (threaded\n  through the heuristic and Foundation Models parsers) instead of\n  hardcoded lb.\n\nTests: 9 new corpus pins (notation tier), new\nHandwrittenWorkoutParserPasteTests (25 cases), and TextEntry view-model\ntests for unparsed lines, retry, live preview, and unit injection.\nFull MarbleTests: 682 passed, 0 failures.\n\nCo-authored-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>\nSigned-off-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-04T23:59:49-07:00"
+        },
+        "committer": {
+          "date": "2026-08-04T23:59:49-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 274,
+          "deletions": 0,
+          "changes": 274
+        },
+        {
+          "filename": "Tests/Unit/WorkoutParseEvalCorpus.swift",
+          "additions": 100,
+          "deletions": 0,
+          "changes": 100
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 89,
+          "deletions": 0,
+          "changes": 89
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 15,
+          "deletions": 3,
+          "changes": 18
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 365,
+          "deletions": 39,
+          "changes": 404
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 85,
+          "deletions": 0,
+          "changes": 85
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 98,
+          "deletions": 3,
+          "changes": 101
+        }
+      ],
+      "stats": {
+        "additions": 1026,
+        "deletions": 45,
+        "total": 1071
+      }
+    },
     {
       "sha": "fce923187a2828ff8ac5aa0c39157beaf41ae072",
       "html_url": "https://github.com/enzo-prism/marble/commit/fce923187a2828ff8ac5aa0c39157beaf41ae072",
