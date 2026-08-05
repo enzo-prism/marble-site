@@ -1,10 +1,302 @@
 {
-  "generatedAt": "2026-08-05T09:05:24.049Z",
+  "generatedAt": "2026-08-05T19:55:15.286Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 155,
+  "commitCount": 160,
   "commits": [
+    {
+      "sha": "20169771628c6b282012f602596ef729a022f888",
+      "html_url": "https://github.com/enzo-prism/marble/commit/20169771628c6b282012f602596ef729a022f888",
+      "commit": {
+        "message": "Record 2.3 (build 55) VALID on TestFlight\n\nFirst 2.3-train build, carrying both 2026-08-05 Typed Workout waves\n(app-export paste + zero silent loss; order/progress/delight). 2.2 is\nREADY_FOR_DISTRIBUTION, which closed the 2.2 train to new uploads.\n\nCo-authored-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>\nSigned-off-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-05T10:17:17-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T10:17:17-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 6,
+          "deletions": 4,
+          "changes": 10
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 58,
+          "deletions": 3,
+          "changes": 61
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 66,
+        "deletions": 9,
+        "total": 75
+      }
+    },
+    {
+      "sha": "717cf919fb0f9ebb3e8306daddfbc025620cb022",
+      "html_url": "https://github.com/enzo-prism/marble/commit/717cf919fb0f9ebb3e8306daddfbc025620cb022",
+      "commit": {
+        "message": "Move the working train to 2.3\n\n2.2 is READY_FOR_DISTRIBUTION, which closed the train: the build-55 upload\nfailed processing with ITMS-90186/90062 (new builds must carry a higher\nversion string than the approved one). MARKETING_VERSION 2.2 -> 2.3 and\nASC_APPSTORE_VERSION follows (forgetting this bit us on the 2.1 -> 2.2 move).\nBuild number stays 55, free on the new train.\n\nCo-authored-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>\nSigned-off-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-05T09:55:56-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T09:55:56-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "Makefile",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 5,
+        "deletions": 5,
+        "total": 10
+      }
+    },
+    {
+      "sha": "8efa7737d0a541e297d242d21e3400de8c2f1814",
+      "html_url": "https://github.com/enzo-prism/marble/commit/8efa7737d0a541e297d242d21e3400de8c2f1814",
+      "commit": {
+        "message": "Bump build number to 55 for the Typed Workout order/progress wave\n\nCo-authored-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>\nSigned-off-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-05T09:50:59-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T09:50:59-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 4,
+        "deletions": 4,
+        "total": 8
+      }
+    },
+    {
+      "sha": "a4b9451da4df1301d14d4ddb442bfb137e144d42",
+      "html_url": "https://github.com/enzo-prism/marble/commit/a4b9451da4df1301d14d4ddb442bfb137e144d42",
+      "commit": {
+        "message": "Merge pull request #16 from enzo-prism/k3/text-import-order-progress\n\nTyped Workout: saved order matches review, staged progress, paste & delight",
+        "author": {
+          "date": "2026-08-05T09:49:39-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T09:49:39-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 26,
+          "deletions": 1,
+          "changes": 27
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserFreeFormTests.swift",
+          "additions": 97,
+          "deletions": 0,
+          "changes": 97
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 73,
+          "deletions": 0,
+          "changes": 73
+        },
+        {
+          "filename": "Tests/Unit/WorkoutParseEvalCorpus.swift",
+          "additions": 87,
+          "deletions": 0,
+          "changes": 87
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTests.swift",
+          "additions": 61,
+          "deletions": 1,
+          "changes": 62
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTimingTests.swift",
+          "additions": 5,
+          "deletions": 3,
+          "changes": 8
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 124,
+          "deletions": 0,
+          "changes": 124
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 227,
+          "deletions": 4,
+          "changes": 231
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 20,
+          "deletions": 1,
+          "changes": 21
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 118,
+          "deletions": 8,
+          "changes": 126
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 105,
+          "deletions": 1,
+          "changes": 106
+        }
+      ],
+      "stats": {
+        "additions": 960,
+        "deletions": 19,
+        "total": 979
+      }
+    },
+    {
+      "sha": "afc24989243eaefcbd3730bd977fce2198d469af",
+      "html_url": "https://github.com/enzo-prism/marble/commit/afc24989243eaefcbd3730bd977fce2198d469af",
+      "commit": {
+        "message": "Typed Workout: saved order matches review, staged progress, paste & delight\n\nJournal order fix:\n- Imported sets shared one performedAt and the journal sorts only by it,\n  so tied rows came back scrambled. The importer now spaces the sets by a\n  millisecond ordinal cascade: the first reviewed set is the newest, so the\n  newest-first journal reproduces the exact review order. The cascade steps\n  forward from the effective date (a date-only midnight pick never spills\n  into the previous day), stays sub-second, and explicit per-set times still\n  win. Benefits the scan flow too.\n\nPreview generation progress:\n- WorkoutScanParsing gains a staged parse variant (default implementation\n  forwards to the plain parse) reporting WorkoutParseStage: notation pass,\n  each Apple Intelligence pass, finalizing. The processing step is now a\n  determinate bar with stage label and percent; a timer eases toward the\n  current stage anchor so the bar keeps moving during long model passes\n  without fabricating completion.\n\nUX accelerators + delight:\n- System PasteButton in the input step (no paste-permission prompt, no\n  programmatic clipboard reads; offered only when the clipboard has text).\n- Exercise reorder controls in review (per-section list can't use .onMove);\n  since draft order is import order, this also fixes saved order.\n- The imported screen shows total volume (sum of weight x reps in the\n  user's preferred unit) and celebrates beaten PRs via the existing tested\n  PersonalRecords engine, computed pre-import against records on file.\n\nParser coverage (deterministic):\n- Rep ladders/pyramids: \"225x5/3/1\", \"5/3/1 @ 225\", \"3x10-8-6\" parse to one\n  set per rung (rungs win over a disagreeing leading count; slash dates and\n  dash rep ranges pinned to keep working).\n- Tempo notation (\"3x5 tempo 31x1\", \"(31X1)\") is stripped as noise, fixing\n  the corruption that produced sets of 3 lb and 31 lb.\n- Round/circuit headers (\"3 rounds:\", \"Circuit 1\", \"three rounds:\") are\n  consumed as structure; counted headers multiply following movements' sets\n  instead of becoming junk exercises. Prose-tier corpus boundary unchanged.\n\nDocs: README current-state + ROADMAP status rows for this wave and the\nmerged app-export paste wave. Full MarbleTests: 706 passed, 0 failures.\n\nCo-authored-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>\nSigned-off-by: enzo-prism <215033440+enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-05T09:16:27-07:00"
+        },
+        "committer": {
+          "date": "2026-08-05T09:16:27-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 26,
+          "deletions": 1,
+          "changes": 27
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserFreeFormTests.swift",
+          "additions": 97,
+          "deletions": 0,
+          "changes": 97
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 73,
+          "deletions": 0,
+          "changes": 73
+        },
+        {
+          "filename": "Tests/Unit/WorkoutParseEvalCorpus.swift",
+          "additions": 87,
+          "deletions": 0,
+          "changes": 87
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTests.swift",
+          "additions": 61,
+          "deletions": 1,
+          "changes": 62
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTimingTests.swift",
+          "additions": 5,
+          "deletions": 3,
+          "changes": 8
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 124,
+          "deletions": 0,
+          "changes": 124
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 227,
+          "deletions": 4,
+          "changes": 231
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 20,
+          "deletions": 1,
+          "changes": 21
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 118,
+          "deletions": 8,
+          "changes": 126
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 105,
+          "deletions": 1,
+          "changes": 106
+        }
+      ],
+      "stats": {
+        "additions": 960,
+        "deletions": 19,
+        "total": 979
+      }
+    },
     {
       "sha": "2dfd2d819c22b1fa606ebc9901498edd1f7ae0d9",
       "html_url": "https://github.com/enzo-prism/marble/commit/2dfd2d819c22b1fa606ebc9901498edd1f7ae0d9",
