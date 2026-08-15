@@ -10,7 +10,7 @@ const canonicalOrigin = "https://marble-fit.app";
 const ignoredDirectories = new Set([".git", "node_modules"]);
 
 const homeContract = {
-  sectionIds: ["marble-2-2", "features", "screens", "faq", "download"],
+  sectionIds: ["marble-2-3", "features", "screens", "faq", "download"],
   labels: [
     "Marble 2.2",
     "Paste your workout",
@@ -372,10 +372,10 @@ function validateHtml(file, idCache) {
     const text = visibleText(withoutComments);
 
     for (const id of homeContract.sectionIds) {
-      check(pageIds.has(id), file, source, 0, `Marble 2.2 contract requires section id="${id}"`);
+      check(pageIds.has(id), file, source, 0, `home contract requires section id="${id}"`);
     }
     for (const label of homeContract.labels) {
-      check(text.includes(label), file, source, 0, `Marble 2.2 contract requires visible text "${label}"`);
+      check(text.includes(label), file, source, 0, `home contract requires visible text "${label}"`);
     }
   }
 }
