@@ -1,10 +1,90 @@
 {
-  "generatedAt": "2026-08-05T19:55:15.286Z",
+  "generatedAt": "2026-08-16T01:57:08.699Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 160,
+  "commitCount": 161,
   "commits": [
+    {
+      "sha": "9313875468ccbe53b4e0bbf786988d26f6379a9e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9313875468ccbe53b4e0bbf786988d26f6379a9e",
+      "commit": {
+        "message": "Add gated review prompt and 2.3 store package\n\n* Add gated App Store review prompt and 2.3 store package\n\nAsk for a review only after a real success (finished workout with\nsets, first imported workout saved, or a genuine PR), using the\nsystem StoreKit dialog and a local 45-day cooldown. Bump build 55\nto 56. Add 2.3 whatsNew and review notes. Does not submit to ASC.\n\n* Ask for a review after a finished workout or first import\n\nCall ReviewPrompt only after a successful save: Workout finish (in-app\nand Finish Workout intent) when the session has sets, and import commit\npaths when sets were actually saved.\n\n* Consider a review after Siri finish and import saves\n\nSame gate as the Workout tab: only after a successful save with sets.\n\n* Consider a review after the first imported workout is saved\n\n* Consider a review after a scanned workout is saved\n\n* Consider a review after a typed workout is saved\n\n* Bump CURRENT_PROJECT_VERSION 55 → 56\n\nKeep MARKETING_VERSION at 2.3. App and widget Debug/Release only.\n\n* Mark ReviewPrompt as nonisolated for Swift 6\n\nDefault MainActor isolation made Event's Equatable unusable from the\nnonisolated shouldRequest gate, which failed CI compile.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>\n\n---------\n\nCo-authored-by: Cursor Agent <cursoragent@cursor.com>\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-15T12:40:35-07:00"
+        },
+        "committer": {
+          "date": "2026-08-15T12:40:35-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/metadata/version/2.3/en-US.json",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 44,
+          "deletions": 0,
+          "changes": 44
+        },
+        {
+          "filename": "Tests/Unit/ReviewPromptTests.swift",
+          "additions": 157,
+          "deletions": 0,
+          "changes": 157
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Import/ImportViewModel.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanViewModel.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Workout/ReviewPrompt.swift",
+          "additions": 121,
+          "deletions": 0,
+          "changes": 121
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Intents/WorkoutSessionIntents.swift",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 348,
+        "deletions": 4,
+        "total": 352
+      }
+    },
     {
       "sha": "20169771628c6b282012f602596ef729a022f888",
       "html_url": "https://github.com/enzo-prism/marble/commit/20169771628c6b282012f602596ef729a022f888",
