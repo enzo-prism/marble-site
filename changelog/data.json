@@ -1,10 +1,138 @@
 {
-  "generatedAt": "2026-08-17T01:54:58.400Z",
+  "generatedAt": "2026-08-17T07:16:03.407Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 169,
+  "commitCount": 170,
   "commits": [
+    {
+      "sha": "8bde7a215b32823c898e877f6f4ace1fe370a192",
+      "html_url": "https://github.com/enzo-prism/marble/commit/8bde7a215b32823c898e877f6f4ace1fe370a192",
+      "commit": {
+        "message": "Enable Cloud Agent TestFlight and App Store publishing\n\nLinux agents still cannot xcodebuild. Archive/sign/upload now runs on\nGitHub Actions macos-26; App Store submit and release stay API-only.\nAgents drive both through make cloud-* after a one-time secrets bootstrap.\n\nCo-authored-by: Cursor Agent <cursoragent@cursor.com>\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T20:51:26-07:00"
+        },
+        "committer": {
+          "date": "2026-08-16T20:51:26-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".cursor/environment.json",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        },
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": ".github/workflows/release-appstore.yml",
+          "additions": 171,
+          "deletions": 0,
+          "changes": 171
+        },
+        {
+          "filename": ".github/workflows/release-testflight.yml",
+          "additions": 103,
+          "deletions": 0,
+          "changes": 103
+        },
+        {
+          "filename": "AGENTS.md",
+          "additions": 17,
+          "deletions": 10,
+          "changes": 27
+        },
+        {
+          "filename": "ASC.md",
+          "additions": 11,
+          "deletions": 3,
+          "changes": 14
+        },
+        {
+          "filename": "CLOUD_RELEASE.md",
+          "additions": 146,
+          "deletions": 0,
+          "changes": 146
+        },
+        {
+          "filename": "Makefile",
+          "additions": 25,
+          "deletions": 0,
+          "changes": 25
+        },
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 5,
+          "changes": 15
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 13,
+          "deletions": 2,
+          "changes": 15
+        },
+        {
+          "filename": "WORKFLOW_PAPERCUTS.md",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "scripts/bootstrap_github_release_secrets.sh",
+          "additions": 65,
+          "deletions": 0,
+          "changes": 65
+        },
+        {
+          "filename": "scripts/ci_appstore.sh",
+          "additions": 189,
+          "deletions": 0,
+          "changes": 189
+        },
+        {
+          "filename": "scripts/ci_import_signing.sh",
+          "additions": 146,
+          "deletions": 0,
+          "changes": 146
+        },
+        {
+          "filename": "scripts/ci_testflight.sh",
+          "additions": 100,
+          "deletions": 0,
+          "changes": 100
+        },
+        {
+          "filename": "scripts/cloud_release.sh",
+          "additions": 284,
+          "deletions": 0,
+          "changes": 284
+        },
+        {
+          "filename": "scripts/cursor-cloud-install.sh",
+          "additions": 77,
+          "deletions": 0,
+          "changes": 77
+        },
+        {
+          "filename": "scripts/lib/marble_release.sh",
+          "additions": 167,
+          "deletions": 0,
+          "changes": 167
+        }
+      ],
+      "stats": {
+        "additions": 1537,
+        "deletions": 20,
+        "total": 1557
+      }
+    },
     {
       "sha": "171d1a04a32c6d67723af900d9878b1e3149dcf5",
       "html_url": "https://github.com/enzo-prism/marble/commit/171d1a04a32c6d67723af900d9878b1e3149dcf5",
