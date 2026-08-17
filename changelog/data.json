@@ -1,10 +1,728 @@
 {
-  "generatedAt": "2026-08-16T01:57:08.699Z",
+  "generatedAt": "2026-08-17T01:54:58.400Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 161,
+  "commitCount": 169,
   "commits": [
+    {
+      "sha": "171d1a04a32c6d67723af900d9878b1e3149dcf5",
+      "html_url": "https://github.com/enzo-prism/marble/commit/171d1a04a32c6d67723af900d9878b1e3149dcf5",
+      "commit": {
+        "message": "Sync remaining docs with Train/Log/Progress on main\n\nSync remaining docs with Train/Log/Progress on main",
+        "author": {
+          "date": "2026-08-16T13:05:26-07:00"
+        },
+        "committer": {
+          "date": "2026-08-16T13:05:26-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/metadata/version/2.3/en-US.json",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "DAILY_HIGHLIGHTS.md",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "EXERCISE_LIBRARY.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "MarbleWidgets/SETUP.md",
+          "additions": 6,
+          "deletions": 5,
+          "changes": 11
+        },
+        {
+          "filename": "README.md",
+          "additions": 11,
+          "deletions": 9,
+          "changes": 20
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "SPRINT_WORKOUTS.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 11,
+          "deletions": 1,
+          "changes": 12
+        },
+        {
+          "filename": "WORKFLOW_PAPERCUTS.md",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 45,
+        "deletions": 23,
+        "total": 68
+      }
+    },
+    {
+      "sha": "019143adf8b1cfd26b8f410989b17115fa5ecb81",
+      "html_url": "https://github.com/enzo-prism/marble/commit/019143adf8b1cfd26b8f410989b17115fa5ecb81",
+      "commit": {
+        "message": "Sync remaining docs with Train/Log/Progress on main.\n\nCorrect schema (V6), live ASC version checks (build 56), widget snapshot\ncoverage, Daily Highlights/Progress wording, 2.3 store copy, and navigation\npaths that still said Workout or Journal.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T19:55:55Z"
+        },
+        "committer": {
+          "date": "2026-08-16T19:55:55Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/metadata/version/2.3/en-US.json",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "DAILY_HIGHLIGHTS.md",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "EXERCISE_LIBRARY.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "MarbleWidgets/SETUP.md",
+          "additions": 6,
+          "deletions": 5,
+          "changes": 11
+        },
+        {
+          "filename": "README.md",
+          "additions": 11,
+          "deletions": 9,
+          "changes": 20
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "SPRINT_WORKOUTS.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 11,
+          "deletions": 1,
+          "changes": 12
+        },
+        {
+          "filename": "WORKFLOW_PAPERCUTS.md",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 45,
+        "deletions": 23,
+        "total": 68
+      }
+    },
+    {
+      "sha": "b09ccc963199bef4dd949d30135bdd3f0ff50f05",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b09ccc963199bef4dd949d30135bdd3f0ff50f05",
+      "commit": {
+        "message": "Record Train/Log/Progress IA as merged to main\n\nRecord Train/Log/Progress IA as merged to main",
+        "author": {
+          "date": "2026-08-16T12:46:15-07:00"
+        },
+        "committer": {
+          "date": "2026-08-16T12:46:15-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 9,
+          "changes": 19
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 4,
+          "deletions": 5,
+          "changes": 9
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 15,
+        "deletions": 15,
+        "total": 30
+      }
+    },
+    {
+      "sha": "80fcfd531990dfdec1ca411c8b20df17cdc27abc",
+      "html_url": "https://github.com/enzo-prism/marble/commit/80fcfd531990dfdec1ca411c8b20df17cdc27abc",
+      "commit": {
+        "message": "Record Train/Log/Progress IA as merged to main.\n\nTestFlight for 2.3 build 56 still needs a Mac archive; 2.2 App Store release\nstays a separate decision.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T19:38:27Z"
+        },
+        "committer": {
+          "date": "2026-08-16T19:38:27Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 9,
+          "changes": 19
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 4,
+          "deletions": 5,
+          "changes": 9
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 15,
+        "deletions": 15,
+        "total": 30
+      }
+    },
+    {
+      "sha": "c0cef9e2d19ee8589585bdfe082ab4af8cdec7bb",
+      "html_url": "https://github.com/enzo-prism/marble/commit/c0cef9e2d19ee8589585bdfe082ab4af8cdec7bb",
+      "commit": {
+        "message": "Streamline Marble to Train, Log, and Progress\n\nStreamline Marble to Train, Log, and Progress",
+        "author": {
+          "date": "2026-08-16T12:37:48-07:00"
+        },
+        "committer": {
+          "date": "2026-08-16T12:37:48-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AGENTS.md",
+          "additions": 23,
+          "deletions": 0,
+          "changes": 23
+        },
+        {
+          "filename": "ASC.md",
+          "additions": 10,
+          "deletions": 9,
+          "changes": 19
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 9,
+          "deletions": 7,
+          "changes": 16
+        },
+        {
+          "filename": "README.md",
+          "additions": 32,
+          "deletions": 17,
+          "changes": 49
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 36,
+          "deletions": 1,
+          "changes": 37
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 11,
+          "deletions": 7,
+          "changes": 18
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Snapshots/JournalSnapshotTests.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "Tests/Snapshots/SupplementsSnapshotTests.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 40,
+          "deletions": 5,
+          "changes": 45
+        },
+        {
+          "filename": "Tests/Unit/SetLoggingTests.swift",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": "Tests/Unit/WeeklyGoalWidgetCopyTests.swift",
+          "additions": 11,
+          "deletions": 0,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Components/AddSetToolbarButton.swift",
+          "additions": 27,
+          "deletions": 0,
+          "changes": 27
+        },
+        {
+          "filename": "marble/Components/LogModePicker.swift",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Components/QuickLogCoordinator.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Components/TabSelection.swift",
+          "additions": 54,
+          "deletions": 1,
+          "changes": 55
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 39,
+          "deletions": 29,
+          "changes": 68
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 3,
+          "deletions": 3,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 19,
+          "deletions": 0,
+          "changes": 19
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 11,
+          "deletions": 47,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestTimerPillView.swift",
+          "additions": 79,
+          "deletions": 13,
+          "changes": 92
+        },
+        {
+          "filename": "marble/Features/Split/SplitView.swift",
+          "additions": 0,
+          "deletions": 5,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 7,
+          "deletions": 4,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 1,
+          "deletions": 5,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Workout/LogHubView.swift",
+          "additions": 17,
+          "deletions": 0,
+          "changes": 17
+        },
+        {
+          "filename": "marble/Features/Workout/SetLogging.swift",
+          "additions": 63,
+          "deletions": 0,
+          "changes": 63
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 98,
+          "deletions": 23,
+          "changes": 121
+        },
+        {
+          "filename": "marble/Shared/WeeklyGoalWidgetViews.swift",
+          "additions": 10,
+          "deletions": 1,
+          "changes": 11
+        }
+      ],
+      "stats": {
+        "additions": 685,
+        "deletions": 178,
+        "total": 863
+      }
+    },
+    {
+      "sha": "9259007be2d05bc34eafd1024011e771fd319b4b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9259007be2d05bc34eafd1024011e771fd319b4b",
+      "commit": {
+        "message": "Remove AppIcon.icon; it crashes actool in CI.\n\nFilesystem-synchronized marble/ ingested the Icon Composer folder and actool\nfailed with a nil object. Keep AppIcon.appiconset until a Mac can add a proper\npackage file reference.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T19:28:33Z"
+        },
+        "committer": {
+          "date": "2026-08-16T19:28:33Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "ROADMAP.md",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "marble/AppIcon.icon/Foreground.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marble/AppIcon.icon/icon.json",
+          "additions": 0,
+          "deletions": 37,
+          "changes": 37
+        }
+      ],
+      "stats": {
+        "additions": 6,
+        "deletions": 43,
+        "total": 49
+      }
+    },
+    {
+      "sha": "b00efb3eade94536be42b748771a00cac44032ba",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b00efb3eade94536be42b748771a00cac44032ba",
+      "commit": {
+        "message": "Fix widget copy compile and document Train/Log/Progress IA.\n\nRestore WeeklyGoalCopy.progress (CI failed: cannot find progress in scope).\nKeep the Log Set zoom source on the button view. Update project docs for the\nthree-tab IA and the Mac-only TestFlight path.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T19:25:34Z"
+        },
+        "committer": {
+          "date": "2026-08-16T19:25:34Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "AGENTS.md",
+          "additions": 19,
+          "deletions": 1,
+          "changes": 20
+        },
+        {
+          "filename": "ASC.md",
+          "additions": 10,
+          "deletions": 9,
+          "changes": 19
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 9,
+          "deletions": 7,
+          "changes": 16
+        },
+        {
+          "filename": "README.md",
+          "additions": 32,
+          "deletions": 17,
+          "changes": 49
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 36,
+          "deletions": 1,
+          "changes": 37
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 11,
+          "deletions": 7,
+          "changes": 18
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 18,
+          "deletions": 1,
+          "changes": 19
+        },
+        {
+          "filename": "marble/Components/AddSetToolbarButton.swift",
+          "additions": 16,
+          "deletions": 4,
+          "changes": 20
+        },
+        {
+          "filename": "marble/Shared/WeeklyGoalWidgetViews.swift",
+          "additions": 4,
+          "deletions": 0,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 159,
+        "deletions": 48,
+        "total": 207
+      }
+    },
+    {
+      "sha": "f0801054794b19094b25973bbc36d6db424defb2",
+      "html_url": "https://github.com/enzo-prism/marble/commit/f0801054794b19094b25973bbc36d6db424defb2",
+      "commit": {
+        "message": "Streamline Marble to Train, Log, and Progress.\n\nCollapse Calendar and Supplements into Log modes, make Train the\none-thumb session player, present Log Set as a medium morphing\nsheet, and add session chrome plus an Icon Composer asset.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-16T19:19:49Z"
+        },
+        "committer": {
+          "date": "2026-08-16T19:19:49Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "AGENTS.md",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Snapshots/JournalSnapshotTests.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "Tests/Snapshots/SupplementsSnapshotTests.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 23,
+          "deletions": 5,
+          "changes": 28
+        },
+        {
+          "filename": "Tests/Unit/SetLoggingTests.swift",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": "Tests/Unit/WeeklyGoalWidgetCopyTests.swift",
+          "additions": 11,
+          "deletions": 0,
+          "changes": 11
+        },
+        {
+          "filename": "marble/AppIcon.icon/Foreground.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "marble/AppIcon.icon/icon.json",
+          "additions": 37,
+          "deletions": 0,
+          "changes": 37
+        },
+        {
+          "filename": "marble/Components/AddSetToolbarButton.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Components/LogModePicker.swift",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Components/QuickLogCoordinator.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Components/TabSelection.swift",
+          "additions": 54,
+          "deletions": 1,
+          "changes": 55
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 39,
+          "deletions": 29,
+          "changes": 68
+        },
+        {
+          "filename": "marble/Features/Calendar/CalendarView.swift",
+          "additions": 3,
+          "deletions": 3,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Journal/AddSetView.swift",
+          "additions": 19,
+          "deletions": 0,
+          "changes": 19
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 11,
+          "deletions": 47,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Features/RestTimer/RestTimerPillView.swift",
+          "additions": 79,
+          "deletions": 13,
+          "changes": 92
+        },
+        {
+          "filename": "marble/Features/Split/SplitView.swift",
+          "additions": 0,
+          "deletions": 5,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Supplements/SupplementsView.swift",
+          "additions": 7,
+          "deletions": 4,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 1,
+          "deletions": 5,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Workout/LogHubView.swift",
+          "additions": 17,
+          "deletions": 0,
+          "changes": 17
+        },
+        {
+          "filename": "marble/Features/Workout/SetLogging.swift",
+          "additions": 63,
+          "deletions": 0,
+          "changes": 63
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 98,
+          "deletions": 23,
+          "changes": 121
+        },
+        {
+          "filename": "marble/Shared/WeeklyGoalWidgetViews.swift",
+          "additions": 8,
+          "deletions": 3,
+          "changes": 11
+        }
+      ],
+      "stats": {
+        "additions": 571,
+        "deletions": 138,
+        "total": 709
+      }
+    },
     {
       "sha": "9313875468ccbe53b4e0bbf786988d26f6379a9e",
       "html_url": "https://github.com/enzo-prism/marble/commit/9313875468ccbe53b4e0bbf786988d26f6379a9e",
