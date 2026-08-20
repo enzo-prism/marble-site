@@ -1,10 +1,914 @@
 {
-  "generatedAt": "2026-08-17T07:16:03.407Z",
+  "generatedAt": "2026-08-20T07:05:58.352Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 170,
+  "commitCount": 184,
   "commits": [
+    {
+      "sha": "42b90610b206447feb286dc6e613485cbee3d39b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/42b90610b206447feb286dc6e613485cbee3d39b",
+      "commit": {
+        "message": "Record 2.4 build 57 TestFlight VALID after PR #24 merge\n\nLive ASC: a8f9716a-5b39-4013-a795-181344ff54a6. CI 800 tests green\n(run 32334810598). Do not submit 2.4 App Review; do not release 2.3.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T05:28:53Z"
+        },
+        "committer": {
+          "date": "2026-08-20T05:28:53Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 7,
+          "deletions": 6,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 17,
+          "deletions": 10,
+          "changes": 27
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 2,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 29,
+        "deletions": 19,
+        "total": 48
+      }
+    },
+    {
+      "sha": "df055855dd705876806aa94cae7d647f4d9f3728",
+      "html_url": "https://github.com/enzo-prism/marble/commit/df055855dd705876806aa94cae7d647f4d9f3728",
+      "commit": {
+        "message": "Group CSV exercises by raw name before stripping equipment\n\nSquat (Barbell) and Squat (Dumbbell) share a stripped name and the\nsame starting set index, so grouping after the strip merged them.\nKeep the export name for run boundaries; strip only on the draft.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T05:13:46Z"
+        },
+        "committer": {
+          "date": "2026-08-20T05:13:46Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/Unit/WorkoutCSVParserTests.swift",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 6,
+          "deletions": 4,
+          "changes": 10
+        }
+      ],
+      "stats": {
+        "additions": 21,
+        "deletions": 5,
+        "total": 26
+      }
+    },
+    {
+      "sha": "257e8ce4fff66cd42044968fbd8a935501dd508b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/257e8ce4fff66cd42044968fbd8a935501dd508b",
+      "commit": {
+        "message": "Document Day/Session, @RPE, and Hevy failure import honesty\n\nRecord that numbered session labels are titles, @RPE is difficulty,\nHevy warmup skip (not Strong), failed 0-rep rows stay, and scan review\ncan reorder.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T05:07:40Z"
+        },
+        "committer": {
+          "date": "2026-08-20T05:07:40Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/review/2.4.md",
+          "additions": 4,
+          "deletions": 3,
+          "changes": 7
+        },
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "README.md",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 7,
+          "deletions": 4,
+          "changes": 11
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 4,
+          "deletions": 2,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 25,
+        "deletions": 19,
+        "total": 44
+      }
+    },
+    {
+      "sha": "b759f50a26f630fb7909b1c0de1b7ef2381f524b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b759f50a26f630fb7909b1c0de1b7ef2381f524b",
+      "commit": {
+        "message": "Keep Day/Session labels, @RPE, and failed CSV sets honest\n\nNumbered session headers stayed in each paste segment and parsed as\nbodyweight exercises. Consume them as titles. Treat spaced @RPE as an\nRPE marker, keep Hevy failure rows with 0 reps, strip Strong equipment\nsuffixes, disclose blank RPE/rest defaults, and let scan review reorder\nexercises like Paste or Type.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T05:07:34Z"
+        },
+        "committer": {
+          "date": "2026-08-20T05:07:34Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserTests.swift",
+          "additions": 38,
+          "deletions": 0,
+          "changes": 38
+        },
+        {
+          "filename": "Tests/Unit/WorkoutCSVParserTests.swift",
+          "additions": 37,
+          "deletions": 0,
+          "changes": 37
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanViewModelTests.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 40,
+          "deletions": 7,
+          "changes": 47
+        },
+        {
+          "filename": "marble/Features/Import/Scan/ImportTimingViews.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanView.swift",
+          "additions": 28,
+          "deletions": 2,
+          "changes": 30
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanViewModel.swift",
+          "additions": 12,
+          "deletions": 0,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 47,
+          "deletions": 3,
+          "changes": 50
+        }
+      ],
+      "stats": {
+        "additions": 221,
+        "deletions": 12,
+        "total": 233
+      }
+    },
+    {
+      "sha": "ffbad931887fdabeb87d6e304e062800d1af3008",
+      "html_url": "https://github.com/enzo-prism/marble/commit/ffbad931887fdabeb87d6e304e062800d1af3008",
+      "commit": {
+        "message": "Fix scan addSet notes test to copy from the last set\n\naddSet clones the last existing set. The test was annotating\nthe first of five Squat sets, so notes never copied.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:58:07Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:58:07Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/WorkoutScanViewModelTests.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 1,
+        "deletions": 1,
+        "total": 2
+      }
+    },
+    {
+      "sha": "59df622e3d8b0ce1d2f7fd24e65a525c64fab25b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/59df622e3d8b0ce1d2f7fd24e65a525c64fab25b",
+      "commit": {
+        "message": "Open the 2.4 train and document bulk import honesty\n\nApple closed 2.3 to new uploads (ITMS-90186). MARKETING_VERSION is 2.4;\nbuild 57 is unused and stays. App Store 2.3 remains approved and unreleased.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:48:20Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:48:20Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 10,
+          "deletions": 11,
+          "changes": 21
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 10,
+          "deletions": 6,
+          "changes": 16
+        },
+        {
+          "filename": "AppStore/review/2.4.md",
+          "additions": 54,
+          "deletions": 0,
+          "changes": 54
+        },
+        {
+          "filename": "CLOUD_RELEASE.md",
+          "additions": 5,
+          "deletions": 5,
+          "changes": 10
+        },
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 9,
+          "deletions": 6,
+          "changes": 15
+        },
+        {
+          "filename": "Makefile",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "README.md",
+          "additions": 7,
+          "deletions": 1,
+          "changes": 8
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 48,
+          "deletions": 14,
+          "changes": 62
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 11,
+          "deletions": 0,
+          "changes": 11
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 161,
+        "deletions": 49,
+        "total": 210
+      }
+    },
+    {
+      "sha": "11085b4111704b10d947ced77cd60d9fd5396896",
+      "html_url": "https://github.com/enzo-prism/marble/commit/11085b4111704b10d947ced77cd60d9fd5396896",
+      "commit": {
+        "message": "Keep bulk import honest: CSV runs, weak matches, and review fields\n\nStop Hevy set_index resets from interleaving the same lift, parse EU Strong\nCSV (semicolons, Weight (kg), decimal commas), tag supersets, and treat Strong\nDistance as km/mi. Weak library matches now default to a new exercise. Scan\nreview matches the library, shows rest/RPE/notes, and tells the truth about\nre-imports. Paste or Type is the user-facing name throughout.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:45:54Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:45:54Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserTests.swift",
+          "additions": 21,
+          "deletions": 0,
+          "changes": 21
+        },
+        {
+          "filename": "Tests/Unit/WorkoutCSVParserTests.swift",
+          "additions": 69,
+          "deletions": 0,
+          "changes": 69
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanViewModelTests.swift",
+          "additions": 46,
+          "deletions": 0,
+          "changes": 46
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 33,
+          "deletions": 0,
+          "changes": 33
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 32,
+          "deletions": 4,
+          "changes": 36
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 89,
+          "deletions": 9,
+          "changes": 98
+        },
+        {
+          "filename": "marble/Features/Import/Scan/ImportTimingViews.swift",
+          "additions": 160,
+          "deletions": 3,
+          "changes": 163
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutDraftArbiter.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanView.swift",
+          "additions": 36,
+          "deletions": 15,
+          "changes": 51
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanViewModel.swift",
+          "additions": 61,
+          "deletions": 5,
+          "changes": 66
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/PendingTextImport.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 121,
+          "deletions": 66,
+          "changes": 187
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutImportPayload.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutSessionSegmenter.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 15,
+          "deletions": 80,
+          "changes": 95
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 29,
+          "deletions": 15,
+          "changes": 44
+        },
+        {
+          "filename": "marble/Models/ImportedWorkout.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 719,
+        "deletions": 204,
+        "total": 923
+      }
+    },
+    {
+      "sha": "e4ca6637a6ba6e07945ac6d8e461c404b3cb1134",
+      "html_url": "https://github.com/enzo-prism/marble/commit/e4ca6637a6ba6e07945ac6d8e461c404b3cb1134",
+      "commit": {
+        "message": "Fix TestFlight upload for asc 4.5 builds upload flags\n\nArchive of 2.3 (57) succeeded; upload died on the removed --timeout\nflag. Wait with --poll-interval and --verify-timeout instead.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:20:37Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:20:37Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "scripts/ci_testflight.sh",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 4,
+        "deletions": 1,
+        "total": 5
+      }
+    },
+    {
+      "sha": "17b5fbadaca35c79c9777035ab9c798e2e5a49f6",
+      "html_url": "https://github.com/enzo-prism/marble/commit/17b5fbadaca35c79c9777035ab9c798e2e5a49f6",
+      "commit": {
+        "message": "Bump project build to 57 for the bulk import TestFlight\n\nASC already has 2.3 build 56 VALID (Train/Log/Progress). The TestFlight\njob refuses an upload whose CURRENT_PROJECT_VERSION is behind next-build.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:16:22Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:16:22Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 12,
+          "deletions": 7,
+          "changes": 19
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        }
+      ],
+      "stats": {
+        "additions": 16,
+        "deletions": 11,
+        "total": 27
+      }
+    },
+    {
+      "sha": "6a92432d1917f681ff0d923e172e4299089feec6",
+      "html_url": "https://github.com/enzo-prism/marble/commit/6a92432d1917f681ff0d923e172e4299089feec6",
+      "commit": {
+        "message": "Record PR #23 merge on main for the bulk import wave\n\nHandoff, roadmap, README, and testing notes now cite merge SHA cbd5116\nand the green unit-test CI run.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:15:10Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:15:10Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 8,
+          "deletions": 5,
+          "changes": 13
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 14,
+        "deletions": 10,
+        "total": 24
+      }
+    },
+    {
+      "sha": "cbd51164ceb40cd61b1743e9e889b0bce389ea13",
+      "html_url": "https://github.com/enzo-prism/marble/commit/cbd51164ceb40cd61b1743e9e889b0bce389ea13",
+      "commit": {
+        "message": "Document bulk import CSV fidelity, scan handoff, and Paste or Type\n\nINTEGRATIONS now describes the on-device scan/text/CSV pipeline. Review\nnotes and hub copy use Paste or Type, not Typed Workout.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:04:57Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:04:57Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "AGENTS.md",
+          "additions": 6,
+          "deletions": 4,
+          "changes": 10
+        },
+        {
+          "filename": "AppStore/review/2.3.md",
+          "additions": 6,
+          "deletions": 4,
+          "changes": 10
+        },
+        {
+          "filename": "INTEGRATIONS.md",
+          "additions": 25,
+          "deletions": 0,
+          "changes": 25
+        },
+        {
+          "filename": "README.md",
+          "additions": 9,
+          "deletions": 4,
+          "changes": 13
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 20,
+          "deletions": 1,
+          "changes": 21
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 14,
+          "deletions": 1,
+          "changes": 15
+        }
+      ],
+      "stats": {
+        "additions": 81,
+        "deletions": 14,
+        "total": 95
+      }
+    },
+    {
+      "sha": "a14d072e5e6eaa3bd02ddef0b74cee484597f19b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/a14d072e5e6eaa3bd02ddef0b74cee484597f19b",
+      "commit": {
+        "message": "Import CSV fidelity, multi-page scan handoff, and honest batch matching\n\nHevy/Strong CSVs now skip warmup sets, map RPE and notes, and keep the\nsession clock. Multi-page scans concatenate OCR and hand a dated week to\nthe typed pipeline. Batch review reports library/new/weak matches and\ncounts unique new names. File import no longer promises JSON.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T04:03:46Z"
+        },
+        "committer": {
+          "date": "2026-08-20T04:03:46Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/Unit/WorkoutCSVParserTests.swift",
+          "additions": 64,
+          "deletions": 0,
+          "changes": 64
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTests.swift",
+          "additions": 35,
+          "deletions": 0,
+          "changes": 35
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanViewModelTests.swift",
+          "additions": 52,
+          "deletions": 0,
+          "changes": 52
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 27,
+          "deletions": 0,
+          "changes": 27
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 43,
+          "deletions": 0,
+          "changes": 43
+        },
+        {
+          "filename": "marble/Features/Import/ImportView.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Features/Import/Scan/DocumentScannerView.swift",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanDraft.swift",
+          "additions": 25,
+          "deletions": 1,
+          "changes": 26
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 39,
+          "deletions": 4,
+          "changes": 43
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanView.swift",
+          "additions": 27,
+          "deletions": 13,
+          "changes": 40
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanViewModel.swift",
+          "additions": 63,
+          "deletions": 10,
+          "changes": 73
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 140,
+          "deletions": 2,
+          "changes": 142
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextBatchReview.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 13,
+          "deletions": 3,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 58,
+          "deletions": 2,
+          "changes": 60
+        }
+      ],
+      "stats": {
+        "additions": 599,
+        "deletions": 38,
+        "total": 637
+      }
+    },
+    {
+      "sha": "186e4e319e2afa20fdef99b6ab901201ac9af231",
+      "html_url": "https://github.com/enzo-prism/marble/commit/186e4e319e2afa20fdef99b6ab901201ac9af231",
+      "commit": {
+        "message": "Drop unnecessary nonisolated(unsafe) on Sendable CSV date formatters\n\nThe iOS 26 SDK treats DateFormatter as Sendable, so the CSV date cache\nno longer needs the unsafe annotation. ISO8601DateFormatter still does.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T03:36:48Z"
+        },
+        "committer": {
+          "date": "2026-08-20T03:36:48Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        }
+      ],
+      "stats": {
+        "additions": 2,
+        "deletions": 2,
+        "total": 4
+      }
+    },
+    {
+      "sha": "cbf5dccc3592a75ff4f784de26709cef43cc268d",
+      "html_url": "https://github.com/enzo-prism/marble/commit/cbf5dccc3592a75ff4f784de26709cef43cc268d",
+      "commit": {
+        "message": "Add bulk text and CSV workout import with session split and review\n\nPaste, file, or Shortcuts can now bring in a week of notes or a Hevy/Strong\nexport as separate workouts. Date, weekday, and month headers split sessions\nbefore parsing; CSV is grouped by title and start time and never sent through\nFoundation Models. N>1 opens a Health-style select list; N==1 keeps the\nexisting single-workout review.\n\nImported sets now link to the ledger (and a finished session) so origin\nbadges and the calendar match Health imports. Already-imported segments stay\nunselected instead of duplicating. Accessibility IDs stay on leaf controls.\n\nCo-authored-by: enzo <enzo-prism@users.noreply.github.com>",
+        "author": {
+          "date": "2026-08-20T03:28:45Z"
+        },
+        "committer": {
+          "date": "2026-08-20T03:28:45Z"
+        }
+      },
+      "files": [
+        {
+          "filename": "Tests/UI/ImportFlowUITests.swift",
+          "additions": 27,
+          "deletions": 0,
+          "changes": 27
+        },
+        {
+          "filename": "Tests/Unit/WorkoutCSVParserTests.swift",
+          "additions": 158,
+          "deletions": 0,
+          "changes": 158
+        },
+        {
+          "filename": "Tests/Unit/WorkoutScanImporterTests.swift",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 119,
+          "deletions": 0,
+          "changes": 119
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 246,
+          "deletions": 0,
+          "changes": 246
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Import/ImportView.swift",
+          "additions": 23,
+          "deletions": 6,
+          "changes": 29
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 10,
+          "deletions": 0,
+          "changes": 10
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 136,
+          "deletions": 2,
+          "changes": 138
+        },
+        {
+          "filename": "marble/Features/Import/Scan/ImportTimingViews.swift",
+          "additions": 3,
+          "deletions": 3,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanImporter.swift",
+          "additions": 71,
+          "deletions": 2,
+          "changes": 73
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/PendingTextImport.swift",
+          "additions": 30,
+          "deletions": 0,
+          "changes": 30
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutCSVParser.swift",
+          "additions": 477,
+          "deletions": 0,
+          "changes": 477
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutImportOrchestrator.swift",
+          "additions": 52,
+          "deletions": 0,
+          "changes": 52
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutImportPayload.swift",
+          "additions": 64,
+          "deletions": 0,
+          "changes": 64
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutSessionSegmenter.swift",
+          "additions": 62,
+          "deletions": 0,
+          "changes": 62
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextBatchReview.swift",
+          "additions": 153,
+          "deletions": 0,
+          "changes": 153
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 191,
+          "deletions": 53,
+          "changes": 244
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 397,
+          "deletions": 89,
+          "changes": 486
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Intents/MarbleAppIntents.swift",
+          "additions": 55,
+          "deletions": 0,
+          "changes": 55
+        }
+      ],
+      "stats": {
+        "additions": 2329,
+        "deletions": 155,
+        "total": 2484
+      }
+    },
     {
       "sha": "8bde7a215b32823c898e877f6f4ace1fe370a192",
       "html_url": "https://github.com/enzo-prism/marble/commit/8bde7a215b32823c898e877f6f4ace1fe370a192",
