@@ -1,10 +1,324 @@
 {
-  "generatedAt": "2026-08-24T07:20:27.324Z",
+  "generatedAt": "2026-08-24T13:12:51.949Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
-  "commitCount": 194,
+  "commitCount": 198,
   "commits": [
+    {
+      "sha": "cfc3ca5df1411a77568b00bccaec52dbbc7db620",
+      "html_url": "https://github.com/enzo-prism/marble/commit/cfc3ca5df1411a77568b00bccaec52dbbc7db620",
+      "commit": {
+        "message": "Reconcile build 60 release state",
+        "author": {
+          "date": "2026-08-24T01:29:29-07:00"
+        },
+        "committer": {
+          "date": "2026-08-24T01:29:29-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 28,
+          "deletions": 25,
+          "changes": 53
+        },
+        {
+          "filename": "AppStore/testflight/2.4-build-60.md",
+          "additions": 24,
+          "deletions": 18,
+          "changes": 42
+        },
+        {
+          "filename": "README.md",
+          "additions": 16,
+          "deletions": 12,
+          "changes": 28
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 54,
+          "deletions": 43,
+          "changes": 97
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 7,
+          "deletions": 8,
+          "changes": 15
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 36,
+          "deletions": 28,
+          "changes": 64
+        }
+      ],
+      "stats": {
+        "additions": 165,
+        "deletions": 134,
+        "total": 299
+      }
+    },
+    {
+      "sha": "b287d7238494799818db5947524a5cc05b9c8a9c",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b287d7238494799818db5947524a5cc05b9c8a9c",
+      "commit": {
+        "message": "Merge pull request #28 from enzo-prism/codex/build-60-release-fixes\n\nFix build 60 workout release blockers",
+        "author": {
+          "date": "2026-08-24T01:07:55-07:00"
+        },
+        "committer": {
+          "date": "2026-08-24T01:07:55-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 17,
+          "deletions": 8,
+          "changes": 25
+        },
+        {
+          "filename": "AppStore/testflight/2.4-build-60.md",
+          "additions": 74,
+          "deletions": 0,
+          "changes": 74
+        },
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 0,
+          "changes": 10
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 48,
+          "deletions": 2,
+          "changes": 50
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 35,
+          "deletions": 1,
+          "changes": 36
+        },
+        {
+          "filename": "Tests/UI/WorkoutFlowUITests.swift",
+          "additions": 10,
+          "deletions": 0,
+          "changes": 10
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 73,
+          "deletions": 5,
+          "changes": 78
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 17,
+          "deletions": 3,
+          "changes": 20
+        }
+      ],
+      "stats": {
+        "additions": 311,
+        "deletions": 26,
+        "total": 337
+      }
+    },
+    {
+      "sha": "34b24166c44dd0fc76c4a8e70ca5a94795bb387b",
+      "html_url": "https://github.com/enzo-prism/marble/commit/34b24166c44dd0fc76c4a8e70ca5a94795bb387b",
+      "commit": {
+        "message": "Fix build 60 workout release blockers",
+        "author": {
+          "date": "2026-08-24T00:53:18-07:00"
+        },
+        "committer": {
+          "date": "2026-08-24T00:53:18-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 17,
+          "deletions": 8,
+          "changes": 25
+        },
+        {
+          "filename": "AppStore/testflight/2.4-build-60.md",
+          "additions": 74,
+          "deletions": 0,
+          "changes": 74
+        },
+        {
+          "filename": "README.md",
+          "additions": 10,
+          "deletions": 0,
+          "changes": 10
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 48,
+          "deletions": 2,
+          "changes": 50
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 35,
+          "deletions": 1,
+          "changes": 36
+        },
+        {
+          "filename": "Tests/UI/WorkoutFlowUITests.swift",
+          "additions": 10,
+          "deletions": 0,
+          "changes": 10
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 73,
+          "deletions": 5,
+          "changes": 78
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/ContentView.swift",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 15,
+          "deletions": 0,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 17,
+          "deletions": 3,
+          "changes": 20
+        }
+      ],
+      "stats": {
+        "additions": 311,
+        "deletions": 26,
+        "total": 337
+      }
+    },
+    {
+      "sha": "c43d7d7a90ecad35bcd7c032bfdfa432ff9b6ec1",
+      "html_url": "https://github.com/enzo-prism/marble/commit/c43d7d7a90ecad35bcd7c032bfdfa432ff9b6ec1",
+      "commit": {
+        "message": "Reconcile build 59 release state",
+        "author": {
+          "date": "2026-08-24T00:26:05-07:00"
+        },
+        "committer": {
+          "date": "2026-08-24T00:26:05-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "ASC.md",
+          "additions": 17,
+          "deletions": 15,
+          "changes": 32
+        },
+        {
+          "filename": "AppStore/ACCESSIBILITY_NUTRITION_LABELS.md",
+          "additions": 4,
+          "deletions": 3,
+          "changes": 7
+        },
+        {
+          "filename": "AppStore/PHYSICAL_DEVICE_CHECKLIST_2.4.md",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "AppStore/testflight/2.4-build-59.md",
+          "additions": 9,
+          "deletions": 5,
+          "changes": 14
+        },
+        {
+          "filename": "MarbleWidgets/SETUP.md",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "README.md",
+          "additions": 9,
+          "deletions": 8,
+          "changes": 17
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 48,
+          "deletions": 35,
+          "changes": 83
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 6,
+          "deletions": 7,
+          "changes": 13
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 14,
+          "deletions": 12,
+          "changes": 26
+        }
+      ],
+      "stats": {
+        "additions": 114,
+        "deletions": 91,
+        "total": 205
+      }
+    },
     {
       "sha": "eead033f7d454180c61f1e49d7d66a233927c3c8",
       "html_url": "https://github.com/enzo-prism/marble/commit/eead033f7d454180c61f1e49d7d66a233927c3c8",
