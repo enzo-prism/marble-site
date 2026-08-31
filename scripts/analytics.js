@@ -2,18 +2,21 @@
   "use strict";
 
   const page = document.body?.dataset.page || window.location.pathname || "unknown";
+  const eventDataKeys = ["location", "target"];
 
   function track(name, data = {}) {
-    if (!name || typeof window.va !== "function") return;
+    if (typeof name !== "string" || !name.trim() || typeof window.va !== "function") return;
 
-    const payload = { name, page };
+    const eventData = {};
 
-    for (const [key, value] of Object.entries(data)) {
-      if (value === undefined || value === null || value === "") continue;
-      payload[key] = value;
+    for (const key of eventDataKeys) {
+      const value = data?.[key];
+      if (!["string", "number", "boolean"].includes(typeof value)) continue;
+      if (typeof value === "string" && !value.trim()) continue;
+      eventData[key] = value;
     }
 
-    window.va("event", payload);
+    window.va("event", { name, data: eventData });
   }
 
   function getTrackingData(node) {
@@ -22,7 +25,6 @@
     return {
       location: node.dataset.analyticsLocation,
       target: node.dataset.analyticsTarget,
-      label: node.dataset.analyticsLabel,
     };
   }
 

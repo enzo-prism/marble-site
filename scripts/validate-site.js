@@ -4,6 +4,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const vm = require("node:vm");
 
 const root = path.resolve(__dirname, "..");
 const canonicalOrigin = "https://marble-fit.app";
@@ -193,10 +194,179 @@ function validateReference({ file, source, rawValue, index, baseUrl, idCache, la
   );
 }
 
+function scriptElements(source) {
+  return [...source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)].map((match) => ({
+    match,
+    attributes: parseAttributes(`<script${match[1]}>`),
+    body: match[2],
+  }));
+}
+
+function executeAnalyticsBootstrap(body, hostname) {
+  const appendedScripts = [];
+  const windowObject = { location: { hostname } };
+  const documentObject = {
+    createElement(tagName) {
+      return { tagName };
+    },
+    head: {
+      appendChild(node) {
+        appendedScripts.push(node);
+      },
+    },
+  };
+
+  vm.runInNewContext(body, { document: documentObject, URL, window: windowObject }, { timeout: 1_000 });
+  return { appendedScripts, windowObject };
+}
+
+function validateAnalyticsHtml(file, source, withoutComments) {
+  const scripts = scriptElements(withoutComments);
+  const loaderPath = "/_vercel/insights/script.js";
+  const loaderOccurrences = [...withoutComments.matchAll(/\/_vercel\/insights\/script\.js/g)];
+  const loaderScripts = scripts.filter(({ body }) => body.includes(loaderPath));
+  const queueScripts = scripts.filter(({ body }) =>
+    /window\.vaq[\s\S]*?\.push\s*\(\s*arguments\s*\)/.test(body),
+  );
+
+  check(
+    loaderOccurrences.length === 1,
+    file,
+    source,
+    loaderOccurrences[0]?.index ?? 0,
+    "must contain exactly one Vercel Web Analytics loader",
+  );
+  check(
+    loaderScripts.length === 1,
+    file,
+    source,
+    loaderScripts[0]?.match.index ?? 0,
+    "must load Vercel Web Analytics from one inline production guard",
+  );
+  check(
+    queueScripts.length === 1,
+    file,
+    source,
+    queueScripts[0]?.match.index ?? 0,
+    "must contain exactly one Vercel Web Analytics queue shim",
+  );
+  if (loaderScripts.length === 1 && queueScripts.length === 1) {
+    check(
+      loaderScripts[0].match.index === queueScripts[0].match.index,
+      file,
+      source,
+      loaderScripts[0].match.index,
+      "Vercel Web Analytics loader and queue shim must share one bootstrap",
+    );
+  }
+
+  if (loaderScripts.length === 1) {
+    const loader = loaderScripts[0];
+
+    for (const hostname of ["localhost", "127.0.0.1", "::1"]) {
+      try {
+        const result = executeAnalyticsBootstrap(loader.body, hostname);
+        check(
+          result.appendedScripts.length === 0,
+          file,
+          source,
+          loader.match.index,
+          `Vercel Web Analytics must not load on ${hostname}`,
+        );
+      } catch (error) {
+        check(false, file, source, loader.match.index, `analytics bootstrap failed for ${hostname}: ${error.message}`);
+      }
+    }
+
+    try {
+      const result = executeAnalyticsBootstrap(loader.body, "marble-fit.app");
+      check(
+        result.appendedScripts.length === 1,
+        file,
+        source,
+        loader.match.index,
+        "Vercel Web Analytics must load exactly once in production",
+      );
+      if (result.appendedScripts.length === 1) {
+        check(
+          result.appendedScripts[0].src === loaderPath && result.appendedScripts[0].defer === true,
+          file,
+          source,
+          loader.match.index,
+          "production analytics loader must be deferred and use /_vercel/insights/script.js",
+        );
+      }
+
+      const queueLength = Array.isArray(result.windowObject.vaq) ? result.windowObject.vaq.length : -1;
+      check(
+        typeof result.windowObject.va === "function" && queueLength >= 1,
+        file,
+        source,
+        loader.match.index,
+        "analytics bootstrap must initialize window.va and queue beforeSend",
+      );
+      if (typeof result.windowObject.va === "function") {
+        result.windowObject.va("validator-probe");
+        check(
+          Array.isArray(result.windowObject.vaq) &&
+            result.windowObject.vaq.length === queueLength + 1 &&
+            result.windowObject.vaq.at(-1)?.[0] === "validator-probe",
+          file,
+          source,
+          loader.match.index,
+          "window.va must queue calls made before the analytics client is ready",
+        );
+      }
+    } catch (error) {
+      check(false, file, source, loader.match.index, `analytics bootstrap failed in production: ${error.message}`);
+    }
+  }
+
+  const trackedElements = [...withoutComments.matchAll(/<[a-z][^>]*\bdata-analytics-event\b[^>]*>/gi)].map((match) => ({
+    match,
+    attributes: parseAttributes(match[0]),
+  }));
+
+  for (const { match, attributes } of trackedElements) {
+    for (const attribute of ["data-analytics-event", "data-analytics-location", "data-analytics-target"]) {
+      check(
+        Boolean(attributes.get(attribute)?.trim()),
+        file,
+        source,
+        match.index,
+        `tracked elements must have a non-empty ${attribute}`,
+      );
+    }
+  }
+
+  if (trackedElements.length) {
+    const clientScripts = scripts.filter(({ attributes }) => attributes.get("src") === "/scripts/analytics.js");
+    check(
+      clientScripts.length === 1,
+      file,
+      source,
+      clientScripts[0]?.match.index ?? trackedElements[0].match.index,
+      "pages with custom analytics events must load /scripts/analytics.js exactly once",
+    );
+
+    const bodyTags = tags(withoutComments, "body");
+    const bodyAttributes = bodyTags.length ? parseAttributes(bodyTags[0][0]) : new Map();
+    check(
+      bodyTags.length === 1 && Boolean(bodyAttributes.get("data-page")?.trim()),
+      file,
+      source,
+      bodyTags[0]?.index ?? 0,
+      "pages with custom analytics events must declare a non-empty body[data-page]",
+    );
+  }
+}
+
 function validateHtml(file, idCache) {
   const source = fs.readFileSync(file, "utf8");
   const withoutComments = source.replace(/<!--[\s\S]*?-->/g, "");
   const canonical = expectedCanonical(file);
+
+  validateAnalyticsHtml(file, source, withoutComments);
 
   const htmlTags = tags(withoutComments, "html");
   const htmlAttributes = htmlTags.length ? parseAttributes(htmlTags[0][0]) : new Map();
@@ -380,6 +550,105 @@ function validateHtml(file, idCache) {
   }
 }
 
+function validateAnalyticsImplementation(file) {
+  const source = fs.readFileSync(file, "utf8");
+  const emitted = [];
+  const windowObject = {
+    location: { pathname: "/validator/" },
+    va(...args) {
+      emitted.push(args);
+    },
+  };
+  class StubElement {}
+  class StubHTMLElement extends StubElement {}
+  const documentObject = {
+    body: { dataset: { page: "validator" } },
+    addEventListener() {},
+    querySelectorAll() {
+      return [];
+    },
+  };
+
+  try {
+    vm.runInNewContext(
+      source,
+      {
+        document: documentObject,
+        Element: StubElement,
+        HTMLElement: StubHTMLElement,
+        window: windowObject,
+      },
+      { filename: relativeName(file), timeout: 1_000 },
+    );
+  } catch (error) {
+    check(false, file, source, 0, `analytics implementation does not execute: ${error.message}`);
+    return;
+  }
+
+  const track = windowObject.marbleAnalytics?.track;
+  check(typeof track === "function", file, source, 0, "analytics implementation must expose marbleAnalytics.track");
+  if (typeof track !== "function") return;
+
+  track("Validator Event", {
+    location: "validator_location",
+    target: "validator_target",
+    label: "must_not_be_sent",
+    page: "automatic_pageview_dimension",
+    unexpected: { nested: true },
+  });
+
+  check(emitted.length === 1, file, source, 0, "one track call must emit exactly one analytics event");
+  if (emitted.length !== 1) return;
+
+  const [command, payload] = emitted[0];
+  check(command === "event", file, source, 0, "custom analytics must use the raw event command");
+  check(payload && typeof payload === "object", file, source, 0, "custom analytics must emit an event payload object");
+  if (!payload || typeof payload !== "object") return;
+
+  check(
+    JSON.stringify(Object.keys(payload).sort()) === JSON.stringify(["data", "name"]),
+    file,
+    source,
+    0,
+    "custom analytics payload must use { name, data } without redundant page or label fields",
+  );
+  check(payload.name === "Validator Event", file, source, 0, "custom analytics must preserve the event name");
+
+  const data = payload.data;
+  check(data && typeof data === "object" && !Array.isArray(data), file, source, 0, "custom analytics data must be an object");
+  if (!data || typeof data !== "object" || Array.isArray(data)) return;
+
+  const dataKeys = Object.keys(data).sort();
+  check(
+    dataKeys.length <= 2,
+    file,
+    source,
+    0,
+    "custom analytics events cannot send more than two data properties",
+  );
+  check(
+    JSON.stringify(dataKeys) === JSON.stringify(["location", "target"]),
+    file,
+    source,
+    0,
+    "custom analytics data must contain only location and target",
+  );
+  check(
+    data.location === "validator_location" && data.target === "validator_target",
+    file,
+    source,
+    0,
+    "custom analytics must preserve location and target values",
+  );
+  check(
+    Object.values(data).every((value) => ["string", "number", "boolean"].includes(typeof value)),
+    file,
+    source,
+    0,
+    "custom analytics data values must be primitive",
+  );
+}
+
 function validateCss(file, idCache) {
   const source = fs.readFileSync(file, "utf8");
   const baseUrl = `${canonicalOrigin}/${relativeName(file)}`;
@@ -400,12 +669,15 @@ function validateCss(file, idCache) {
 function main() {
   const htmlFiles = walk(root, new Set([".html"]));
   const cssFiles = walk(root, new Set([".css"]));
+  const analyticsFile = path.join(root, "scripts", "analytics.js");
   const idCache = new Map();
 
   check(htmlFiles.length > 0, path.join(root, "index.html"), "", 0, "no HTML files found");
+  check(fs.existsSync(analyticsFile), analyticsFile, "", 0, "scripts/analytics.js is required");
 
   for (const file of htmlFiles) validateHtml(file, idCache);
   for (const file of cssFiles) validateCss(file, idCache);
+  if (fs.existsSync(analyticsFile)) validateAnalyticsImplementation(analyticsFile);
 
   if (errors.length) {
     console.error(`\nSite validation failed with ${errors.length} error${errors.length === 1 ? "" : "s"}:\n`);
