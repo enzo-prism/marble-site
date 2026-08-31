@@ -649,6 +649,104 @@ function validateAnalyticsImplementation(file) {
   );
 }
 
+function extractBalancedBlock(source, openingBrace) {
+  let depth = 0;
+
+  for (let index = openingBrace; index < source.length; index += 1) {
+    if (source[index] === "{") depth += 1;
+    if (source[index] !== "}") continue;
+
+    depth -= 1;
+    if (depth === 0) {
+      return source.slice(openingBrace + 1, index);
+    }
+  }
+
+  return null;
+}
+
+function listenerBodies(source, receiver, eventName) {
+  const escapedReceiver = receiver.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedEventName = eventName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(
+    `${escapedReceiver}\\.addEventListener\\(\\s*["']${escapedEventName}["']\\s*,\\s*\\(\\)\\s*=>\\s*\\{`,
+    "g",
+  );
+  const listeners = [];
+
+  for (const match of source.matchAll(pattern)) {
+    const openingBrace = match.index + match[0].lastIndexOf("{");
+    listeners.push({ body: extractBalancedBlock(source, openingBrace), index: match.index });
+  }
+
+  return listeners;
+}
+
+function validateChangelogInteractionAnalytics(file) {
+  const source = fs.readFileSync(file, "utf8");
+  const eventName = "Commit Detail Opened";
+  const eventOccurrences = [...source.matchAll(new RegExp(`trackAnalyticsEvent\\(\\s*["']${eventName}["']`, "g"))];
+  const summaryClicks = listenerBodies(source, "d.summary", "click");
+  const detailToggles = listenerBodies(source, "d.root", "toggle");
+
+  check(
+    eventOccurrences.length === 1,
+    file,
+    source,
+    eventOccurrences[0]?.index ?? 0,
+    `${eventName} must have exactly one emission path`,
+  );
+  check(
+    summaryClicks.length === 1 && typeof summaryClicks[0].body === "string",
+    file,
+    source,
+    summaryClicks[0]?.index ?? 0,
+    "commit detail analytics must use exactly one summary click listener",
+  );
+  if (summaryClicks.length === 1 && typeof summaryClicks[0].body === "string") {
+    const { body, index } = summaryClicks[0];
+    check(
+      body.includes("if (!d.root.open)") && body.includes(`trackAnalyticsEvent("${eventName}"`),
+      file,
+      source,
+      index,
+      "summary click must track only when the detail is currently closed",
+    );
+    check(
+      body.includes('location: "changelog_details"') && body.includes('target: "commit"'),
+      file,
+      source,
+      index,
+      "commit detail analytics must keep categorical location and target properties",
+    );
+  }
+
+  check(
+    detailToggles.length === 1 && typeof detailToggles[0].body === "string",
+    file,
+    source,
+    detailToggles[0]?.index ?? 0,
+    "commit details must use exactly one toggle listener for lazy hydration",
+  );
+  if (detailToggles.length === 1 && typeof detailToggles[0].body === "string") {
+    const { body, index } = detailToggles[0];
+    check(
+      body.includes("if (d.root.open)") && body.includes("hydrateDetail(commit, refs, overrides)"),
+      file,
+      source,
+      index,
+      "detail toggle must continue lazy hydration when opened",
+    );
+    check(
+      !body.includes(eventName) && !body.includes("trackAnalyticsEvent"),
+      file,
+      source,
+      index,
+      "detail toggle must not emit analytics for default or programmatic opens",
+    );
+  }
+}
+
 function validateCss(file, idCache) {
   const source = fs.readFileSync(file, "utf8");
   const baseUrl = `${canonicalOrigin}/${relativeName(file)}`;
@@ -670,14 +768,17 @@ function main() {
   const htmlFiles = walk(root, new Set([".html"]));
   const cssFiles = walk(root, new Set([".css"]));
   const analyticsFile = path.join(root, "scripts", "analytics.js");
+  const changelogFile = path.join(root, "changelog", "changelog.js");
   const idCache = new Map();
 
   check(htmlFiles.length > 0, path.join(root, "index.html"), "", 0, "no HTML files found");
   check(fs.existsSync(analyticsFile), analyticsFile, "", 0, "scripts/analytics.js is required");
+  check(fs.existsSync(changelogFile), changelogFile, "", 0, "changelog/changelog.js is required");
 
   for (const file of htmlFiles) validateHtml(file, idCache);
   for (const file of cssFiles) validateCss(file, idCache);
   if (fs.existsSync(analyticsFile)) validateAnalyticsImplementation(analyticsFile);
+  if (fs.existsSync(changelogFile)) validateChangelogInteractionAnalytics(changelogFile);
 
   if (errors.length) {
     console.error(`\nSite validation failed with ${errors.length} error${errors.length === 1 ? "" : "s"}:\n`);
