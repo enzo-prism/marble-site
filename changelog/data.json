@@ -1,10 +1,358 @@
 {
-  "generatedAt": "2026-08-27T22:15:54.182Z",
+  "generatedAt": "2026-08-31T05:34:55.183Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
   "commitCount": 200,
   "commits": [
+    {
+      "sha": "ac25a24c15c0f171806e929110e6b1ffdb18f4d4",
+      "html_url": "https://github.com/enzo-prism/marble/commit/ac25a24c15c0f171806e929110e6b1ffdb18f4d4",
+      "commit": {
+        "message": "Document build 63 TestFlight release",
+        "author": {
+          "date": "2026-08-30T19:44:16-07:00"
+        },
+        "committer": {
+          "date": "2026-08-30T19:44:16-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/testflight/2.4-build-63.md",
+          "additions": 31,
+          "deletions": 12,
+          "changes": 43
+        },
+        {
+          "filename": "README.md",
+          "additions": 17,
+          "deletions": 7,
+          "changes": 24
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 43,
+          "deletions": 7,
+          "changes": 50
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 31,
+          "deletions": 12,
+          "changes": 43
+        }
+      ],
+      "stats": {
+        "additions": 122,
+        "deletions": 38,
+        "total": 160
+      }
+    },
+    {
+      "sha": "cbeb6d2f7131c14ab1327ff07e703f812a6fc754",
+      "html_url": "https://github.com/enzo-prism/marble/commit/cbeb6d2f7131c14ab1327ff07e703f812a6fc754",
+      "commit": {
+        "message": "Improve Add responsiveness and Progress performance for build 63\n\nMerge exact build-63 candidate after successful PR CI.",
+        "author": {
+          "date": "2026-08-30T19:28:33-07:00"
+        },
+        "committer": {
+          "date": "2026-08-30T19:28:33-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/testflight/2.4-build-63.md",
+          "additions": 65,
+          "deletions": 0,
+          "changes": 65
+        },
+        {
+          "filename": "README.md",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 24,
+          "deletions": 0,
+          "changes": 24
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 75,
+          "deletions": 0,
+          "changes": 75
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 115,
+          "deletions": 0,
+          "changes": 115
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutDateParser.swift",
+          "additions": 41,
+          "deletions": 9,
+          "changes": 50
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutLivePreviewBuilder.swift",
+          "additions": 128,
+          "deletions": 0,
+          "changes": 128
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextBatchReview.swift",
+          "additions": 34,
+          "deletions": 9,
+          "changes": 43
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 28,
+          "deletions": 8,
+          "changes": 36
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 92,
+          "deletions": 62,
+          "changes": 154
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 69,
+          "deletions": 15,
+          "changes": 84
+        }
+      ],
+      "stats": {
+        "additions": 704,
+        "deletions": 118,
+        "total": 822
+      }
+    },
+    {
+      "sha": "d14350a4e8b0e5bcd3b4e26bfd24d4cae888df7f",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d14350a4e8b0e5bcd3b4e26bfd24d4cae888df7f",
+      "commit": {
+        "message": "Improve Add responsiveness and Progress performance for build 63",
+        "author": {
+          "date": "2026-08-30T17:22:55-07:00"
+        },
+        "committer": {
+          "date": "2026-08-30T17:22:55-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "AppStore/testflight/2.4-build-63.md",
+          "additions": 65,
+          "deletions": 0,
+          "changes": 65
+        },
+        {
+          "filename": "README.md",
+          "additions": 3,
+          "deletions": 2,
+          "changes": 5
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerLivePreview.WorkoutComposer_LivePreview_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Unit/HandwrittenWorkoutParserPasteTests.swift",
+          "additions": 24,
+          "deletions": 0,
+          "changes": 24
+        },
+        {
+          "filename": "Tests/Unit/WorkoutSessionSegmenterTests.swift",
+          "additions": 75,
+          "deletions": 0,
+          "changes": 75
+        },
+        {
+          "filename": "Tests/Unit/WorkoutTextEntryViewModelTests.swift",
+          "additions": 115,
+          "deletions": 0,
+          "changes": 115
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Import/Scan/FoundationModelsWorkoutParser.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutDateParser.swift",
+          "additions": 41,
+          "deletions": 9,
+          "changes": 50
+        },
+        {
+          "filename": "marble/Features/Import/Scan/HandwrittenWorkoutParser.swift",
+          "additions": 24,
+          "deletions": 7,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutLivePreviewBuilder.swift",
+          "additions": 128,
+          "deletions": 0,
+          "changes": 128
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextBatchReview.swift",
+          "additions": 34,
+          "deletions": 9,
+          "changes": 43
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 28,
+          "deletions": 8,
+          "changes": 36
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 92,
+          "deletions": 62,
+          "changes": 154
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 69,
+          "deletions": 15,
+          "changes": 84
+        }
+      ],
+      "stats": {
+        "additions": 704,
+        "deletions": 118,
+        "total": 822
+      }
+    },
     {
       "sha": "e14692df3babb054a53b1c2aa3ea3e064df7e4ad",
       "html_url": "https://github.com/enzo-prism/marble/commit/e14692df3babb054a53b1c2aa3ea3e064df7e4ad",
@@ -31135,264 +31483,6 @@
         "additions": 314,
         "deletions": 154,
         "total": 468
-      }
-    },
-    {
-      "sha": "f09a57fc625d33646332844a1e9a351f9d24bffe",
-      "html_url": "https://github.com/enzo-prism/marble/commit/f09a57fc625d33646332844a1e9a351f9d24bffe",
-      "commit": {
-        "message": "Expand AGENTS with Apple design/dev standards",
-        "author": {
-          "date": "2026-01-12T15:42:06-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T15:42:06-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "AGENTS.md",
-          "additions": 54,
-          "deletions": 10,
-          "changes": 64
-        }
-      ],
-      "stats": {
-        "additions": 54,
-        "deletions": 10,
-        "total": 64
-      }
-    },
-    {
-      "sha": "6df1ed87f9c332fbad0ff97a4666f53ffaeefc57",
-      "html_url": "https://github.com/enzo-prism/marble/commit/6df1ed87f9c332fbad0ff97a4666f53ffaeefc57",
-      "commit": {
-        "message": "Refine Quick Log glass pill and document Liquid Glass rules",
-        "author": {
-          "date": "2026-01-12T15:35:16-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T15:35:16-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "AGENTS.md",
-          "additions": 15,
-          "deletions": 1,
-          "changes": 16
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Components/GlassStyle.swift",
-          "additions": 5,
-          "deletions": 5,
-          "changes": 10
-        },
-        {
-          "filename": "marble/Components/QuickLogAccessory.swift",
-          "additions": 11,
-          "deletions": 4,
-          "changes": 15
-        }
-      ],
-      "stats": {
-        "additions": 31,
-        "deletions": 10,
-        "total": 41
-      }
-    },
-    {
-      "sha": "fd3d40a23cf343212f4d4a9bec942df18ab0449c",
-      "html_url": "https://github.com/enzo-prism/marble/commit/fd3d40a23cf343212f4d4a9bec942df18ab0449c",
-      "commit": {
-        "message": "Fix app icon set sizes and Info.plist icon name",
-        "author": {
-          "date": "2026-01-12T15:11:33-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T15:11:33-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "marble.xcodeproj/project.pbxproj",
-          "additions": 2,
-          "deletions": 0,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iOSMarketing-1024.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-20@1x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-20@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-29@1x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-29@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-40@1x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-40@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-76@1x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-76@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPad-83.5@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-20@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-20@3x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-29@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-29@3x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-40@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-40@3x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-60@2x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon-iPhone-60@3x.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Assets.xcassets/AppIcon.appiconset/Contents.json",
-          "additions": 101,
-          "deletions": 23,
-          "changes": 124
-        }
-      ],
-      "stats": {
-        "additions": 103,
-        "deletions": 23,
-        "total": 126
       }
     }
   ]
