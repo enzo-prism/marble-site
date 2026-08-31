@@ -380,6 +380,7 @@
 
     return {
       root,
+      summary,
       whyBody,
       notesSection,
       notesBody,
@@ -713,12 +714,19 @@
         loading: false,
       };
 
-      d.root.addEventListener("toggle", () => {
-        if (d.root.open) {
+      // Native <summary> keyboard activation dispatches click too. Checking the
+      // pre-toggle state records only a genuine user request to open the detail.
+      d.summary.addEventListener("click", () => {
+        if (!d.root.open) {
           trackAnalyticsEvent("Commit Detail Opened", {
             location: "changelog_details",
             target: "commit",
           });
+        }
+      });
+
+      d.root.addEventListener("toggle", () => {
+        if (d.root.open) {
           hydrateDetail(commit, refs, overrides);
         }
       });
