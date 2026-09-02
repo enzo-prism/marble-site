@@ -13,10 +13,19 @@ marble logs sets, supplements, streaks, and trends — and turns your own number
 - Offline: core logging, storage, and analysis work offline; optional external imports use Apple Health or their connected service
 - Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
-- Current App Store version: 2.2 (as of 2026-08-15)
+- Current App Store version: 2.4 (as of 2026-09-02)
+- Minimum OS: iOS 26.0
 
 ## Features
 
+- Add: an AI-first workout composer. Paste or type natural language, gym notation, multi-day Notes, or a Hevy or Strong CSV. Apple Intelligence structures prose on device when available; a deterministic parser handles notation and is the fallback. Review every workout, exercise match, set, date, RPE, rest, and note before anything is saved. Drafts survive tab switches and relaunches. Shortcuts can hand text directly to Add.
+- Strong exports handle European delimiters, decimal commas, kilograms, distance units, and supersets more accurately
+- Hevy imports preserve failed sets, RPE, notes, and session timing while skipping warmups
+- Weak exercise-name matches default to a new exercise instead of silently merging
+- Train, Log, and Progress IA (Calendar and Supplements inside Log; planned sets)
+- Typed or pasted workout import from Hevy, Strong, or Notes with on-device parse and review
+- Sprint V6: tenths-precision timing, built-in stopwatch, and multiple plans per exercise
+- Editable and deletable weigh-ins
 - Fast set logging (weight, reps, RPE, rest) with Save + Next and last-set recall
 - Estimated 1RM trends with plain verdicts: progressing, holding, adapted
 - Personal record feed, rep-record tables, and PR-in-reach cues while logging
@@ -36,14 +45,7 @@ marble logs sets, supplements, streaks, and trends — and turns your own number
 - Local reminders that cancel themselves once you've trained
 - Light and dark mode
 
-## Coming in marble 2.3
-
-- Typed or pasted workout import (Hevy, Strong, Notes, or free text) with on-device parse and review
-- Import date/time plus per-set overrides
-- Sprint V6: tenths-precision timing, built-in stopwatch, and multiple plans per exercise
-- Editable and deletable weigh-ins
-
-marble 2.2 is the version currently available on the App Store. marble 2.3 is coming soon.
+Parsing and review stay on-device. Marble remains local-first: no account, no ads, no Marble server, and no third-party tracking.
 
 ## Links
 
@@ -59,7 +61,7 @@ marble 2.2 is the version currently available on the App Store. marble 2.3 is co
 - Is marble free? Yes — every feature, nothing to unlock.
 - Does it work offline? Core logging, storage, and analysis do. Optional external imports use Apple Health or their connected service.
 - Is an account required? No.
-- Which devices? iPhone (Apple Watch and Garmin workouts import via Apple Health).
+- Which devices? iPhone, iOS 26.0 or later (Apple Watch and Garmin workouts import via Apple Health).
 - Ads or tracking? The app has no ads or third-party tracking and does not sell data. The website uses anonymous, aggregated Vercel Analytics.
 - Where does the coaching come from? The user's own logged sets, computed on-device.
-- What is coming in marble 2.3? Typed/pasted workout import with on-device review, tenths-precision sprints, import date/time and per-set overrides, and editable weigh-ins. 2.2 is live on the App Store.
+- What's new in marble 2.4? Add is an AI-first workout composer: paste or type natural language, gym notation, multi-day Notes, or a Hevy or Strong CSV; review structured sets before save. Apple Intelligence is optional and on-device when available, with a deterministic parser fallback. Strong and Hevy imports are more accurate. Train, Log, and Progress, tenths-precision sprints, and editable weigh-ins are already live.

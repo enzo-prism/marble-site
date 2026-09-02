@@ -50,5 +50,5 @@ this project is static. deploy with vercel as a static site or any static host.
 
 - media is fully self-hosted: no Cloudinary or Google Fonts. The changelog makes a lightweight GitHub API freshness check and the site uses Vercel Analytics.
 - current App Store marketing screenshots live in the versioned `images/app-store-2.1/` directory as complete 1320 × 2868 compositions, with responsive 660 × 1434 derivatives in `images/app-store-2.1/660w/`. Render them directly with `.store-shot`; do not place them inside the legacy `.device` frame or theme-swap them.
-- the `images/app-store-2.2/` directory holds approved in-app previews used for live 2.2 features (widgets, Daily Highlights, bodyweight) and the clearly labeled “Coming in Marble 2.3” section (typed import, tenths sprints).
+- the `images/app-store-2.2/` directory holds approved in-app previews used for live features (widgets, Daily Highlights, bodyweight, typed import / Add composer, tenths sprints).
 - legacy raw light/dark captures remain in `images/` for historical reference. They use `<screen>-light.png` / `<screen>-dark.png` pairs and can still be theme-swapped through `data-light` / `data-dark` when used.

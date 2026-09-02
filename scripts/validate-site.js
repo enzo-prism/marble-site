@@ -11,9 +11,9 @@ const canonicalOrigin = "https://marble-fit.app";
 const ignoredDirectories = new Set([".git", "node_modules"]);
 
 const homeContract = {
-  sectionIds: ["marble-2-3", "features", "screens", "faq", "download"],
+  sectionIds: ["marble-2-4", "features", "screens", "faq", "download"],
   labels: [
-    "Marble 2.2",
+    "Marble 2.4",
     "Paste your workout",
     "on-device",
     "Sprints, measured to the tenth",
