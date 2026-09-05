@@ -1,10 +1,1716 @@
 {
-  "generatedAt": "2026-08-31T05:34:55.183Z",
+  "generatedAt": "2026-09-05T10:35:36.411Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
   "commitCount": 200,
   "commits": [
+    {
+      "sha": "fb1baca9e0d954025b4806446d75c9eaa8c7ecc9",
+      "html_url": "https://github.com/enzo-prism/marble/commit/fb1baca9e0d954025b4806446d75c9eaa8c7ecc9",
+      "commit": {
+        "message": "Expose set rows as a single accessible summary for build 66",
+        "author": {
+          "date": "2026-09-04T23:16:00-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T23:16:00-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 8,
+          "deletions": 5,
+          "changes": 13
+        },
+        {
+          "filename": "AppStore/PHYSICAL_DEVICE_CHECKLIST_2.5.md",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "AppStore/testflight/2.5-build-66.md",
+          "additions": 20,
+          "deletions": 0,
+          "changes": 20
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        }
+      ],
+      "stats": {
+        "additions": 57,
+        "deletions": 16,
+        "total": 73
+      }
+    },
+    {
+      "sha": "61e67bda1dc29b8aa2ecf690b8df8d7bbc405bcf",
+      "html_url": "https://github.com/enzo-prism/marble/commit/61e67bda1dc29b8aa2ecf690b8df8d7bbc405bcf",
+      "commit": {
+        "message": "Accept rendered History baselines and restore snapshot comparisons",
+        "author": {
+          "date": "2026-09-04T22:46:46-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T22:46:46-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 2,
+          "deletions": 14,
+          "changes": 16
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        }
+      ],
+      "stats": {
+        "additions": 10,
+        "deletions": 14,
+        "total": 24
+      }
+    },
+    {
+      "sha": "946dda83900a29ca2abb8121d50d677d862c70e1",
+      "html_url": "https://github.com/enzo-prism/marble/commit/946dda83900a29ca2abb8121d50d677d862c70e1",
+      "commit": {
+        "message": "Wait for stable native History snapshot frames",
+        "author": {
+          "date": "2026-09-04T22:32:12-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T22:32:12-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/Snapshots/HistorySnapshotHarness.swift",
+          "additions": 45,
+          "deletions": 21,
+          "changes": 66
+        }
+      ],
+      "stats": {
+        "additions": 46,
+        "deletions": 22,
+        "total": 68
+      }
+    },
+    {
+      "sha": "23d4b969b735ecf62887d5c60008cc23614d38d5",
+      "html_url": "https://github.com/enzo-prism/marble/commit/23d4b969b735ecf62887d5c60008cc23614d38d5",
+      "commit": {
+        "message": "Attach snapshot windows to scene and validate rendered content",
+        "author": {
+          "date": "2026-09-04T22:12:36-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T22:12:36-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 15,
+          "deletions": 15,
+          "changes": 30
+        },
+        {
+          "filename": "Tests/Snapshots/HistorySnapshotHarness.swift",
+          "additions": 47,
+          "deletions": 33,
+          "changes": 80
+        },
+        {
+          "filename": "Tests/Snapshots/WorkoutHistorySnapshotTests.swift",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        }
+      ],
+      "stats": {
+        "additions": 63,
+        "deletions": 49,
+        "total": 112
+      }
+    },
+    {
+      "sha": "ee052abd79aa61f8510dc15cbf9671fe0e443ce0",
+      "html_url": "https://github.com/enzo-prism/marble/commit/ee052abd79aa61f8510dc15cbf9671fe0e443ce0",
+      "commit": {
+        "message": "Mount History snapshots before capture and isolate accessibility fixtures",
+        "author": {
+          "date": "2026-09-04T21:42:15-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T21:42:15-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "Tests/Snapshots/HistorySnapshotHarness.swift",
+          "additions": 128,
+          "deletions": 0,
+          "changes": 128
+        },
+        {
+          "filename": "Tests/Snapshots/WorkoutHistorySnapshotTests.swift",
+          "additions": 12,
+          "deletions": 4,
+          "changes": 16
+        },
+        {
+          "filename": "Tests/UI/WorkoutHistoryUITests.swift",
+          "additions": 18,
+          "deletions": 1,
+          "changes": 19
+        }
+      ],
+      "stats": {
+        "additions": 160,
+        "deletions": 7,
+        "total": 167
+      }
+    },
+    {
+      "sha": "dd7225fb08489c60080c937f2fa87e3c843e67c7",
+      "html_url": "https://github.com/enzo-prism/marble/commit/dd7225fb08489c60080c937f2fa87e3c843e67c7",
+      "commit": {
+        "message": "Improve workout summary semantics and hide decorative exercise icons",
+        "author": {
+          "date": "2026-09-04T21:12:57-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T21:12:57-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "marble/Components/SetRowView.swift",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutHistoryView.swift",
+          "additions": 15,
+          "deletions": 8,
+          "changes": 23
+        }
+      ],
+      "stats": {
+        "additions": 18,
+        "deletions": 8,
+        "total": 26
+      }
+    },
+    {
+      "sha": "d22e17d7f3dcb15aa0bcffaafe952f988649c44e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d22e17d7f3dcb15aa0bcffaafe952f988649c44e",
+      "commit": {
+        "message": "Use native repeat action and verify largest text interaction",
+        "author": {
+          "date": "2026-09-04T20:56:34-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T20:56:34-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 6,
+          "deletions": 3,
+          "changes": 9
+        },
+        {
+          "filename": "Tests/UI/WorkoutHistoryUITests.swift",
+          "additions": 31,
+          "deletions": 0,
+          "changes": 31
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutHistoryView.swift",
+          "additions": 8,
+          "deletions": 9,
+          "changes": 17
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 18,
+          "deletions": 6,
+          "changes": 24
+        }
+      ],
+      "stats": {
+        "additions": 63,
+        "deletions": 18,
+        "total": 81
+      }
+    },
+    {
+      "sha": "f19e7dea684ea8bc3d0f2844b5c43fa3d84d2560",
+      "html_url": "https://github.com/enzo-prism/marble/commit/f19e7dea684ea8bc3d0f2844b5c43fa3d84d2560",
+      "commit": {
+        "message": "Fix History text contrast and wrapping for build 65",
+        "author": {
+          "date": "2026-09-04T20:34:59-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T20:34:59-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 21,
+          "deletions": 6,
+          "changes": 27
+        },
+        {
+          "filename": ".github/workflows/release-checks.yml",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "AppStore/PHYSICAL_DEVICE_CHECKLIST_2.5.md",
+          "additions": 16,
+          "deletions": 6,
+          "changes": 22
+        },
+        {
+          "filename": "AppStore/testflight/2.5-build-65.md",
+          "additions": 18,
+          "deletions": 0,
+          "changes": 18
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 37,
+          "deletions": 19,
+          "changes": 56
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutHistoryView.swift",
+          "additions": 31,
+          "deletions": 8,
+          "changes": 39
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        }
+      ],
+      "stats": {
+        "additions": 132,
+        "deletions": 43,
+        "total": 175
+      }
+    },
+    {
+      "sha": "d3364db57ba5e7c9b39ca1ac21e9616735f527d9",
+      "html_url": "https://github.com/enzo-prism/marble/commit/d3364db57ba5e7c9b39ca1ac21e9616735f527d9",
+      "commit": {
+        "message": "Fix repeat review lifecycle and verify retained migration data",
+        "author": {
+          "date": "2026-09-04T18:53:01-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T18:53:01-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 3,
+          "deletions": 1,
+          "changes": 4
+        },
+        {
+          "filename": "AppStore/PHYSICAL_DEVICE_CHECKLIST_2.5.md",
+          "additions": 86,
+          "deletions": 0,
+          "changes": 86
+        },
+        {
+          "filename": "AppStore/metadata/version/2.5/en-US.json",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "AppStore/review/2.5.md",
+          "additions": 77,
+          "deletions": 0,
+          "changes": 77
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 25,
+          "deletions": 20,
+          "changes": 45
+        },
+        {
+          "filename": "Tests/Unit/WorkoutEntryDraftPersistenceTests.swift",
+          "additions": 60,
+          "deletions": 0,
+          "changes": 60
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 11,
+          "deletions": 4,
+          "changes": 15
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Testing/ReleaseMigrationProbe.swift",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": "marble/marbleApp.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 61,
+          "deletions": 2,
+          "changes": 63
+        },
+        {
+          "filename": "scripts/tests/migration_probe_test.rb",
+          "additions": 61,
+          "deletions": 0,
+          "changes": 61
+        },
+        {
+          "filename": "scripts/verify_migration_probe.rb",
+          "additions": 28,
+          "deletions": 0,
+          "changes": 28
+        }
+      ],
+      "stats": {
+        "additions": 476,
+        "deletions": 27,
+        "total": 503
+      }
+    },
+    {
+      "sha": "b1a6d5616d4f66af167ca69949a2f4eb6c2e275f",
+      "html_url": "https://github.com/enzo-prism/marble/commit/b1a6d5616d4f66af167ca69949a2f4eb6c2e275f",
+      "commit": {
+        "message": "Improve workout recovery, session history, and release safety",
+        "author": {
+          "date": "2026-09-04T17:28:13-07:00"
+        },
+        "committer": {
+          "date": "2026-09-04T17:28:13-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": ".github/workflows/ci.yml",
+          "additions": 9,
+          "deletions": 5,
+          "changes": 14
+        },
+        {
+          "filename": ".github/workflows/release-appstore.yml",
+          "additions": 61,
+          "deletions": 4,
+          "changes": 65
+        },
+        {
+          "filename": ".github/workflows/release-checks.yml",
+          "additions": 39,
+          "deletions": 0,
+          "changes": 39
+        },
+        {
+          "filename": ".github/workflows/release-testflight.yml",
+          "additions": 13,
+          "deletions": 5,
+          "changes": 18
+        },
+        {
+          "filename": "ASC.md",
+          "additions": 10,
+          "deletions": 18,
+          "changes": 28
+        },
+        {
+          "filename": "AppStore/testflight/2.5-build-64.md",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "CLOUD_RELEASE.md",
+          "additions": 25,
+          "deletions": 16,
+          "changes": 41
+        },
+        {
+          "filename": "Makefile",
+          "additions": 6,
+          "deletions": 6,
+          "changes": 12
+        },
+        {
+          "filename": "README.md",
+          "additions": 8,
+          "deletions": 3,
+          "changes": 11
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 21,
+          "deletions": 1,
+          "changes": 22
+        },
+        {
+          "filename": "ROADMAP.md",
+          "additions": 12,
+          "deletions": 0,
+          "changes": 12
+        },
+        {
+          "filename": "TESTING.md",
+          "additions": 19,
+          "deletions": 1,
+          "changes": 20
+        },
+        {
+          "filename": "Tests/Snapshots/PersistenceRecoverySnapshotTests.swift",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "Tests/Snapshots/SnapshotTestCase.swift",
+          "additions": 8,
+          "deletions": 0,
+          "changes": 8
+        },
+        {
+          "filename": "Tests/Snapshots/WorkoutComposerSnapshotTests.swift",
+          "additions": 57,
+          "deletions": 0,
+          "changes": 57
+        },
+        {
+          "filename": "Tests/Snapshots/WorkoutHistorySnapshotTests.swift",
+          "additions": 46,
+          "deletions": 0,
+          "changes": 46
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalBodyweightBest.Journal_BodyweightBest_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalRunBest.Journal_RunBest_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testDamagedStore.Storage_Damaged_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/PersistenceRecoverySnapshotTests/testTemporarilyUnavailable.Storage_TemporarilyUnavailable_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerCorrectedWeightAfterRecovery.WorkoutComposer_CorrectedWeightAfterRecovery_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutComposerSnapshotTests/testWorkoutComposerRecoveredReview.WorkoutComposer_RecoveredReview_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryEmpty.History_Empty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testHistoryPopulated.History_Populated_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailEmpty.History_DetailEmpty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/WorkoutHistorySnapshotTests/testSessionDetailPopulated.History_Detail_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
+          "additions": 58,
+          "deletions": 0,
+          "changes": 58
+        },
+        {
+          "filename": "Tests/UI/DraftResumeUITests.swift",
+          "additions": 72,
+          "deletions": 0,
+          "changes": 72
+        },
+        {
+          "filename": "Tests/UI/MarbleUITestCase.swift",
+          "additions": 2,
+          "deletions": 0,
+          "changes": 2
+        },
+        {
+          "filename": "Tests/UI/PersistenceRecoveryUITests.swift",
+          "additions": 20,
+          "deletions": 0,
+          "changes": 20
+        },
+        {
+          "filename": "Tests/UI/WorkoutHistoryUITests.swift",
+          "additions": 44,
+          "deletions": 0,
+          "changes": 44
+        },
+        {
+          "filename": "Tests/Unit/MarbleBackupTests.swift",
+          "additions": 35,
+          "deletions": 0,
+          "changes": 35
+        },
+        {
+          "filename": "Tests/Unit/PersistenceRecoveryTests.swift",
+          "additions": 109,
+          "deletions": 52,
+          "changes": 161
+        },
+        {
+          "filename": "Tests/Unit/TrainingConsistencyQueryTests.swift",
+          "additions": 58,
+          "deletions": 0,
+          "changes": 58
+        },
+        {
+          "filename": "Tests/Unit/WorkoutEntryDraftPersistenceTests.swift",
+          "additions": 166,
+          "deletions": 0,
+          "changes": 166
+        },
+        {
+          "filename": "Tests/Unit/WorkoutHistoryStorePerformanceTests.swift",
+          "additions": 65,
+          "deletions": 0,
+          "changes": 65
+        },
+        {
+          "filename": "Tests/Unit/WorkoutHistoryTests.swift",
+          "additions": 98,
+          "deletions": 0,
+          "changes": 98
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 8,
+          "deletions": 8,
+          "changes": 16
+        },
+        {
+          "filename": "marble/Components/HistoryPerformance.swift",
+          "additions": 6,
+          "deletions": 0,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Import/ExerciseMatcher.swift",
+          "additions": 3,
+          "deletions": 3,
+          "changes": 6
+        },
+        {
+          "filename": "marble/Features/Import/Scan/WorkoutScanDraft.swift",
+          "additions": 7,
+          "deletions": 3,
+          "changes": 10
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutEntryDraftStore.swift",
+          "additions": 76,
+          "deletions": 0,
+          "changes": 76
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutImportPayload.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryView.swift",
+          "additions": 139,
+          "deletions": 30,
+          "changes": 169
+        },
+        {
+          "filename": "marble/Features/Import/TextEntry/WorkoutTextEntryViewModel.swift",
+          "additions": 130,
+          "deletions": 10,
+          "changes": 140
+        },
+        {
+          "filename": "marble/Features/Journal/JournalView.swift",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutHistoryQuery.swift",
+          "additions": 61,
+          "deletions": 0,
+          "changes": 61
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutHistoryView.swift",
+          "additions": 229,
+          "deletions": 0,
+          "changes": 229
+        },
+        {
+          "filename": "marble/Features/Workout/WorkoutView.swift",
+          "additions": 9,
+          "deletions": 3,
+          "changes": 12
+        },
+        {
+          "filename": "marble/Intents/ExerciseEntity.swift",
+          "additions": 7,
+          "deletions": 7,
+          "changes": 14
+        },
+        {
+          "filename": "marble/Intents/LogSetIntent.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Intents/MarbleAppIntents.swift",
+          "additions": 7,
+          "deletions": 4,
+          "changes": 11
+        },
+        {
+          "filename": "marble/Intents/WorkoutSessionIntents.swift",
+          "additions": 2,
+          "deletions": 2,
+          "changes": 4
+        },
+        {
+          "filename": "marble/Persistence/MarbleBackup.swift",
+          "additions": 21,
+          "deletions": 7,
+          "changes": 28
+        },
+        {
+          "filename": "marble/Persistence/ModelContainer.swift",
+          "additions": 67,
+          "deletions": 91,
+          "changes": 158
+        },
+        {
+          "filename": "marble/Persistence/PersistenceRecoveryCopy.swift",
+          "additions": 72,
+          "deletions": 0,
+          "changes": 72
+        },
+        {
+          "filename": "marble/Persistence/PersistenceUnavailableView.swift",
+          "additions": 67,
+          "deletions": 0,
+          "changes": 67
+        },
+        {
+          "filename": "marble/marbleApp.swift",
+          "additions": 38,
+          "deletions": 6,
+          "changes": 44
+        },
+        {
+          "filename": "scripts/ci_appstore.sh",
+          "additions": 28,
+          "deletions": 0,
+          "changes": 28
+        },
+        {
+          "filename": "scripts/ci_testflight.sh",
+          "additions": 24,
+          "deletions": 0,
+          "changes": 24
+        },
+        {
+          "filename": "scripts/cloud_release.sh",
+          "additions": 50,
+          "deletions": 21,
+          "changes": 71
+        },
+        {
+          "filename": "scripts/prepare_release_evidence.rb",
+          "additions": 20,
+          "deletions": 0,
+          "changes": 20
+        },
+        {
+          "filename": "scripts/release_evidence.sh",
+          "additions": 2,
+          "deletions": 1,
+          "changes": 3
+        },
+        {
+          "filename": "scripts/release_evidence_manifest.rb",
+          "additions": 1,
+          "deletions": 0,
+          "changes": 1
+        },
+        {
+          "filename": "scripts/run_snapshot_suite.sh",
+          "additions": 3,
+          "deletions": 0,
+          "changes": 3
+        },
+        {
+          "filename": "scripts/select_ci_xcode.sh",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "scripts/sim_destination.sh",
+          "additions": 5,
+          "deletions": 1,
+          "changes": 6
+        },
+        {
+          "filename": "scripts/test_previous_release_migration.sh",
+          "additions": 11,
+          "deletions": 6,
+          "changes": 17
+        },
+        {
+          "filename": "scripts/tests/release_candidate_test.rb",
+          "additions": 116,
+          "deletions": 0,
+          "changes": 116
+        },
+        {
+          "filename": "scripts/verify_release_candidate.rb",
+          "additions": 56,
+          "deletions": 0,
+          "changes": 56
+        },
+        {
+          "filename": "scripts/write_upload_receipt.rb",
+          "additions": 29,
+          "deletions": 0,
+          "changes": 29
+        }
+      ],
+      "stats": {
+        "additions": 2420,
+        "deletions": 318,
+        "total": 2738
+      }
+    },
     {
       "sha": "ac25a24c15c0f171806e929110e6b1ffdb18f4d4",
       "html_url": "https://github.com/enzo-prism/marble/commit/ac25a24c15c0f171806e929110e6b1ffdb18f4d4",
@@ -28055,3434 +29761,6 @@
         "additions": 851,
         "deletions": 9,
         "total": 860
-      }
-    },
-    {
-      "sha": "0f8b10d3645668779954a63e89a897d94324c3b5",
-      "html_url": "https://github.com/enzo-prism/marble/commit/0f8b10d3645668779954a63e89a897d94324c3b5",
-      "commit": {
-        "message": "Add arm and leg exercise categories",
-        "author": {
-          "date": "2026-01-18T10:02:44-08:00"
-        },
-        "committer": {
-          "date": "2026-01-18T10:02:44-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "marble/Models/Enums.swift",
-          "additions": 35,
-          "deletions": 10,
-          "changes": 45
-        }
-      ],
-      "stats": {
-        "additions": 35,
-        "deletions": 10,
-        "total": 45
-      }
-    },
-    {
-      "sha": "eb18524d3649250690fc1c81ca83ddea3aa06a5c",
-      "html_url": "https://github.com/enzo-prism/marble/commit/eb18524d3649250690fc1c81ca83ddea3aa06a5c",
-      "commit": {
-        "message": "Add split planned sets and quick log prefill",
-        "author": {
-          "date": "2026-01-13T08:41:51-08:00"
-        },
-        "committer": {
-          "date": "2026-01-13T08:41:51-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/SplitFlowUITests.swift",
-          "additions": 20,
-          "deletions": 0,
-          "changes": 20
-        },
-        {
-          "filename": "marble/Components/Formatters.swift",
-          "additions": 28,
-          "deletions": 0,
-          "changes": 28
-        },
-        {
-          "filename": "marble/Components/QuickLogCoordinator.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "marble/ContentView.swift",
-          "additions": 14,
-          "deletions": 2,
-          "changes": 16
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 1,
-          "deletions": 0,
-          "changes": 1
-        },
-        {
-          "filename": "marble/Features/Split/PlannedSetRowView.swift",
-          "additions": 35,
-          "deletions": 0,
-          "changes": 35
-        },
-        {
-          "filename": "marble/Features/Split/SplitDayEditorView.swift",
-          "additions": 145,
-          "deletions": 1,
-          "changes": 146
-        },
-        {
-          "filename": "marble/Features/Split/SplitView.swift",
-          "additions": 13,
-          "deletions": 0,
-          "changes": 13
-        },
-        {
-          "filename": "marble/Models/SplitPlan.swift",
-          "additions": 33,
-          "deletions": 1,
-          "changes": 34
-        },
-        {
-          "filename": "marble/Persistence/ModelContainer.swift",
-          "additions": 2,
-          "deletions": 1,
-          "changes": 3
-        },
-        {
-          "filename": "marble/Persistence/TestFixtures.swift",
-          "additions": 33,
-          "deletions": 0,
-          "changes": 33
-        }
-      ],
-      "stats": {
-        "additions": 327,
-        "deletions": 6,
-        "total": 333
-      }
-    },
-    {
-      "sha": "e565f1520fbdb46d28c7989553d7b0a86a8be40a",
-      "html_url": "https://github.com/enzo-prism/marble/commit/e565f1520fbdb46d28c7989553d7b0a86a8be40a",
-      "commit": {
-        "message": "Refine Log Set layout and reps slider",
-        "author": {
-          "date": "2026-01-13T08:18:58-08:00"
-        },
-        "committer": {
-          "date": "2026-01-13T08:18:58-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/JournalFlowUITests.swift",
-          "additions": 3,
-          "deletions": 9,
-          "changes": 12
-        },
-        {
-          "filename": "Tests/UI/MarbleUITestCase.swift",
-          "additions": 10,
-          "deletions": 0,
-          "changes": 10
-        },
-        {
-          "filename": "marble/Components/RestPicker.swift",
-          "additions": 4,
-          "deletions": 20,
-          "changes": 24
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 54,
-          "deletions": 3,
-          "changes": 57
-        }
-      ],
-      "stats": {
-        "additions": 71,
-        "deletions": 32,
-        "total": 103
-      }
-    },
-    {
-      "sha": "a4d4c82851a7a37d52a6f213784444b3bfd81f81",
-      "html_url": "https://github.com/enzo-prism/marble/commit/a4d4c82851a7a37d52a6f213784444b3bfd81f81",
-      "commit": {
-        "message": "Remove Save & Add Another from add set",
-        "author": {
-          "date": "2026-01-13T08:02:57-08:00"
-        },
-        "committer": {
-          "date": "2026-01-13T08:02:57-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/JournalFlowUITests.swift",
-          "additions": 4,
-          "deletions": 54,
-          "changes": 58
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 4,
-          "deletions": 15,
-          "changes": 19
-        }
-      ],
-      "stats": {
-        "additions": 8,
-        "deletions": 69,
-        "total": 77
-      }
-    },
-    {
-      "sha": "e9ab0e109f632e9bb5b75a2b3b1ec94db1643cf3",
-      "html_url": "https://github.com/enzo-prism/marble/commit/e9ab0e109f632e9bb5b75a2b3b1ec94db1643cf3",
-      "commit": {
-        "message": "Clean up tests and snapshot coverage",
-        "author": {
-          "date": "2026-01-13T07:52:14-08:00"
-        },
-        "committer": {
-          "date": "2026-01-13T07:52:14-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/AddSetSnapshotTests.swift",
-          "additions": 0,
-          "deletions": 12,
-          "changes": 12
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/CalendarFlowUITests.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "Tests/UI/MarbleUITestCase.swift",
-          "additions": 1,
-          "deletions": 1,
-          "changes": 2
-        },
-        {
-          "filename": "Tests/UI/SmokeNavigationUITests.swift",
-          "additions": 12,
-          "deletions": 2,
-          "changes": 14
-        },
-        {
-          "filename": "Tests/UI/TrendsSmokeUITests.swift",
-          "additions": 6,
-          "deletions": 1,
-          "changes": 7
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 1,
-          "deletions": 0,
-          "changes": 1
-        }
-      ],
-      "stats": {
-        "additions": 23,
-        "deletions": 17,
-        "total": 40
-      }
-    },
-    {
-      "sha": "dc33a7a5d24ac9b8a1b5cc65d9382e1dc4f58334",
-      "html_url": "https://github.com/enzo-prism/marble/commit/dc33a7a5d24ac9b8a1b5cc65d9382e1dc4f58334",
-      "commit": {
-        "message": "Stabilize add set flow and tests",
-        "author": {
-          "date": "2026-01-13T07:27:16-08:00"
-        },
-        "committer": {
-          "date": "2026-01-13T07:27:16-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/JournalSnapshotTests.swift",
-          "additions": 4,
-          "deletions": 1,
-          "changes": 5
-        },
-        {
-          "filename": "Tests/Snapshots/SnapshotFixtures.swift",
-          "additions": 4,
-          "deletions": 0,
-          "changes": 4
-        },
-        {
-          "filename": "Tests/Snapshots/SupplementsSnapshotTests.swift",
-          "additions": 2,
-          "deletions": 1,
-          "changes": 3
-        },
-        {
-          "filename": "Tests/Snapshots/TrendsSnapshotTests.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/JournalFlowUITests.swift",
-          "additions": 212,
-          "deletions": 9,
-          "changes": 221
-        },
-        {
-          "filename": "Tests/UI/MarbleUITestCase.swift",
-          "additions": 22,
-          "deletions": 2,
-          "changes": 24
-        },
-        {
-          "filename": "marble/Assets.xcassets/Logo.imageset/Contents.json",
-          "additions": 8,
-          "deletions": 0,
-          "changes": 8
-        },
-        {
-          "filename": "marble/Components/SetRowView.swift",
-          "additions": 17,
-          "deletions": 6,
-          "changes": 23
-        },
-        {
-          "filename": "marble/ContentView.swift",
-          "additions": 2,
-          "deletions": 2,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 0,
-          "deletions": 1,
-          "changes": 1
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 255,
-          "deletions": 100,
-          "changes": 355
-        },
-        {
-          "filename": "marble/Features/Journal/JournalView.swift",
-          "additions": 64,
-          "deletions": 31,
-          "changes": 95
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsDrilldownSheets.swift",
-          "additions": 0,
-          "deletions": 2,
-          "changes": 2
-        },
-        {
-          "filename": "marble/marbleApp.swift",
-          "additions": 9,
-          "deletions": 0,
-          "changes": 9
-        }
-      ],
-      "stats": {
-        "additions": 602,
-        "deletions": 156,
-        "total": 758
-      }
-    },
-    {
-      "sha": "8bb15b4309ea56e59afa7ba30d4593f08178fd9b",
-      "html_url": "https://github.com/enzo-prism/marble/commit/8bb15b4309ea56e59afa7ba30d4593f08178fd9b",
-      "commit": {
-        "message": "Add interactive trends charts and drilldown sheets",
-        "author": {
-          "date": "2026-01-12T20:31:14-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T20:31:14-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "AdditionalDocumentation/AppIntents-Updates.md",
-          "additions": 427,
-          "deletions": 0,
-          "changes": 427
-        },
-        {
-          "filename": "AdditionalDocumentation/AppKit-Implementing-Liquid-Glass-Design.md",
-          "additions": 370,
-          "deletions": 0,
-          "changes": 370
-        },
-        {
-          "filename": "AdditionalDocumentation/Foundation-AttributedString-Updates.md",
-          "additions": 234,
-          "deletions": 0,
-          "changes": 234
-        },
-        {
-          "filename": "AdditionalDocumentation/FoundationModels-Using-on-device-LLM-in-your-app.md",
-          "additions": 340,
-          "deletions": 0,
-          "changes": 340
-        },
-        {
-          "filename": "AdditionalDocumentation/INDEX.md",
-          "additions": 119,
-          "deletions": 0,
-          "changes": 119
-        },
-        {
-          "filename": "AdditionalDocumentation/Implementing-Assistive-Access-in-iOS.md",
-          "additions": 226,
-          "deletions": 0,
-          "changes": 226
-        },
-        {
-          "filename": "AdditionalDocumentation/Implementing-Visual-Intelligence-in-iOS.md",
-          "additions": 331,
-          "deletions": 0,
-          "changes": 331
-        },
-        {
-          "filename": "AdditionalDocumentation/MapKit-GeoToolbox-PlaceDescriptors.md",
-          "additions": 309,
-          "deletions": 0,
-          "changes": 309
-        },
-        {
-          "filename": "AdditionalDocumentation/StoreKit-Updates.md",
-          "additions": 278,
-          "deletions": 0,
-          "changes": 278
-        },
-        {
-          "filename": "AdditionalDocumentation/Swift-Charts-3D-Visualization.md",
-          "additions": 376,
-          "deletions": 0,
-          "changes": 376
-        },
-        {
-          "filename": "AdditionalDocumentation/Swift-Concurrency-Updates.md",
-          "additions": 273,
-          "deletions": 0,
-          "changes": 273
-        },
-        {
-          "filename": "AdditionalDocumentation/Swift-InlineArray-Span.md",
-          "additions": 290,
-          "deletions": 0,
-          "changes": 290
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftData-Class-Inheritance.md",
-          "additions": 301,
-          "deletions": 0,
-          "changes": 301
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftUI-AlarmKit-Integration.md",
-          "additions": 784,
-          "deletions": 0,
-          "changes": 784
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftUI-Implementing-Liquid-Glass-Design.md",
-          "additions": 280,
-          "deletions": 0,
-          "changes": 280
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftUI-New-Toolbar-Features.md",
-          "additions": 202,
-          "deletions": 0,
-          "changes": 202
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftUI-Styled-Text-Editing.md",
-          "additions": 407,
-          "deletions": 0,
-          "changes": 407
-        },
-        {
-          "filename": "AdditionalDocumentation/SwiftUI-WebKit-Integration.md",
-          "additions": 481,
-          "deletions": 0,
-          "changes": 481
-        },
-        {
-          "filename": "AdditionalDocumentation/UIKit-Implementing-Liquid-Glass-Design.md",
-          "additions": 281,
-          "deletions": 0,
-          "changes": 281
-        },
-        {
-          "filename": "AdditionalDocumentation/WidgetKit-Implementing-Liquid-Glass-Design.md",
-          "additions": 234,
-          "deletions": 0,
-          "changes": 234
-        },
-        {
-          "filename": "AdditionalDocumentation/Widgets-for-visionOS.md",
-          "additions": 248,
-          "deletions": 0,
-          "changes": 248
-        },
-        {
-          "filename": "Makefile",
-          "additions": 4,
-          "deletions": 3,
-          "changes": 7
-        },
-        {
-          "filename": "TESTING.md",
-          "additions": 1,
-          "deletions": 0,
-          "changes": 1
-        },
-        {
-          "filename": "Tests/Snapshots/AddSetSnapshotTests.swift",
-          "additions": 5,
-          "deletions": 1,
-          "changes": 6
-        },
-        {
-          "filename": "Tests/Snapshots/SnapshotFixtures.swift",
-          "additions": 0,
-          "deletions": 1,
-          "changes": 1
-        },
-        {
-          "filename": "Tests/Snapshots/SplitSnapshotTests.swift",
-          "additions": 22,
-          "deletions": 0,
-          "changes": 22
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitEmpty.Split_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitPopulated.Split_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SplitSnapshotTests/testSplitStates.Split_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/UI/AccessibilityAuditUITests.swift",
-          "additions": 10,
-          "deletions": 1,
-          "changes": 11
-        },
-        {
-          "filename": "Tests/UI/JournalFlowUITests.swift",
-          "additions": 35,
-          "deletions": 11,
-          "changes": 46
-        },
-        {
-          "filename": "Tests/UI/MarbleUITestCase.swift",
-          "additions": 18,
-          "deletions": 1,
-          "changes": 19
-        },
-        {
-          "filename": "Tests/UI/SmokeNavigationUITests.swift",
-          "additions": 1,
-          "deletions": 1,
-          "changes": 2
-        },
-        {
-          "filename": "Tests/UI/SplitFlowUITests.swift",
-          "additions": 29,
-          "deletions": 0,
-          "changes": 29
-        },
-        {
-          "filename": "Tests/UI/TrendsSelectionUITests.swift",
-          "additions": 50,
-          "deletions": 0,
-          "changes": 50
-        },
-        {
-          "filename": "Tests/Unit/SeedDataTests.swift",
-          "additions": 14,
-          "deletions": 1,
-          "changes": 15
-        },
-        {
-          "filename": "marble/Components/MarbleStyles.swift",
-          "additions": 17,
-          "deletions": 5,
-          "changes": 22
-        },
-        {
-          "filename": "marble/Components/SetRowView.swift",
-          "additions": 0,
-          "deletions": 3,
-          "changes": 3
-        },
-        {
-          "filename": "marble/Components/TabSelection.swift",
-          "additions": 1,
-          "deletions": 0,
-          "changes": 1
-        },
-        {
-          "filename": "marble/ContentView.swift",
-          "additions": 8,
-          "deletions": 0,
-          "changes": 8
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 24,
-          "deletions": 9,
-          "changes": 33
-        },
-        {
-          "filename": "marble/Features/Journal/JournalView.swift",
-          "additions": 3,
-          "deletions": 0,
-          "changes": 3
-        },
-        {
-          "filename": "marble/Features/Journal/SetDetailView.swift",
-          "additions": 3,
-          "deletions": 0,
-          "changes": 3
-        },
-        {
-          "filename": "marble/Features/Split/SplitDayEditorView.swift",
-          "additions": 95,
-          "deletions": 0,
-          "changes": 95
-        },
-        {
-          "filename": "marble/Features/Split/SplitView.swift",
-          "additions": 122,
-          "deletions": 0,
-          "changes": 122
-        },
-        {
-          "filename": "marble/Features/Trends/TrendTooltipView.swift",
-          "additions": 82,
-          "deletions": 0,
-          "changes": 82
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsDrilldownSheets.swift",
-          "additions": 175,
-          "deletions": 0,
-          "changes": 175
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsSelectionHelpers.swift",
-          "additions": 109,
-          "deletions": 0,
-          "changes": 109
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 221,
-          "deletions": 56,
-          "changes": 277
-        },
-        {
-          "filename": "marble/Models/Enums.swift",
-          "additions": 50,
-          "deletions": 1,
-          "changes": 51
-        },
-        {
-          "filename": "marble/Models/SplitPlan.swift",
-          "additions": 60,
-          "deletions": 0,
-          "changes": 60
-        },
-        {
-          "filename": "marble/Persistence/ModelContainer.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Persistence/SeedData.swift",
-          "additions": 38,
-          "deletions": 11,
-          "changes": 49
-        },
-        {
-          "filename": "marble/Persistence/TestFixtures.swift",
-          "additions": 30,
-          "deletions": 0,
-          "changes": 30
-        },
-        {
-          "filename": "scripts/run_snapshot_suite.sh",
-          "additions": 50,
-          "deletions": 0,
-          "changes": 50
-        }
-      ],
-      "stats": {
-        "additions": 8071,
-        "deletions": 106,
-        "total": 8177
-      }
-    },
-    {
-      "sha": "ec289beaad863bdd24b7b524a4861c4d4f8be163",
-      "html_url": "https://github.com/enzo-prism/marble/commit/ec289beaad863bdd24b7b524a4861c4d4f8be163",
-      "commit": {
-        "message": "Move add set to top bar",
-        "author": {
-          "date": "2026-01-12T17:02:00-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T17:02:00-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarMonthWithMarkers.Calendar_MonthMarkers_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarMonthWithMarkers.Calendar_MonthMarkers_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Components/AddSetToolbarButton.swift",
-          "additions": 18,
-          "deletions": 0,
-          "changes": 18
-        },
-        {
-          "filename": "marble/Components/GlassStyle.swift",
-          "additions": 29,
-          "deletions": 5,
-          "changes": 34
-        },
-        {
-          "filename": "marble/Components/QuickLogAccessory.swift",
-          "additions": 25,
-          "deletions": 75,
-          "changes": 100
-        },
-        {
-          "filename": "marble/ContentView.swift",
-          "additions": 0,
-          "deletions": 8,
-          "changes": 8
-        },
-        {
-          "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 5,
-          "deletions": 0,
-          "changes": 5
-        },
-        {
-          "filename": "marble/Features/Journal/JournalView.swift",
-          "additions": 5,
-          "deletions": 0,
-          "changes": 5
-        },
-        {
-          "filename": "marble/Features/Supplements/SupplementsView.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 5,
-          "deletions": 0,
-          "changes": 5
-        },
-        {
-          "filename": "marble/Theme/DesignTokens.swift",
-          "additions": 1,
-          "deletions": 3,
-          "changes": 4
-        }
-      ],
-      "stats": {
-        "additions": 91,
-        "deletions": 92,
-        "total": 183
-      }
-    },
-    {
-      "sha": "14e9dc78d9a34e3bdfa89debc9056f395a570e70",
-      "html_url": "https://github.com/enzo-prism/marble/commit/14e9dc78d9a34e3bdfa89debc9056f395a570e70",
-      "commit": {
-        "message": "Refine quick log tile",
-        "author": {
-          "date": "2026-01-12T16:33:54-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T16:33:54-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble/Components/GlassStyle.swift",
-          "additions": 33,
-          "deletions": 0,
-          "changes": 33
-        },
-        {
-          "filename": "marble/Components/QuickLogAccessory.swift",
-          "additions": 35,
-          "deletions": 19,
-          "changes": 54
-        },
-        {
-          "filename": "marble/Theme/DesignTokens.swift",
-          "additions": 3,
-          "deletions": 0,
-          "changes": 3
-        }
-      ],
-      "stats": {
-        "additions": 71,
-        "deletions": 19,
-        "total": 90
-      }
-    },
-    {
-      "sha": "d0f4f46d2bcc98aa8ba0e7bba23859586535e2c0",
-      "html_url": "https://github.com/enzo-prism/marble/commit/d0f4f46d2bcc98aa8ba0e7bba23859586535e2c0",
-      "commit": {
-        "message": "Refine UI design system",
-        "author": {
-          "date": "2026-01-12T16:27:15-08:00"
-        },
-        "committer": {
-          "date": "2026-01-12T16:27:15-08:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetDurationOnly.AddSet_DurationOnly_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOff.AddSet_RepsOnly_AddedLoadOff_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetRepsOnlyAddedLoadOn.AddSet_RepsOnly_AddedLoadOn_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetValidationErrors.AddSet_Validation_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/AddSetSnapshotTests/testAddSetWeightAndReps.AddSet_WeightReps_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetEmpty.Calendar_DaySheet_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/CalendarSnapshotTests/testCalendarDaySheetWithEntries.Calendar_DaySheet_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/ComponentGallerySnapshotTests/testComponentGallery.ComponentGallery_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalEmpty.Journal_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalExtremes.Journal_Extremes_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalLongName.Journal_LongName_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testJournalPopulated.Journal_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/JournalSnapshotTests/testQuickLogVisible.Journal_QuickLog_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsEmpty.Supplements_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/SupplementsSnapshotTests/testSupplementsPopulated.Supplements_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsFilteredExercise.Trends_Filtered_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_a11y.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_default.png",
-          "additions": 0,
-          "deletions": 0,
-          "changes": 0
-        },
-        {
-          "filename": "marble.xcodeproj/project.pbxproj",
-          "additions": 2,
-          "deletions": 2,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Components/ComponentGalleryView.swift",
-          "additions": 15,
-          "deletions": 33,
-          "changes": 48
-        },
-        {
-          "filename": "marble/Components/DurationPicker.swift",
-          "additions": 1,
-          "deletions": 1,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Components/EmptyStateView.swift",
-          "additions": 6,
-          "deletions": 5,
-          "changes": 11
-        },
-        {
-          "filename": "marble/Components/MarbleStyles.swift",
-          "additions": 102,
-          "deletions": 0,
-          "changes": 102
-        },
-        {
-          "filename": "marble/Components/NumberField.swift",
-          "additions": 4,
-          "deletions": 0,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Components/PRCardView.swift",
-          "additions": 7,
-          "deletions": 6,
-          "changes": 13
-        },
-        {
-          "filename": "marble/Components/QuickLogAccessory.swift",
-          "additions": 8,
-          "deletions": 7,
-          "changes": 15
-        },
-        {
-          "filename": "marble/Components/RPEPicker.swift",
-          "additions": 5,
-          "deletions": 13,
-          "changes": 18
-        },
-        {
-          "filename": "marble/Components/RestPicker.swift",
-          "additions": 17,
-          "deletions": 27,
-          "changes": 44
-        },
-        {
-          "filename": "marble/Components/SectionHeaderView.swift",
-          "additions": 2,
-          "deletions": 2,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Components/SetRowView.swift",
-          "additions": 11,
-          "deletions": 9,
-          "changes": 20
-        },
-        {
-          "filename": "marble/Components/SupplementRowView.swift",
-          "additions": 9,
-          "deletions": 8,
-          "changes": 17
-        },
-        {
-          "filename": "marble/Components/ToastView.swift",
-          "additions": 8,
-          "deletions": 8,
-          "changes": 16
-        },
-        {
-          "filename": "marble/Features/Calendar/CalendarView.swift",
-          "additions": 9,
-          "deletions": 6,
-          "changes": 15
-        },
-        {
-          "filename": "marble/Features/Journal/AddSetView.swift",
-          "additions": 20,
-          "deletions": 7,
-          "changes": 27
-        },
-        {
-          "filename": "marble/Features/Journal/ExerciseEditorView.swift",
-          "additions": 1,
-          "deletions": 0,
-          "changes": 1
-        },
-        {
-          "filename": "marble/Features/Journal/ExercisePickerView.swift",
-          "additions": 6,
-          "deletions": 2,
-          "changes": 8
-        },
-        {
-          "filename": "marble/Features/Journal/JournalView.swift",
-          "additions": 2,
-          "deletions": 0,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Features/Journal/ManageExercisesView.swift",
-          "additions": 5,
-          "deletions": 2,
-          "changes": 7
-        },
-        {
-          "filename": "marble/Features/Journal/RestTimerView.swift",
-          "additions": 4,
-          "deletions": 4,
-          "changes": 8
-        },
-        {
-          "filename": "marble/Features/Journal/SetDetailView.swift",
-          "additions": 5,
-          "deletions": 0,
-          "changes": 5
-        },
-        {
-          "filename": "marble/Features/Supplements/SupplementDetailView.swift",
-          "additions": 2,
-          "deletions": 0,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Features/Supplements/SupplementTypeEditorView.swift",
-          "additions": 2,
-          "deletions": 0,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Features/Supplements/SupplementTypeManagerView.swift",
-          "additions": 2,
-          "deletions": 0,
-          "changes": 2
-        },
-        {
-          "filename": "marble/Features/Supplements/SupplementsView.swift",
-          "additions": 8,
-          "deletions": 4,
-          "changes": 12
-        },
-        {
-          "filename": "marble/Features/Trends/TrendsView.swift",
-          "additions": 8,
-          "deletions": 8,
-          "changes": 16
-        },
-        {
-          "filename": "marble/Theme/DesignTokens.swift",
-          "additions": 43,
-          "deletions": 0,
-          "changes": 43
-        }
-      ],
-      "stats": {
-        "additions": 314,
-        "deletions": 154,
-        "total": 468
       }
     }
   ]
