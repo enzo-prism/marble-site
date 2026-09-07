@@ -1,10 +1,408 @@
 {
-  "generatedAt": "2026-09-06T10:56:26.192Z",
+  "generatedAt": "2026-09-07T12:32:38.158Z",
   "owner": "enzo-prism",
   "repo": "marble",
   "branch": "main",
   "commitCount": 200,
   "commits": [
+    {
+      "sha": "555f3259c12ddc9fd4fb2959d37fe52d9059a668",
+      "html_url": "https://github.com/enzo-prism/marble/commit/555f3259c12ddc9fd4fb2959d37fe52d9059a668",
+      "commit": {
+        "message": "Record build 76 live on TestFlight",
+        "author": {
+          "date": "2026-09-06T23:52:39-07:00"
+        },
+        "committer": {
+          "date": "2026-09-06T23:52:39-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 5,
+          "deletions": 2,
+          "changes": 7
+        }
+      ],
+      "stats": {
+        "additions": 5,
+        "deletions": 2,
+        "total": 7
+      }
+    },
+    {
+      "sha": "9153598cad4bd3504d8c101e77a4754acd84b301",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9153598cad4bd3504d8c101e77a4754acd84b301",
+      "commit": {
+        "message": "Keep Progress overview quotes on one line; prepare build 76",
+        "author": {
+          "date": "2026-09-06T23:49:03-07:00"
+        },
+        "committer": {
+          "date": "2026-09-06T23:49:03-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "DAILY_HIGHLIGHTS.md",
+          "additions": 5,
+          "deletions": 0,
+          "changes": 5
+        },
+        {
+          "filename": "README.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 16,
+          "deletions": 0,
+          "changes": 16
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/UI/TrendsSmokeUITests.swift",
+          "additions": 20,
+          "deletions": 0,
+          "changes": 20
+        },
+        {
+          "filename": "Tests/Unit/ProgressOverviewQuotesTests.swift",
+          "additions": 44,
+          "deletions": 0,
+          "changes": 44
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Trends/DailyHighlightQuoteRotator.swift",
+          "additions": 52,
+          "deletions": 6,
+          "changes": 58
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsView.swift",
+          "additions": 4,
+          "deletions": 1,
+          "changes": 5
+        }
+      ],
+      "stats": {
+        "additions": 146,
+        "deletions": 12,
+        "total": 158
+      }
+    },
+    {
+      "sha": "9122b8a0e80fc9c9d50be87907162b5040656f95",
+      "html_url": "https://github.com/enzo-prism/marble/commit/9122b8a0e80fc9c9d50be87907162b5040656f95",
+      "commit": {
+        "message": "Record build 75 live on TestFlight",
+        "author": {
+          "date": "2026-09-06T23:13:08-07:00"
+        },
+        "committer": {
+          "date": "2026-09-06T23:13:08-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 5,
+          "deletions": 2,
+          "changes": 7
+        }
+      ],
+      "stats": {
+        "additions": 5,
+        "deletions": 2,
+        "total": 7
+      }
+    },
+    {
+      "sha": "eba364c2b1e453011cbb0e79502546d043d0c92e",
+      "html_url": "https://github.com/enzo-prism/marble/commit/eba364c2b1e453011cbb0e79502546d043d0c92e",
+      "commit": {
+        "message": "Require dated PRs for Progress top exercises; prepare build 75",
+        "author": {
+          "date": "2026-09-06T23:10:30-07:00"
+        },
+        "committer": {
+          "date": "2026-09-06T23:10:30-07:00"
+        }
+      },
+      "files": [
+        {
+          "filename": "README.md",
+          "additions": 1,
+          "deletions": 1,
+          "changes": 2
+        },
+        {
+          "filename": "RELEASE_HANDOFF.md",
+          "additions": 14,
+          "deletions": 0,
+          "changes": 14
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsEmpty.Trends_Empty_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11Landscape_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11Landscape_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11Landscape_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11Landscape_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPadPro11_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhone15Pro_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_dark_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_a11y.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Snapshots/__Snapshots__/TrendsSnapshotTests/testTrendsPopulated.Trends_Populated_iPhoneSE_light_default.png",
+          "additions": 0,
+          "deletions": 0,
+          "changes": 0
+        },
+        {
+          "filename": "Tests/Unit/TrendsShareCardTests.swift",
+          "additions": 41,
+          "deletions": 5,
+          "changes": 46
+        },
+        {
+          "filename": "marble.xcodeproj/project.pbxproj",
+          "additions": 4,
+          "deletions": 4,
+          "changes": 8
+        },
+        {
+          "filename": "marble/Features/Trends/TrendsShareCard.swift",
+          "additions": 13,
+          "deletions": 12,
+          "changes": 25
+        }
+      ],
+      "stats": {
+        "additions": 73,
+        "deletions": 22,
+        "total": 95
+      }
+    },
     {
       "sha": "2af61127baf1a41a6b22efd61927fae6afc2d6ea",
       "html_url": "https://github.com/enzo-prism/marble/commit/2af61127baf1a41a6b22efd61927fae6afc2d6ea",
@@ -23609,350 +24007,6 @@
         "additions": 171,
         "deletions": 73,
         "total": 244
-      }
-    },
-    {
-      "sha": "8e4e8d1db46e35277b43859dd68fda20d02871c9",
-      "html_url": "https://github.com/enzo-prism/marble/commit/8e4e8d1db46e35277b43859dd68fda20d02871c9",
-      "commit": {
-        "message": "Bump version to 1.9 (build 20) for TestFlight\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>",
-        "author": {
-          "date": "2026-06-18T17:52:55-07:00"
-        },
-        "committer": {
-          "date": "2026-06-18T17:52:55-07:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "marble.xcodeproj/project.pbxproj",
-          "additions": 4,
-          "deletions": 4,
-          "changes": 8
-        }
-      ],
-      "stats": {
-        "additions": 4,
-        "deletions": 4,
-        "total": 8
-      }
-    },
-    {
-      "sha": "3612df5c1f8acde4acd3cd458e5664f714b51466",
-      "html_url": "https://github.com/enzo-prism/marble/commit/3612df5c1f8acde4acd3cd458e5664f714b51466",
-      "commit": {
-        "message": "Harden data safety, import feature, and add CI\n\nData safety:\n- Add explicit SwiftData VersionedSchema + MarbleMigrationPlan (MarbleSchema.swift).\n- ModelContainer recovers from a failed migration (backs up *.corrupt, recreates,\n  in-memory fallback) instead of fatal-crashing on launch; drop force-unwraps.\n- Gate the default split plan behind a one-time flag so deleting it sticks.\n\nImport feature:\n- Add a DB-level unique deduplicationKey to ImportedWorkout; importer queries by it.\n- HealthKit: remove force-unwraps on quantity types.\n- Garmin: skip activities with no stable id/date instead of fabricating \"0\"/now;\n  resolve credentials from Info.plist and hide the source until configured.\n- Surface import failures in the UI instead of only a haptic.\n- Fix category inference (Leg Curl -> hamstrings).\n\nSwift 6 readiness:\n- Mark SwiftData-serialized value types nonisolated under MainActor default isolation\n  (ExerciseMetricsProfile, MetricRequirement, ExerciseMetricKind, DistanceUnit,\n  formattedDuration, KeychainTokenStore, ImportOutcome). App build is warning-clean.\n\nPrivacy + CI:\n- Add PrivacyInfo.xcprivacy (no tracking/collection; UserDefaults + file-timestamp reasons).\n- Add GitHub Actions workflow running the unit suite on PRs/release pushes.\n\nTests:\n- Add ImportProviderMappingTests and ImportViewModelTests; extend mapper tests.\n- All 89 unit tests pass.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>",
-        "author": {
-          "date": "2026-06-18T10:18:05-07:00"
-        },
-        "committer": {
-          "date": "2026-06-18T10:18:05-07:00"
-        }
-      },
-      "files": [
-        {
-          "filename": ".github/workflows/ci.yml",
-          "additions": 49,
-          "deletions": 0,
-          "changes": 49
-        },
-        {
-          "filename": "Tests/Unit/ImportProviderMappingTests.swift",
-          "additions": 78,
-          "deletions": 0,
-          "changes": 78
-        },
-        {
-          "filename": "Tests/Unit/ImportViewModelTests.swift",
-          "additions": 129,
-          "deletions": 0,
-          "changes": 129
-        },
-        {
-          "filename": "Tests/Unit/WorkoutImportMapperTests.swift",
-          "additions": 14,
-          "deletions": 0,
-          "changes": 14
-        },
-        {
-          "filename": "marble/Components/Formatters.swift",
-          "additions": 3,
-          "deletions": 1,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/GarminConnectClient.swift",
-          "additions": 19,
-          "deletions": 0,
-          "changes": 19
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/GarminConnectProvider.swift",
-          "additions": 9,
-          "deletions": 4,
-          "changes": 13
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/KeychainTokenStore.swift",
-          "additions": 5,
-          "deletions": 1,
-          "changes": 6
-        },
-        {
-          "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
-          "additions": 11,
-          "deletions": 6,
-          "changes": 17
-        },
-        {
-          "filename": "marble/Features/Import/ImportView.swift",
-          "additions": 25,
-          "deletions": 6,
-          "changes": 31
-        },
-        {
-          "filename": "marble/Features/Import/ImportViewModel.swift",
-          "additions": 5,
-          "deletions": 1,
-          "changes": 6
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImportMapper.swift",
-          "additions": 8,
-          "deletions": 2,
-          "changes": 10
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImporter.swift",
-          "additions": 5,
-          "deletions": 5,
-          "changes": 10
-        },
-        {
-          "filename": "marble/Models/Enums.swift",
-          "additions": 14,
-          "deletions": 4,
-          "changes": 18
-        },
-        {
-          "filename": "marble/Models/ImportedWorkout.swift",
-          "additions": 10,
-          "deletions": 0,
-          "changes": 10
-        },
-        {
-          "filename": "marble/Persistence/MarbleSchema.swift",
-          "additions": 61,
-          "deletions": 0,
-          "changes": 61
-        },
-        {
-          "filename": "marble/Persistence/ModelContainer.swift",
-          "additions": 87,
-          "deletions": 25,
-          "changes": 112
-        },
-        {
-          "filename": "marble/Persistence/ProgressMediaStore.swift",
-          "additions": 1,
-          "deletions": 2,
-          "changes": 3
-        },
-        {
-          "filename": "marble/Persistence/SeedData.swift",
-          "additions": 9,
-          "deletions": 1,
-          "changes": 10
-        },
-        {
-          "filename": "marble/PrivacyInfo.xcprivacy",
-          "additions": 36,
-          "deletions": 0,
-          "changes": 36
-        },
-        {
-          "filename": "marble/Testing/TestHooks.swift",
-          "additions": 7,
-          "deletions": 0,
-          "changes": 7
-        }
-      ],
-      "stats": {
-        "additions": 585,
-        "deletions": 58,
-        "total": 643
-      }
-    },
-    {
-      "sha": "cf92b5cb557f2a715c6ba42fcd3e9807f7d9f742",
-      "html_url": "https://github.com/enzo-prism/marble/commit/cf92b5cb557f2a715c6ba42fcd3e9807f7d9f742",
-      "commit": {
-        "message": "Add HealthKit + Garmin Connect workout import\n\n- HealthKit (Apple Watch) provider with read-only workout/distance/energy auth\n- Garmin Connect provider (OAuth via ASWebAuthenticationSession, keychain token)\n- Importer with idempotent (source, externalID) dedupe ledger via ImportedWorkout\n- Mapper resolves/creates exercises case-insensitively with per-batch cache\n- Drop unused heartRate from HealthKit read request (privacy hygiene)\n- Import sheet surfaced from Journal toolbar",
-        "author": {
-          "date": "2026-06-18T03:44:36-07:00"
-        },
-        "committer": {
-          "date": "2026-06-18T03:44:36-07:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/Unit/WorkoutImportMapperTests.swift",
-          "additions": 145,
-          "deletions": 0,
-          "changes": 145
-        },
-        {
-          "filename": "Tests/Unit/WorkoutImporterTests.swift",
-          "additions": 67,
-          "deletions": 0,
-          "changes": 67
-        },
-        {
-          "filename": "marble.entitlements",
-          "additions": 8,
-          "deletions": 0,
-          "changes": 8
-        },
-        {
-          "filename": "marble.xcodeproj/project.pbxproj",
-          "additions": 4,
-          "deletions": 0,
-          "changes": 4
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/GarminConnectClient.swift",
-          "additions": 185,
-          "deletions": 0,
-          "changes": 185
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/GarminConnectProvider.swift",
-          "additions": 123,
-          "deletions": 0,
-          "changes": 123
-        },
-        {
-          "filename": "marble/Features/Import/Garmin/KeychainTokenStore.swift",
-          "additions": 58,
-          "deletions": 0,
-          "changes": 58
-        },
-        {
-          "filename": "marble/Features/Import/HealthKit/HealthKitWorkoutProvider.swift",
-          "additions": 138,
-          "deletions": 0,
-          "changes": 138
-        },
-        {
-          "filename": "marble/Features/Import/ImportView.swift",
-          "additions": 244,
-          "deletions": 0,
-          "changes": 244
-        },
-        {
-          "filename": "marble/Features/Import/ImportViewModel.swift",
-          "additions": 132,
-          "deletions": 0,
-          "changes": 132
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImportMapper.swift",
-          "additions": 154,
-          "deletions": 0,
-          "changes": 154
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImportProvider.swift",
-          "additions": 15,
-          "deletions": 0,
-          "changes": 15
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImportRecord.swift",
-          "additions": 83,
-          "deletions": 0,
-          "changes": 83
-        },
-        {
-          "filename": "marble/Features/Import/WorkoutImporter.swift",
-          "additions": 55,
-          "deletions": 0,
-          "changes": 55
-        },
-        {
-          "filename": "marble/Features/Journal/JournalView.swift",
-          "additions": 14,
-          "deletions": 0,
-          "changes": 14
-        },
-        {
-          "filename": "marble/Models/ImportedWorkout.swift",
-          "additions": 63,
-          "deletions": 0,
-          "changes": 63
-        },
-        {
-          "filename": "marble/Persistence/ModelContainer.swift",
-          "additions": 2,
-          "deletions": 1,
-          "changes": 3
-        }
-      ],
-      "stats": {
-        "additions": 1490,
-        "deletions": 1,
-        "total": 1491
-      }
-    },
-    {
-      "sha": "d986bce9062e513e64c17ffdca23973451bed2d1",
-      "html_url": "https://github.com/enzo-prism/marble/commit/d986bce9062e513e64c17ffdca23973451bed2d1",
-      "commit": {
-        "message": "Add progress media crop editing polish",
-        "author": {
-          "date": "2026-06-18T03:43:27-07:00"
-        },
-        "committer": {
-          "date": "2026-06-18T03:43:27-07:00"
-        }
-      },
-      "files": [
-        {
-          "filename": "Tests/UI/ProgressMediaUITests.swift",
-          "additions": 11,
-          "deletions": 1,
-          "changes": 12
-        },
-        {
-          "filename": "Tests/Unit/ProgressMediaStoreTests.swift",
-          "additions": 66,
-          "deletions": 0,
-          "changes": 66
-        },
-        {
-          "filename": "marble/Features/Calendar/ProgressMediaSection.swift",
-          "additions": 463,
-          "deletions": 88,
-          "changes": 551
-        },
-        {
-          "filename": "marble/Models/ProgressMediaAttachment.swift",
-          "additions": 34,
-          "deletions": 0,
-          "changes": 34
-        },
-        {
-          "filename": "marble/Persistence/ProgressMediaStore.swift",
-          "additions": 301,
-          "deletions": 26,
-          "changes": 327
-        }
-      ],
-      "stats": {
-        "additions": 875,
-        "deletions": 115,
-        "total": 990
       }
     }
   ]
