@@ -1,0 +1,81 @@
+{
+  "source": "Public App Store version history, https://apps.apple.com/us/app/marble-fit/id6757725234 (fetched 2026-09-24)",
+  "appStoreId": "6757725234",
+  "releases": [
+    {
+      "version": "2.5",
+      "releasedAt": "2026-09-24T03:43:39Z",
+      "notes": "Find past workouts, pick up an unfinished review, and see your lifting records at a glance.\n\nNEW\n- Search completed workout sessions by workout or exercise, filter by date, and review every set.\n- Repeat a session as an editable draft. Nothing is logged until you confirm.\n- A simpler Progress overview highlights up to five top exercises with their weight personal records and dates. Open Details for goals, charts, reports, and more.\n- Browse a larger collection of training quotes with a tap or swipe.\n\nIMPROVED\n- Resume interrupted workout reviews with your edited sets, notes, dates, exercise matches, and workout selections intact.\n- More responsive typing and paste previews, plus smoother history loading.\n- Clearer history text, set summaries, and date/time controls at larger text sizes.\n\nFIXED\n- Relative-date notes no longer split a workout into extra sessions, and unreadable pasted sections stay visible for review.\n- If saved workouts cannot open, Marble preserves the original files and offers retry and recovery-copy options.\n- Failed backup restores no longer leave partially restored changes behind.\n- Progress quotes fit without shrinking or truncating, and swiping backward no longer also advances the quote."
+    },
+    {
+      "version": "2.4",
+      "releasedAt": "2026-09-02T23:05:46Z",
+      "notes": "Marble 2.4 makes adding a workout radically simpler.\n\nNEW\n- Add is now an AI-first workout composer: paste or type natural language, gym notation, multi-day Notes, or a Hevy or Strong CSV.\n- Apple Intelligence structures prose on device when available; a deterministic parser handles notation and provides the fallback.\n- Review every workout, exercise match, set, date, RPE, rest, and note before anything is saved.\n- Drafts survive tab switches and relaunches, and Shortcuts can hand text directly to Add.\n\nIMPROVED\n- Strong exports handle European delimiters, decimal commas, kilograms, distance units, and supersets more accurately.\n- Hevy imports preserve failed sets, RPE, notes, and session timing while skipping warmups.\n- Weak exercise-name matches default to a new exercise instead of silently merging with the wrong movement.\n\nParsing and review stay on-device. Marble remains local-first: no account, no ads, no Marble server, and no third-party tracking."
+    },
+    {
+      "version": "2.3",
+      "releasedAt": "2026-08-19T19:59:52Z",
+      "notes": "Marble 2.3 makes it easier to train, log, and see progress without extra tabs.\n\nNEW\n- Train, Log, and Progress: Calendar and Supplements live inside Log. Planned sets with history complete in one tap.\n- Typed and paste import: bring a Hevy, Strong, or Notes workout in as text, parse it on-device, and review every set before it is saved.\n- Sprint V6: tenths-precision timing, a stopwatch, and more than one plan per sprint exercise.\n- Editable weigh-ins: correct or delete a bodyweight entry so a typo does not stay in your progress.\n\nIMPROVED\n- Marble now runs on iOS 26.0, down from 26.2.\n- Reliability fixes across backup restore, number entry, and system controls.\n\nMarble remains local-first: no account, no ads, no Marble server, and no third-party tracking."
+    },
+    {
+      "version": "2.2",
+      "releasedAt": "2026-08-03T01:42:10Z",
+      "notes": "Marble 2.2 brings your training goals, quick logging, and progress beyond the app while keeping your data private.\n\nNEW\n- Weekly Goal widget for the Home Screen and Lock Screen, including quick log from the medium widget.\n- Siri, Shortcuts, and Spotlight support for logging sets, repeating your last set, and starting or finishing workouts.\n- Daily Highlights, a customizable private evening recap of truthful same-day progress.\n- Bodyweight tracking with manual entry, Apple Health import, a bodyweight trend, and per-lift DOTS relative-strength scores.\n- Three-step onboarding and a central Settings screen for units, weekly goals, reminders, Health options, backups, and privacy.\n- Control Center, Lock Screen, and Action button access to quick logging.\n\nIMPROVED\n- Rest Live Activities now include +30 seconds and End controls, a rest-complete alert, and a clear stale state.\n- JSON backup and restore now covers every persisted data type; photo and video files remain on your device.\n- App Intents refresh widgets and reminders after logging, and restored data refreshes system surfaces immediately.\n- Trends are faster on large histories and include accessible Audio Graph descriptions.\n- Widgets support Smart Stack relevance, tinted rendering, and a dedicated privacy manifest.\n\nMarble remains local-first: no account, no ads, no Marble server, and no third-party tracking."
+    },
+    {
+      "version": "2.1",
+      "releasedAt": "2026-07-21T18:36:48Z",
+      "notes": "Marble 2.1 makes it easier to plan a workout, stay in the flow, and keep your training history yours.\n\nNEW\n- Workout sessions: start, log, repeat, and finish a focused session while every set remains in your Journal.\n- Sprint prescriptions: set distance, reps, a target time or range, and rest; each completed rep keeps the exact goal it was judged against.\n- Exercise Library: search, favorite, create, and safely edit exercises from one redesigned home.\n- Custom exercise icons: choose an emoji or SF Symbol for every movement.\n- JSON backup and restore: move a complete local training record between devices without creating an account.\n\nIMPROVED\n- Weight-unit normalization keeps lb and kg comparisons accurate across history, records, and trends.\n- Release-upgrade coverage now verifies the complete production model before launch.\n- Data management explains exactly what is included in a backup and what stays on-device.\n\nMarble remains private and local-first: no accounts, no ads, no tracking."
+    },
+    {
+      "version": "2.0",
+      "releasedAt": "2026-07-15T04:52:43Z",
+      "notes": "Marble 2.0 turns Trends into a coach. Everything is computed from your own logged sets, on your device.\n\nNEW\n- Your Lifts: estimated 1RM trend per lift with an honest verdict — progressing, holding, or adapted — compared at matched effort (RPE), so backing off never reads as stalling.\n- Records: a feed of your genuine PRs in Trends, plus a quiet best-at-every-rep-count table for each exercise.\n- PR in reach: while logging, Marble tells you when a weight or rep record is close enough to chase today.\n- Double-progression hint: when every set tops 8 reps at the same load and manageable effort, Marble names the classic next step — with the evidence, never a command.\n- Weekly Goal: set your sessions-per-week target and build a week streak that forgives — hit 4 weeks in a row to bank a flex week that absorbs a miss, and comebacks are celebrated.\n- Monthly report: sessions, volume, and PRs with fair same-point-vs-last-month comparisons, plus short insights computed privately on your iPhone.\n- Muscle groups now show weekly hard sets against the 10–20 set guide, count pressing/pulling assistance fractionally, and remind you when a muscle hasn't been trained lately.\n- Send sessions to Apple Health (optional): completed training days export as strength workouts with your effort score, so Marble sessions count toward Apple's Training Load.\n\nIMPROVED\n- One quiet, adaptive weekly-goal reminder that cancels itself once you've trained.\n- Best Weight comparisons are now unit-safe across lb and kg.\n\nMarble remains local-only: no accounts, no ads, no tracking."
+    },
+    {
+      "version": "1.9",
+      "releasedAt": "2026-07-02T22:12:02Z",
+      "notes": "Marble 1.9 adds workout import, handwritten workout scanning, rest-timer Live Activities, and major performance polish.\n\nNEW\n- Import workouts from Apple Health, including Apple Watch and Garmin workouts that sync through Health.\n- Scan handwritten workouts with on-device text recognition, review the parsed sets, then add them to your journal.\n- Rest timer Live Activity and Dynamic Island support after logging sets with rest time.\n- Clearer Import hub with Garmin-via-Health guidance and privacy-first source labeling.\n\nIMPROVED\n- Faster Journal, Calendar, and Trends screens with memoized chart and list data.\n- Refined Trends summary with sets, best week, supplements, charts, PRs, and drill-downs.\n- Better first-run Journal checklist, smoother Add Set flow, and Save + Next logging.\n- iOS 26 visual polish, updated symbols, and more reliable widget packaging.\n\nMarble remains local-only: no accounts, no ads, no tracking."
+    },
+    {
+      "version": "1.8",
+      "releasedAt": "2026-06-23T09:01:25Z",
+      "notes": "Marble 1.8 is a big quality release: faster everywhere, smarter with long training histories, and better integrated with iOS.\n\nNEW\n• Custom reminders: schedule weekly notifications for training days, supplements, or anything else you want to stay on top of.\n• Siri & Shortcuts: say \"Log a set in Marble\" or trigger \"Log Last Set Again\" from Shortcuts, Spotlight, or the Action button.\n• Smarter long-range Trends: 1-year and all-time charts now aggregate by week, with week-by-week drill-downs into your sets and supplement logs.\n\nIMPROVED\n• Major performance work across Journal, Calendar, and Trends — scrolling and chart scrubbing stay smooth even with years of logged sets.\n• Refined iOS 26 design with native Liquid Glass navigation, and the tab bar now tucks away while you scroll your log.\n• Haptic feedback confirms saving, repeating, and deleting sets.\n• Shake-to-undo works alongside the existing Undo buttons.\n• Better Dynamic Type support: icons scale with your text size and labels no longer clip at accessibility sizes.\n• \"Today\" and \"Yesterday\" labels stay correct when the app returns from the background on a new day.\n• Trends exercise filtering with search, recents, and per-exercise best lifts.\n\nFIXED\n• Duplicating a set (or undoing a delete) now keeps its distance values.\n• Failed saves roll back cleanly and let you know, instead of failing silently.\n\nNo accounts. No ads. No tracking. Your training stays on your device."
+    },
+    {
+      "version": "1.7",
+      "releasedAt": "2026-05-27T12:07:20Z",
+      "notes": "New in 1.7: Add custom supplement reminders with multiple times, weekday schedules, and confirmation before logging. Also includes reliability and UI test improvements."
+    },
+    {
+      "version": "1.6",
+      "releasedAt": "2026-05-08T09:07:45Z",
+      "notes": "New in 1.6:\n- Attach progress photos and videos to calendar dates to track physique changes alongside training.\n- Refreshed key screens to better follow iOS navigation, spacing, contrast, and accessibility patterns.\n- Improved Trends and Calendar coverage for a smoother, more reliable logging experience."
+    },
+    {
+      "version": "1.5",
+      "releasedAt": "2026-04-23T20:34:46Z",
+      "notes": "Search exercise titles to more easily add new sets"
+    },
+    {
+      "version": "1.4.1",
+      "releasedAt": "2026-02-05T05:00:19Z",
+      "notes": "UI + UX enhancements"
+    },
+    {
+      "version": "1.4",
+      "releasedAt": "2026-01-27T19:36:23Z",
+      "notes": "- see what weight + reps for your previous set whenever logging a new one\n- added supplements chart and UI to trends tab"
+    },
+    {
+      "version": "1.2",
+      "releasedAt": "2026-01-19T06:17:54Z",
+      "notes": "expanded workout categories: biceps, triceps, quads, hamstrings, calves"
+    },
+    {
+      "version": "1.0",
+      "releasedAt": "2026-01-15T10:03:50Z",
+      "notes": ""
+    }
+  ]
+}

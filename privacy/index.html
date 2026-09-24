@@ -8,8 +8,25 @@
     <link rel="canonical" href="https://marble-fit.app/privacy/" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Lorenzo Quaid Sison" />
+    <meta name="apple-itunes-app" content="app-id=6757725234" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
     <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <meta property="og:title" content="marble — privacy policy" />
+    <meta property="og:description" content="How marble handles workout, health, and website data." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marble-fit.app/privacy/" />
+    <meta property="og:site_name" content="marble" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="marble — privacy policy" />
+    <meta name="twitter:description" content="How marble handles workout, health, and website data." />
+    <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta name="twitter:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
     <script>
@@ -22,6 +39,33 @@
           document.documentElement.dataset.theme = theme;
         } catch {}
       })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://marble-fit.app/privacy/#webpage",
+            "url": "https://marble-fit.app/privacy/",
+            "name": "marble privacy policy",
+            "description": "How marble handles workout, health, and website data.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://marble-fit.app/#website" },
+            "about": { "@id": "https://marble-fit.app/#app" },
+            "publisher": { "@id": "https://marble-fit.app/#organization" },
+            "breadcrumb": { "@id": "https://marble-fit.app/privacy/#breadcrumb" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://marble-fit.app/privacy/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://marble-fit.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Privacy policy", "item": "https://marble-fit.app/privacy/" }
+            ]
+          }
+        ]
+      }
     </script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -41,6 +85,7 @@
       }
     </script>
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
   </head>
@@ -48,34 +93,60 @@
     <a class="skip-link" href="#top">skip to content</a>
     <header class="nav">
       <div class="container nav-inner">
-        <a class="brand" href="/">
+        <a class="brand" href="/" aria-label="marble home">
           <img src="/Favicon%20large.png" alt="" width="26" height="26" />
           <span>marble</span>
         </a>
+        <nav class="nav-links" aria-label="site">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="privacy_nav" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="privacy_nav" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="privacy_nav" data-analytics-target="releases">What’s new</a>
+          <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="privacy_nav" data-analytics-target="faq">FAQ</a>
+        </nav>
         <div class="nav-actions">
-          <button class="icon-btn theme-toggle" type="button" aria-label="toggle light and dark mode">
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.4" /><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2" /></svg>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="privacy_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
           </button>
-          <a class="btn btn-small" href="/">Home</a>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=privacy-header"
+            data-analytics-event="App Store Click"
+            data-analytics-location="privacy_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
         </div>
       </div>
     </header>
 
     <main id="top" tabindex="-1">
-      <section class="hero changelog-hero">
-        <div class="container">
+      <header class="page-hero">
+        <div class="container guide-container">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Privacy</span></li></ol></nav>
+          <p class="page-kicker">Effective July 15, 2026</p>
           <h1>Privacy Policy</h1>
-          <p>Effective July 15, 2026</p>
         </div>
-      </section>
+      </header>
 
-      <section class="section">
-        <div class="container">
-          <header class="section-intro">
-            <h2>The short version.</h2>
-            <p>Marble has no account, ads, or third-party tracking. Your workout data stays on your device unless you choose to export it or share it with Apple Health.</p>
-          </header>
+      <article class="section">
+        <div class="container guide-container">
+          <div class="prose">
+          <h2>The short version.</h2>
+          <p class="page-lede">Marble has no account, ads, or third-party tracking. Your workout data stays on your device unless you choose to export it or share it with Apple Health.</p>
 
           <h2>Information the app handles</h2>
           <p>Marble stores the exercises, sets, workout sessions, sprint goals, supplements, notes, reminders, and preferences you enter. If you add progress photos or videos, those files also remain on your device. Marble does not send this information to us.</p>
@@ -95,21 +166,25 @@
           <p>Marble does not sell personal information or share workout or Health data with advertisers, analytics providers, or data brokers. Apple processes App Store, iCloud device-backup, notification, Siri, Shortcuts, and Health data under Apple's terms when you use those system services. If you open the GitHub support page or another external link, that service's privacy policy applies.</p>
 
           <h2>This website</h2>
-          <p>The marble-fit.app website uses Vercel Web Analytics for anonymous, aggregated page and interaction counts. Vercel says these analytics are not tied to an individual or IP address. The changelog may contact GitHub&rsquo;s API to check for recent public app updates, so GitHub&rsquo;s privacy policy applies to that request. Do not include personal information in URL query parameters or support messages unless it is necessary.</p>
+          <p>The marble-fit.app website uses Vercel Web Analytics for anonymous, aggregated page and interaction counts. Vercel says these analytics are not tied to an individual or IP address. Do not include personal information in URL query parameters or support messages unless it is necessary.</p>
 
           <h2>Changes and contact</h2>
           <p>We may update this policy as Marble changes. The effective date above identifies the current version. Questions or deletion requests can be sent to <a href="mailto:enzo@design-prism.com" data-analytics-event="Support Click" data-analytics-location="privacy_policy" data-analytics-target="email_support">enzo@design-prism.com</a>.</p>
+          </div>
         </div>
-      </section>
+      </article>
     </main>
 
     <footer class="footer">
       <div class="container footer-inner">
         <span>marble</span>
         <div class="footer-links">
-          <a href="/">Home</a>
-          <a href="/changelog/">Changelog</a>
-          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234" data-analytics-event="App Store Click" data-analytics-location="privacy_footer" data-analytics-target="app_store">App Store</a>
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="privacy_footer" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="privacy_footer" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="privacy_footer" data-analytics-target="releases">Release notes</a>
+          <a href="/privacy/" aria-current="page">Privacy</a>
+          <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="privacy_footer" data-analytics-target="github_issues">Support</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=privacy-footer" data-analytics-event="App Store Click" data-analytics-location="privacy_footer" data-analytics-target="app_store">App Store</a>
         </div>
       </div>
     </footer>

@@ -3,6 +3,8 @@
   "buildCommand": "npm run validate",
   "outputDirectory": ".",
   "redirects": [
+    { "source": "/changelog", "destination": "/releases/", "permanent": true },
+    { "source": "/changelog/", "destination": "/releases/", "permanent": true },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.marble-fit.app" }],

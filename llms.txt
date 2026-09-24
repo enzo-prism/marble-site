@@ -1,67 +1,52 @@
 # marble.fit
 
-> marble is a fast, minimal workout journal for iPhone. Offline. Private. Free. No ads.
+> marble is a private workout journal for iPhone and iPad. Type or paste a workout in your own words, review the structured sets, and save. Free. Offline. No account, no ads.
 
-marble logs sets, supplements, streaks, and trends — and turns your own numbers into honest coaching: estimated 1RM trends with progression verdicts, a real PR feed, weekly goals with flex weeks, and a private monthly report computed on-device. All data stays on the iPhone.
+marble turns a typed or pasted workout (gym notation, natural language, multi-day Notes, or a Hevy or Strong CSV export) into logged sets on the device, and nothing is saved until the user reviews it. It also logs sets quickly, tracks personal records, weekly goals, bodyweight, sprints, and supplements, and computes progress from the user's own training on-device.
 
 ## Key facts
 
 - Name: marble (App Store name: marble.fit)
-- Platform: iPhone
-- Price: Free (no subscription, no unlocks)
-- Privacy: core training data stays on-device; no Marble account, ads, server, or third-party tracking
-- Offline: core logging, storage, and analysis work offline; optional external imports use Apple Health or their connected service
+- Platforms: iPhone and iPad, iOS / iPadOS 26.0 or later
+- Price: Free (no subscription, no unlocks, no ads)
+- Privacy: core training data stays on the device; no marble account, marble server, or third-party tracking in the app
+- Offline: logging, parsing, storage, and analysis work offline
+- Apple Intelligence: optional. It structures free-form prose on supported devices; gym notation and Hevy/Strong CSVs use a deterministic on-device parser on every device
+- Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health
 - Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
-- Current App Store version: 2.4 (as of 2026-09-02)
-- Minimum OS: iOS 26.0
+- Current version and history: https://marble-fit.app/releases/
 
-## Features
+## The app
 
-- Add: an AI-first workout composer. Paste or type natural language, gym notation, multi-day Notes, or a Hevy or Strong CSV. Apple Intelligence structures prose on device when available; a deterministic parser handles notation and is the fallback. Review every workout, exercise match, set, date, RPE, rest, and note before anything is saved. Drafts survive tab switches and relaunches. Shortcuts can hand text directly to Add.
-- Strong exports handle European delimiters, decimal commas, kilograms, distance units, and supersets more accurately
-- Hevy imports preserve failed sets, RPE, notes, and session timing while skipping warmups
-- Weak exercise-name matches default to a new exercise instead of silently merging
-- Train, Log, and Progress IA (Calendar and Supplements inside Log; planned sets)
-- Typed or pasted workout import from Hevy, Strong, or Notes with on-device parse and review
-- Sprint V6: tenths-precision timing, built-in stopwatch, and multiple plans per exercise
-- Editable and deletable weigh-ins
-- Fast set logging (weight, reps, RPE, rest) with Save + Next and last-set recall
-- Estimated 1RM trends with plain verdicts: progressing, holding, adapted
-- Personal record feed, rep-record tables, and PR-in-reach cues while logging
-- Weekly goal with a forgiving streak: bank a flex week every 4 hit weeks
-- Weekly-goal widgets on the Home Screen and Lock Screen
-- Siri, Shortcuts, and Spotlight logging
-- Control Center, Lock Screen, and Action button quick-log
-- Interactive rest Live Activity with Dynamic Island support
-- Daily Highlights: a private, truthful end-of-day training recap
-- Bodyweight trends with optional Apple Health import and per-lift DOTS / relative-strength context
-- Private monthly training report with fair month-over-month comparisons
-- Muscle-group coverage as weekly hard sets against the 10–20 set guide
-- Apple Health import (Apple Watch and Garmin workouts)
-- Optional Apple Health export with effort scores toward Apple's Training Load
-- Handwritten workout scanning (on-device text recognition)
-- Calendar with streaks; weekly split planner; supplement tracking
-- Local reminders that cancel themselves once you've trained
-- Light and dark mode
+- Add: paste or type a workout (natural language, gym notation, multi-day Notes, Hevy or Strong CSV), review every workout, exercise match, set, date, RPE, rest, and note, then save. Scan a handwritten page with on-device text recognition. Resume an interrupted review.
+- Log: fast set logging (weight, reps, distance, time, RPE, rest) with Log Again and Save + Next, personal-record cues while entering a set, focused workout sessions, workout history search, repeat a past workout as an editable draft, weekly split, sprint plans with tenths-precision targets and a stopwatch, calendar, supplements.
+- Progress: top exercises with personal-best weights and dates, estimated 1RM trends, PR feed and rep records, weekly goal with forgiving flex-week streaks, monthly report, muscle-group coverage, bodyweight trends with per-lift DOTS, Daily Highlights end-of-day recap.
+- iOS: Home Screen and Lock Screen weekly-goal widgets, Siri and Shortcuts (log a set, repeat the last set, start or finish a workout), Spotlight, Control Center / Lock Screen / Action button quick log, rest timer Live Activity with Dynamic Island controls.
+- Apple Health: import Apple Watch and Garmin workouts and bodyweight; optionally export strength sessions with an effort score.
+- Data: portable JSON backup and restore; progress photos and videos stay on the device.
 
-Parsing and review stay on-device. Marble remains local-first: no account, no ads, no Marble server, and no third-party tracking.
-
-## Links
+## Pages
 
 - [Home](https://marble-fit.app/)
-- [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
-- [Changelog](https://marble-fit.app/changelog/)
-- [GitHub](https://github.com/enzo-prism/marble)
+- [Every feature](https://marble-fit.app/features/)
+- [Guides](https://marble-fit.app/guides/)
+- [Import Hevy and Strong workouts](https://marble-fit.app/guides/import-hevy-strong-workouts/)
+- [Log workouts from Apple Notes](https://marble-fit.app/guides/log-workouts-from-apple-notes/)
+- [A private, offline workout tracker](https://marble-fit.app/guides/private-offline-workout-tracker/)
+- [Sprint training log](https://marble-fit.app/guides/sprint-training-log/)
+- [Log strength training with Apple Watch](https://marble-fit.app/guides/apple-watch-strength-training-log/)
+- [Release notes](https://marble-fit.app/releases/)
 - [Privacy](https://marble-fit.app/privacy/)
+- [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
 - [Support](https://github.com/enzo-prism/marble/issues)
 
 ## Frequently asked questions
 
-- Is marble free? Yes — every feature, nothing to unlock.
-- Does it work offline? Core logging, storage, and analysis do. Optional external imports use Apple Health or their connected service.
+- Is marble free? Yes: every feature, nothing to unlock.
 - Is an account required? No.
-- Which devices? iPhone, iOS 26.0 or later (Apple Watch and Garmin workouts import via Apple Health).
+- Does it work offline? Yes. Logging, parsing, storage, and analysis happen on the device.
+- Does it need Apple Intelligence? No. Apple Intelligence improves free-form prose parsing where available; notation and CSV imports work on every device.
+- Can I import from Hevy or Strong? Yes. Bring in their CSV export, review the parsed workouts, then save.
+- Does it work with Apple Watch or Garmin? Yes, through Apple Health: marble imports their workouts and can send strength sessions back with an effort score.
 - Ads or tracking? The app has no ads or third-party tracking and does not sell data. The website uses anonymous, aggregated Vercel Analytics.
-- Where does the coaching come from? The user's own logged sets, computed on-device.
-- What's new in marble 2.4? Add is an AI-first workout composer: paste or type natural language, gym notation, multi-day Notes, or a Hevy or Strong CSV; review structured sets before save. Apple Intelligence is optional and on-device when available, with a deterministic parser fallback. Strong and Hevy imports are more accurate. Train, Log, and Progress, tenths-precision sprints, and editable weigh-ins are already live.
