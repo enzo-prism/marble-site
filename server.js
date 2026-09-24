@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
   } else if (urlPath.endsWith("/")) {
     candidates.push(`${urlPath}index.html`);
   } else if (!path.extname(urlPath)) {
-    // Nice local dev behavior: /changelog -> /changelog/index.html
+    // Nice local dev behavior: /releases -> /releases/index.html
     candidates.push(`${urlPath}.html`);
     candidates.push(`${urlPath}/index.html`);
     candidates.push(urlPath);

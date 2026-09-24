@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Import Hevy and Strong workouts into marble | marble</title>
+    <meta name="description" content="How to import a Hevy or Strong CSV export into marble on iPhone: what carries over, what to check in review, and what stays behind. On-device, no account." />
+    <link rel="canonical" href="https://marble-fit.app/guides/import-hevy-strong-workouts/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="application-name" content="marble" />
+    <meta name="author" content="Lorenzo Quaid Sison" />
+    <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="Import Hevy and Strong workouts into marble | marble" />
+    <meta property="og:description" content="How to import a Hevy or Strong CSV export into marble on iPhone: what carries over, what to check in review, and what stays behind. On-device, no account." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://marble-fit.app/guides/import-hevy-strong-workouts/" />
+    <meta property="og:site_name" content="marble" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="marble, a private workout journal for iPhone" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Import Hevy and Strong workouts into marble | marble" />
+    <meta name="twitter:description" content="How to import a Hevy or Strong CSV export into marble on iPhone: what carries over, what to check in review, and what stays behind. On-device, no account." />
+    <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta name="twitter:image:alt" content="marble, a private workout journal for iPhone" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("marble-theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "@id": "https://marble-fit.app/guides/import-hevy-strong-workouts/#article",
+            "headline": "How to import Hevy and Strong workouts into marble",
+            "description": "How to import a Hevy or Strong CSV export into marble on iPhone: what carries over, what to check in review, and what stays behind. On-device, no account.",
+            "url": "https://marble-fit.app/guides/import-hevy-strong-workouts/",
+            "mainEntityOfPage": "https://marble-fit.app/guides/import-hevy-strong-workouts/",
+            "inLanguage": "en",
+            "datePublished": "2026-09-24",
+            "dateModified": "2026-09-24",
+            "image": "https://marble-fit.app/Opengraph.png",
+            "author": {
+              "@id": "https://marble-fit.app/#organization"
+            },
+            "publisher": {
+              "@id": "https://marble-fit.app/#organization"
+            },
+            "about": {
+              "@id": "https://marble-fit.app/#app"
+            },
+            "isPartOf": {
+              "@id": "https://marble-fit.app/#website"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://marble-fit.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://marble-fit.app/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Import Hevy and Strong workouts",
+                "item": "https://marble-fit.app/guides/import-hevy-strong-workouts/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://marble-fit.app/guides/import-hevy-strong-workouts/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need Apple Intelligence to import a Hevy or Strong CSV?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. CSV files are read by marble’s deterministic parser on every supported iPhone and iPad. Apple Intelligence is only used for free-form prose."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens if I import the same export twice?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Workouts that are already in your journal are recognised and stay unselected in review, so they aren’t added a second time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does marble upload my export anywhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The file is read on your device. marble has no account and no server to send it to."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are warm-up sets imported from Hevy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Hevy warm-up sets are skipped. Drop sets and failure sets are kept and tagged so you can tell them apart."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+
+      window.va("beforeSend", function (event) {
+        if (!event || typeof event !== "object" || typeof event.url !== "string") return event;
+
+        try {
+          const url = new URL(event.url);
+          url.hash = "";
+          return { ...event, url: url.toString() };
+        } catch {
+          return event;
+        }
+      });
+
+      if (!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.defer = true;
+        analyticsScript.src = "/_vercel/insights/script.js";
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/pages.css" />
+    <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/site.js" defer></script>
+  </head>
+  <body data-page="guide-hevy-strong">
+    <a class="skip-link" href="#top">skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="marble home">
+          <img src="/Favicon%20large.png" alt="" width="26" height="26" />
+          <span>marble</span>
+        </a>
+        <nav class="nav-links" aria-label="site">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_nav" data-analytics-target="features">Features</a>
+          <a href="/guides/" aria-current="page" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_nav" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_nav" data-analytics-target="releases">What’s new</a>
+          <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_nav" data-analytics-target="faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="guide_hevy_strong_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
+          </button>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-hevy-strong-header"
+            data-analytics-event="App Store Click"
+            data-analytics-location="guide_hevy_strong_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <article class="guide">
+        <header class="page-hero">
+          <div class="container guide-container">
+            <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Import Hevy and Strong workouts</span></li></ol></nav>
+            <p class="page-kicker">Guide</p>
+            <h1>How to import Hevy and Strong workouts into marble</h1>
+            <p class="guide-answer">Export your workouts as a CSV from Hevy or Strong, open the Add tab in marble, tap Choose File, and review the workouts it finds before you save. The file is read by marble&rsquo;s own parser on your iPhone. Nothing is uploaded, and you don&rsquo;t need an account.</p>
+          </div>
+        </header>
+
+        <div class="container guide-container guide-layout">
+          <div class="prose">
+            <h2>Before you start</h2>
+            <p>You need marble on an iPhone or iPad running iOS or iPadOS 26 or later, and a CSV export from Hevy or Strong saved somewhere the Files app can reach. Both apps can export your workout history as a CSV file. Look for the export option in each app&rsquo;s settings.</p>
+            <p>CSV import doesn&rsquo;t use Apple Intelligence. These files are tables, so marble reads them with a deterministic parser that works the same way on every supported device.</p>
+
+            <h2>Steps</h2>
+            <ol class="steps">
+              <li><strong>Export a CSV</strong> from Hevy or Strong and save it to Files.</li>
+              <li><strong>Open Add in marble</strong> and tap <em>Choose File</em>. Pick the export. You can select more than one file, and if they have the same header row, marble merges them into one import. You can also paste the CSV text straight into the composer.</li>
+              <li><strong>Let marble split it into workouts.</strong> Each workout title and start time becomes one workout. A long history shows up as a list on <em>Review Workouts</em>, with counts of library matches, new exercises and weak matches for each one.</li>
+              <li><strong>Check the exercise matches.</strong> Exact and strong name matches link to exercises already in your library. Weak matches stay as suggestions and default to creating a new exercise, so a movement is never quietly merged into the wrong one.</li>
+              <li><strong>Choose what to add, then save.</strong> Workouts that are already in your journal stay unselected, so importing the same file twice doesn&rsquo;t create duplicates. Until you confirm, nothing is logged.</li>
+            </ol>
+
+            <h2>What carries over</h2>
+            <h3>From Hevy</h3>
+            <ul>
+              <li>Weight from <code>weight_lbs</code> or <code>weight_kg</code>, reps, distance, and per-set duration.</li>
+              <li>RPE, the workout description, exercise notes and set notes. A <code>superset_id</code> becomes a set note.</li>
+              <li>Start and end times, so the session keeps its length.</li>
+              <li>Warm-up sets are skipped. Drop sets and failure sets are kept and tagged, including a failure set with zero reps.</li>
+              <li>If you logged the same lift twice in one workout, the two blocks stay separate instead of being mixed together.</li>
+            </ul>
+            <h3>From Strong</h3>
+            <ul>
+              <li>Date, workout name, exercise name, set order, weight, reps, distance, seconds, notes, workout notes and RPE.</li>
+              <li>Workout duration written as <code>60m</code> or <code>1h 5m</code>.</li>
+              <li>European exports that use semicolons, decimal commas and a <code>Weight (kg)</code> column.</li>
+              <li>A plain <code>Distance</code> is read in kilometres or miles, following your preferred unit.</li>
+              <li>Equipment suffixes like &ldquo;(Barbell)&rdquo; are removed from the name, but <em>Squat (Barbell)</em> and <em>Squat (Dumbbell)</em> stay separate exercises.</li>
+            </ul>
+
+            <h2>What the files look like</h2>
+            <p>marble recognises each app from the header row. For example:</p>
+            <pre class="format-example"><code>title,start_time,end_time,exercise_title,set_index,set_type,weight_lbs,reps,rpe
+Push Day,"28 Mar 2025, 17:29","28 Mar 2025, 18:45",Bench Press,0,normal,185,8,8</code></pre>
+            <pre class="format-example"><code>Date,Workout Name,Duration,Exercise Name,Set Order,Weight,Reps,Distance,Seconds,Notes,Workout Notes,RPE
+2025-01-15 18:00:00,Leg Day,60m,Squat,1,225,5,0,0,belt,Heavy day,7</code></pre>
+            <p>If you shared a single workout as text rather than a file, paste that too. Lines such as <code>Set 1: 60 kg x 10</code> under an exercise name are read as sets.</p>
+
+            <h2>Limits worth knowing</h2>
+            <ul>
+              <li>File import accepts <code>.csv</code> and <code>.txt</code>. JSON workout files aren&rsquo;t supported.</li>
+              <li>marble stores whole-number RPE, so a half step rounds up: 8.5 becomes 9.</li>
+              <li>A weight or rep value of zero is left empty rather than logged as zero.</li>
+              <li>The import is one way. marble&rsquo;s own export is a JSON backup for restoring into marble, not a Hevy or Strong file.</li>
+            </ul>
+          </div>
+          <figure class="guide-shot">
+            <picture>
+              <source type="image/webp" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.webp 660w, /images/app-store-2.5/01-paste-or-type-review.webp 1320w" sizes="(max-width: 560px) 72vw, 320px" />
+              <img class="store-shot" src="/images/app-store-2.5/660w/01-paste-or-type-review.png" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.png 660w, /images/app-store-2.5/01-paste-or-type-review.png 1320w" sizes="(max-width: 560px) 72vw, 320px" alt="marble Review Workouts screen listing two workouts imported from Hevy, ready to review before saving" width="1320" height="2868" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Review Workouts, after choosing a Hevy export.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <section id="faq" class="section page-faq" aria-labelledby="faq-title">
+        <div class="container guide-container">
+          <h2 id="faq-title">Questions</h2>
+          <div class="page-faq-list">
+            <details class="page-faq-item">
+              <summary>Do I need Apple Intelligence to import a Hevy or Strong CSV?</summary>
+              <p>No. CSV files are read by marble&rsquo;s deterministic parser on every supported iPhone and iPad. Apple Intelligence is only used for free-form prose.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>What happens if I import the same export twice?</summary>
+              <p>Workouts that are already in your journal are recognised and stay unselected in review, so they aren&rsquo;t added a second time.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Does marble upload my export anywhere?</summary>
+              <p>No. The file is read on your device. marble has no account and no server to send it to.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Are warm-up sets imported from Hevy?</summary>
+              <p>No. Hevy warm-up sets are skipped. Drop sets and failure sets are kept and tagged so you can tell them apart.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section page-cta">
+        <div class="container">
+          <h2>Start the record.</h2>
+          <div class="page-cta-actions">
+            <a
+              class="btn"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-hevy-strong-cta"
+              data-analytics-event="App Store Click"
+              data-analytics-location="guide_hevy_strong_cta"
+              data-analytics-target="app_store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="fine">Free &middot; iPhone and iPad &middot; iOS 26 or later</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section related-guides" aria-labelledby="related-title">
+        <div class="container">
+          <h2 id="related-title">Related guides</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="/guides/log-workouts-from-apple-notes/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_related" data-analytics-target="guide_notes">
+                <strong>Log workouts from Apple Notes</strong>
+                <span>Paste a note, even a whole week of them, and turn gym shorthand into sets you review before saving.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/private-offline-workout-tracker/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_related" data-analytics-target="guide_private">
+                <strong>A private, offline workout tracker</strong>
+                <span>What stays on your iPhone, what leaves only when you choose, and how to keep a backup without an account.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/sprint-training-log/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_related" data-analytics-target="guide_sprint">
+                <strong>Keep a sprint training log</strong>
+                <span>Set a distance and a target time, time every rep to the tenth, and see your fastest times per distance.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/apple-watch-strength-training-log/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_related" data-analytics-target="guide_watch">
+                <strong>Log strength training with Apple Watch</strong>
+                <span>Record the workout on Apple Watch or Garmin, log the sets in marble, and connect the two through Apple Health.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <div class="footer-links">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="releases">Release notes</a>
+          <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="privacy">Privacy</a>
+          <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="github_issues">Support</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-hevy-strong-footer" data-analytics-event="App Store Click" data-analytics-location="guide_hevy_strong_footer" data-analytics-target="app_store">App Store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

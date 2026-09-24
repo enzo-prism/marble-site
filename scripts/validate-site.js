@@ -5,20 +5,25 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { spawnSync } = require("node:child_process");
 
 const root = path.resolve(__dirname, "..");
 const canonicalOrigin = "https://marble-fit.app";
 const ignoredDirectories = new Set([".git", "node_modules"]);
 
 const homeContract = {
-  sectionIds: ["marble-2-4", "features", "screens", "faq", "download"],
+  sectionIds: ["tour", "screens", "ios", "privacy", "whats-new", "faq", "download"],
   labels: [
-    "Marble 2.4",
-    "Paste your workout",
-    "on-device",
-    "Sprints, measured to the tenth",
+    "Type your workout. marble logs it.",
+    "Add. Log. Progress.",
+    "Built into iOS.",
+    "Add 1 workout (11 sets)",
   ],
 };
+
+const appStoreId = "6757725234";
+const appStorePath = `/us/app/marble-fit/id${appStoreId}`;
+const releaseRegionPattern = /<!-- marble:latest-release:start -->[\s\S]*?<!-- marble:latest-release:end -->/g;
 
 const errors = [];
 let checkCount = 0;
@@ -485,9 +490,7 @@ function validateHtml(file, idCache) {
       fail(file, source, script.index, `JSON-LD does not parse: ${error.message}`);
     }
   }
-  if (["index.html", "changelog/index.html"].includes(relativeName(file))) {
-    check(jsonLdScripts.length > 0, file, source, 0, "must contain JSON-LD structured data");
-  }
+  check(jsonLdScripts.length > 0, file, source, 0, "must contain JSON-LD structured data");
 
   const baseUrl = canonical;
   const referenceAttributes = {
@@ -537,7 +540,50 @@ function validateHtml(file, idCache) {
     }
   }
 
+  const smartBanners = metaByName("apple-itunes-app");
+  check(
+    smartBanners.length === 1 && smartBanners[0].attributes.get("content") === `app-id=${appStoreId}`,
+    file,
+    source,
+    smartBanners[0]?.match.index ?? 0,
+    `must contain exactly one Smart App Banner meta[name="apple-itunes-app"] with content="app-id=${appStoreId}"`,
+  );
+
+  for (const match of tags(withoutComments, "a")) {
+    const href = decodeHtml(parseAttributes(match[0]).get("href") || "");
+    if (!href.startsWith("https://apps.apple.com/")) continue;
+    let url;
+    try {
+      url = new URL(href);
+    } catch {
+      continue;
+    }
+    check(url.pathname === appStorePath, file, source, match.index, `App Store links must point to ${appStorePath}`);
+    check(
+      /^[a-z0-9-]{1,40}$/.test(url.searchParams.get("ct") || ""),
+      file,
+      source,
+      match.index,
+      "App Store links must carry a campaign token ct (lowercase, hyphens, ≤ 40 chars)",
+    );
+  }
+
   if (relativeName(file) === "index.html") {
+    const regions = [...source.matchAll(releaseRegionPattern)];
+    check(regions.length === 1, file, source, 0, "home page must contain exactly one generated latest-release region");
+
+    // The version lives in data/releases.json; the home page may only show it
+    // inside the region scripts/build-releases.js regenerates.
+    const outsideRelease = source.replace(releaseRegionPattern, " ").replace(/<!--[\s\S]*?-->/g, "");
+    const hardCodedVersion = visibleText(outsideRelease).match(/\b(?:marble|new in|version)\s+\d+\.\d+/i);
+    check(
+      !hardCodedVersion,
+      file,
+      source,
+      0,
+      `home page must not hard-code a version outside the generated latest-release region (found "${hardCodedVersion?.[0]}")`,
+    );
+
     const pageIds = idCache.get(file);
     const text = visibleText(withoutComments);
 
@@ -649,104 +695,6 @@ function validateAnalyticsImplementation(file) {
   );
 }
 
-function extractBalancedBlock(source, openingBrace) {
-  let depth = 0;
-
-  for (let index = openingBrace; index < source.length; index += 1) {
-    if (source[index] === "{") depth += 1;
-    if (source[index] !== "}") continue;
-
-    depth -= 1;
-    if (depth === 0) {
-      return source.slice(openingBrace + 1, index);
-    }
-  }
-
-  return null;
-}
-
-function listenerBodies(source, receiver, eventName) {
-  const escapedReceiver = receiver.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const escapedEventName = eventName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(
-    `${escapedReceiver}\\.addEventListener\\(\\s*["']${escapedEventName}["']\\s*,\\s*\\(\\)\\s*=>\\s*\\{`,
-    "g",
-  );
-  const listeners = [];
-
-  for (const match of source.matchAll(pattern)) {
-    const openingBrace = match.index + match[0].lastIndexOf("{");
-    listeners.push({ body: extractBalancedBlock(source, openingBrace), index: match.index });
-  }
-
-  return listeners;
-}
-
-function validateChangelogInteractionAnalytics(file) {
-  const source = fs.readFileSync(file, "utf8");
-  const eventName = "Commit Detail Opened";
-  const eventOccurrences = [...source.matchAll(new RegExp(`trackAnalyticsEvent\\(\\s*["']${eventName}["']`, "g"))];
-  const summaryClicks = listenerBodies(source, "d.summary", "click");
-  const detailToggles = listenerBodies(source, "d.root", "toggle");
-
-  check(
-    eventOccurrences.length === 1,
-    file,
-    source,
-    eventOccurrences[0]?.index ?? 0,
-    `${eventName} must have exactly one emission path`,
-  );
-  check(
-    summaryClicks.length === 1 && typeof summaryClicks[0].body === "string",
-    file,
-    source,
-    summaryClicks[0]?.index ?? 0,
-    "commit detail analytics must use exactly one summary click listener",
-  );
-  if (summaryClicks.length === 1 && typeof summaryClicks[0].body === "string") {
-    const { body, index } = summaryClicks[0];
-    check(
-      body.includes("if (!d.root.open)") && body.includes(`trackAnalyticsEvent("${eventName}"`),
-      file,
-      source,
-      index,
-      "summary click must track only when the detail is currently closed",
-    );
-    check(
-      body.includes('location: "changelog_details"') && body.includes('target: "commit"'),
-      file,
-      source,
-      index,
-      "commit detail analytics must keep categorical location and target properties",
-    );
-  }
-
-  check(
-    detailToggles.length === 1 && typeof detailToggles[0].body === "string",
-    file,
-    source,
-    detailToggles[0]?.index ?? 0,
-    "commit details must use exactly one toggle listener for lazy hydration",
-  );
-  if (detailToggles.length === 1 && typeof detailToggles[0].body === "string") {
-    const { body, index } = detailToggles[0];
-    check(
-      body.includes("if (d.root.open)") && body.includes("hydrateDetail(commit, refs, overrides)"),
-      file,
-      source,
-      index,
-      "detail toggle must continue lazy hydration when opened",
-    );
-    check(
-      !body.includes(eventName) && !body.includes("trackAnalyticsEvent"),
-      file,
-      source,
-      index,
-      "detail toggle must not emit analytics for default or programmatic opens",
-    );
-  }
-}
-
 function validateCss(file, idCache) {
   const source = fs.readFileSync(file, "utf8");
   const baseUrl = `${canonicalOrigin}/${relativeName(file)}`;
@@ -764,21 +712,51 @@ function validateCss(file, idCache) {
   }
 }
 
+// Every page is listed in sitemap.xml, and every listed URL exists.
+function validateSitemap(htmlFiles) {
+  const sitemapFile = path.join(root, "sitemap.xml");
+  const source = fs.existsSync(sitemapFile) ? fs.readFileSync(sitemapFile, "utf8") : "";
+  check(Boolean(source), sitemapFile, source, 0, "sitemap.xml is required");
+
+  const listed = [...source.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => ({ url: match[1].trim(), index: match.index }));
+  const listedUrls = new Set(listed.map(({ url }) => url));
+
+  for (const file of htmlFiles) {
+    const url = expectedCanonical(file);
+    check(listedUrls.has(url), sitemapFile, source, 0, `sitemap.xml is missing ${url}`);
+  }
+  for (const { url, index } of listed) {
+    const target = url.startsWith(canonicalOrigin) ? findLocalFile(new URL(url).pathname) : null;
+    check(Boolean(target), sitemapFile, source, index, `sitemap.xml lists a URL with no page: ${url}`);
+  }
+}
+
+// Release pages and the home page's latest-release region are generated from
+// data/releases.json; fail the build if someone edited one without the other.
+function validateGeneratedReleases() {
+  const script = path.join(root, "scripts", "build-releases.js");
+  checkCount += 1;
+  const result = spawnSync(process.execPath, [script, "--check"], { cwd: root, encoding: "utf8" });
+  if (result.status !== 0) {
+    const detail = `${result.stdout || ""}${result.stderr || ""}`.trim();
+    fail(script, "", undefined, `generated release pages are out of date; run npm run build:releases\n${detail}`);
+  }
+}
+
 function main() {
   const htmlFiles = walk(root, new Set([".html"]));
   const cssFiles = walk(root, new Set([".css"]));
   const analyticsFile = path.join(root, "scripts", "analytics.js");
-  const changelogFile = path.join(root, "changelog", "changelog.js");
   const idCache = new Map();
 
   check(htmlFiles.length > 0, path.join(root, "index.html"), "", 0, "no HTML files found");
   check(fs.existsSync(analyticsFile), analyticsFile, "", 0, "scripts/analytics.js is required");
-  check(fs.existsSync(changelogFile), changelogFile, "", 0, "changelog/changelog.js is required");
 
   for (const file of htmlFiles) validateHtml(file, idCache);
   for (const file of cssFiles) validateCss(file, idCache);
   if (fs.existsSync(analyticsFile)) validateAnalyticsImplementation(analyticsFile);
-  if (fs.existsSync(changelogFile)) validateChangelogInteractionAnalytics(changelogFile);
+  validateSitemap(htmlFiles);
+  validateGeneratedReleases();
 
   if (errors.length) {
     console.error(`\nSite validation failed with ${errors.length} error${errors.length === 1 ? "" : "s"}:\n`);

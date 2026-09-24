@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>marble 2.3 release notes | marble</title>
+    <meta name="description" content="Marble 2.3 makes it easier to train, log, and see progress without extra tabs." />
+    <link rel="canonical" href="https://marble-fit.app/releases/2-3/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="application-name" content="marble" />
+    <meta name="author" content="Lorenzo Quaid Sison" />
+    <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="marble 2.3 release notes | marble" />
+    <meta property="og:description" content="Marble 2.3 makes it easier to train, log, and see progress without extra tabs." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://marble-fit.app/releases/2-3/" />
+    <meta property="og:site_name" content="marble" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
+    <meta property="article:published_time" content="2026-08-19T19:59:52Z" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="marble 2.3 release notes | marble" />
+    <meta name="twitter:description" content="Marble 2.3 makes it easier to train, log, and see progress without extra tabs." />
+    <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta name="twitter:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("marble-theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://marble-fit.app/releases/2-3/#webpage",
+            "url": "https://marble-fit.app/releases/2-3/",
+            "name": "marble 2.3 release notes",
+            "description": "Marble 2.3 makes it easier to train, log, and see progress without extra tabs.",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@id": "https://marble-fit.app/#website"
+            },
+            "about": {
+              "@id": "https://marble-fit.app/#app"
+            },
+            "publisher": {
+              "@id": "https://marble-fit.app/#organization"
+            },
+            "breadcrumb": {
+              "@id": "https://marble-fit.app/releases/2-3/#breadcrumb"
+            },
+            "datePublished": "2026-08-19T19:59:52Z"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://marble-fit.app/releases/2-3/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://marble-fit.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Release notes",
+                "item": "https://marble-fit.app/releases/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "2.3",
+                "item": "https://marble-fit.app/releases/2-3/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+
+      window.va("beforeSend", function (event) {
+        if (!event || typeof event !== "object" || typeof event.url !== "string") return event;
+
+        try {
+          const url = new URL(event.url);
+          url.hash = "";
+          return { ...event, url: url.toString() };
+        } catch {
+          return event;
+        }
+      });
+
+      if (!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.defer = true;
+        analyticsScript.src = "/_vercel/insights/script.js";
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/releases/releases.css" />
+    <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/site.js" defer></script>
+  </head>
+  <body data-page="release">
+    <a class="skip-link" href="#top">skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="marble home">
+          <img src="/Favicon%20large.png" alt="" width="26" height="26" />
+          <span>marble</span>
+        </a>
+        <nav class="nav-links" aria-label="site">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="release_nav" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="release_nav" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" aria-current="true" data-analytics-event="Nav Click" data-analytics-location="release_nav" data-analytics-target="releases">What’s new</a>
+          <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="release_nav" data-analytics-target="faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="release_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
+          </button>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=release-2-3-header"
+            data-analytics-event="App Store Click"
+            data-analytics-location="release_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <article>
+        <header class="hero releases-hero">
+          <div class="container">
+            <nav class="release-crumbs" aria-label="Breadcrumb">
+              <a href="/releases/">Release notes</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">2.3</span>
+            </nav>
+            <p class="release-label">Release notes</p>
+            <h1>marble 2.3</h1>
+            <p class="release-date"><time datetime="2026-08-19T19:59:52Z">August 19, 2026</time> &middot; App Store</p>
+          </div>
+        </header>
+
+        <div class="section release-body">
+          <div class="container release-notes">
+            <p class="release-lede">Marble 2.3 makes it easier to train, log, and see progress without extra tabs.</p>
+            <h2 id="new">New</h2>
+            <ul>
+              <li>Train, Log, and Progress: Calendar and Supplements live inside Log. Planned sets with history complete in one tap.</li>
+              <li>Typed and paste import: bring a Hevy, Strong, or Notes workout in as text, parse it on-device, and review every set before it is saved.</li>
+              <li>Sprint V6: tenths-precision timing, a stopwatch, and more than one plan per sprint exercise.</li>
+              <li>Editable weigh-ins: correct or delete a bodyweight entry so a typo does not stay in your progress.</li>
+            </ul>
+            <h2 id="improved">Improved</h2>
+            <ul>
+              <li>Marble now runs on iOS 26.0, down from 26.2.</li>
+              <li>Reliability fixes across backup restore, number entry, and system controls.</li>
+            </ul>
+            <p>Marble remains local-first: no account, no ads, no Marble server, and no third-party tracking.</p>
+          </div>
+
+          <div class="container">
+            <div class="release-cta">
+              <a
+                class="btn"
+                href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=release-2-3"
+                data-analytics-event="App Store Click"
+                data-analytics-location="release_cta"
+                data-analytics-target="app_store"
+              >
+                <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+                Download on the App Store
+              </a>
+              <span class="fine">Free &middot; iPhone and iPad &middot; No account</span>
+            </div>
+
+            <nav class="release-pager" aria-label="More releases">
+            <a class="release-pager-older" href="/releases/2-2/" data-analytics-event="Nav Click" data-analytics-location="release_pager" data-analytics-target="older_release">
+              <small>Older</small>
+              <span>marble 2.2</span>
+            </a>
+            <a class="release-pager-newer" href="/releases/2-4/" data-analytics-event="Nav Click" data-analytics-location="release_pager" data-analytics-target="newer_release">
+              <small>Newer</small>
+              <span>marble 2.4</span>
+            </a>
+            </nav>
+            <p class="release-all"><a class="text-link" href="/releases/">All release notes</a></p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <div class="footer-links">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="release_footer" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="release_footer" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="release_footer" data-analytics-target="releases">Release notes</a>
+          <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="release_footer" data-analytics-target="privacy">Privacy</a>
+          <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="release_footer" data-analytics-target="github_issues">Support</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=release-2-3-footer" data-analytics-event="App Store Click" data-analytics-location="release_footer" data-analytics-target="app_store">App Store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

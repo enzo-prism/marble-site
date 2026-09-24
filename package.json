@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "update:changelog": "node scripts/generate-changelog-data.js",
+    "build:releases": "node scripts/build-releases.js",
+    "check:releases": "node scripts/build-releases.js --check",
     "validate": "node scripts/validate-site.js"
   }
 }

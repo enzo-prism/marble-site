@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log strength training with Apple Watch and Garmin | marble</title>
+    <meta name="description" content="Record strength workouts on Apple Watch or Garmin, bring them into marble through Apple Health, and log sets and reps on your iPhone. No Watch app required." />
+    <link rel="canonical" href="https://marble-fit.app/guides/apple-watch-strength-training-log/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="application-name" content="marble" />
+    <meta name="author" content="Lorenzo Quaid Sison" />
+    <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="Log strength training with Apple Watch and Garmin | marble" />
+    <meta property="og:description" content="Record strength workouts on Apple Watch or Garmin, bring them into marble through Apple Health, and log sets and reps on your iPhone. No Watch app required." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://marble-fit.app/guides/apple-watch-strength-training-log/" />
+    <meta property="og:site_name" content="marble" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="marble, a private workout journal for iPhone" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Log strength training with Apple Watch and Garmin | marble" />
+    <meta name="twitter:description" content="Record strength workouts on Apple Watch or Garmin, bring them into marble through Apple Health, and log sets and reps on your iPhone. No Watch app required." />
+    <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta name="twitter:image:alt" content="marble, a private workout journal for iPhone" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("marble-theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "@id": "https://marble-fit.app/guides/apple-watch-strength-training-log/#article",
+            "headline": "How to log strength training with Apple Watch, sets and reps included",
+            "description": "Record strength workouts on Apple Watch or Garmin, bring them into marble through Apple Health, and log sets and reps on your iPhone. No Watch app required.",
+            "url": "https://marble-fit.app/guides/apple-watch-strength-training-log/",
+            "mainEntityOfPage": "https://marble-fit.app/guides/apple-watch-strength-training-log/",
+            "inLanguage": "en",
+            "datePublished": "2026-09-24",
+            "dateModified": "2026-09-24",
+            "image": "https://marble-fit.app/Opengraph.png",
+            "author": {
+              "@id": "https://marble-fit.app/#organization"
+            },
+            "publisher": {
+              "@id": "https://marble-fit.app/#organization"
+            },
+            "about": {
+              "@id": "https://marble-fit.app/#app"
+            },
+            "isPartOf": {
+              "@id": "https://marble-fit.app/#website"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://marble-fit.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://marble-fit.app/guides/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Log strength training with Apple Watch",
+                "item": "https://marble-fit.app/guides/apple-watch-strength-training-log/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://marble-fit.app/guides/apple-watch-strength-training-log/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is there a marble app for Apple Watch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The Watch records the workout in Apple Health and marble imports it. Sets and reps are logged in marble on your iPhone."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can marble import sets and reps from my Apple Watch or Garmin?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Apple Health carries workout summaries such as duration, calories and heart rate, not per-set weight and reps. You log the sets in marble."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do marble workouts count toward Apple’s Training Load?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "They can. Turn on Send sessions to Apple Health, and completed training days are saved as strength workouts with an effort score from your logged RPE."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do Garmin workouts get into marble?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Turn on Apple Health syncing in the Garmin Connect app. Garmin workouts then appear in marble’s Apple Health import list with a Garmin badge."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+
+      window.va("beforeSend", function (event) {
+        if (!event || typeof event !== "object" || typeof event.url !== "string") return event;
+
+        try {
+          const url = new URL(event.url);
+          url.hash = "";
+          return { ...event, url: url.toString() };
+        } catch {
+          return event;
+        }
+      });
+
+      if (!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.defer = true;
+        analyticsScript.src = "/_vercel/insights/script.js";
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/pages.css" />
+    <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/site.js" defer></script>
+  </head>
+  <body data-page="guide-watch">
+    <a class="skip-link" href="#top">skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="marble home">
+          <img src="/Favicon%20large.png" alt="" width="26" height="26" />
+          <span>marble</span>
+        </a>
+        <nav class="nav-links" aria-label="site">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_nav" data-analytics-target="features">Features</a>
+          <a href="/guides/" aria-current="page" data-analytics-event="Nav Click" data-analytics-location="guide_watch_nav" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_nav" data-analytics-target="releases">What’s new</a>
+          <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="guide_watch_nav" data-analytics-target="faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="guide_watch_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
+          </button>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-watch-header"
+            data-analytics-event="App Store Click"
+            data-analytics-location="guide_watch_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <article class="guide">
+        <header class="page-hero">
+          <div class="container guide-container">
+            <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Log strength training with Apple Watch</span></li></ol></nav>
+            <p class="page-kicker">Guide</p>
+            <h1>How to log strength training with Apple Watch, sets and reps included</h1>
+            <p class="guide-answer">marble has no Apple Watch app. Instead, the Watch records the workout in Apple Health, and marble imports it with its time, calories and heart rate. You log the sets and reps in marble on your iPhone. Garmin workouts come in the same way, through Apple Health.</p>
+          </div>
+        </header>
+
+        <div class="container guide-container guide-layout">
+          <div class="prose">
+            <h2>How the pieces fit</h2>
+            <p>Apple Health stores workout summaries: type, time, duration, calories and heart rate. It doesn&rsquo;t store the weight and reps of each set. So the Watch records the workout, and marble records the sets. There are two ways to combine them.</p>
+
+            <h2>Option 1: record on the Watch, log sets in marble</h2>
+            <ol class="steps">
+              <li><strong>Start a strength workout</strong> on your Apple Watch as usual.</li>
+              <li><strong>Log your sets in marble</strong> on your iPhone. Start a workout session, then use <em>Save + Next</em> or <em>Log Again</em> to repeat your last set. The rest timer runs as a Live Activity on the Lock Screen and in the Dynamic Island.</li>
+              <li><strong>Import the Watch workout.</strong> In Log, open <em>Import Workouts</em>, connect Apple Health, choose a range (last 30 days, last 90 days or last year) and tap <em>Load</em>. Select the workout and import it.</li>
+              <li><strong>Or turn on <em>Auto-import new workouts</em>.</strong> Each time you open marble, workouts recorded after you turned it on are added automatically.</li>
+            </ol>
+            <p>Each imported workout shows where it came from, such as Apple Watch or Garmin, along with its duration, calories and heart rate.</p>
+
+            <h2>Option 2: log in marble, send it to Apple Health</h2>
+            <p>If you don&rsquo;t record on the Watch, turn on <em>Send sessions to Apple Health</em>. marble saves your completed training days to Health as strength workouts, with an effort score based on the RPE you logged. That effort score is what lets the sessions count toward Apple&rsquo;s Training Load. Sets that came from Apple Health in the first place are never sent back.</p>
+            <p>Pick one option per session. marble never re-exports workouts it imported from Health, but it can’t tell that sets you typed in marble match a session your Watch also recorded. If you do both for the same session, Health will hold two workouts.</p>
+
+            <h2>Garmin strength workouts</h2>
+            <ol class="steps">
+              <li>In the Garmin Connect app, turn on syncing to Apple Health. marble&rsquo;s import screen has an <em>Open Garmin Connect</em> button to help.</li>
+              <li>After Garmin Connect syncs, your Garmin workouts appear in marble&rsquo;s Apple Health list with a Garmin badge.</li>
+              <li>Import them, and log the sets in marble as above.</li>
+            </ol>
+            <p>Garmin keeps per-set strength detail in its own service, and it doesn&rsquo;t pass through Apple Health. marble connects only through Apple Health and never asks for your Garmin password.</p>
+
+            <h2>Limits worth knowing</h2>
+            <ul>
+              <li>There is no marble app on Apple Watch. Sets and reps are logged on your iPhone or iPad. Quick logging is also available from the Lock Screen, Control Center, the Action button and Siri.</li>
+              <li>A strength workout imported from Health arrives as a duration entry with its summary, not as individual sets.</li>
+              <li>If nothing appears, check that marble can read workouts: Settings &rsaquo; Apps &rsaquo; Health &rsaquo; Data Access &amp; Devices &rsaquo; Marble.</li>
+            </ul>
+          </div>
+          <figure class="guide-shot">
+            <picture>
+              <source type="image/webp" srcset="/images/app-store-2.5/660w/07-active-workout.webp 660w, /images/app-store-2.5/07-active-workout.webp 1320w" sizes="(max-width: 560px) 72vw, 320px" />
+              <img class="store-shot" src="/images/app-store-2.5/660w/07-active-workout.png" srcset="/images/app-store-2.5/660w/07-active-workout.png 660w, /images/app-store-2.5/07-active-workout.png 1320w" sizes="(max-width: 560px) 72vw, 320px" alt="marble Active Workout screen for a live Leg Day session with Add Set and Finish controls" width="1320" height="2868" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Log the sets in marble while the Watch records.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <section id="faq" class="section page-faq" aria-labelledby="faq-title">
+        <div class="container guide-container">
+          <h2 id="faq-title">Questions</h2>
+          <div class="page-faq-list">
+            <details class="page-faq-item">
+              <summary>Is there a marble app for Apple Watch?</summary>
+              <p>No. The Watch records the workout in Apple Health and marble imports it. Sets and reps are logged in marble on your iPhone.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Can marble import sets and reps from my Apple Watch or Garmin?</summary>
+              <p>No. Apple Health carries workout summaries such as duration, calories and heart rate, not per-set weight and reps. You log the sets in marble.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Do marble workouts count toward Apple&rsquo;s Training Load?</summary>
+              <p>They can. Turn on Send sessions to Apple Health, and completed training days are saved as strength workouts with an effort score from your logged RPE.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>How do Garmin workouts get into marble?</summary>
+              <p>Turn on Apple Health syncing in the Garmin Connect app. Garmin workouts then appear in marble&rsquo;s Apple Health import list with a Garmin badge.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section page-cta">
+        <div class="container">
+          <h2>Start the record.</h2>
+          <div class="page-cta-actions">
+            <a
+              class="btn"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-watch-cta"
+              data-analytics-event="App Store Click"
+              data-analytics-location="guide_watch_cta"
+              data-analytics-target="app_store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="fine">Free &middot; iPhone and iPad &middot; iOS 26 or later</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section related-guides" aria-labelledby="related-title">
+        <div class="container">
+          <h2 id="related-title">Related guides</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="/guides/import-hevy-strong-workouts/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_related" data-analytics-target="guide_hevy_strong">
+                <strong>Import Hevy and Strong workouts</strong>
+                <span>Bring a Hevy or Strong CSV export into marble, check every match, and keep your history.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/log-workouts-from-apple-notes/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_related" data-analytics-target="guide_notes">
+                <strong>Log workouts from Apple Notes</strong>
+                <span>Paste a note, even a whole week of them, and turn gym shorthand into sets you review before saving.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/private-offline-workout-tracker/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_related" data-analytics-target="guide_private">
+                <strong>A private, offline workout tracker</strong>
+                <span>What stays on your iPhone, what leaves only when you choose, and how to keep a backup without an account.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/sprint-training-log/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_related" data-analytics-target="guide_sprint">
+                <strong>Keep a sprint training log</strong>
+                <span>Set a distance and a target time, time every rep to the tenth, and see your fastest times per distance.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <div class="footer-links">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_footer" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_footer" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_footer" data-analytics-target="releases">Release notes</a>
+          <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="guide_watch_footer" data-analytics-target="privacy">Privacy</a>
+          <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="guide_watch_footer" data-analytics-target="github_issues">Support</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=guide-watch-footer" data-analytics-event="App Store Click" data-analytics-location="guide_watch_footer" data-analytics-target="app_store">App Store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
