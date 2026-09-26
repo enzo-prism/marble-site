@@ -13,7 +13,7 @@ const canonicalOrigin = "https://marble-fit.app";
 const ignoredDirectories = new Set([".git", "node_modules"]);
 
 const homeContract = {
-  sectionIds: ["tour", "screens", "switch", "ios", "privacy", "whats-new", "faq", "download"],
+  sectionIds: ["tour", "screens", "switch", "ios", "privacy", "whats-new", "faq", "download", "formats-title"],
   labels: [
     "Type your workout. marble logs it.",
     "Add. Log. Progress.",
@@ -29,6 +29,13 @@ const appStore = loadAppStore();
 const appStoreId = appStore.appId;
 const appStorePath = new URL(appStore.url).pathname;
 const releaseRegionPattern = /<!-- marble:latest-release:start -->[\s\S]*?<!-- marble:latest-release:end -->/g;
+
+const iconSprite = path.join(root, "icons.svg");
+const iconIds = new Set(
+  fs.existsSync(iconSprite)
+    ? [...fs.readFileSync(iconSprite, "utf8").matchAll(/<symbol\b[^>]*\bid="([^"]+)"/g)].map((match) => match[1])
+    : [],
+);
 
 const errors = [];
 let checkCount = 0;
@@ -488,6 +495,14 @@ function validateHtml(file, idCache) {
   }
   idCache.set(file, new Set(idOccurrences.keys()));
 
+  // Icons come from one sprite; a typo in a symbol id renders nothing.
+  for (const match of tags(withoutComments, "use")) {
+    const href = parseAttributes(match[0]).get("href") || "";
+    const icon = href.match(/^\/icons\.svg#(.+)$/);
+    check(Boolean(icon), file, source, match.index, `<use> must reference /icons.svg#<id>, got ${JSON.stringify(href)}`);
+    if (icon) check(iconIds.has(icon[1]), file, source, match.index, `icon ${icon[1]} is not a <symbol> in icons.svg`);
+  }
+
   for (const image of tags(withoutComments, "img")) {
     const attributes = parseAttributes(image[0]);
     check(attributes.has("alt"), file, source, image.index, `<img> is missing an alt attribute`);
@@ -789,6 +804,16 @@ function main() {
   const htmlFiles = walk(root, new Set([".html"]));
   const cssFiles = walk(root, new Set([".css"]));
   const analyticsFile = path.join(root, "scripts", "analytics.js");
+  const siteScript = path.join(root, "scripts", "site.js");
+
+  check(iconIds.size > 0, iconSprite, "", 0, "icons.svg must define <symbol> icons");
+  // site.js swaps the menu icon at runtime, so those ids must exist too.
+  if (fs.existsSync(siteScript)) {
+    const siteSource = fs.readFileSync(siteScript, "utf8");
+    for (const match of siteSource.matchAll(/\/icons\.svg#([a-z0-9-]+)/g)) {
+      check(iconIds.has(match[1]), siteScript, siteSource, match.index, `icon ${match[1]} is not a <symbol> in icons.svg`);
+    }
+  }
   const idCache = new Map();
 
   check(htmlFiles.length > 0, path.join(root, "index.html"), "", 0, "no HTML files found");

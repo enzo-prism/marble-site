@@ -134,9 +134,11 @@
 
 /* single release ------------------------------------------------------- */
 
+/* a 720px reading column that lines up with the header's left edge
+   instead of centring (or, on wide screens, sitting on the window edge) */
 .release-notes {
-  max-width: 720px;
-  margin-left: 0;
+  max-width: calc(720px + 2 * var(--gutter));
+  margin-left: max(0px, calc((100% - var(--max-width) - 2 * var(--gutter)) / 2));
 }
 
 .release-notes .release-lede {
@@ -232,4 +234,9 @@
 
 .release-all {
   margin-top: 18px;
+}
+
+/* the notes follow straight on from their header */
+.releases-hero + .section {
+  padding-top: clamp(8px, 2vw, 24px);
 }

@@ -130,7 +130,7 @@
           <img src="/Favicon%20large.png" alt="" width="26" height="26" />
           <span>marble</span>
         </a>
-        <nav class="nav-links" aria-label="site">
+        <nav class="nav-links" id="site-nav" aria-label="site">
           <a href="/features/" aria-current="page" data-analytics-event="Nav Click" data-analytics-location="features_nav" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="features_nav" data-analytics-target="guides">Guides</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="features_nav" data-analytics-target="releases">What’s new</a>
@@ -162,6 +162,9 @@
           >
             Download
           </a>
+          <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-menu"/></svg>
+          </button>
         </div>
       </div>
     </header>
@@ -172,61 +175,89 @@
           <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Features</span></li></ol></nav>
           <p class="page-kicker">Features</p>
           <h1>Everything marble does.</h1>
-          <p class="page-lede">marble is a private workout journal for iPhone and iPad. It has three tabs, Add, Log and Progress, and connects to iOS and Apple Health where it helps. It&rsquo;s free, with no account and no ads.</p>
-          <nav class="page-toc" aria-label="On this page"><ul><li><a href="#add" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="add">Add</a></li><li><a href="#log" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="log">Log</a></li><li><a href="#progress" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="progress">Progress</a></li><li><a href="#ios" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="ios">iOS</a></li><li><a href="#health" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="health">Apple Health</a></li><li><a href="#privacy" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="privacy">Privacy and data</a></li></ul></nav>
+          <p class="page-lede">Three tabs, a few iOS hooks, and nothing to sign up for. Free, with no account and no ads.</p>
+          <nav class="page-toc" aria-label="On this page"><ul><li><a href="#add" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="add"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-plus"/></svg>Add</a></li><li><a href="#log" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="log"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg>Log</a></li><li><a href="#progress" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="progress"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg>Progress</a></li><li><a href="#ios" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="ios"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-phone"/></svg>iOS</a></li><li><a href="#health" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="health"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-heart"/></svg>Apple Health</a></li><li><a href="#privacy" data-analytics-event="Section Navigate" data-analytics-location="features_toc" data-analytics-target="privacy"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lock"/></svg>Privacy and data</a></li></ul></nav>
         </div>
       </section>
 
       <section id="add" class="section feature-group" aria-labelledby="add-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-plus"/></svg></span>
             <p class="page-kicker">Add</p>
             <h2 id="add-title">Write it your way. Review, then save.</h2>
-            <p>Add is where workouts come in: typed, pasted, imported or scanned. Nothing is logged until you&rsquo;ve reviewed it.</p>
+            <p>Typed, pasted, imported or scanned. Nothing is logged until you&rsquo;ve checked it.</p>
             <figure class="feature-group-shot">
-            <picture>
-              <source type="image/webp" srcset="/images/app-store-2.5/screens/01-paste-or-type-review.webp" />
-              <img class="phone-shot" src="/images/app-store-2.5/screens/01-paste-or-type-review.png" alt="marble Review Workouts screen with two imported Hevy workouts awaiting review" width="600" height="1308" loading="lazy" decoding="async" />
-            </picture>
+              <picture>
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/01-paste-or-type-review.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/01-paste-or-type-review.png" alt="marble Review Workouts screen with two imported Hevy workouts awaiting review" width="600" height="1308" loading="lazy" decoding="async" />
+              </picture>
             </figure>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-type"/></svg></span>
+              <div>
                 <h3>Paste or type in your own words</h3>
-                <p>Write gym notation like <code>Squat 5x5 @ 225</code> or <code>Bench 3x8 @ 185 rest 90s</code>, or paste a note as it is. A live preview shows each exercise and its set count as you type.</p>
-              </li>
-              <li class="feature-item">
+                <p>Gym notation like <code>Squat 5x5 @ 225</code>, or a note as it is, with a live preview.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-cpu"/></svg></span>
+              <div>
                 <h3>On-device parsing</h3>
-                <p>Notation and files are read by a deterministic parser on every device. Apple Intelligence structures free-form prose on device when it&rsquo;s available.</p>
-              </li>
-              <li class="feature-item">
+                <p>A deterministic parser on every device, and Apple Intelligence for prose where available.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-note"/></svg></span>
+              <div>
                 <h3>Multi-day Notes</h3>
-                <p>Paste a week at once. Lines that are only a date, a weekday or a label like <code>Day 1</code> split it into separate workouts.</p>
-              </li>
-              <li class="feature-item">
+                <p>Paste a week. Dates, weekdays and <code>Day 1</code> labels split it into workouts.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-file-csv"/></svg></span>
+              <div>
                 <h3>Hevy and Strong CSV</h3>
-                <p>Choose one or more <code>.csv</code> or <code>.txt</code> exports. Warm-ups are skipped, while RPE, notes, failure sets and session times come across.</p>
-              </li>
-              <li class="feature-item">
+                <p>RPE, notes, failure sets and session times come across. Warm-ups are skipped.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-list-checks"/></svg></span>
+              <div>
                 <h3>Review before saving</h3>
-                <p>Check every workout, exercise match, set, date, RPE, rest and note. Weak name matches default to a new exercise instead of merging into the wrong one.</p>
-              </li>
-              <li class="feature-item">
+                <p>Check every match and set. A weak match becomes a new exercise, never a wrong merge.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-history"/></svg></span>
+              <div>
                 <h3>Drafts that wait for you</h3>
-                <p>An unfinished review is kept across relaunches, and you can resume it with your edits, dates and matches intact.</p>
-              </li>
-              <li class="feature-item">
+                <p>An unfinished review survives relaunches, with your edits intact.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-scan"/></svg></span>
+              <div>
                 <h3>Scan handwritten pages</h3>
-                <p>Photograph every page of a training notebook. Text recognition runs on device, and a dated week is split into workouts for review.</p>
-              </li>
-              <li class="feature-item">
+                <p>Photograph a training notebook. Text recognition runs on device.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-repeat"/></svg></span>
+              <div>
                 <h3>History and repeat</h3>
-                <p>Search completed sessions by workout or exercise, filter by date and review every set. Repeat a session as an editable draft, and nothing is logged until you confirm.</p>
-              </li>
-              <li class="feature-item">
+                <p>Search past sessions, and repeat one as an editable draft.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-command"/></svg></span>
+              <div>
                 <h3>Shortcuts handoff</h3>
-                <p>Shortcuts can send text straight to Add. If a draft is already open, you choose whether to add to it, replace it or keep it.</p>
-              </li>
+                <p>Send text from Shortcuts straight into Add.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -234,61 +265,95 @@
       <section id="log" class="section feature-group" aria-labelledby="log-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg></span>
             <p class="page-kicker">Log</p>
             <h2 id="log-title">Log without losing your flow.</h2>
-            <p>Record weight, reps, distance, time, RPE, rest and notes, with each exercise showing only the fields it needs.</p>
+            <p>Weight, reps, distance, time, RPE and rest, with only the fields each exercise needs.</p>
             <figure class="feature-group-shot">
-            <picture>
-              <source type="image/webp" srcset="/images/app-store-2.5/screens/06-fast-set-logger.webp" />
-              <img class="phone-shot" src="/images/app-store-2.5/screens/06-fast-set-logger.png" alt="marble Log Set sheet showing the last set, personal best and a Save plus Next button" width="600" height="1308" loading="lazy" decoding="async" />
-            </picture>
+              <picture>
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/06-fast-set-logger.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/06-fast-set-logger.png" alt="marble Log Set sheet showing the last set, personal best and a Save plus Next button" width="600" height="1308" loading="lazy" decoding="async" />
+              </picture>
             </figure>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg></span>
+              <div>
                 <h3>Fast set logging</h3>
-                <p>The Log Set sheet shows what you did last time and your personal best before you enter anything.</p>
-              </li>
-              <li class="feature-item">
+                <p>Last time and your best, before you type anything.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-rotate"/></svg></span>
+              <div>
                 <h3>Log Again</h3>
-                <p>Repeat your last set with one tap from the Log Again card.</p>
-              </li>
-              <li class="feature-item">
+                <p>Repeat your last set with one tap.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-forward"/></svg></span>
+              <div>
                 <h3>Save + Next</h3>
                 <p>Save a set and stay in the sheet for the next one.</p>
-              </li>
-              <li class="feature-item">
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trophy"/></svg></span>
+              <div>
                 <h3>Personal-record cues</h3>
-                <p>See the record to beat while you enter a set, and get a New PR cue the moment you pass it.</p>
-              </li>
-              <li class="feature-item">
+                <p>The record to beat, and a New PR cue the moment you pass it.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-target"/></svg></span>
+              <div>
                 <h3>Workout sessions</h3>
-                <p>Start a focused session, log into it and finish it. Every set still lands in your journal.</p>
-              </li>
-              <li class="feature-item">
+                <p>Start, log and finish a focused session.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-layers"/></svg></span>
+              <div>
                 <h3>Weekly split</h3>
-                <p>Build a weekly split so each training day has a plan.</p>
-              </li>
-              <li class="feature-item">
+                <p>Give each training day a plan.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg></span>
+              <div>
                 <h3>Sprints to the tenth</h3>
-                <p>Build reusable sprint plans with a distance, a rep count and a target time or range. Time reps with the stopwatch or type a decimal, then see every rep, your best and your average.</p>
-              </li>
-              <li class="feature-item">
+                <p>Distance, reps and a target time, timed to 0.1 seconds.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-bell"/></svg></span>
+              <div>
                 <h3>Rest timer</h3>
-                <p>An in-app timer with a Live Activity, Dynamic Island controls to add 30 seconds or end early, and a rest-complete alert.</p>
-              </li>
-              <li class="feature-item">
+                <p>A Live Activity with +30 s and End, and a rest-complete alert.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-pill"/></svg></span>
+              <div>
                 <h3>Supplements</h3>
-                <p>Log creatine, protein and other daily habits alongside your training.</p>
-              </li>
-              <li class="feature-item">
+                <p>Creatine, protein and daily habits beside your training.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-calendar"/></svg></span>
+              <div>
                 <h3>Calendar</h3>
-                <p>A month view with training-day markers, day detail, streaks, and progress photos and videos.</p>
-              </li>
-              <li class="feature-item">
+                <p>Training days, streaks and progress photos, month by month.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-book"/></svg></span>
+              <div>
                 <h3>Exercise library</h3>
-                <p>Search, favourite, create and safely edit exercises, each with its own emoji or SF Symbol icon.</p>
-              </li>
+                <p>Search, favourite and edit exercises, each with its own icon.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -296,53 +361,81 @@
       <section id="progress" class="section feature-group" aria-labelledby="progress-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg></span>
             <p class="page-kicker">Progress</p>
             <h2 id="progress-title">Clear progress, computed on your phone.</h2>
-            <p>The overview shows your top lifts. Open Details for goals, charts, records and reports, all calculated from your own logged sets.</p>
+            <p>Top lifts up front. Goals, charts and reports one tap deeper.</p>
             <figure class="feature-group-shot">
-            <picture>
-              <source type="image/webp" srcset="/images/app-store-2.5/screens/05-strength-trends.webp" />
-              <img class="phone-shot" src="/images/app-store-2.5/screens/05-strength-trends.png" alt="marble Progress overview listing top exercises with their personal-record weights and dates" width="600" height="1308" loading="lazy" decoding="async" />
-            </picture>
+              <picture>
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/05-strength-trends.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/05-strength-trends.png" alt="marble Progress overview listing top exercises with their personal-record weights and dates" width="600" height="1308" loading="lazy" decoding="async" />
+              </picture>
             </figure>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-chart"/></svg></span>
+              <div>
                 <h3>Top exercises</h3>
-                <p>Up to five of your most-logged weighted exercises, each with its personal-record weight and the date you set it.</p>
-              </li>
-              <li class="feature-item">
+                <p>Your five most-logged lifts, with record weights and dates.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg></span>
+              <div>
                 <h3>Estimated 1RM verdicts</h3>
-                <p>Each lift gets an estimated 1RM trend and a plain verdict: progressing, holding or adapted. Comparisons are made at matched effort.</p>
-              </li>
-              <li class="feature-item">
+                <p>Progressing, holding or adapted, compared at matched effort.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-badge-check"/></svg></span>
+              <div>
                 <h3>PR feed and rep records</h3>
-                <p>A feed of your real personal records, plus your best weight at every rep count for each exercise.</p>
-              </li>
-              <li class="feature-item">
+                <p>Every real record, and your best weight at each rep count.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-up"/></svg></span>
+              <div>
                 <h3>Progression hints</h3>
-                <p>When every set tops 8 reps at the same load and a manageable effort, marble suggests the next load and shows its evidence.</p>
-              </li>
-              <li class="feature-item">
+                <p>A suggested next load, with the evidence behind it.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-flame"/></svg></span>
+              <div>
                 <h3>Weekly goal and flex weeks</h3>
-                <p>Set a sessions-per-week target. Hit it four weeks in a row to bank a flex week that covers one missed week.</p>
-              </li>
-              <li class="feature-item">
+                <p>Hit your target four weeks running to bank a flex week.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-file-chart"/></svg></span>
+              <div>
                 <h3>Monthly report</h3>
-                <p>Sessions, volume and records, compared fairly with the same point last month, with short insights written on the device.</p>
-              </li>
-              <li class="feature-item">
+                <p>Sessions, volume and records, against the same point last month.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-pie"/></svg></span>
+              <div>
                 <h3>Muscle coverage</h3>
-                <p>Weekly hard sets per muscle group, measured against the 10&ndash;20 set guide.</p>
-              </li>
-              <li class="feature-item">
+                <p>Weekly hard sets per muscle group, against the 10&ndash;20 set guide.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-scale"/></svg></span>
+              <div>
                 <h3>Bodyweight and DOTS</h3>
-                <p>Log bodyweight or import it from Apple Health, correct a weigh-in that was wrong, and compare each lift to your bodyweight with a DOTS score.</p>
-              </li>
-              <li class="feature-item">
+                <p>Track weigh-ins and compare each lift to your bodyweight.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-moon"/></svg></span>
+              <div>
                 <h3>Daily Highlights</h3>
-                <p>A private evening recap of that day&rsquo;s truthful progress, on days you train. It appears from 8:00 PM by default, and you can change the window.</p>
-              </li>
+                <p>A private evening recap, on the days you train.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -350,36 +443,54 @@
       <section id="ios" class="section feature-group" aria-labelledby="ios-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-phone"/></svg></span>
             <p class="page-kicker">iOS</p>
             <h2 id="ios-title">Reach marble from anywhere on iOS.</h2>
-            <p>marble uses the native iPhone and iPad features you already know, so a set is never more than a glance away.</p>
-
+            <p>A set is never more than a glance away.</p>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-widgets"/></svg></span>
+              <div>
                 <h3>Widgets</h3>
-                <p>The Weekly Goal widget sits on the Home Screen or Lock Screen, and the medium size includes quick logging.</p>
-              </li>
-              <li class="feature-item">
+                <p>Your weekly goal on the Home and Lock Screen, with quick logging.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-mic"/></svg></span>
+              <div>
                 <h3>Siri and Shortcuts</h3>
-                <p>Log a set, repeat your last set, and start or finish a workout by voice or from Shortcuts.</p>
-              </li>
-              <li class="feature-item">
+                <p>Log a set, repeat it, or start and finish a workout by voice.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-toggle"/></svg></span>
+              <div>
                 <h3>Control Center and the Action button</h3>
-                <p>Open quick logging from Control Center, the Lock Screen or the Action button.</p>
-              </li>
-              <li class="feature-item">
+                <p>Quick logging from Control Center, the Lock Screen or the Action button.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-island"/></svg></span>
+              <div>
                 <h3>Live Activities</h3>
-                <p>Rest counts down on the Lock Screen and in the Dynamic Island, with +30 seconds and End controls.</p>
-              </li>
-              <li class="feature-item">
+                <p>Rest counts down in the Dynamic Island, with +30 s and End.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-search"/></svg></span>
+              <div>
                 <h3>Spotlight</h3>
                 <p>Find your exercises from system search.</p>
-              </li>
-              <li class="feature-item">
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-tablet"/></svg></span>
+              <div>
                 <h3>iPhone and iPad</h3>
-                <p>Runs on iOS and iPadOS 26 or later, in light and dark mode, with support for larger text sizes.</p>
-              </li>
+                <p>iOS and iPadOS 26 or later, in light and dark, with larger text.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -387,28 +498,40 @@
       <section id="health" class="section feature-group" aria-labelledby="health-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-heart"/></svg></span>
             <p class="page-kicker">Apple Health</p>
             <h2 id="health-title">Connected to Apple Health, only if you choose.</h2>
-            <p>Apple Health links marble to Apple Watch, Garmin and other apps that write to Health. marble has no Watch app of its own.</p>
-
+            <p>Apple Watch and Garmin workouts come in through Health. marble has no Watch app of its own.</p>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-watch"/></svg></span>
+              <div>
                 <h3>Import workouts</h3>
-                <p>Load Apple Watch workouts, and Garmin workouts synced through Garmin Connect, with their origin, duration, calories and heart rate. Turn on auto-import to add new ones whenever you open marble.</p>
-              </li>
-              <li class="feature-item">
+                <p>Apple Watch and Garmin sessions, with duration, calories and heart rate.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-scale"/></svg></span>
+              <div>
                 <h3>Import bodyweight</h3>
-                <p>Bring weigh-ins in from Apple Health to track bodyweight and DOTS.</p>
-              </li>
-              <li class="feature-item">
+                <p>Weigh-ins from Health, for bodyweight trends and DOTS.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-heart"/></svg></span>
+              <div>
                 <h3>Send sessions to Health</h3>
-                <p>Optionally save completed training days as strength workouts with an effort score from your RPE, so they count toward Apple&rsquo;s Training Load.</p>
-              </li>
-              <li class="feature-item">
+                <p>Strength workouts with an effort score, so they count toward Training Load.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-note"/></svg></span>
+              <div>
                 <h3>An honest limit</h3>
-                <p>Apple Health carries workout summaries, not per-set weight and reps. Sets and reps are logged in marble.</p>
-              </li>
+                <p>Health keeps workout summaries, not sets and reps. Those live in marble.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -416,41 +539,60 @@
       <section id="privacy" class="section feature-group" aria-labelledby="privacy-title">
         <div class="container feature-group-grid">
           <header class="feature-group-head">
+            <span class="icon-tile icon-tile-lg"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lock"/></svg></span>
             <p class="page-kicker">Privacy and data</p>
             <h2 id="privacy-title">Your training stays yours.</h2>
-            <p>There&rsquo;s no account, no marble server, no ads and no third-party tracking in the app. Your core data stays on your iPhone or iPad.</p>
+            <p>No account, no marble server, no ads and no third-party tracking.</p>
             <figure class="feature-group-shot">
-            <picture>
-              <source type="image/webp" srcset="/images/app-store-2.5/screens/10-private-backup.webp" />
-              <img class="phone-shot" src="/images/app-store-2.5/screens/10-private-backup.png" alt="marble Data and Backups screen showing on-device totals with export and restore controls" width="600" height="1308" loading="lazy" decoding="async" />
-            </picture>
+              <picture>
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/10-private-backup.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/10-private-backup.png" alt="marble Data and Backups screen showing on-device totals with export and restore controls" width="600" height="1308" loading="lazy" decoding="async" />
+              </picture>
             </figure>
           </header>
           <ul class="feature-list">
-              <li class="feature-item">
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-phone"/></svg></span>
+              <div>
                 <h3>On device</h3>
-                <p>Parsing, analysis and storage all happen on the device and keep working offline.</p>
-              </li>
-              <li class="feature-item">
+                <p>Parsing, analysis and storage all run on the device, offline.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-archive"/></svg></span>
+              <div>
                 <h3>JSON backup and restore</h3>
-                <p>Export a portable backup of your exercises, sets, supplements, sessions, weigh-ins and split. A restore adds missing data without deleting anything, and a failed restore leaves no partial changes.</p>
-              </li>
-              <li class="feature-item">
+                <p>A portable backup. A restore adds what&rsquo;s missing and never deletes.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-image"/></svg></span>
+              <div>
                 <h3>Photos stay local</h3>
-                <p>Progress photos and videos stay on the device and aren&rsquo;t included in backup files.</p>
-              </li>
-              <li class="feature-item">
+                <p>Progress photos and videos never leave the device.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lifebuoy"/></svg></span>
+              <div>
                 <h3>Careful recovery</h3>
-                <p>If saved workouts can&rsquo;t open, marble keeps the original files and offers retry and recovery-copy options.</p>
-              </li>
-              <li class="feature-item">
+                <p>If saved workouts can&rsquo;t open, the original files are kept, with retry and recovery.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-code"/></svg></span>
+              <div>
                 <h3>Checkable claims</h3>
-                <p>The App Store privacy label reads Data Not Collected, and <a href="https://github.com/enzo-prism/marble" data-analytics-event="Source Click" data-analytics-location="features_privacy" data-analytics-target="github_source">the app&rsquo;s source code is public</a>.</p>
-              </li>
-              <li class="feature-item">
+                <p>The App Store privacy label reads Data Not Collected, and <a href="https://github.com/enzo-prism/marble" data-analytics-event="Source Click" data-analytics-location="features_privacy" data-analytics-target="github_source">the source code is public</a>.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-reveal>
+              <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-gift"/></svg></span>
+              <div>
                 <h3>Free</h3>
                 <p>Every feature, with no subscription and nothing to unlock.</p>
-              </li>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
