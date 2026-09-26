@@ -26,19 +26,19 @@
     <meta property="og:url" content="https://marble-fit.app/" />
     <meta property="og:site_name" content="marble" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="https://marble-fit.app/Opengraph.png" />
+    <meta property="og:image" content="https://marble-fit.app/images/og/home.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
+    <meta property="og:image:alt" content="Type your workout. marble logs it. A typed leg day turned into reviewed sets in marble, a free workout journal for iPhone." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="marble — type your workout, get logged sets" />
     <meta
       name="twitter:description"
       content="A private workout journal for iPhone and iPad. Type or paste a session in your own words, review the sets marble finds, then save. Free, no account, works offline."
     />
-    <meta name="twitter:image" content="https://marble-fit.app/Opengraph.png" />
-    <meta name="twitter:image:alt" content="marble — a minimal workout journal for iOS, shown on iPhone" />
+    <meta name="twitter:image" content="https://marble-fit.app/images/og/home.png" />
+    <meta name="twitter:image:alt" content="Type your workout. marble logs it. A typed leg day turned into reviewed sets in marble, a free workout journal for iPhone." />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
     <script>
@@ -65,7 +65,8 @@
             "name": "marble",
             "url": "https://marble-fit.app/",
             "logo": "https://marble-fit.app/Favicon%20large.png",
-            "founder": { "@type": "Person", "name": "Lorenzo Quaid Sison" }
+            "founder": { "@type": "Person", "name": "Lorenzo Quaid Sison" },
+            "sameAs": ["https://apps.apple.com/us/app/marble-fit/id6757725234", "https://github.com/enzo-prism/marble"]
           },
           {
             "@type": "WebSite",
@@ -89,7 +90,7 @@
             "installUrl": "https://apps.apple.com/us/app/marble-fit/id6757725234",
             "inLanguage": "en",
             "description": "marble is a private workout journal for iPhone and iPad. Paste or type a workout in your own words, gym notation, Notes, or a Hevy or Strong CSV; marble turns it into sets on your device and saves nothing until you review it. Log sets fast, see your top lifts and personal records, and keep your training on your device with no account, ads, or tracking.",
-            "image": "https://marble-fit.app/Opengraph.png",
+            "image": "https://marble-fit.app/images/og/home.png",
             "screenshot": [
               "https://marble-fit.app/images/app-store-2.5/01-paste-or-type-review.png",
               "https://marble-fit.app/images/app-store-2.5/02-workout-history.png",
@@ -170,10 +171,26 @@
               },
               {
                 "@type": "Question",
+                "name": "How do I find marble on the App Store?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Search for marble.fit, or use a Download button on this page. The App Store listing is called marble.fit; the app itself is marble. It needs iOS or iPadOS 26 or later."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is marble a good alternative to Hevy or Strong?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "If you want a private journal rather than a social feed or a subscription, yes. Every feature is free, there is no account, and your Hevy or Strong CSV imports on your iPhone. There is no Android app, web app or cloud sync. See switching from Hevy and switching from Strong."
+                }
+              },
+              {
+                "@type": "Question",
                 "name": "Does marble sell my data or show ads?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. The app has no ads, marble account, marble server, or third-party tracking, and your data is never sold. This website uses anonymous, aggregated Vercel Analytics."
+                  "text": "No. The app has no ads, marble account, marble server, or third-party tracking, and your data is never sold. Its App Store privacy label reads Data Not Collected, and the source code is public. This website uses anonymous, aggregated Vercel Analytics."
                 }
               }
             ]
@@ -259,9 +276,9 @@
       <section class="hero hero-home" aria-labelledby="hero-title">
         <div class="container hero-home-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Workout journal for iPhone and iPad</p>
+            <p class="eyebrow">Free workout journal for iPhone and iPad</p>
             <h1 id="hero-title">Type your workout. marble logs it.</h1>
-            <p class="hero-lede">Paste or type a session in your own words or gym notation. marble turns it into sets on your device, and nothing is saved until you review it.</p>
+            <p class="hero-lede">Paste or type a session in your own words or gym notation. marble turns it into sets on your device, and nothing is saved until you review it. Every feature is free, with nothing to unlock.</p>
             <div class="hero-actions">
               <a
                 class="btn"
@@ -275,7 +292,11 @@
                 </svg>
                 Download on the App Store
               </a>
-              <span class="fine">Free &middot; No account &middot; Works offline</span>
+              <p class="hero-notes">
+                <span class="fine">No subscription &middot; No account &middot; Works offline</span>
+                <span class="fine">On the App Store as <strong>marble.fit</strong> &middot; iOS 26 or later</span>
+              </p>
+              <!-- marble:rating:start --><!-- marble:rating:end -->
             </div>
           </div>
 
@@ -351,8 +372,8 @@
             </div>
             <div class="pillar-media">
               <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.webp 660w, /images/app-store-2.5/01-paste-or-type-review.webp 1320w" sizes="(max-width: 560px) 136px, 300px" />
-                <img class="store-shot" src="/images/app-store-2.5/660w/01-paste-or-type-review.png" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.png 660w, /images/app-store-2.5/01-paste-or-type-review.png 1320w" sizes="(max-width: 560px) 136px, 300px" alt="Review every workout before you save. The Review Workouts screen with two workouts imported from Hevy." width="1320" height="2868" loading="lazy" decoding="async" />
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/01-paste-or-type-review.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/01-paste-or-type-review.png" alt="Review every workout before you save. The Review Workouts screen with two workouts imported from Hevy." width="600" height="1308" loading="lazy" decoding="async" />
               </picture>
             </div>
           </article>
@@ -370,8 +391,8 @@
             </div>
             <div class="pillar-media">
               <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/660w/06-fast-set-logger.webp 660w, /images/app-store-2.5/06-fast-set-logger.webp 1320w" sizes="(max-width: 560px) 136px, 300px" />
-                <img class="store-shot" src="/images/app-store-2.5/660w/06-fast-set-logger.png" srcset="/images/app-store-2.5/660w/06-fast-set-logger.png 660w, /images/app-store-2.5/06-fast-set-logger.png 1320w" sizes="(max-width: 560px) 136px, 300px" alt="Log fast. Beat your best. The Log Set sheet with the last set, personal best, and Save + Next." width="1320" height="2868" loading="lazy" decoding="async" />
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/06-fast-set-logger.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/06-fast-set-logger.png" alt="Log fast. Beat your best. The Log Set sheet with the last set, personal best, and Save + Next." width="600" height="1308" loading="lazy" decoding="async" />
               </picture>
             </div>
           </article>
@@ -389,8 +410,8 @@
             </div>
             <div class="pillar-media">
               <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/660w/05-strength-trends.webp 660w, /images/app-store-2.5/05-strength-trends.webp 1320w" sizes="(max-width: 560px) 136px, 300px" />
-                <img class="store-shot" src="/images/app-store-2.5/660w/05-strength-trends.png" srcset="/images/app-store-2.5/660w/05-strength-trends.png 660w, /images/app-store-2.5/05-strength-trends.png 1320w" sizes="(max-width: 560px) 136px, 300px" alt="Your lifting records, at a glance. Progress showing top exercises with their personal bests." width="1320" height="2868" loading="lazy" decoding="async" />
+                <source type="image/webp" srcset="/images/app-store-2.5/screens/05-strength-trends.webp" />
+                <img class="phone-shot" src="/images/app-store-2.5/screens/05-strength-trends.png" alt="Your lifting records, at a glance. Progress showing top exercises with their personal bests." width="600" height="1308" loading="lazy" decoding="async" />
               </picture>
             </div>
           </article>
@@ -411,72 +432,110 @@
         <div class="container">
           <header class="section-intro">
             <h2 id="screens-title">A closer look.</h2>
-            <p>The App Store screenshots, with sample training data.</p>
+            <p>More of the app, with sample training data.</p>
           </header>
           <div class="screens-strip" role="region" aria-labelledby="screens-title" tabindex="0">
             <ul class="screens-list">
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.webp 660w, /images/app-store-2.5/01-paste-or-type-review.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/01-paste-or-type-review.png" srcset="/images/app-store-2.5/660w/01-paste-or-type-review.png 660w, /images/app-store-2.5/01-paste-or-type-review.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Review every workout before you save. The Review Workouts screen with two workouts imported from Hevy." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/02-workout-history.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/02-workout-history.png" alt="A Leg Day session from workout history with a Repeat Workout button." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Your past workouts, ready when you are.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/02-workout-history.webp 660w, /images/app-store-2.5/02-workout-history.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/02-workout-history.png" srcset="/images/app-store-2.5/660w/02-workout-history.png 660w, /images/app-store-2.5/02-workout-history.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Your past workouts, ready when you are. A Leg Day session from workout history with a Repeat Workout button." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/03-repeat-review.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/03-repeat-review.png" alt="A repeated workout opened as an editable Paste or Type draft." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Repeat the workout. Make it yours.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/03-repeat-review.webp 660w, /images/app-store-2.5/03-repeat-review.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/03-repeat-review.png" srcset="/images/app-store-2.5/660w/03-repeat-review.png 660w, /images/app-store-2.5/03-repeat-review.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Repeat the workout. Make it yours. A repeated workout opened as an editable Paste or Type draft." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/04-journal.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/04-journal.png" alt="The Log tab with a Log Again card and today’s sets." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Every workout, organized.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/04-journal.webp 660w, /images/app-store-2.5/04-journal.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/04-journal.png" srcset="/images/app-store-2.5/660w/04-journal.png 660w, /images/app-store-2.5/04-journal.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Every workout. Beautifully organized. The Log tab with a Log Again card and today’s sets." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/07-active-workout.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/07-active-workout.png" alt="A live Leg Day workout with Add Set and Finish controls." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Stay with your plan.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/05-strength-trends.webp 660w, /images/app-store-2.5/05-strength-trends.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/05-strength-trends.png" srcset="/images/app-store-2.5/660w/05-strength-trends.png 660w, /images/app-store-2.5/05-strength-trends.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Your lifting records, at a glance. Progress showing top exercises with their personal bests." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/08-training-calendar.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/08-training-calendar.png" alt="The training calendar with a 35-day streak." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Your rhythm, at a glance.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/06-fast-set-logger.webp 660w, /images/app-store-2.5/06-fast-set-logger.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/06-fast-set-logger.png" srcset="/images/app-store-2.5/660w/06-fast-set-logger.png 660w, /images/app-store-2.5/06-fast-set-logger.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Log fast. Beat your best. The Log Set sheet with the last set, personal best, and Save + Next." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/09-sprint-prescription.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/09-sprint-prescription.png" alt="Sprint rep 1 of 4 with a 14.0 to 16.0 second target." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Every sprint has a target.</figcaption>
+                </figure>
               </li>
               <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/07-active-workout.webp 660w, /images/app-store-2.5/07-active-workout.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/07-active-workout.png" srcset="/images/app-store-2.5/660w/07-active-workout.png 660w, /images/app-store-2.5/07-active-workout.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Stay with your plan. A live Leg Day workout with Add Set and Finish controls." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
-              </li>
-              <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/08-training-calendar.webp 660w, /images/app-store-2.5/08-training-calendar.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/08-training-calendar.png" srcset="/images/app-store-2.5/660w/08-training-calendar.png 660w, /images/app-store-2.5/08-training-calendar.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Your rhythm, at a glance. The training calendar with a 35-day streak." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
-              </li>
-              <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/09-sprint-prescription.webp 660w, /images/app-store-2.5/09-sprint-prescription.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/09-sprint-prescription.png" srcset="/images/app-store-2.5/660w/09-sprint-prescription.png 660w, /images/app-store-2.5/09-sprint-prescription.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Every sprint has a target. Sprint rep 1 of 4 with a 14.0 to 16.0 second target." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
-              </li>
-              <li class="screen-item">
-                <picture>
-                  <source type="image/webp" srcset="/images/app-store-2.5/660w/10-private-backup.webp 660w, /images/app-store-2.5/10-private-backup.webp 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" />
-                  <img class="store-shot" src="/images/app-store-2.5/660w/10-private-backup.png" srcset="/images/app-store-2.5/660w/10-private-backup.png 660w, /images/app-store-2.5/10-private-backup.png 1320w" sizes="(max-width: 560px) 172px, (max-width: 860px) 200px, 184px" alt="Keep a copy of your training. Data and Backups with portable export and restore." width="1320" height="2868" loading="lazy" decoding="async" />
-                </picture>
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="/images/app-store-2.5/screens/10-private-backup.webp" />
+                    <img class="phone-shot" src="/images/app-store-2.5/screens/10-private-backup.png" alt="Data and Backups with portable export and restore." width="600" height="1308" loading="lazy" decoding="async" />
+                  </picture>
+                  <figcaption>Keep a copy of your training.</figcaption>
+                </figure>
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section id="switch" class="section" aria-labelledby="switch-title">
+        <div class="container">
+          <header class="section-intro">
+            <h2 id="switch-title">Coming from Hevy, Strong or Notes?</h2>
+            <p>Bring your history with you. marble reads it on your iPhone, and you check every workout before it&rsquo;s saved.</p>
+          </header>
+          <ul class="switch-list">
+            <li>
+              <a href="/guides/hevy-alternative/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_hevy_alternative">
+                <strong>From Hevy</strong>
+                <span>Import the CSV with RPE, notes and session times. No account and no subscription.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/strong-alternative/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_strong_alternative">
+                <strong>From Strong</strong>
+                <span>Bring every workout over, including kg and European exports. Every feature is free, with nothing to unlock.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/log-workouts-from-apple-notes/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_notes">
+                <strong>From Apple Notes</strong>
+                <span>Paste a note, or a whole week of them. Gym shorthand becomes sets you can chart.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/import-hevy-strong-workouts/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_hevy_strong">
+                <strong>Step by step</strong>
+                <span>What carries over from each app, what to check in review, and what stays behind.</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -518,6 +577,16 @@
         <div class="container">
           <p>No account, ads, marble server, or third-party tracking. Your core training data stays on your device.</p>
           <span class="fine">Offline core &middot; On-device parsing &middot; Portable JSON backup</span>
+          <ul class="privacy-proof">
+            <li>
+              The App Store privacy label reads <strong>Data Not Collected</strong>.
+              <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?ct=home-privacy" data-analytics-event="App Store Click" data-analytics-location="home_privacy" data-analytics-target="app_store">See the label</a>
+            </li>
+            <li>
+              The app&rsquo;s source code is public, so you can check these claims yourself.
+              <a href="https://github.com/enzo-prism/marble" data-analytics-event="Source Click" data-analytics-location="home_privacy" data-analytics-target="github_source">Read the code</a>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -569,8 +638,16 @@
               <p>Yes, through Apple Health. marble imports Apple Watch workouts and Garmin workouts that sync to Health, and can optionally send your strength sessions back to Health with an effort score. There is no separate Apple Watch app.</p>
             </details>
             <details class="faq-item">
+              <summary>How do I find marble on the App Store?</summary>
+              <p>Search for <strong>marble.fit</strong>, or use a Download button on this page. The App Store listing is called marble.fit; the app itself is marble. It needs iOS or iPadOS 26 or later.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is marble a good alternative to Hevy or Strong?</summary>
+              <p>If you want a private journal rather than a social feed or a subscription, yes. Every feature is free, there is no account, and your Hevy or Strong CSV imports on your iPhone. There is no Android app, web app or cloud sync. See <a href="/guides/hevy-alternative/">switching from Hevy</a> and <a href="/guides/strong-alternative/">switching from Strong</a>.</p>
+            </details>
+            <details class="faq-item">
               <summary>Does marble sell my data or show ads?</summary>
-              <p>No. The app has no ads, marble account, marble server, or third-party tracking, and your data is never sold. This website uses anonymous, aggregated Vercel Analytics.</p>
+              <p>No. The app has no ads, marble account, marble server, or third-party tracking, and your data is never sold. Its App Store privacy label reads Data Not Collected, and <a href="https://github.com/enzo-prism/marble">the source code is public</a>. This website uses anonymous, aggregated Vercel Analytics.</p>
             </details>
           </div>
         </div>
@@ -592,7 +669,8 @@
               </svg>
               Download on the App Store
             </a>
-            <span class="fine">Free &middot; iPhone and iPad &middot; Works offline</span>
+            <span class="fine">Free &middot; iPhone and iPad &middot; iOS 26 or later</span>
+            <span class="fine">Search the App Store for <strong>marble.fit</strong></span>
           </div>
         </div>
       </section>

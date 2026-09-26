@@ -27,10 +27,11 @@ const releasesDir = path.join(root, "releases");
 const homeFile = path.join(root, "index.html");
 
 const ORIGIN = "https://marble-fit.app";
-const APP_STORE = "https://apps.apple.com/us/app/marble-fit/id6757725234";
-const APP_ID = "6757725234";
-const OG_IMAGE = `${ORIGIN}/Opengraph.png`;
-const OG_IMAGE_ALT = "marble — a minimal workout journal for iOS, shown on iPhone";
+const { appStoreHref, loadAppStore } = require("./build-app-store");
+
+const APP_ID = loadAppStore().appId;
+const OG_IMAGE = `${ORIGIN}/images/og/releases.png`; // rendered by scripts/build-og.js
+const OG_IMAGE_ALT = "What’s new in marble, a free, private workout journal for iPhone.";
 const MARKER_START = "<!-- marble:latest-release:start -->";
 const MARKER_END = "<!-- marble:latest-release:end -->";
 const FIRST_RELEASE_TEXT = "First release on the App Store.";
@@ -252,8 +253,9 @@ function loadReleases() {
 // shared chrome
 // ---------------------------------------------------------------------------
 
+// Escaped for an href; the provider token comes from data/app-store.json.
 function appStoreUrl(ct) {
-  return `${APP_STORE}?ct=${ct}`;
+  return appStoreHref(ct);
 }
 
 function head({ title, description, pagePath, ogType, jsonLd, extraMeta = "" }) {

@@ -127,7 +127,7 @@
 }
 
 .feature-group-shot {
-  max-width: 280px;
+  max-width: 240px;
   margin-top: 32px;
 }
 
@@ -199,6 +199,11 @@
   top: 96px;
 }
 
+.guide-shot .phone-shot {
+  max-width: 230px;
+  margin: 0 auto;
+}
+
 .guide-shot figcaption,
 .feature-group-shot figcaption {
   margin-top: 12px;
@@ -261,6 +266,24 @@
 
 .prose ul li::marker {
   color: var(--line);
+}
+
+.prose a,
+.page-faq-item a,
+.feature-item a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .prose a:hover,
+  .page-faq-item a:hover,
+  .feature-item a:hover {
+    text-decoration-color: var(--ink);
+  }
 }
 
 /* numbered steps */
@@ -499,7 +522,7 @@
 
   .feature-group-shot,
   .guide-shot {
-    max-width: 240px;
+    max-width: 220px;
   }
 
   .guide-shot {
@@ -535,5 +558,68 @@
   .guide-list a,
   .page-faq-item summary::after {
     transition: none;
+  }
+}
+
+/* marble beside another app: a row label, then one column each ------------- */
+
+.compare-table th[scope="row"] {
+  width: 24%;
+  padding-right: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+
+.compare-table td {
+  width: 38%;
+  padding-right: 16px;
+}
+
+.compare-table td:nth-child(2) {
+  color: var(--ink);
+}
+
+.compare-note {
+  font-size: 0.85rem;
+}
+
+/* phones: each row stacks, and every answer carries its app's name */
+@media (max-width: 560px) {
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table th,
+  .compare-table td {
+    display: block;
+    width: auto;
+  }
+
+  .compare-table thead {
+    display: none;
+  }
+
+  .compare-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .compare-table th[scope="row"],
+  .compare-table td {
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .compare-table td {
+    margin-top: 6px;
+  }
+
+  .compare-table td::before {
+    content: attr(data-label) " \2014  ";
+    font-weight: 600;
+    color: var(--ink);
   }
 }
