@@ -6,23 +6,28 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const { spawnSync } = require("node:child_process");
+const { appStoreUrl, loadAppStore } = require("./build-app-store");
 
 const root = path.resolve(__dirname, "..");
 const canonicalOrigin = "https://marble-fit.app";
 const ignoredDirectories = new Set([".git", "node_modules"]);
 
 const homeContract = {
-  sectionIds: ["tour", "screens", "ios", "privacy", "whats-new", "faq", "download"],
+  sectionIds: ["tour", "screens", "switch", "ios", "privacy", "whats-new", "faq", "download"],
   labels: [
     "Type your workout. marble logs it.",
     "Add. Log. Progress.",
     "Built into iOS.",
     "Add 1 workout (11 sets)",
+    "Coming from Hevy, Strong or Notes?",
+    "Data Not Collected",
+    "marble.fit",
   ],
 };
 
-const appStoreId = "6757725234";
-const appStorePath = `/us/app/marble-fit/id${appStoreId}`;
+const appStore = loadAppStore();
+const appStoreId = appStore.appId;
+const appStorePath = new URL(appStore.url).pathname;
 const releaseRegionPattern = /<!-- marble:latest-release:start -->[\s\S]*?<!-- marble:latest-release:end -->/g;
 
 const errors = [];
@@ -443,6 +448,17 @@ function validateHtml(file, idCache) {
       }
     }
 
+    // Share images must be local files, so a renamed card can't silently 404.
+    for (const [label, matches] of [
+      ["og:image", metaByProperty("og:image")],
+      ["twitter:image", metaByName("twitter:image")],
+    ]) {
+      if (matches.length !== 1) continue;
+      const content = matches[0].attributes.get("content") || "";
+      const local = content.startsWith(`${canonicalOrigin}/`) ? findLocalFile(new URL(content).pathname) : null;
+      check(Boolean(local), file, source, matches[0].match.index, `${label} must be an existing ${canonicalOrigin} file: ${content}`);
+    }
+
     const ogUrl = metaByProperty("og:url");
     if (ogUrl.length === 1) {
       check(ogUrl[0].attributes.get("content") === canonical, file, source, ogUrl[0].match.index, `og:url must match canonical URL ${canonical}`);
@@ -558,14 +574,28 @@ function validateHtml(file, idCache) {
     } catch {
       continue;
     }
+    // Links to other apps' listings are citations; only marble's own
+    // listing needs the campaign form.
+    if (!url.pathname.includes(`/id${appStoreId}`)) continue;
     check(url.pathname === appStorePath, file, source, match.index, `App Store links must point to ${appStorePath}`);
+    const campaign = url.searchParams.get("ct") || "";
+    const campaignOk = /^[a-z0-9-]{1,40}$/.test(campaign);
     check(
-      /^[a-z0-9-]{1,40}$/.test(url.searchParams.get("ct") || ""),
+      campaignOk,
       file,
       source,
       match.index,
       "App Store links must carry a campaign token ct (lowercase, hyphens, ≤ 40 chars)",
     );
+    if (campaignOk) {
+      check(
+        href === appStoreUrl(campaign, appStore),
+        file,
+        source,
+        match.index,
+        `App Store link must be ${appStoreUrl(campaign, appStore)} (run npm run build:app-store)`,
+      );
+    }
   }
 
   if (relativeName(file) === "index.html") {
@@ -743,6 +773,18 @@ function validateGeneratedReleases() {
   }
 }
 
+// App Store links and the home page's rating are generated from
+// data/app-store.json.
+function validateGeneratedAppStore() {
+  const script = path.join(root, "scripts", "build-app-store.js");
+  checkCount += 1;
+  const result = spawnSync(process.execPath, [script, "--check"], { cwd: root, encoding: "utf8" });
+  if (result.status !== 0) {
+    const detail = `${result.stdout || ""}${result.stderr || ""}`.trim();
+    fail(script, "", undefined, `App Store links or ratings are out of date; run npm run build:app-store\n${detail}`);
+  }
+}
+
 function main() {
   const htmlFiles = walk(root, new Set([".html"]));
   const cssFiles = walk(root, new Set([".css"]));
@@ -757,6 +799,7 @@ function main() {
   if (fs.existsSync(analyticsFile)) validateAnalyticsImplementation(analyticsFile);
   validateSitemap(htmlFiles);
   validateGeneratedReleases();
+  validateGeneratedAppStore();
 
   if (errors.length) {
     console.error(`\nSite validation failed with ${errors.length} error${errors.length === 1 ? "" : "s"}:\n`);

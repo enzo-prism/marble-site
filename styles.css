@@ -5,7 +5,7 @@
 /* Base classes shared by every page (keep names stable):              */
 /*   .container .nav .brand .nav-links .nav-actions .theme-toggle      */
 /*   .btn .btn-small .btn-secondary .text-link .fine .eyebrow          */
-/*   .section .section-intro .store-shot .pillar* .tile-grid .tile     */
+/*   .section .section-intro .phone-shot .pillar* .tile-grid .tile     */
 /*   .faq-list .faq-item .cta .footer .visually-hidden                 */
 /* ================================================================== */
 
@@ -480,13 +480,39 @@ main:focus {
   gap: 14px;
 }
 
-.store-shot {
+.hero-notes {
+  display: grid;
+  gap: 2px;
+  line-height: 1.5;
+}
+
+.fine strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* filled by scripts/build-app-store.js once the App Store has ratings */
+.hero-rating {
+  flex-basis: 100%;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero-rating-star {
+  color: var(--ink);
+}
+
+/* App Store screenshots cropped to the phone by scripts/crop-screens.py.
+   The corners are transparent, so the shadow follows the phone's shape. */
+.phone-shot {
+  display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: #f5f5f5;
-  box-shadow: var(--shadow);
+  filter: drop-shadow(0 0 0.5px var(--line)) drop-shadow(0 16px 32px rgba(19, 18, 16, 0.14));
+}
+
+:root[data-theme="dark"] .phone-shot {
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.55));
 }
 
 /* home hero ---------------------------------------------------------- */
@@ -766,8 +792,8 @@ main:focus {
   justify-content: center;
 }
 
-.pillar-media .store-shot {
-  max-width: 280px;
+.pillar-media .phone-shot {
+  max-width: 250px;
 }
 
 .more-link {
@@ -778,8 +804,21 @@ main:focus {
 
 /* screenshot gallery ------------------------------------------------ */
 
+/* a horizontal, snapping strip that runs off the right edge of the page,
+   so it reads as scrollable */
 .screens-strip {
+  margin-right: calc((100% - 100vw) / 2);
+  padding: 6px var(--gutter) 18px 0;
   border-radius: 8px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.screens-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .screens-strip:focus-visible {
@@ -788,27 +827,72 @@ main:focus {
 }
 
 .screens-list {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(16px, 2.4vw, 24px);
+  display: flex;
+  gap: 24px;
+  width: max-content;
   list-style: none;
 }
 
 .screen-item {
-  min-width: 0;
+  flex: 0 0 208px;
+  scroll-snap-align: start;
+}
+
+.screen-item figure {
   margin: 0;
 }
 
-.screen-item .store-shot {
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-}
-
 .screen-item figcaption {
-  margin-top: 12px;
-  font-size: 0.82rem;
+  margin-top: 14px;
+  font-size: 0.84rem;
+  line-height: 1.4;
   color: var(--muted);
   text-align: center;
+  text-wrap: balance;
+}
+
+/* switching from another app ------------------------------------------ */
+
+.switch-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 860px;
+  list-style: none;
+}
+
+.switch-list a {
+  display: block;
+  height: 100%;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.switch-list strong {
+  display: block;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.switch-list span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.switch-list a:active {
+  transform: scale(0.99);
+}
+
+@media (hover: hover) {
+  .switch-list a:hover {
+    border-color: var(--ink);
+  }
 }
 
 /* short cards (Built into iOS, and reusable elsewhere) -------------- */
@@ -857,6 +941,37 @@ main:focus {
   display: block;
   margin-top: 20px;
   font-family: var(--font-sans);
+}
+
+/* the claims above, with evidence a reader can check */
+.privacy-proof {
+  display: grid;
+  gap: 10px;
+  max-width: 560px;
+  margin: 28px auto 0;
+  list-style: none;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+  text-wrap: balance;
+}
+
+.privacy-proof strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.privacy-proof a,
+.faq-item a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.privacy-proof a {
+  margin-left: 4px;
+  white-space: nowrap;
 }
 
 /* what's new (filled by scripts/build-releases.js) ------------------- */
@@ -1044,11 +1159,11 @@ main:focus {
     gap: 32px;
   }
 
-  .pillar-media .store-shot {
-    max-width: 300px;
+  .pillar-media .phone-shot {
+    max-width: 260px;
   }
 
-  /* gallery becomes a horizontal, snapping strip */
+  /* the strip bleeds to both edges of the screen */
   .screens-strip {
     margin: 0 calc(-1 * var(--gutter) - env(safe-area-inset-right)) 0
       calc(-1 * var(--gutter) - env(safe-area-inset-left));
@@ -1058,23 +1173,14 @@ main:focus {
     overscroll-behavior-inline: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: calc(var(--gutter) + env(safe-area-inset-left));
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .screens-strip::-webkit-scrollbar {
-    display: none;
   }
 
   .screens-list {
-    display: flex;
     gap: 16px;
-    width: max-content;
   }
 
   .screen-item {
-    flex: 0 0 200px;
-    scroll-snap-align: start;
+    flex-basis: 200px;
   }
 
   .tile-grid {
@@ -1255,10 +1361,8 @@ main:focus {
     line-height: 1.4;
   }
 
-  .pillar-media .store-shot {
+  .pillar-media .phone-shot {
     max-width: 124px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-soft);
   }
 
   .more-link {
@@ -1269,8 +1373,8 @@ main:focus {
     flex-basis: 172px;
   }
 
-  .screen-item .store-shot {
-    border-radius: 14px;
+  .switch-list {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .tile-grid {

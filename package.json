@@ -5,6 +5,11 @@
     "dev": "node server.js",
     "build:releases": "node scripts/build-releases.js",
     "check:releases": "node scripts/build-releases.js --check",
+    "build:app-store": "node scripts/build-app-store.js",
+    "refresh:ratings": "node scripts/build-app-store.js --refresh-ratings",
+    "build:og": "node scripts/build-og.js",
+    "crop:screens": "python3 scripts/crop-screens.py images/app-store-2.5",
+    "indexnow": "node scripts/indexnow.js",
     "validate": "node scripts/validate-site.js"
   }
 }

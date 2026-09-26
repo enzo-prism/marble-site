@@ -6,10 +6,12 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 
 ## Key facts
 
-- Name: marble (App Store name: marble.fit)
+- Name: marble (App Store name: marble.fit; search "marble.fit" on the App Store, because "marble" alone returns unrelated games)
 - Platforms: iPhone and iPad, iOS / iPadOS 26.0 or later
 - Price: Free (no subscription, no unlocks, no ads)
 - Privacy: core training data stays on the device; no marble account, marble server, or third-party tracking in the app
+- App Store privacy label: Data Not Collected
+- Source code: public at https://github.com/enzo-prism/marble
 - Offline: logging, parsing, storage, and analysis work offline
 - Apple Intelligence: optional. It structures free-form prose on supported devices; gym notation and Hevy/Strong CSVs use a deterministic on-device parser on every device
 - Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health
@@ -36,6 +38,8 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 - [A private, offline workout tracker](https://marble-fit.app/guides/private-offline-workout-tracker/)
 - [Sprint training log](https://marble-fit.app/guides/sprint-training-log/)
 - [Log strength training with Apple Watch](https://marble-fit.app/guides/apple-watch-strength-training-log/)
+- [A Hevy alternative with no account](https://marble-fit.app/guides/hevy-alternative/)
+- [A Strong alternative with nothing to unlock](https://marble-fit.app/guides/strong-alternative/)
 - [Release notes](https://marble-fit.app/releases/)
 - [Privacy](https://marble-fit.app/privacy/)
 - [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
@@ -48,5 +52,6 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 - Does it work offline? Yes. Logging, parsing, storage, and analysis happen on the device.
 - Does it need Apple Intelligence? No. Apple Intelligence improves free-form prose parsing where available; notation and CSV imports work on every device.
 - Can I import from Hevy or Strong? Yes. Bring in their CSV export, review the parsed workouts, then save.
+- How does it compare with Hevy or Strong? marble is free with nothing to unlock, has no account or social feed, and keeps data on the device. It has no Android or web app, no cloud sync, and no Apple Watch app.
 - Does it work with Apple Watch or Garmin? Yes, through Apple Health: marble imports their workouts and can send strength sessions back with an effort score.
-- Ads or tracking? The app has no ads or third-party tracking and does not sell data. The website uses anonymous, aggregated Vercel Analytics.
+- Ads or tracking? The app has no ads or third-party tracking and does not sell data. Its App Store privacy label reads Data Not Collected. The website uses anonymous, aggregated Vercel Analytics.
