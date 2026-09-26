@@ -2,7 +2,19 @@
 
 single-page marketing site for the marble fitness app.
 
-**Brand:** quiet, monochrome, typographic — the site mirrors the app's own white/black/gray design. System fonts only; no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
+**Brand:** quiet, monochrome, in motion — the site mirrors the app's own white/black/gray design. System fonts only; no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
+
+## design system
+
+- **Show, don't list.** Sections lead with a heading of a few words, one short line, and something visual: a phone screen, an icon, or a live widget. Longer detail lives on `/features/` and in the guides.
+- **Space.** Sections are separated by `--section-space`; content sits in `.container` (1120px). Don't add dividers where space already separates.
+- **Icons.** `icons.svg` is a sprite of 24 × 24 line icons drawn for this site. Use `<svg class="icon" aria-hidden="true"><use href="/icons.svg#i-name"/></svg>`; `.icon` sets the stroke, so symbols stay stroke-only unless a part is deliberately solid. Put an icon in `.icon-tile` for a soft rounded square, or in `.chip` for a pill. The validator fails on an id that isn't in the sprite.
+- **Components** (all in `styles.css`): floating glass nav with a phone menu sheet (`.nav-menu`), `.badge`, `.chip` / `.chips`, `.icon-tile`, `.device` (bezel around a screen), the Add / Log / Progress `.tour` carousel, the `.bento` of live iOS widgets, `.switch-list` link rows, `.marquee` of example notation, and the FAQ plus-to-cross toggle.
+- **Motion.**
+  - `data-reveal` fades an element in as it scrolls into view, using CSS scroll-driven animations. Browsers without them show it immediately, so nothing is ever hidden.
+  - `data-animate` marks a one-shot widget (the weekly-goal ring). `scripts/site.js` adds `.is-in` when it's on screen; without JS it rests in its finished state.
+  - Loops (the ticker, Siri waveform, Quick log press, Spotlight typing, floating chips) are pure CSS. The rest timer (`data-countdown`) and the tour autoplay run in `scripts/site.js`, only while on screen and the tab is visible.
+  - `prefers-reduced-motion: reduce` stops all of it: no autoplay, a still ticker, no typing demo.
 
 ## quick start
 
@@ -24,7 +36,8 @@ then open: http://127.0.0.1:5173
 
 ## structure
 
-- `index.html` home page: hero with a live "type a workout" demo, Add / Log / Progress tour, screenshots, iOS integrations, privacy, what's new, FAQ
+- `index.html` home page: hero with a live "type a workout" demo, a ticker of notation marble reads, the Add / Log / Progress tour, live iOS widgets, screenshots, switching guides, privacy, what's new, FAQ
+- `icons.svg` the icon sprite; `scripts/site.js` theme, nav menu, typing demo, tour, rest timer and one-shot animations
 - `features/` every feature, grouped by the app's tabs
 - `guides/` search-intent guides (Hevy and Strong alternatives, Hevy/Strong import, Apple Notes, private offline tracker, sprint log, Apple Watch via Apple Health); shared styles in `pages.css`
 - `releases/` release notes, **generated**: one page per App Store version plus an index

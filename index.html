@@ -236,7 +236,7 @@
           <img src="/Favicon%20large.png" alt="" width="26" height="26" />
           <span>marble</span>
         </a>
-        <nav class="nav-links" aria-label="site">
+        <nav class="nav-links" id="site-nav" aria-label="site">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="home_header" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="home_header" data-analytics-target="guides">Guides</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="home_header" data-analytics-target="releases">What’s new</a>
@@ -268,20 +268,24 @@
           >
             Download
           </a>
+          <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-menu"/></svg>
+          </button>
         </div>
       </div>
     </header>
 
     <main id="top" tabindex="-1">
       <section class="hero hero-home" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true"></div>
         <div class="container hero-home-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Free workout journal for iPhone and iPad</p>
+            <p class="badge"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-sparkles"/></svg></span>Free workout journal for iPhone and iPad</p>
             <h1 id="hero-title">Type your workout. marble logs it.</h1>
-            <p class="hero-lede">Paste or type a session in your own words or gym notation. marble turns it into sets on your device, and nothing is saved until you review it. Every feature is free, with nothing to unlock.</p>
+            <p class="hero-lede">Write it like a note. Check the sets. Save.</p>
             <div class="hero-actions">
               <a
-                class="btn"
+                class="btn btn-large"
                 href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=home-hero&amp;mt=8"
                 data-analytics-event="App Store Click"
                 data-analytics-location="home_hero"
@@ -292,130 +296,203 @@
                 </svg>
                 Download on the App Store
               </a>
-              <p class="hero-notes">
-                <span class="fine">No subscription &middot; No account &middot; Works offline</span>
-                <span class="fine">On the App Store as <strong>marble.fit</strong> &middot; iOS 26 or later</span>
-              </p>
+              <p class="fine">On the App Store as <strong>marble.fit</strong> &middot; iOS 26 or later</p>
               <!-- marble:rating:start --><!-- marble:rating:end -->
             </div>
+            <ul class="chips hero-facts" aria-label="At a glance">
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-gift"/></svg>Free forever</li>
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-user-off"/></svg>No account</li>
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-offline"/></svg>Works offline</li>
+              <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-shield"/></svg>Data Not Collected</li>
+            </ul>
           </div>
 
-          <figure class="type-demo" data-type-demo>
-            <figcaption class="visually-hidden">
-              Example: you type “Leg day. Squat 5x5 @ 225, rest 2 min. RDL 3x8 @ 185. Calf raises 3x12 @ 90.”
-              marble reviews it as Leg Day with 3 exercises and 11 sets: Squat, 5 sets of 5 at 225 lb with 2 minutes rest;
-              Romanian Deadlift, matched from “RDL”, 3 sets of 8 at 185 lb; and Calf Raises, 3 sets of 12 at 90 lb.
-              Nothing is saved until you tap “Add 1 workout (11 sets)”.
-            </figcaption>
-            <div class="type-demo-stage" aria-hidden="true">
-              <div class="type-demo-panel type-demo-input">
-                <div class="type-demo-bar">
-                  <span>Paste or Type</span>
-                  <span class="type-demo-hint">Your words</span>
+          <div class="hero-visual">
+            <figure class="type-demo" data-type-demo>
+              <figcaption class="visually-hidden">
+                Example: you type “Leg day. Squat 5x5 @ 225, rest 2 min. RDL 3x8 @ 185. Calf raises 3x12 @ 90.”
+                marble reviews it as Leg Day with 3 exercises and 11 sets: Squat, 5 sets of 5 at 225 lb with 2 minutes rest;
+                Romanian Deadlift, matched from “RDL”, 3 sets of 8 at 185 lb; and Calf Raises, 3 sets of 12 at 90 lb.
+                Nothing is saved until you tap “Add 1 workout (11 sets)”.
+              </figcaption>
+              <div class="type-demo-stage" aria-hidden="true">
+                <div class="type-demo-panel type-demo-input">
+                  <div class="type-demo-bar">
+                    <span>Paste or Type</span>
+                    <span class="type-demo-hint">Your words</span>
+                  </div>
+                  <div class="type-demo-lines">
+                    <span class="type-demo-line"><span class="type-demo-text">Leg day</span></span>
+                    <span class="type-demo-line"><span class="type-demo-text">Squat 5x5 @ 225, rest 2 min</span></span>
+                    <span class="type-demo-line"><span class="type-demo-text">RDL 3x8 @ 185</span></span>
+                    <span class="type-demo-line"><span class="type-demo-text">Calf raises 3x12 @ 90</span></span>
+                  </div>
                 </div>
-                <div class="type-demo-lines">
-                  <span class="type-demo-line"><span class="type-demo-text">Leg day</span></span>
-                  <span class="type-demo-line"><span class="type-demo-text">Squat 5x5 @ 225, rest 2 min</span></span>
-                  <span class="type-demo-line"><span class="type-demo-text">RDL 3x8 @ 185</span></span>
-                  <span class="type-demo-line"><span class="type-demo-text">Calf raises 3x12 @ 90</span></span>
-                </div>
-              </div>
 
-              <div class="type-demo-panel type-demo-review">
-                <div class="type-demo-bar">
-                  <span>Review Workout</span>
-                  <span class="type-demo-hint">On device</span>
-                </div>
-                <p class="type-demo-status"><span data-when="typing">Nothing is saved yet</span><span data-when="parsing">Reading on device…</span></p>
-                <div class="type-demo-body">
-                  <p class="type-demo-head type-demo-reveal"><strong>Leg Day</strong> &middot; 3 exercises &middot; 11 sets</p>
-                  <ul class="type-demo-rows">
-                    <li class="type-demo-row type-demo-reveal">
-                      <strong>Squat</strong>
-                      <span>5 × 5 · 225 lb · rest 2m</span>
-                    </li>
-                    <li class="type-demo-row type-demo-reveal">
-                      <strong>Romanian Deadlift</strong>
-                      <span>3 × 8 · 185 lb</span>
-                      <small>matched from “RDL”</small>
-                    </li>
-                    <li class="type-demo-row type-demo-reveal">
-                      <strong>Calf Raises</strong>
-                      <span>3 × 12 · 90 lb</span>
-                    </li>
-                  </ul>
-                  <span class="type-demo-button type-demo-reveal">Add 1 workout (11 sets)</span>
+                <div class="type-demo-panel type-demo-review">
+                  <div class="type-demo-bar">
+                    <span>Review Workout</span>
+                    <span class="type-demo-hint">On device</span>
+                  </div>
+                  <p class="type-demo-status"><span data-when="typing">Nothing is saved yet</span><span data-when="parsing">Reading on device…</span></p>
+                  <div class="type-demo-body">
+                    <p class="type-demo-head type-demo-reveal"><strong>Leg Day</strong> &middot; 3 exercises &middot; 11 sets</p>
+                    <ul class="type-demo-rows">
+                      <li class="type-demo-row type-demo-reveal">
+                        <strong>Squat</strong>
+                        <span>5 × 5 · 225 lb · rest 2m</span>
+                      </li>
+                      <li class="type-demo-row type-demo-reveal">
+                        <strong>Romanian Deadlift</strong>
+                        <span>3 × 8 · 185 lb</span>
+                        <small>matched from “RDL”</small>
+                      </li>
+                      <li class="type-demo-row type-demo-reveal">
+                        <strong>Calf Raises</strong>
+                        <span>3 × 12 · 90 lb</span>
+                      </li>
+                    </ul>
+                    <span class="type-demo-button type-demo-reveal">Add 1 workout (11 sets)</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </figure>
+            </figure>
+            <span class="float-chip float-chip-a" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-cpu"/></svg>Read on your iPhone</span>
+            <span class="float-chip float-chip-b" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg>Matched from “RDL”</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="formats" aria-labelledby="formats-title">
+        <div class="container">
+          <h2 id="formats-title" class="formats-title" data-reveal>If you can write it, <strong>marble can read it.</strong></h2>
+        </div>
+        <div class="marquee" data-reveal>
+          <div class="marquee-row">
+              <ul class="marquee-list">
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Squat 5x5 @ 225</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Bench 3x8 @ 185 rest 90s</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>RDL 3x8 @ 185</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Run 5k 25:00</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Deadlift 3x3 @ 100 kg</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Plank 3x45s</code></li>
+              </ul>
+              <ul class="marquee-list" aria-hidden="true">
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Squat 5x5 @ 225</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Bench 3x8 @ 185 rest 90s</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>RDL 3x8 @ 185</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Run 5k 25:00</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Deadlift 3x3 @ 100 kg</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Plank 3x45s</code></li>
+              </ul>
+          </div>
+          <div class="marquee-row" aria-hidden="true">
+              <ul class="marquee-list" aria-hidden="true">
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Pull ups 3x12</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Bench 225x5/3/1</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Row 2000m 7:30</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Sprints 4x20m</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Day 1 — Push</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Calf raises 3x12 @ 90</code></li>
+              </ul>
+              <ul class="marquee-list" aria-hidden="true">
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Pull ups 3x12</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Bench 225x5/3/1</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Row 2000m 7:30</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Sprints 4x20m</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Day 1 — Push</code></li>
+                <li class="token"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><code>Calf raises 3x12 @ 90</code></li>
+              </ul>
+          </div>
         </div>
       </section>
 
       <section id="tour" class="section" aria-labelledby="tour-title">
         <div class="container">
-          <header class="section-intro">
+          <header class="section-intro" data-reveal>
             <h2 id="tour-title">Add. Log. Progress.</h2>
-            <p>Three tabs. Everything else stays out of the way.</p>
+            <p>Three tabs. Nothing else in the way.</p>
           </header>
-
-          <article class="pillar">
-            <div class="pillar-copy">
-              <p class="pillar-kicker">Add</p>
-              <h3>From a note to logged sets.</h3>
-              <p>Paste or type plain words, gym notation, Notes, or a Hevy or Strong CSV. Check every match and set before anything is saved.</p>
-              <ul class="pillar-points">
-                <li>Resume an interrupted review</li>
-                <li>Search past sessions</li>
-                <li>Repeat a workout as an editable draft</li>
-              </ul>
+          <div class="tour" data-tour>
+            <nav class="tour-tabs" aria-label="App tabs">
+              <div class="tour-tabs-inner">
+                <a class="tour-tab" href="#tour-add" aria-controls="tour-add" aria-current="true" data-tour-tab data-analytics-event="Tour Tab" data-analytics-location="home_tour" data-analytics-target="add"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-plus"/></svg>Add<span class="tour-progress" aria-hidden="true"></span></a>
+                <a class="tour-tab" href="#tour-log" aria-controls="tour-log" aria-current="false" data-tour-tab data-analytics-event="Tour Tab" data-analytics-location="home_tour" data-analytics-target="log"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg>Log<span class="tour-progress" aria-hidden="true"></span></a>
+                <a class="tour-tab" href="#tour-progress" aria-controls="tour-progress" aria-current="false" data-tour-tab data-analytics-event="Tour Tab" data-analytics-location="home_tour" data-analytics-target="progress"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg>Progress<span class="tour-progress" aria-hidden="true"></span></a>
+              </div>
+            </nav>
+            <div class="tour-track" data-tour-track>
+              <article class="tour-slide" id="tour-add" aria-label="Add">
+                <div class="tour-media">
+                  <div class="device">
+                    <picture>
+                      <source type="image/webp" srcset="/images/app-store-2.5/screens/01-paste-or-type-review.webp" />
+                      <img src="/images/app-store-2.5/screens/01-paste-or-type-review.png" alt="The Review Workouts screen with two workouts imported from Hevy, ready to check before saving." width="600" height="1308" loading="lazy" decoding="async" />
+                    </picture>
+                  </div>
+                  <span class="tour-float tour-float-left" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-file-csv"/></svg>Hevy import</span>
+                  <span class="tour-float tour-float-right" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-check"/></svg>2 workouts found</span>
+                </div>
+                <div class="tour-copy">
+                  <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-plus"/></svg></span>
+                  <p class="eyebrow">Add</p>
+                  <h3>From a note to logged sets.</h3>
+                  <p>Words, gym notation, Notes or a CSV. You check every set first.</p>
+                  <ul class="chips">
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-history"/></svg>Resume a review</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-search"/></svg>Search sessions</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-repeat"/></svg>Repeat a workout</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tour-slide" id="tour-log" aria-label="Log">
+                <div class="tour-media">
+                  <div class="device">
+                    <picture>
+                      <source type="image/webp" srcset="/images/app-store-2.5/screens/06-fast-set-logger.webp" />
+                      <img src="/images/app-store-2.5/screens/06-fast-set-logger.png" alt="The Log Set sheet with the last set, the personal best, and Save + Next." width="600" height="1308" loading="lazy" decoding="async" />
+                    </picture>
+                  </div>
+                  <span class="tour-float tour-float-left" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trophy"/></svg>Best: 210 lb × 4</span>
+                  <span class="tour-float tour-float-right" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg>Rest 1:30</span>
+                </div>
+                <div class="tour-copy">
+                  <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg></span>
+                  <p class="eyebrow">Log</p>
+                  <h3>A set in seconds.</h3>
+                  <p>Log Again repeats your last set. Save + Next keeps you moving.</p>
+                  <ul class="chips">
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trophy"/></svg>Records to beat</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-target"/></svg>Focused sessions</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg>Rest timer</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tour-slide" id="tour-progress" aria-label="Progress">
+                <div class="tour-media">
+                  <div class="device">
+                    <picture>
+                      <source type="image/webp" srcset="/images/app-store-2.5/screens/05-strength-trends.webp" />
+                      <img src="/images/app-store-2.5/screens/05-strength-trends.png" alt="Progress showing top exercises with their personal-record weights and dates." width="600" height="1308" loading="lazy" decoding="async" />
+                    </picture>
+                  </div>
+                  <span class="tour-float tour-float-left" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-up"/></svg>New PR</span>
+                  <span class="tour-float tour-float-right" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-flame"/></svg>4-week streak</span>
+                </div>
+                <div class="tour-copy">
+                  <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg></span>
+                  <p class="eyebrow">Progress</p>
+                  <h3>Your records, at a glance.</h3>
+                  <p>Top lifts, personal bests and when you set them.</p>
+                  <ul class="chips">
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-trending"/></svg>Estimated 1RM</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-flame"/></svg>Weekly streaks</li>
+                    <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-moon"/></svg>Daily Highlights</li>
+                  </ul>
+                </div>
+              </article>
             </div>
-            <div class="pillar-media">
-              <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/screens/01-paste-or-type-review.webp" />
-                <img class="phone-shot" src="/images/app-store-2.5/screens/01-paste-or-type-review.png" alt="Review every workout before you save. The Review Workouts screen with two workouts imported from Hevy." width="600" height="1308" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-          </article>
-
-          <article class="pillar">
-            <div class="pillar-copy">
-              <p class="pillar-kicker">Log</p>
-              <h3>A set in seconds.</h3>
-              <p>Repeat your last set with Log Again, or keep moving with Save + Next.</p>
-              <ul class="pillar-points">
-                <li>Personal-record targets as you log</li>
-                <li>Focused workout sessions</li>
-                <li>Rest timer in the Dynamic Island</li>
-              </ul>
-            </div>
-            <div class="pillar-media">
-              <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/screens/06-fast-set-logger.webp" />
-                <img class="phone-shot" src="/images/app-store-2.5/screens/06-fast-set-logger.png" alt="Log fast. Beat your best. The Log Set sheet with the last set, personal best, and Save + Next." width="600" height="1308" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-          </article>
-
-          <article class="pillar">
-            <div class="pillar-copy">
-              <p class="pillar-kicker">Progress</p>
-              <h3>Your records, at a glance.</h3>
-              <p>Top exercises with personal bests and dates. Details holds the rest.</p>
-              <ul class="pillar-points">
-                <li>Estimated 1RM per lift</li>
-                <li>Weekly goals and streaks</li>
-                <li>Daily Highlights, a private evening recap</li>
-              </ul>
-            </div>
-            <div class="pillar-media">
-              <picture>
-                <source type="image/webp" srcset="/images/app-store-2.5/screens/05-strength-trends.webp" />
-                <img class="phone-shot" src="/images/app-store-2.5/screens/05-strength-trends.png" alt="Your lifting records, at a glance. Progress showing top exercises with their personal bests." width="600" height="1308" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-          </article>
-
+          </div>
           <p class="more-link">
             <a
               class="btn btn-secondary"
@@ -423,16 +500,89 @@
               data-analytics-event="Nav Click"
               data-analytics-location="home_tour"
               data-analytics-target="features"
-            >See every feature <span aria-hidden="true">&rarr;</span></a>
+            >See every feature <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-right"/></svg></a>
           </p>
+        </div>
+      </section>
+
+      <section id="ios" class="section" aria-labelledby="ios-title">
+        <div class="container">
+          <header class="section-intro" data-reveal>
+            <h2 id="ios-title">Built into iOS.</h2>
+            <p>A set is never more than a glance away.</p>
+          </header>
+          <ul class="bento">
+            <li class="bento-tile bento-wide" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div>
+                  <div class="island">
+                    <span class="island-ring"><svg viewBox="0 0 36 36"><circle class="ring-bg" cx="18" cy="18" r="15" pathLength="100"/><circle class="ring-fg" cx="18" cy="18" r="15" pathLength="100"/></svg></span>
+                    <span class="island-label">Rest</span>
+                    <span class="island-time" data-countdown="90">1:30</span>
+                  </div>
+                  <div class="island-controls"><span>+30s</span><span>End</span></div>
+                </div>
+              </div>
+              <h3>Live Activity</h3>
+              <p>Rest, in the Dynamic Island.</p>
+            </li>
+            <li class="bento-tile bento-wide" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div class="goal-widget" data-animate>
+                  <div class="goal-ring"><svg viewBox="0 0 36 36"><circle class="ring-bg" cx="18" cy="18" r="15" pathLength="100"/><circle class="ring-fg" cx="18" cy="18" r="15" pathLength="100"/></svg><strong>3/4</strong></div>
+                  <div class="goal-text">
+                    <strong>Weekly goal</strong>
+                    <span>1 session to go</span>
+                    <ul class="goal-days"><li class="done"></li><li class="done"></li><li class="done"></li><li></li></ul>
+                  </div>
+                </div>
+              </div>
+              <h3>Widgets</h3>
+              <p>Your weekly goal, at a glance.</p>
+            </li>
+            <li class="bento-tile" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div>
+                  <div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                  <p class="wave-quote">“Log a set”</p>
+                </div>
+              </div>
+              <h3>Siri &amp; Shortcuts</h3>
+              <p>Log a set by voice.</p>
+            </li>
+            <li class="bento-tile" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div class="controls"><span><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg></span><span class="is-key"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-dumbbell"/></svg></span><span><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-toggle"/></svg></span><span><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-widgets"/></svg></span></div>
+              </div>
+              <h3>Quick log</h3>
+              <p>Control Center or Action button.</p>
+            </li>
+            <li class="bento-tile" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div class="pulse-heart"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-heart"/></svg></div>
+              </div>
+              <h3>Apple Health</h3>
+              <p>Watch and Garmin workouts in.</p>
+            </li>
+            <li class="bento-tile" data-reveal>
+              <div class="bento-visual" aria-hidden="true">
+                <div class="spotlight">
+                  <div class="spotlight-field"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-search"/></svg><span class="spotlight-typed">Bench</span></div>
+                  <div class="spotlight-result"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-dumbbell"/></svg></span><span>Bench Press<small>marble &middot; Exercise</small></span></div>
+                </div>
+              </div>
+              <h3>Spotlight</h3>
+              <p>Find any exercise.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
       <section id="screens" class="section" aria-labelledby="screens-title">
         <div class="container">
-          <header class="section-intro">
+          <header class="section-intro" data-reveal>
             <h2 id="screens-title">A closer look.</h2>
-            <p>More of the app, with sample training data.</p>
+            <p>More of the app, with sample data.</p>
           </header>
           <div class="screens-strip" role="region" aria-labelledby="screens-title" tabindex="0">
             <ul class="screens-list">
@@ -506,96 +656,69 @@
 
       <section id="switch" class="section" aria-labelledby="switch-title">
         <div class="container">
-          <header class="section-intro">
+          <header class="section-intro" data-reveal>
             <h2 id="switch-title">Coming from Hevy, Strong or Notes?</h2>
-            <p>Bring your history with you. marble reads it on your iPhone, and you check every workout before it&rsquo;s saved.</p>
+            <p>Bring your history. Check it once. Keep going.</p>
           </header>
-          <ul class="switch-list">
+          <ul class="switch-list" data-reveal>
             <li>
               <a href="/guides/hevy-alternative/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_hevy_alternative">
-                <strong>From Hevy</strong>
-                <span>Import the CSV with RPE, notes and session times. No account and no subscription.</span>
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-switch"/></svg></span>
+                <span class="switch-text"><strong>From Hevy</strong><span>No account, no subscription.</span></span>
+                <svg class="icon chevron" aria-hidden="true"><use href="/icons.svg#i-chevron-right"/></svg>
               </a>
             </li>
             <li>
               <a href="/guides/strong-alternative/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_strong_alternative">
-                <strong>From Strong</strong>
-                <span>Bring every workout over, including kg and European exports. Every feature is free, with nothing to unlock.</span>
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-switch"/></svg></span>
+                <span class="switch-text"><strong>From Strong</strong><span>Every feature, nothing to unlock.</span></span>
+                <svg class="icon chevron" aria-hidden="true"><use href="/icons.svg#i-chevron-right"/></svg>
               </a>
             </li>
             <li>
               <a href="/guides/log-workouts-from-apple-notes/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_notes">
-                <strong>From Apple Notes</strong>
-                <span>Paste a note, or a whole week of them. Gym shorthand becomes sets you can chart.</span>
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-note"/></svg></span>
+                <span class="switch-text"><strong>From Apple Notes</strong><span>Paste a whole week at once.</span></span>
+                <svg class="icon chevron" aria-hidden="true"><use href="/icons.svg#i-chevron-right"/></svg>
               </a>
             </li>
             <li>
               <a href="/guides/import-hevy-strong-workouts/" data-analytics-event="Nav Click" data-analytics-location="home_switch" data-analytics-target="guide_hevy_strong">
-                <strong>Step by step</strong>
-                <span>What carries over from each app, what to check in review, and what stays behind.</span>
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-file-csv"/></svg></span>
+                <span class="switch-text"><strong>Step by step</strong><span>What carries over, and what to check.</span></span>
+                <svg class="icon chevron" aria-hidden="true"><use href="/icons.svg#i-chevron-right"/></svg>
               </a>
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="ios" class="section" aria-labelledby="ios-title">
+      <section id="privacy" class="section privacy" aria-labelledby="privacy-title">
         <div class="container">
-          <header class="section-intro">
-            <h2 id="ios-title">Built into iOS.</h2>
-          </header>
-          <ul class="tile-grid">
-            <li class="tile">
-              <h3>Widgets</h3>
-              <p>Your weekly goal on the Home and Lock Screen.</p>
-            </li>
-            <li class="tile">
-              <h3>Siri &amp; Shortcuts</h3>
-              <p>Log sets, and start or finish workouts.</p>
-            </li>
-            <li class="tile">
-              <h3>Live Activity</h3>
-              <p>Rest timer in the Dynamic Island.</p>
-            </li>
-            <li class="tile">
-              <h3>Quick log</h3>
-              <p>Control Center, Lock Screen, or Action button.</p>
-            </li>
-            <li class="tile">
-              <h3>Apple Health</h3>
-              <p>Apple Watch and Garmin workouts come in; sessions go back with an effort score.</p>
-            </li>
-            <li class="tile">
-              <h3>Spotlight</h3>
-              <p>Find exercises from system search.</p>
-            </li>
+          <div class="privacy-mark" aria-hidden="true" data-reveal><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lock"/></svg></div>
+          <h2 id="privacy-title" data-reveal>Your training stays on your iPhone.</h2>
+          <ul class="chips" data-reveal>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-user-off"/></svg>No account</li>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-ban"/></svg>No ads or tracking</li>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-offline"/></svg>Works offline</li>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-archive"/></svg>Your own backup</li>
           </ul>
-        </div>
-      </section>
-
-      <section id="privacy" class="section privacy" aria-label="Privacy">
-        <div class="container">
-          <p>No account, ads, marble server, or third-party tracking. Your core training data stays on your device.</p>
-          <span class="fine">Offline core &middot; On-device parsing &middot; Portable JSON backup</span>
-          <ul class="privacy-proof">
-            <li>
-              The App Store privacy label reads <strong>Data Not Collected</strong>.
+          <div class="privacy-proof" data-reveal>
+            <p>App Store privacy label: <strong>Data Not Collected</strong>.</p>
+            <p class="privacy-links">
               <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=home-privacy&amp;mt=8" data-analytics-event="App Store Click" data-analytics-location="home_privacy" data-analytics-target="app_store">See the label</a>
-            </li>
-            <li>
-              The app&rsquo;s source code is public, so you can check these claims yourself.
               <a href="https://github.com/enzo-prism/marble" data-analytics-event="Source Click" data-analytics-location="home_privacy" data-analytics-target="github_source">Read the code</a>
-            </li>
-          </ul>
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="whats-new" class="section whats-new" aria-labelledby="whats-new-title">
         <div class="container">
-          <header class="section-intro">
+          <header class="section-intro" data-reveal>
             <h2 id="whats-new-title">What’s new</h2>
           </header>
-          <div class="latest-release">
+          <div class="latest-release" data-reveal>
             <!-- marble:latest-release:start -->
             <p class="release-label">marble 2.5 &middot; <time datetime="2026-09-24T03:43:39Z">September 24, 2026</time></p>
             <p class="latest-release-summary">Find past workouts, pick up an unfinished review, and see your lifting records at a glance.</p>
@@ -613,7 +736,7 @@
 
       <section id="faq" class="section" aria-labelledby="faq-title">
         <div class="container">
-          <header class="section-intro">
+          <header class="section-intro" data-reveal>
             <h2 id="faq-title">Questions.</h2>
           </header>
           <div class="faq-list">
@@ -655,18 +778,19 @@
 
       <section id="download" class="section cta" aria-labelledby="download-title">
         <div class="container">
-          <h2 id="download-title">Start the record.</h2>
-          <div class="hero-cta">
+          <div class="cta-icon" data-reveal><img src="/Favicon%20large.png" alt="" width="96" height="96" /></div>
+          <h2 id="download-title" data-reveal>Start the record.</h2>
+          <div class="hero-cta" data-reveal>
             <a
-              class="btn"
+              class="btn btn-large"
               href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=home-download&amp;mt=8"
               data-analytics-event="App Store Click"
               data-analytics-location="home_download"
               data-analytics-target="app_store"
             >
               <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
-              </svg>
+                  <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+                </svg>
               Download on the App Store
             </a>
             <span class="fine">Free &middot; iPhone and iPad &middot; iOS 26 or later</span>
