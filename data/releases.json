@@ -1,7 +1,17 @@
 {
-  "source": "Public App Store version history, https://apps.apple.com/us/app/marble-fit/id6757725234 (fetched 2026-09-24)",
+  "source": "Public US App Store version history and iTunes Lookup API, https://apps.apple.com/us/app/marble-fit/id6757725234 (verified 2026-11-06)",
   "appStoreId": "6757725234",
   "releases": [
+    {
+      "version": "2.6.1",
+      "releasedAt": "2026-10-30T21:07:04Z",
+      "notes": "Marble 2.6.1 makes Top Exercises in Progress reflect your whole training history.\n\n- Top Exercises now lists your five most-logged exercises of all time, not just the selected range.\n- Each exercise shows its all-time heaviest set and the date you lifted it.\n- Changing the range in Details no longer changes your Top Exercises.\n- Bests from an earlier year now include the year in their date.\n\nYour training stays private, with no account, ads, or third-party tracking."
+    },
+    {
+      "version": "2.6",
+      "releasedAt": "2026-10-10T16:24:44Z",
+      "notes": "Marble 2.6 makes workout importing easier to review and more reliable.\n\n- Weights without a unit follow your kg or lb preference.\n- Better handling of workout notation, dates, rest times, and set order.\n- Log the same typed workout on different days. Same-day duplicates keep your draft available to edit.\n- Stop workout reading and see when Apple Intelligence helped interpret your text.\n- More consistent Monthly Report insights and volume units.\n- Improved import recovery, Apple Health duplicate handling, and backup restoration.\n- Additional attributed training quotes."
+    },
     {
       "version": "2.5",
       "releasedAt": "2026-09-24T03:43:39Z",
@@ -77,5 +87,10 @@
       "releasedAt": "2026-01-15T10:03:50Z",
       "notes": ""
     }
-  ]
+  ],
+  "pendingUpdate": {
+    "version": "2.7",
+    "submittedAt": "2026-11-06T15:40:39.553Z",
+    "summary": "More faithful workout-note review and more exercise details in Shortcuts."
+  }
 }

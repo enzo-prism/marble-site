@@ -1806,6 +1806,18 @@ main:focus {
 /* what's new (filled by scripts/build-releases.js)                    */
 /* ------------------------------------------------------------------ */
 
+.pending-update {
+  margin-top: 2rem;
+  max-width: 48rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.pending-update > * + * {
+  margin-top: 0.65rem;
+}
+
 .latest-release {
   max-width: 720px;
   margin: 0 auto;
