@@ -59,7 +59,7 @@
             "mainEntityOfPage": "https://marble-fit.app/guides/log-workouts-from-apple-notes/",
             "inLanguage": "en",
             "datePublished": "2026-09-24",
-            "dateModified": "2026-09-24",
+            "dateModified": "2026-11-06",
             "image": "https://marble-fit.app/images/og/guide-notes.png",
             "author": {
               "@id": "https://marble-fit.app/#organization"
@@ -245,7 +245,7 @@
                 <thead><tr><th scope="col">You write</th><th scope="col">marble logs</th></tr></thead>
                 <tbody>
                   <tr><td><code>Squat 5x5</code> or <code>5&times;5</code></td><td>5 sets of 5</td></tr>
-                  <tr><td><code>Bench Press 3x8 @ 185</code></td><td>3 sets of 8 at 185 lb</td></tr>
+                  <tr><td><code>Bench Press 3x8 @ 185</code></td><td>3 sets of 8 at 185 in your preferred kg or lb unit</td></tr>
                   <tr><td><code>Deadlift 3x3 @ 100 kg</code></td><td>3 sets of 3 at 100 kg</td></tr>
                   <tr><td><code>Bench 135x5 155x3 175x1</code></td><td>3 sets, one per pair</td></tr>
                   <tr><td><code>Bench 225x5/3/1</code></td><td>5, 3 and 1 reps at 225</td></tr>
@@ -263,6 +263,10 @@
             </div>
             <p>A few more details: <code>3 rounds:</code> on its own line repeats the exercises below it. <code>rest 3</code> means three minutes, while <code>rest 90</code> means 90 seconds. <code>Calf raises 4x8-10</code> records the lower end of the range. <code>RPE 8</code>, <code>rpe9</code> and <code>@RPE 8</code> all set effort, but a bare <code>@ 8</code> is read as a weight.</p>
 
+            <h2>Units, repeat workouts and reading controls</h2>
+            <p>Weights without a unit use your preference in Settings &rsaquo; Units. For example, <code>Bench Press 3x8 @ 60</code> means 60 kg when kg is selected. Writing <code>60 kg</code> or <code>135 lb</code> takes precedence over that preference. Check the reviewed units before saving.</p>
+            <p>You can log the same typed workout on different days. Same-day duplicate protection keeps the draft available to edit rather than silently adding it again. If a model reading is taking too long, tap <em>Stop</em> to return to your text. Review indicates when Apple Intelligence helped interpret it.</p>
+
             <h2>Several days in one note</h2>
             <p>marble starts a new workout at a line that is only a date or a label: <code>3/5</code>, <code>March 5</code>, <code>Monday</code>, <code>Yesterday</code>, <code>Day 1</code> or <code>Day 2: Legs</code>.</p>
             <pre class="format-example"><code>Monday &mdash; Push
@@ -276,7 +280,7 @@ Pull ups 3x8</code></pre>
 
             <h2>Limits worth knowing</h2>
             <ul>
-              <li>Full sentences such as &ldquo;did 4 sets of squats at 225 for 5 reps&rdquo; need Apple Intelligence. When it&rsquo;s available on your device, marble uses it on device to structure the prose. Without it, the line is flagged for you to rewrite in shorthand.</li>
+              <li>Full sentences such as &ldquo;did 4 sets of squats at 225 for 5 reps&rdquo; may need Apple Intelligence. This requires compatible hardware, a supported language and available on-device models. If prose cannot be read, rewrite it in gym notation and check the review before saving.</li>
               <li>Percentages like <code>at 85%</code> and tempo notes like <code>tempo 3-0-1</code> are ignored, not logged as weights.</li>
               <li>Whatever you paste, you review it before anything is saved.</li>
             </ul>

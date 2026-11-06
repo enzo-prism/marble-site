@@ -60,6 +60,20 @@ then open: http://127.0.0.1:5173
 5. Run `npm run refresh:ratings` so the home page shows the current rating (it stays hidden below `minRatingsToShow`).
 6. Run `npm run validate`. It fails if the generated pages are stale, if a version number is hard-coded elsewhere on the home page, if a page is missing from the sitemap, or if an App Store link lacks its `ct` campaign token.
 
+Keep submitted updates separate from public releases. `data/releases.json` may
+contain a `pendingUpdate` object with `version`, `submittedAt` and `summary`,
+verified against App Store Connect. The generator adds a dated submission notice
+to home, the release index and `llms.txt`; it never adds that version to the
+released timeline or `softwareVersion`. Once the public release list reaches that
+version, the pending notice disappears automatically. Run `build:releases` after
+either public release data or the pending submission changes.
+
+The November 6, 2026 refresh verified public 2.6.1 against Apple's US Lookup API
+and version history, and the 2.7 submission against App Store Connect. Release
+timestamps are public release dates, not ASC version-creation or upload dates.
+The retained sample screenshots still depict supported interfaces; their asset
+folder name records their capture provenance rather than the current app version.
+
 Never write a version number into the home page by hand. The validator rejects it outside the generated region.
 
 ## seo / geo

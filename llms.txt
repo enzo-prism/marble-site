@@ -17,13 +17,18 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 - Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health
 - Category: Health & Fitness
 - Developer: Lorenzo Quaid Sison
-- Current version and history: https://marble-fit.app/releases/
+- Version history: https://marble-fit.app/releases/
+
+<!-- marble:release-status:start -->
+- Current public App Store version: 2.6.1, released October 30, 2026.
+- Upcoming 2.7: submitted to Apple for review on November 6, 2026. More faithful workout-note review and more exercise details in Shortcuts. The public download remains 2.6.1.
+<!-- marble:release-status:end -->
 
 ## The app
 
-- Add: paste or type a workout (natural language, gym notation, multi-day Notes, Hevy or Strong CSV), review every workout, exercise match, set, date, RPE, rest, and note, then save. Scan a handwritten page with on-device text recognition. Resume an interrupted review.
+- Add: paste or type a workout (natural language, gym notation, multi-day Notes, Hevy or Strong CSV), review every workout, exercise match, set, date, RPE, rest, and note, then save. Scan a handwritten page with on-device text recognition. Resume an interrupted review. Unitless weights follow the user's kg or lb preference; explicit units take precedence. Repeat a typed workout on another day with same-day duplicate protection. Stop a model reading and edit the text; model-assisted reviews are identified.
 - Log: fast set logging (weight, reps, distance, time, RPE, rest) with Log Again and Save + Next, personal-record cues while entering a set, focused workout sessions, workout history search, repeat a past workout as an editable draft, weekly split, sprint plans with tenths-precision targets and a stopwatch, calendar, supplements.
-- Progress: top exercises with personal-best weights and dates, estimated 1RM trends, PR feed and rep records, weekly goal with forgiving flex-week streaks, monthly report, muscle-group coverage, bodyweight trends with per-lift DOTS, Daily Highlights end-of-day recap.
+- Progress: lifetime top five exercises with all-time best weights and dates (independent of the Details range), estimated 1RM trends, PR feed and rep records, weekly goal with forgiving flex-week streaks, monthly report, muscle-group coverage, bodyweight trends with per-lift DOTS, Daily Highlights end-of-day recap.
 - iOS: Home Screen and Lock Screen weekly-goal widgets, Siri and Shortcuts (log a set, repeat the last set, start or finish a workout), Spotlight, Control Center / Lock Screen / Action button quick log, rest timer Live Activity with Dynamic Island controls.
 - Apple Health: import Apple Watch and Garmin workouts and bodyweight; optionally export strength sessions with an effort score.
 - Data: portable JSON backup and restore; progress photos and videos stay on the device.

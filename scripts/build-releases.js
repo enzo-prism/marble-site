@@ -249,6 +249,28 @@ function loadReleases() {
   return releases.sort((a, b) => compareVersions(b.version, a.version));
 }
 
+// A submission is not a public release. Keep it outside the release timeline
+// and softwareVersion, and hide this dated notice once that version ships.
+function pendingUpdate(latest) {
+  const pending = JSON.parse(fs.readFileSync(dataFile, "utf8")).pendingUpdate;
+  if (!pending) return null;
+  if (!/^\d+(\.\d+)*$/.test(pending.version) || !pending.summary || !pending.submittedAt) {
+    throw new Error("pendingUpdate requires a version, summary and submittedAt");
+  }
+  if (compareVersions(pending.version, latest.version) <= 0) return null;
+  return { ...pending, date: formatDate(pending.submittedAt) };
+}
+
+function pendingNotice(latest) {
+  const pending = pendingUpdate(latest);
+  if (!pending) return "";
+  return `<aside class="pending-update" aria-label="Upcoming update">
+              <p class="release-label">Next update &middot; submitted for review</p>
+              <p><strong>marble ${escapeHtml(pending.version)}</strong> &mdash; ${escapeHtml(pending.summary)}</p>
+              <p class="fine">Submitted to Apple on <time datetime="${escapeHtml(pending.submittedAt)}">${pending.date}</time>. The current App Store download is ${escapeHtml(latest.version)}.</p>
+            </aside>`;
+}
+
 // ---------------------------------------------------------------------------
 // shared chrome
 // ---------------------------------------------------------------------------
@@ -467,6 +489,7 @@ ${header({ page: "releases", ct: "releases", current: "page" })}
           <p class="release-label">Release notes</p>
           <h1>What’s new in marble</h1>
           <p class="hero-lede">Every version on the App Store, newest first, in the words that shipped with it.</p>
+          ${pendingNotice(releases[0])}
         </div>
       </section>
 
@@ -635,6 +658,7 @@ function updateHome(html, latest) {
     `<p class="latest-release-summary">${escapeHtml(release.summary)}</p>`,
     ...list,
     `<a class="text-link" href="${release.path}" data-analytics-event="Nav Click" data-analytics-location="home_latest_release" data-analytics-target="release_notes">Read the ${version} release notes <span aria-hidden="true">&rarr;</span></a>`,
+    pendingNotice(release),
   ];
   const block = lines.map((line) => `${indent}${line}`).join("\n");
 
@@ -654,6 +678,17 @@ function buildOutputs() {
   const outputs = new Map();
 
   outputs.set(path.join(releasesDir, "index.html"), renderIndex(releases));
+
+  const llmsFile = path.join(root, "llms.txt");
+  const llms = fs.readFileSync(llmsFile, "utf8");
+  const pending = pendingUpdate(releases[0]);
+  const status = [
+    `- Current public App Store version: ${releases[0].version}, released ${releases[0].date}.`,
+    ...(pending ? [`- Upcoming ${pending.version}: submitted to Apple for review on ${pending.date}. ${pending.summary} The public download remains ${releases[0].version}.`] : []),
+  ].join("\n");
+  const llmsPattern = /<!-- marble:release-status:start -->[\s\S]*?<!-- marble:release-status:end -->/;
+  if (!llmsPattern.test(llms)) throw new Error("llms.txt is missing release-status markers");
+  outputs.set(llmsFile, llms.replace(llmsPattern, `<!-- marble:release-status:start -->\n${status}\n<!-- marble:release-status:end -->`));
   releases.forEach((release, index) => {
     outputs.set(
       path.join(releasesDir, release.slug, "index.html"),

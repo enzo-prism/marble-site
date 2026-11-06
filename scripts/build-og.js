@@ -61,9 +61,9 @@ const demo = `<figure class="type-demo">
       <div class="type-demo-bar"><span>Paste or Type</span><span class="type-demo-hint">Your words</span></div>
       <div class="type-demo-lines">
         <span class="type-demo-line">Leg day</span>
-        <span class="type-demo-line">Squat 5x5 @ 225, rest 2 min</span>
-        <span class="type-demo-line">RDL 3x8 @ 185</span>
-        <span class="type-demo-line">Calf raises 3x12 @ 90</span>
+        <span class="type-demo-line">Squat 5x5 @ 225 lb, rest 2 min</span>
+        <span class="type-demo-line">RDL 3x8 @ 185 lb</span>
+        <span class="type-demo-line">Calf raises 3x12 @ 90 lb</span>
       </div>
     </div>
     <div class="type-demo-panel type-demo-review">
