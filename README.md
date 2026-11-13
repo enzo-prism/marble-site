@@ -68,9 +68,10 @@ released timeline or `softwareVersion`. Once the public release list reaches tha
 version, the pending notice disappears automatically. Run `build:releases` after
 either public release data or the pending submission changes.
 
-The November 6, 2026 refresh verified public 2.6.1 against Apple's US Lookup API
-and version history, and the 2.7 submission against App Store Connect. Release
-timestamps are public release dates, not ASC version-creation or upload dates.
+The November 13, 2026 refresh verified released 2.7 (build 86) against App Store
+Connect and uses its release/phased-rollout start timestamp. Build 87 remains
+TestFlight and is not represented as a public release. Earlier release timestamps
+come from the public App Store version history, not ASC creation or upload dates.
 The retained sample screenshots still depict supported interfaces; their asset
 folder name records their capture provenance rather than the current app version.
 

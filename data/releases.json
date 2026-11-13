@@ -1,7 +1,12 @@
 {
-  "source": "Public US App Store version history and iTunes Lookup API, https://apps.apple.com/us/app/marble-fit/id6757725234 (verified 2026-11-06)",
+  "source": "App Store Connect released version 2.7 (build 86), verified 2026-11-13; earlier releases from public US App Store version history and iTunes Lookup API, https://apps.apple.com/us/app/marble-fit/id6757725234",
   "appStoreId": "6757725234",
   "releases": [
+    {
+      "version": "2.7",
+      "releasedAt": "2026-11-13T03:26:34Z",
+      "notes": "Marble 2.7 makes it easier to turn your workout notes into a complete training log.\n\n- Count-only drills keep every set without adding reps or weight you didn't enter.\n- Sprint and distance workouts preserve each effort, its distance, and your exercise order.\n- Improved reading of everyday notes, circuits, set ladders, and light kg loads.\n- Review workout totals and your original text before saving. Fix unrecognized lines or keep them in your workout notes.\n- Workout History and Repeat preserve the order of your exercises and sets.\n- Apple Intelligence readings are checked against your original notes, with editable review before saving.\n- Shortcuts can read each exercise's favorite status, last performed date, total sets, heaviest set, most reps, and usual range.\n- VoiceOver announces sets recorded without numbers."
+    },
     {
       "version": "2.6.1",
       "releasedAt": "2026-10-30T21:07:04Z",
@@ -87,10 +92,5 @@
       "releasedAt": "2026-01-15T10:03:50Z",
       "notes": ""
     }
-  ],
-  "pendingUpdate": {
-    "version": "2.7",
-    "submittedAt": "2026-11-06T15:40:39.553Z",
-    "summary": "More faithful workout-note review and more exercise details in Shortcuts."
-  }
+  ]
 }
