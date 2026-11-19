@@ -753,3 +753,52 @@
     color: var(--ink);
   }
 }
+
+/* a quieter marble field behind each page title (scripts/marble.js) ---- */
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-backdrop {
+  position: absolute;
+  inset: -80px 0 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-backdrop .marble-canvas {
+  --marble-strength: 0.34;
+  -webkit-mask-image: radial-gradient(55% 85% at 86% 38%, #000 15%, transparent 78%);
+  mask-image: radial-gradient(55% 85% at 86% 38%, #000 15%, transparent 78%);
+}
+
+:root[data-theme="dark"] .page-backdrop .marble-canvas {
+  --marble-strength: 0.2;
+}
+
+@media (max-width: 720px) {
+  .page-backdrop .marble-canvas {
+    -webkit-mask-image: radial-gradient(90% 60% at 80% 20%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(90% 60% at 80% 20%, #000 10%, transparent 75%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero .crumbs,
+  .page-hero .page-kicker {
+    animation: rise-in 0.9s var(--ease-out-expo) both;
+  }
+
+  .page-hero h1 {
+    animation: rise-in 1.1s var(--ease-out-expo) 0.08s both;
+  }
+
+  .page-hero .page-lede,
+  .page-hero .guide-answer,
+  .page-hero .chips {
+    animation: rise-in 1.1s var(--ease-out-expo) 0.2s both;
+  }
+}

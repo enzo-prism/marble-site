@@ -59,7 +59,7 @@
             "mainEntityOfPage": "https://marble-fit.app/guides/log-workouts-from-apple-notes/",
             "inLanguage": "en",
             "datePublished": "2026-09-24",
-            "dateModified": "2026-11-06",
+            "dateModified": "2026-11-18",
             "image": "https://marble-fit.app/images/og/guide-notes.png",
             "author": {
               "@id": "https://marble-fit.app/#organization"
@@ -168,6 +168,7 @@
     <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="guide-notes">
     <a class="skip-link" href="#top">skip to content</a>
@@ -218,7 +219,8 @@
 
     <main id="top" tabindex="-1">
       <article class="guide">
-        <header class="page-hero">
+        <header class="page-hero" data-marble-host>
+        <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="1.032"></canvas></div>
           <div class="container guide-container">
             <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Log workouts from Apple Notes</span></li></ol></nav>
             <p class="page-kicker">Guide</p>
@@ -233,8 +235,8 @@
             <ol class="steps">
               <li><strong>Copy your workout</strong> from Notes. It can be one session or a whole week.</li>
               <li><strong>Open Add in marble</strong> and paste into <em>Paste or type your workout</em>. As you type or paste, a live preview lists each exercise with its set count.</li>
-              <li><strong>Fix anything flagged.</strong> Lines marble can&rsquo;t read yet are listed separately, not dropped. Rewrite one in standard notation, like <code>Bench 3x8 @ 185</code>, and it joins the workout.</li>
-              <li><strong>Review.</strong> Check each exercise match, set, date, RPE, rest and note. A multi-day note opens as a list of workouts that you can select one by one.</li>
+              <li><strong>Fix anything flagged.</strong> A line marble can&rsquo;t organize stays in review, never dropped. Edit it, for example into <code>Bench 3x8 @ 185</code>, and tap <em>Try again</em>, or tap <em>Keep in workout notes</em>. Nothing is added until every flagged line is handled.</li>
+              <li><strong>Review.</strong> Check each exercise match, set, date, RPE, rest and note, the workout&rsquo;s totals, and your original text beside it. Exercises and sets keep the order you wrote them in. A multi-day note opens as a list of workouts that you can select one by one.</li>
               <li><strong>Save.</strong> If you leave halfway, your draft is kept, and you can resume the review later with your edits intact.</li>
             </ol>
 
@@ -254,6 +256,12 @@
                   <tr><td><code>Plank 3x45s</code> or <code>3x1:00</code></td><td>timed sets</td></tr>
                   <tr><td><code>Run 5k 25:00</code>, <code>Row 2000m 7:30</code></td><td>distance and time</td></tr>
                   <tr><td><code>Sprints 4x20m</code></td><td>4 reps of 20 m</td></tr>
+                  <tr><td><code>Sprints 2 sets, 50m each</code></td><td>2 efforts of 50 m each</td></tr>
+                  <tr><td><code>Bounds (2 sets)</code></td><td>2 sets, with no reps or weight added</td></tr>
+                  <tr><td><code>Bench 185 lb: 8, 7, 6 reps</code></td><td>8, 7 and 6 reps at 185 lb</td></tr>
+                  <tr><td><code>Squat: two sets of five at 100kg</code></td><td>2 sets of 5 at 100 kg</td></tr>
+                  <tr><td><code>3 rounds: 10 pushups + 15 squats</code></td><td>3 sets of each, in order</td></tr>
+                  <tr><td><code>A1 Bench 3x8 @135</code></td><td>3 sets of 8 at 135; <code>A1</code> only marks the order</td></tr>
                   <tr><td><code>Bench Press 3x8 @ 185 rest 90s</code></td><td>rest of 90 seconds on each set</td></tr>
                   <tr><td><code>Squat 5x5 @ 225 RPE 8</code></td><td>RPE 8 on each set</td></tr>
                   <tr><td><code>Pushups 3xAMRAP</code></td><td>3 sets, no rep count</td></tr>
@@ -261,7 +269,7 @@
                 </tbody>
               </table>
             </div>
-            <p>A few more details: <code>3 rounds:</code> on its own line repeats the exercises below it. <code>rest 3</code> means three minutes, while <code>rest 90</code> means 90 seconds. <code>Calf raises 4x8-10</code> records the lower end of the range. <code>RPE 8</code>, <code>rpe9</code> and <code>@RPE 8</code> all set effort, but a bare <code>@ 8</code> is read as a weight.</p>
+            <p>A few more details: <code>3 rounds:</code> on its own line repeats the exercises below it. <code>rest 3</code> means three minutes, while <code>rest 90</code> means 90 seconds. <code>Calf raises 4x8-10</code> records the lower end of the range and keeps the range you wrote in the set note. <code>RPE 8</code>, <code>rpe9</code> and <code>@RPE 8</code> all set effort, but a bare <code>@ 8</code> is read as a weight.</p>
 
             <h2>Units, repeat workouts and reading controls</h2>
             <p>Weights without a unit use your preference in Settings &rsaquo; Units. For example, <code>Bench Press 3x8 @ 60</code> means 60 kg when kg is selected. Writing <code>60 kg</code> or <code>135 lb</code> takes precedence over that preference. Check the reviewed units before saving.</p>
@@ -280,7 +288,7 @@ Pull ups 3x8</code></pre>
 
             <h2>Limits worth knowing</h2>
             <ul>
-              <li>Full sentences such as &ldquo;did 4 sets of squats at 225 for 5 reps&rdquo; may need Apple Intelligence. This requires compatible hardware, a supported language and available on-device models. If prose cannot be read, rewrite it in gym notation and check the review before saving.</li>
+              <li>Many everyday sentences are read on the device without Apple Intelligence, such as &ldquo;ran 5 kilometers in 25 minutes, then did three planks of 45 seconds each&rdquo;. Longer free-form prose may need Apple Intelligence, which requires compatible hardware, a supported language and available on-device models. Its readings are checked against your note: dates, titles and numbers must come from what you wrote. If prose can&rsquo;t be read, rewrite it in gym notation.</li>
               <li>Percentages like <code>at 85%</code> and tempo notes like <code>tempo 3-0-1</code> are ignored, not logged as weights.</li>
               <li>Whatever you paste, you review it before anything is saved.</li>
             </ul>

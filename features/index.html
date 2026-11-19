@@ -121,6 +121,7 @@
     <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="features">
     <a class="skip-link" href="#top">skip to content</a>
@@ -170,7 +171,8 @@
     </header>
 
     <main id="top" tabindex="-1">
-      <section class="page-hero">
+      <section class="page-hero" data-marble-host>
+        <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="0.21"></canvas></div>
         <div class="container">
           <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Features</span></li></ol></nav>
           <p class="page-kicker">Features</p>
@@ -253,7 +255,7 @@
               <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-scan"/></svg></span>
               <div>
                 <h3>Scan handwritten pages</h3>
-                <p>Photograph a training notebook. Text recognition runs on device.</p>
+                <p>Photograph a notebook page or choose a photo from Log &rsaquo; Import Workouts. Text recognition runs on device.</p>
               </div>
             </li>
             <li class="feature-item" data-reveal>

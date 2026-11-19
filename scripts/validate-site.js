@@ -18,7 +18,7 @@ const homeContract = {
     "Type your workout. marble logs it.",
     "Add. Log. Progress.",
     "Built into iOS.",
-    "Add 1 workout (11 sets)",
+    "Add 11 sets to Log",
     "Coming from Hevy, Strong or Notes?",
     "Data Not Collected",
     "marble.fit",

@@ -75,7 +75,7 @@ const demo = `<figure class="type-demo">
           <li class="type-demo-row"><strong>Romanian Deadlift</strong><span>3 × 8 · 185 lb</span><small>matched from “RDL”</small></li>
           <li class="type-demo-row"><strong>Calf Raises</strong><span>3 × 12 · 90 lb</span></li>
         </ul>
-        <span class="type-demo-button">Add 1 workout (11 sets)</span>
+        <span class="type-demo-button">Add 11 sets to Log</span>
       </div>
     </div>
   </div>

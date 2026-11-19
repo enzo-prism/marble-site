@@ -168,6 +168,7 @@
     <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="guide-private">
     <a class="skip-link" href="#top">skip to content</a>
@@ -218,7 +219,8 @@
 
     <main id="top" tabindex="-1">
       <article class="guide">
-        <header class="page-hero">
+        <header class="page-hero" data-marble-host>
+        <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="1.169"></canvas></div>
           <div class="container guide-container">
             <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">A private, offline workout tracker</span></li></ol></nav>
             <p class="page-kicker">Guide</p>
