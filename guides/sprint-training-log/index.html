@@ -59,7 +59,7 @@
             "mainEntityOfPage": "https://marble-fit.app/guides/sprint-training-log/",
             "inLanguage": "en",
             "datePublished": "2026-09-24",
-            "dateModified": "2026-09-24",
+            "dateModified": "2026-11-18",
             "image": "https://marble-fit.app/images/og/guide-sprint.png",
             "author": {
               "@id": "https://marble-fit.app/#organization"
@@ -168,6 +168,7 @@
     <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="guide-sprint">
     <a class="skip-link" href="#top">skip to content</a>
@@ -218,7 +219,8 @@
 
     <main id="top" tabindex="-1">
       <article class="guide">
-        <header class="page-hero">
+        <header class="page-hero" data-marble-host>
+        <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="1.306"></canvas></div>
           <div class="container guide-container">
             <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Keep a sprint training log</span></li></ol></nav>
             <p class="page-kicker">Guide</p>
@@ -257,6 +259,7 @@
 
             <h2>Writing sprints as text</h2>
             <p>In the Add tab, <code>Sprints 4x20m</code> becomes four 20 m reps, and <code>4x20meter accelerations at 85-90%</code> becomes four 20 m accelerations. The percentage is ignored, not read as a weight. Times from a typed line are added during review.</p>
+            <p>Training notes work too. <code>Sprints, 2 sets, 50m each</code> becomes two 50 m efforts, and a note that lists drills before sprints, like <code>Straight Leg Speed Bounds (2 sets)</code>, keeps every set of each in the order you wrote them. Count-only drills get no invented reps or weight. Review shows the workout&rsquo;s totals beside your original text, and Repeat later brings back the same efforts and distances.</p>
 
             <h2>Limits worth knowing</h2>
             <ul>

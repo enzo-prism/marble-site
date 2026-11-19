@@ -14,7 +14,12 @@ single-page marketing site for the marble fitness app.
   - `data-reveal` fades an element in as it scrolls into view, using CSS scroll-driven animations. Browsers without them show it immediately, so nothing is ever hidden.
   - `data-animate` marks a one-shot widget (the weekly-goal ring). `scripts/site.js` adds `.is-in` when it's on screen; without JS it rests in its finished state.
   - Loops (the ticker, Siri waveform, Quick log press, Spotlight typing, floating chips) are pure CSS. The rest timer (`data-countdown`) and the tour autoplay run in `scripts/site.js`, only while on screen and the tab is visible.
-  - `prefers-reduced-motion: reduce` stops all of it: no autoplay, a still ticker, no typing demo.
+  - **Living marble** (`scripts/marble.js`): a small WebGL shader draws slowly drifting stone veins in any `<canvas class="marble-canvas" data-marble>`, used behind the home hero, the final call to action and every content-page title. Vein colour and strength come from `--marble-ink` / `--marble-strength` (set per theme, and overridable per canvas in CSS); `data-marble-seed` varies the pattern and `data-marble-host` on an ancestor is where a mouse moves the soft light. It renders below device resolution near 30 fps, only while on screen and the tab is visible, and fades in once ready, so without WebGL the CSS backdrop simply shows.
+  - **Hero choreography:** the headline words (`.hero-title .hw`, each with `--w`) blur up in sequence, then the lede, button, chips and the demo. While the demo reads, a scan line sweeps the note and recognised parts (`.tok`) light up; the review button shines once.
+  - **Pointer polish** (fine pointers only, from `scripts/site.js`): the demo tilts toward the cursor with a glare; `.bento-tile`, `.switch-list a`, `.feature-item` and `.guide-list a` get a spotlight and lit edge (`.spot-glow`); `.btn-large` leans toward the cursor and sweeps a sheen on hover.
+  - **Scroll-driven** (CSS only, where supported): the hero backdrop recedes, bento tiles land in a stagger, gallery phones deal in from the right edge, the nav pill carries a reading-progress hairline, and the footer wordmark settles as it arrives.
+  - The privacy orbit (`.privacy-orbit`) and the floating app icon in the final call to action are pure CSS loops. Pages cross-fade with cross-document view transitions; the nav stays put.
+  - `prefers-reduced-motion: reduce` stops all of it: no autoplay, a still ticker, no typing demo, a single still marble frame, no tilt, spotlight, magnet or view transition.
 
 ## quick start
 

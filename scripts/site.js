@@ -94,6 +94,24 @@
     reveals.forEach((node, index) => node.classList.toggle("is-shown", index < count));
   }
 
+  // Mark the parts marble recognises (set × rep pairs, loads, rest, the
+  // "RDL" abbreviation) so they can light up while the text is read.
+  const TOKEN = /\b\d+x\d+\b|\b\d+(?:\.\d+)?\s?(?:lb|kg|min)\b|\bRDL\b/g;
+
+  function escapeHtml(text) {
+    return text.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  }
+
+  function highlightTokens() {
+    let count = 0;
+    lineNodes.forEach((node, index) => {
+      node.innerHTML = escapeHtml(lines[index]).replace(TOKEN, (match) => {
+        count += 1;
+        return `<span class="tok" style="--t:${count}">${match}</span>`;
+      });
+    });
+  }
+
   function fillAll() {
     lineNodes.forEach((node, index) => {
       node.textContent = lines[index];
@@ -112,7 +130,7 @@
       steps.push({ delay: pause, run: () => { node.textContent = text.slice(0, i); } });
     }
   });
-  steps.push({ delay: 520, run: () => { caret.remove(); setPhase("parsing"); } });
+  steps.push({ delay: 520, run: () => { caret.remove(); highlightTokens(); setPhase("parsing"); } });
   steps.push({ delay: 900, run: () => { setPhase("review"); showReveals(1); } });
   for (let count = 2; count <= reveals.length; count += 1) {
     steps.push({ delay: count === reveals.length ? 380 : 260, run: () => showReveals(count) });
@@ -431,5 +449,112 @@
     }
     document.addEventListener("visibilitychange", update);
     reducedMotion.addEventListener("change", update);
+  });
+})();
+
+/* ------------------------------------------------------------------ */
+/* Pointer polish, for a real mouse only and never with Reduce Motion: */
+/* - the hero demo tilts toward the pointer, with a soft glare;        */
+/* - cards carry a spotlight and a lit edge under the pointer;         */
+/* - large App Store buttons lean slightly toward the pointer.         */
+/* All of it is styling on top of finished content.                    */
+/* ------------------------------------------------------------------ */
+(() => {
+  "use strict";
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const enabled = () => finePointer.matches && !reducedMotion.matches;
+
+  // Demo tilt
+  const demo = document.querySelector("[data-type-demo]");
+  const stage = demo && demo.querySelector(".type-demo-stage");
+  const host = demo && demo.closest(".hero");
+  if (demo && stage && host) {
+    const glare = document.createElement("span");
+    glare.className = "type-demo-glare";
+    glare.setAttribute("aria-hidden", "true");
+    stage.appendChild(glare);
+
+    let frame = 0;
+    let pending = null;
+
+    const apply = () => {
+      frame = 0;
+      if (!pending) return;
+      const rect = stage.getBoundingClientRect();
+      const x = (pending.x - rect.left) / rect.width;
+      const y = (pending.y - rect.top) / rect.height;
+      const cx = Math.max(-1, Math.min(1, x * 2 - 1));
+      const cy = Math.max(-1, Math.min(1, y * 2 - 1));
+      demo.style.setProperty("--ry", `${(cx * 7).toFixed(2)}deg`);
+      demo.style.setProperty("--rx", `${(-cy * 5).toFixed(2)}deg`);
+      demo.style.setProperty("--gx", `${(x * 100).toFixed(1)}%`);
+      demo.style.setProperty("--gy", `${(y * 100).toFixed(1)}%`);
+    };
+
+    host.addEventListener("pointermove", (event) => {
+      if (!enabled()) return;
+      pending = { x: event.clientX, y: event.clientY };
+      demo.classList.add("is-tilting");
+      if (!frame) frame = requestAnimationFrame(apply);
+    });
+
+    host.addEventListener("pointerleave", () => {
+      pending = null;
+      demo.classList.remove("is-tilting");
+      demo.style.removeProperty("--rx");
+      demo.style.removeProperty("--ry");
+    });
+  }
+
+  // Card spotlight
+  const SPOT_TARGETS = ".bento-tile, .switch-list a, .feature-item, .guide-list a";
+  const cards = [...document.querySelectorAll(SPOT_TARGETS)];
+  if (cards.length) {
+    cards.forEach((card) => {
+      card.classList.add("has-spot");
+      const glow = document.createElement("span");
+      glow.className = "spot-glow";
+      glow.setAttribute("aria-hidden", "true");
+      card.prepend(glow);
+    });
+
+    let lit = null;
+    document.addEventListener("pointermove", (event) => {
+      if (!enabled()) return;
+      const card = event.target instanceof Element ? event.target.closest(".has-spot") : null;
+      if (lit && lit !== card) lit.classList.remove("is-lit");
+      lit = card;
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+      card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      card.classList.add("is-lit");
+    }, { passive: true });
+
+    document.addEventListener("pointerleave", () => {
+      if (lit) lit.classList.remove("is-lit");
+      lit = null;
+    });
+  }
+
+  // Magnetic App Store buttons
+  document.querySelectorAll(".btn-large").forEach((button) => {
+    const zone = button.parentElement;
+    zone.addEventListener("pointermove", (event) => {
+      if (!enabled()) return;
+      const rect = button.getBoundingClientRect();
+      const dx = event.clientX - (rect.left + rect.width / 2);
+      const dy = event.clientY - (rect.top + rect.height / 2);
+      const reach = Math.max(rect.width, 160);
+      const pull = Math.max(0, 1 - Math.hypot(dx, dy) / reach);
+      button.style.setProperty("--mag-x", `${(dx * 0.18 * pull).toFixed(1)}px`);
+      button.style.setProperty("--mag-y", `${(dy * 0.28 * pull).toFixed(1)}px`);
+    });
+    zone.addEventListener("pointerleave", () => {
+      button.style.removeProperty("--mag-x");
+      button.style.removeProperty("--mag-y");
+    });
   });
 })();

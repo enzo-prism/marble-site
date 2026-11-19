@@ -188,6 +188,7 @@
     <link rel="stylesheet" href="/pages.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="guides">
     <a class="skip-link" href="#top">skip to content</a>
@@ -237,7 +238,8 @@
     </header>
 
     <main id="top" tabindex="-1">
-      <section class="page-hero">
+      <section class="page-hero" data-marble-host>
+        <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="0.347"></canvas></div>
         <div class="container">
           <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Guides</span></li></ol></nav>
           <p class="page-kicker">Guides</p>

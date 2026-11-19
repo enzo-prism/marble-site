@@ -227,6 +227,7 @@
     <link rel="stylesheet" href="/styles.css" />
     <script src="/scripts/analytics.js" defer></script>
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
   </head>
   <body data-page="home">
     <a class="skip-link" href="#top">skip to content</a>
@@ -276,12 +277,12 @@
     </header>
 
     <main id="top" tabindex="-1">
-      <section class="hero hero-home" aria-labelledby="hero-title">
-        <div class="hero-backdrop" aria-hidden="true"></div>
+      <section class="hero hero-home" aria-labelledby="hero-title" data-marble-host>
+        <div class="hero-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble></canvas></div>
         <div class="container hero-home-grid">
           <div class="hero-copy">
             <p class="badge"><span class="icon-dot"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-sparkles"/></svg></span>Free workout journal for iPhone and iPad</p>
-            <h1 id="hero-title">Type your workout. marble logs it.</h1>
+            <h1 id="hero-title" class="hero-title"><span class="hw" style="--w:0">Type</span> <span class="hw" style="--w:1">your</span> <span class="hw" style="--w:2">workout.</span> <span class="hw" style="--w:3">marble</span> <span class="hw" style="--w:4">logs</span> <span class="hw" style="--w:5">it.</span></h1>
             <p class="hero-lede">Write it like a note. Check the sets. Save.</p>
             <div class="hero-actions">
               <a
@@ -313,7 +314,7 @@
                 Example: you type “Leg day. Squat 5x5 @ 225 lb, rest 2 min. RDL 3x8 @ 185 lb. Calf raises 3x12 @ 90 lb.”
                 marble reviews it as Leg Day with 3 exercises and 11 sets: Squat, 5 sets of 5 at 225 lb with 2 minutes rest;
                 Romanian Deadlift, matched from “RDL”, 3 sets of 8 at 185 lb; and Calf Raises, 3 sets of 12 at 90 lb.
-                Nothing is saved until you tap “Add 1 workout (11 sets)”.
+                Nothing is saved until you tap “Add 11 sets to Log”.
               </figcaption>
               <div class="type-demo-stage" aria-hidden="true">
                 <div class="type-demo-panel type-demo-input">
@@ -334,7 +335,7 @@
                     <span>Review Workout</span>
                     <span class="type-demo-hint">On device</span>
                   </div>
-                  <p class="type-demo-status"><span data-when="typing">Nothing is saved yet</span><span data-when="parsing">Reading on device…</span></p>
+                  <p class="type-demo-status"><span data-when="typing">Nothing is saved yet</span><span data-when="parsing">Reading your text…</span></p>
                   <div class="type-demo-body">
                     <p class="type-demo-head type-demo-reveal"><strong>Leg Day</strong> &middot; 3 exercises &middot; 11 sets</p>
                     <ul class="type-demo-rows">
@@ -352,7 +353,7 @@
                         <span>3 × 12 · 90 lb</span>
                       </li>
                     </ul>
-                    <span class="type-demo-button type-demo-reveal">Add 1 workout (11 sets)</span>
+                    <span class="type-demo-button type-demo-reveal">Add 11 sets to Log</span>
                   </div>
                 </div>
               </div>
@@ -695,7 +696,13 @@
 
       <section id="privacy" class="section privacy" aria-labelledby="privacy-title">
         <div class="container">
-          <div class="privacy-mark" aria-hidden="true" data-reveal><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lock"/></svg></div>
+          <div class="privacy-orbit" aria-hidden="true" data-reveal>
+            <span class="orbit-ring orbit-ring-boundary"></span>
+            <span class="orbit-ring orbit-ring-3"><i></i><i></i></span>
+            <span class="orbit-ring orbit-ring-2"><i></i><i></i><i></i></span>
+            <span class="orbit-ring orbit-ring-1"><i></i></span>
+            <span class="privacy-mark"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-lock"/></svg></span>
+          </div>
           <h2 id="privacy-title" data-reveal>Your training stays on your iPhone.</h2>
           <ul class="chips" data-reveal>
             <li class="chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-user-off"/></svg>No account</li>
@@ -777,9 +784,10 @@
         </div>
       </section>
 
-      <section id="download" class="section cta" aria-labelledby="download-title">
+      <section id="download" class="section cta" aria-labelledby="download-title" data-marble-host>
+        <div class="cta-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="0.83"></canvas></div>
         <div class="container">
-          <div class="cta-icon" data-reveal><img src="/Favicon%20large.png" alt="" width="96" height="96" /></div>
+          <div class="cta-icon" data-reveal><img src="/Favicon%20large.png" alt="" width="96" height="96" /><span class="cta-icon-sheen" aria-hidden="true"></span></div>
           <h2 id="download-title" data-reveal>Start the record.</h2>
           <div class="hero-cta" data-reveal>
             <a
@@ -801,7 +809,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer footer-home">
       <div class="container footer-inner">
         <span>marble</span>
         <div class="footer-links">
@@ -813,6 +821,7 @@
           <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=home-footer&amp;mt=8" data-analytics-event="App Store Click" data-analytics-location="home_footer" data-analytics-target="app_store">App Store</a>
         </div>
       </div>
+      <p class="footer-wordmark" aria-hidden="true">marble</p>
     </footer>
   </body>
 </html>
