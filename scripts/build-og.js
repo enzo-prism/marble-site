@@ -22,24 +22,24 @@ const { pathToFileURL } = require("node:url");
 
 const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "images", "og");
-const screens = "images/app-store-2.5/screens";
+const screens = "images/app-store-2.7/screens";
 const WIDTH = 1200;
 const HEIGHT = 630;
 
 // Keep titles short enough for two lines at 64px in 620px.
 const cards = [
   { id: "home", kicker: "Free workout journal for iPhone", title: "Type your workout. marble logs it.", demo: true },
-  { id: "features", kicker: "Features", title: "Everything marble does.", screen: "04-journal" },
-  { id: "guides", kicker: "Guides", title: "Import, log and track your training.", screen: "02-workout-history" },
-  { id: "guide-hevy-strong", kicker: "Guide", title: "Import Hevy and Strong workouts.", screen: "01-paste-or-type-review" },
-  { id: "guide-notes", kicker: "Guide", title: "Log workouts from Apple Notes.", screen: "03-repeat-review" },
-  { id: "guide-private", kicker: "Guide", title: "A private, offline workout tracker.", screen: "10-private-backup" },
-  { id: "guide-sprint", kicker: "Guide", title: "Keep a sprint training log.", screen: "09-sprint-prescription" },
-  { id: "guide-watch", kicker: "Guide", title: "Log strength training with Apple Watch.", screen: "07-active-workout" },
+  { id: "features", kicker: "Features", title: "Everything marble does.", screen: "01-journal" },
+  { id: "guides", kicker: "Guides", title: "Import, log and track your training.", screen: "11-daily-highlights" },
+  { id: "guide-hevy-strong", kicker: "Guide", title: "Import Hevy and Strong workouts.", screen: "02-paste-or-type-review" },
+  { id: "guide-notes", kicker: "Guide", title: "Log workouts from Apple Notes.", screen: "s02-typed-review" },
+  { id: "guide-private", kicker: "Guide", title: "A private, offline workout tracker.", screen: "09-private-backup" },
+  { id: "guide-sprint", kicker: "Guide", title: "Keep a sprint training log.", screen: "06-sprint-prescription" },
+  { id: "guide-watch", kicker: "Guide", title: "Log strength training with Apple Watch.", screen: "04-active-workout" },
   { id: "guide-hevy-alternative", kicker: "Switching from Hevy", title: "A Hevy alternative with no account.", screen: "05-strength-trends" },
-  { id: "guide-strong-alternative", kicker: "Switching from Strong", title: "A Strong alternative with nothing to unlock.", screen: "06-fast-set-logger" },
-  { id: "releases", kicker: "Release notes", title: "What’s new in marble.", screen: "08-training-calendar" },
-  { id: "privacy", kicker: "App Store privacy label", title: "Data Not Collected.", screen: "10-private-backup" },
+  { id: "guide-strong-alternative", kicker: "Switching from Strong", title: "A Strong alternative with nothing to unlock.", screen: "03-fast-set-logger" },
+  { id: "releases", kicker: "Release notes", title: "What’s new in marble.", screen: "07-training-calendar" },
+  { id: "privacy", kicker: "App Store privacy label", title: "Data Not Collected.", screen: "09-private-backup" },
 ];
 
 function escapeHtml(value) {
@@ -69,11 +69,11 @@ const demo = `<figure class="type-demo">
     <div class="type-demo-panel type-demo-review">
       <div class="type-demo-bar"><span>Review Workout</span><span class="type-demo-hint">On device</span></div>
       <div class="type-demo-body">
-        <p class="type-demo-head"><strong>Leg Day</strong> &middot; 3 exercises &middot; 11 sets</p>
+        <p class="type-demo-head"><strong>Leg day</strong> &middot; 3 exercises &middot; 11 sets</p>
         <ul class="type-demo-rows">
           <li class="type-demo-row"><strong>Squat</strong><span>5 × 5 · 225 lb · rest 2m</span></li>
-          <li class="type-demo-row"><strong>Romanian Deadlift</strong><span>3 × 8 · 185 lb</span><small>matched from “RDL”</small></li>
-          <li class="type-demo-row"><strong>Calf Raises</strong><span>3 × 12 · 90 lb</span></li>
+          <li class="type-demo-row"><strong>RDL</strong><span>3 × 8 · 185 lb</span></li>
+          <li class="type-demo-row"><strong>Calf raises</strong><span>3 × 12 · 90 lb</span></li>
         </ul>
         <span class="type-demo-button">Add 11 sets to Log</span>
       </div>
@@ -179,7 +179,7 @@ function main() {
   try {
     for (const card of selected) {
       if (card.screen && !fs.existsSync(path.join(root, screens, `${card.screen}.png`))) {
-        throw new Error(`missing ${screens}/${card.screen}.png; run python3 scripts/crop-screens.py`);
+        throw new Error(`missing ${screens}/${card.screen}.png; run scripts/prepare-screens.py`);
       }
       console.log(`  ${path.relative(root, render(chrome, card, workDir))}`);
     }

@@ -64,10 +64,15 @@
 })();
 
 /* ------------------------------------------------------------------ */
-/* Home hero demo: types a note, then reveals the review card.         */
-/* The markup already shows the final state, so without JS or with     */
-/* reduced motion nothing changes. Animation only runs while the demo  */
-/* is on screen and the tab is visible.                                */
+/* Home hero demo: types a note, reads it, and flies each recognised   */
+/* part into its row of the review card. The examples (in the page's   */
+/* #demo-examples JSON) are real notes with the review the 2.7 app     */
+/* shows for them. The demo cycles through them; the "Try" chips jump  */
+/* to one and stop the cycling.                                        */
+/*                                                                     */
+/* The markup already shows the first example's finished review, so   */
+/* without JS or with Reduce Motion nothing moves. Animation only runs */
+/* while the demo is on screen and the tab is visible.                 */
 /* ------------------------------------------------------------------ */
 (() => {
   "use strict";
@@ -76,74 +81,200 @@
   if (!root) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const stage = root.querySelector(".type-demo-stage");
   const lineNodes = [...root.querySelectorAll(".type-demo-text")];
-  const lines = lineNodes.map((node) => node.textContent);
-  const reveals = [...root.querySelectorAll(".type-demo-reveal")];
+  const head = root.querySelector(".type-demo-head");
+  const rowsList = root.querySelector(".type-demo-rows");
+  const button = root.querySelector(".type-demo-button");
+  const caption = root.querySelector("figcaption");
+  const visual = root.closest(".hero-visual");
+  const chipB = visual?.querySelector(".float-chip-b");
+  const tryBar = visual?.querySelector("[data-try]");
+  const tryChips = tryBar ? [...tryBar.querySelectorAll("[data-example]")] : [];
+  const announcer = visual?.querySelector("[data-try-status]");
+
+  let examples = [];
+  try {
+    examples = JSON.parse(document.getElementById("demo-examples")?.textContent || "[]");
+  } catch {
+    examples = [];
+  }
+  if (!examples.length) return;
+
   const caret = document.createElement("span");
   caret.className = "type-demo-caret";
 
-  const HOLD = 3600;
-  const steps = [];
-  let holdIndex = 0;
+  const HOLD = 4200;
+  const escapeHtml = (text) =>
+    String(text).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
-  function setPhase(phase) {
+  let current = 0;
+  let steps = [];
+  let index = 0;
+  let timer = null;
+  let enabled = false;
+  let onScreen = false;
+  let cycling = true;
+  let flights = [];
+
+  const setPhase = (phase) => {
     root.dataset.phase = phase;
+  };
+
+  // --- rendering ------------------------------------------------------
+
+  function renderReview(example) {
+    head.innerHTML = `<strong>${escapeHtml(example.title)}</strong> &middot; ${escapeHtml(example.meta)}`;
+    rowsList.innerHTML = example.rows
+      .map((row) => `<li class="type-demo-row type-demo-reveal">
+          <strong>${escapeHtml(row.name)}</strong>
+          <span>${escapeHtml(row.value)}</span>${row.note ? `
+          <small>${escapeHtml(row.note)}</small>` : ""}
+        </li>`)
+      .join("");
+    button.textContent = example.button;
+    if (chipB && example.chip) {
+      chipB.lastChild.textContent = example.chip;
+    }
+  }
+
+  function reveals() {
+    return [head, ...rowsList.querySelectorAll(".type-demo-row"), button];
   }
 
   function showReveals(count) {
-    reveals.forEach((node, index) => node.classList.toggle("is-shown", index < count));
+    reveals().forEach((node, i) => node.classList.toggle("is-shown", i < count));
   }
 
-  // Mark the parts marble recognises (set × rep pairs, loads, rest, the
-  // "RDL" abbreviation) so they can light up while the text is read.
-  const TOKEN = /\b\d+x\d+\b|\b\d+(?:\.\d+)?\s?(?:lb|kg|min)\b|\bRDL\b/g;
-
-  function escapeHtml(text) {
-    return text.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-  }
-
-  function highlightTokens() {
-    let count = 0;
-    lineNodes.forEach((node, index) => {
-      node.innerHTML = escapeHtml(lines[index]).replace(TOKEN, (match) => {
-        count += 1;
-        return `<span class="tok" style="--t:${count}">${match}</span>`;
-      });
-    });
-  }
-
-  function fillAll() {
-    lineNodes.forEach((node, index) => {
-      node.textContent = lines[index];
+  function fillLines(example) {
+    lineNodes.forEach((node, i) => {
+      node.textContent = example.lines[i] || "";
     });
     caret.remove();
   }
 
-  // Build the loop once: reset → type each line → read → reveal → hold → fade.
-  steps.push({ delay: 0, run: () => { fillAll(); lineNodes.forEach((node) => { node.textContent = ""; }); showReveals(0); } });
-  steps.push({ delay: 360, run: () => { setPhase("typing"); lineNodes[0].after(caret); } });
-  lines.forEach((text, lineIndex) => {
-    const node = lineNodes[lineIndex];
-    steps.push({ delay: lineIndex === 0 ? 420 : 260, run: () => node.after(caret) });
-    for (let i = 1; i <= text.length; i += 1) {
-      const pause = text[i - 1] === " " ? 70 : 38 + ((i * 7) % 5) * 6;
-      steps.push({ delay: pause, run: () => { node.textContent = text.slice(0, i); } });
-    }
-  });
-  steps.push({ delay: 520, run: () => { caret.remove(); highlightTokens(); setPhase("parsing"); } });
-  steps.push({ delay: 900, run: () => { setPhase("review"); showReveals(1); } });
-  for (let count = 2; count <= reveals.length; count += 1) {
-    steps.push({ delay: count === reveals.length ? 380 : 260, run: () => showReveals(count) });
+  // wrap each recognised part of a typed line so it can light up and fly
+  function highlightTokens(example) {
+    let count = 0;
+    lineNodes.forEach((node, i) => {
+      const text = example.lines[i] || "";
+      const tokens = (example.tokens && example.tokens[i]) || [];
+      let html = "";
+      let cursor = 0;
+      tokens
+        .map((token) => ({ token, at: text.indexOf(token) }))
+        .filter((t) => t.at >= 0)
+        .sort((a, b) => a.at - b.at)
+        .forEach(({ token, at }) => {
+          if (at < cursor) return;
+          count += 1;
+          html += escapeHtml(text.slice(cursor, at));
+          html += `<span class="tok" data-line="${i}" style="--t:${count}">${escapeHtml(token)}</span>`;
+          cursor = at + token.length;
+        });
+      html += escapeHtml(text.slice(cursor));
+      node.innerHTML = html;
+    });
   }
-  holdIndex = steps.length;
-  steps.push({ delay: HOLD, run: () => setPhase("out") });
-  // The reset step (index 0) runs 450ms later, while everything is faded out.
-  steps[0].delay = 450;
 
-  let index = holdIndex;
-  let timer = null;
-  let enabled = false;
-  let onScreen = false;
+  // position of an element inside the (possibly tilted) stage, from
+  // layout offsets so the tilt's transform doesn't skew the maths
+  function local(el) {
+    let x = 0;
+    let y = 0;
+    let node = el;
+    while (node && node !== stage) {
+      x += node.offsetLeft;
+      y += node.offsetTop;
+      node = node.offsetParent;
+    }
+    return { x, y, w: el.offsetWidth, h: el.offsetHeight };
+  }
+
+  function clearFlights() {
+    flights.forEach((f) => f.remove());
+    flights = [];
+  }
+
+  // the signature moment: a recognised part lifts off the note and lands
+  // in the review row it became
+  function fly(rowIndex, example) {
+    const row = rowsList.querySelectorAll(".type-demo-row")[rowIndex];
+    const spec = example.rows[rowIndex];
+    if (!row || !spec || !stage.animate) return;
+    const target = row.querySelector("span");
+    const to = local(target);
+    const tokens = [...root.querySelectorAll(`.tok[data-line="${spec.line}"]`)]
+      .filter((tok) => !spec.tokens || spec.tokens.includes(tok.textContent));
+    tokens.forEach((tok, i) => {
+      const from = local(tok);
+      const ghost = document.createElement("span");
+      ghost.className = "tok-flight";
+      ghost.setAttribute("aria-hidden", "true");
+      ghost.textContent = tok.textContent;
+      ghost.style.left = `${from.x}px`;
+      ghost.style.top = `${from.y}px`;
+      stage.appendChild(ghost);
+      flights.push(ghost);
+      const dx = to.x + to.w - from.w - from.x - i * 6;
+      const dy = to.y + (to.h - from.h) / 2 - from.y;
+      const lift = Math.min(-26, dy * -0.18);
+      const animation = ghost.animate(
+        [
+          { transform: "translate(0, 0) scale(1)", opacity: 0, offset: 0 },
+          { transform: `translate(${dx * 0.12}px, ${lift}px) scale(1.06)`, opacity: 1, offset: 0.22 },
+          { transform: `translate(${dx}px, ${dy}px) scale(0.86)`, opacity: 0.9, offset: 0.88 },
+          { transform: `translate(${dx}px, ${dy}px) scale(0.8)`, opacity: 0, offset: 1 },
+        ],
+        { duration: 760, delay: i * 70, easing: "cubic-bezier(0.65, 0, 0.35, 1)", fill: "both" }
+      );
+      animation.onfinish = () => ghost.remove();
+    });
+    target.classList.remove("is-landed");
+    window.setTimeout(() => {
+      target.classList.add("is-landed");
+    }, 620 + Math.max(0, tokens.length - 1) * 70);
+  }
+
+  // --- the timeline ---------------------------------------------------
+
+  function build(example) {
+    const list = [];
+    list.push({ delay: 450, run: () => {
+      clearFlights();
+      renderReview(example);
+      lineNodes.forEach((node) => { node.textContent = ""; });
+      showReveals(0);
+    } });
+    list.push({ delay: 320, run: () => { setPhase("typing"); lineNodes[0].after(caret); } });
+    example.lines.forEach((text, lineIndex) => {
+      const node = lineNodes[lineIndex];
+      if (!node) return;
+      list.push({ delay: lineIndex === 0 ? 380 : 240, run: () => node.after(caret) });
+      for (let i = 1; i <= text.length; i += 1) {
+        const pause = text[i - 1] === " " ? 66 : 34 + ((i * 7) % 5) * 6;
+        list.push({ delay: pause, run: () => { node.textContent = text.slice(0, i); } });
+      }
+    });
+    list.push({ delay: 480, run: () => { caret.remove(); highlightTokens(example); setPhase("parsing"); } });
+    list.push({ delay: 950, run: () => { setPhase("review"); showReveals(1); } });
+    example.rows.forEach((_, rowIndex) => {
+      list.push({ delay: rowIndex === 0 ? 240 : 420, run: () => { showReveals(rowIndex + 2); fly(rowIndex, example); } });
+    });
+    list.push({ delay: 900, run: () => showReveals(example.rows.length + 2) });
+    const hold = list.length;
+    list.push({ delay: HOLD, run: () => {
+      setPhase("out");
+      if (cycling) {
+        current = (current + 1) % examples.length;
+        markChip();
+        steps = build(examples[current]);
+        index = 0;
+      }
+    } });
+    list.hold = hold;
+    return list;
+  }
 
   function canRun() {
     return enabled && onScreen && !document.hidden;
@@ -154,8 +285,10 @@
     const step = steps[index];
     timer = window.setTimeout(() => {
       timer = null;
+      const before = steps;
       step.run();
-      index = (index + 1) % steps.length;
+      // the last step may have swapped in the next example's timeline
+      if (steps === before) index = (index + 1) % steps.length;
       schedule();
     }, step.delay);
   }
@@ -166,25 +299,108 @@
     timer = null;
   }
 
+  function showFinished(example) {
+    clearFlights();
+    renderReview(example);
+    fillLines(example);
+    showReveals(Infinity);
+    root.querySelectorAll(".type-demo-row span").forEach((s) => s.classList.add("is-landed"));
+  }
+
+  function markChip(ms) {
+    tryChips.forEach((chip) => {
+      const on = Number(chip.dataset.example) === current;
+      chip.setAttribute("aria-pressed", String(on));
+    });
+    tryBar?.classList.toggle("is-cycling", cycling && enabled);
+    if (tryBar) {
+      tryBar.style.setProperty("--try-duration", `${ms || duration(examples[current])}ms`);
+      // restart the active chip's progress fill
+      tryBar.classList.remove("is-ticking");
+      void tryBar.offsetWidth;
+      if (cycling && enabled) tryBar.classList.add("is-ticking");
+    }
+  }
+
+  function duration(example) {
+    return build(example).reduce((sum, step) => sum + step.delay, 0);
+  }
+
+  // the review keeps the tallest example's height, so swapping examples
+  // never moves anything below it
+  const body = root.querySelector(".type-demo-body");
+  function lockHeight() {
+    if (!body) return;
+    root.style.removeProperty("--review-h");
+    let tallest = 0;
+    examples.forEach((example) => {
+      renderReview(example);
+      showReveals(Infinity);
+      tallest = Math.max(tallest, body.offsetHeight);
+    });
+    root.style.setProperty("--review-h", `${tallest}px`);
+    renderReview(examples[current]);
+  }
+
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      if (!enabled) return;
+      const shown = rowsList.querySelectorAll(".type-demo-row.is-shown").length;
+      lockHeight();
+      showReveals(shown ? shown + 1 : 0);
+      root.querySelectorAll(".type-demo-row span").forEach((s) => s.classList.add("is-landed"));
+    }, 200);
+  });
+
   function enable() {
     enabled = true;
     root.classList.add("is-animated");
-    // Start from the finished review, already on screen, so there is no flash.
-    fillAll();
-    showReveals(reveals.length);
+    tryBar?.removeAttribute("hidden");
+    lockHeight();
+    // start from the finished review that's already on screen: no flash
+    showFinished(examples[current]);
     setPhase("review");
-    index = holdIndex;
+    steps = build(examples[current]);
+    index = steps.hold;
+    markChip(HOLD);
     schedule();
   }
 
   function disable() {
     enabled = false;
     pause();
-    fillAll();
-    showReveals(reveals.length);
+    showFinished(examples[current]);
     root.classList.remove("is-animated");
     delete root.dataset.phase;
+    markChip();
   }
+
+  // Try chips: jump to an example and keep it
+  tryChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const next = Number(chip.dataset.example);
+      cycling = false;
+      current = next;
+      const example = examples[current];
+      if (caption) caption.textContent = example.caption;
+      if (announcer) announcer.textContent = `${example.label}: ${example.caption}`;
+      if (!enabled) {
+        showFinished(example);
+        markChip();
+        return;
+      }
+      pause();
+      setPhase("out");
+      steps = build(example);
+      // replaying the chosen note keeps looping just that one
+      steps[steps.length - 1].run = () => setPhase("out");
+      index = 0;
+      markChip();
+      schedule();
+    });
+  });
 
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(
@@ -209,7 +425,15 @@
     else enable();
   });
 
+  tryBar?.removeAttribute("hidden");
+  if (tryBar && visual && "ResizeObserver" in window) {
+    new ResizeObserver(() => {
+      const margin = parseFloat(getComputedStyle(tryBar).marginTop) || 0;
+      visual.style.setProperty("--try-h", `${tryBar.offsetHeight + margin}px`);
+    }).observe(tryBar);
+  }
   if (!reducedMotion.matches) enable();
+  else markChip();
 })();
 
 /* ------------------------------------------------------------------ */
@@ -289,122 +513,6 @@
 })();
 
 /* ------------------------------------------------------------------ */
-/* Tour: Add / Log / Progress. The track is a native scroll-snap       */
-/* carousel, so it swipes without JS; this adds the tabs, keeps them   */
-/* in sync, and autoplays while the tour is on screen until someone    */
-/* touches it.                                                         */
-/* ------------------------------------------------------------------ */
-(() => {
-  "use strict";
-
-  const tour = document.querySelector("[data-tour]");
-  if (!tour) return;
-
-  const track = tour.querySelector("[data-tour-track]");
-  const slides = [...track.children];
-  const tabs = [...tour.querySelectorAll("[data-tour-tab]")];
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const DURATION = 6000;
-
-  let active = 0;
-  let timer = null;
-  let onScreen = false;
-  let autoplay = !reducedMotion.matches;
-  let programmatic = false;
-
-  tour.style.setProperty("--tour-duration", `${DURATION}ms`);
-
-  function mark(index) {
-    active = index;
-    tabs.forEach((tab, i) => tab.setAttribute("aria-current", String(i === index)));
-    slides.forEach((slide, i) => slide.toggleAttribute("inert", i !== index));
-  }
-
-  function restartProgress() {
-    tour.classList.remove("is-playing");
-    if (!autoplay || !onScreen || document.hidden) return;
-    void tour.offsetWidth; // restart the CSS fill on the new tab
-    tour.classList.add("is-playing");
-  }
-
-  function schedule() {
-    window.clearTimeout(timer);
-    timer = null;
-    restartProgress();
-    if (!autoplay || !onScreen || document.hidden) return;
-    timer = window.setTimeout(() => goTo((active + 1) % slides.length), DURATION);
-  }
-
-  function goTo(index) {
-    programmatic = true;
-    track.scrollTo({
-      left: slides[index].offsetLeft,
-      behavior: reducedMotion.matches ? "auto" : "smooth",
-    });
-    mark(index);
-    schedule();
-    window.setTimeout(() => {
-      programmatic = false;
-    }, 700);
-  }
-
-  function stopAutoplay() {
-    if (!autoplay) return;
-    autoplay = false;
-    window.clearTimeout(timer);
-    tour.classList.remove("is-playing");
-  }
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", (event) => {
-      event.preventDefault();
-      stopAutoplay();
-      goTo(index);
-    });
-  });
-
-  // A swipe or a drag on the track is the visitor taking over.
-  ["pointerdown", "wheel", "touchstart"].forEach((type) =>
-    track.addEventListener(type, () => {
-      if (!programmatic) stopAutoplay();
-    }, { passive: true })
-  );
-
-  // Keep the tabs in step with manual swipes.
-  if ("IntersectionObserver" in window) {
-    const slideObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting || programmatic) return;
-          const index = slides.indexOf(entry.target);
-          if (index !== active) {
-            mark(index);
-            schedule();
-          }
-        });
-      },
-      { root: track, threshold: 0.6 }
-    );
-    slides.forEach((slide) => slideObserver.observe(slide));
-
-    new IntersectionObserver(
-      (entries) => {
-        onScreen = entries.some((entry) => entry.isIntersecting);
-        schedule();
-      },
-      { threshold: 0.35 }
-    ).observe(tour);
-  }
-
-  document.addEventListener("visibilitychange", schedule);
-  reducedMotion.addEventListener("change", () => {
-    if (reducedMotion.matches) stopAutoplay();
-  });
-
-  mark(0);
-})();
-
-/* ------------------------------------------------------------------ */
 /* Live Activity tile: a rest timer that counts down while on screen.  */
 /* ------------------------------------------------------------------ */
 (() => {
@@ -441,6 +549,10 @@
     }
 
     render();
+    node.addEventListener("marble:add-time", (event) => {
+      left = Math.min(total, left + (Number(event.detail) || 0));
+      render();
+    });
     if ("IntersectionObserver" in window) {
       new IntersectionObserver((entries) => {
         onScreen = entries.some((entry) => entry.isIntersecting);
@@ -556,5 +668,289 @@
       button.style.removeProperty("--mag-x");
       button.style.removeProperty("--mag-y");
     });
+  });
+})();
+
+/* ------------------------------------------------------------------ */
+/* Living details. Each one is decoration on finished markup and stops */
+/* under Reduce Motion:                                                */
+/* - looping widgets rest while off screen (.is-offscreen);            */
+/* - the formats ticker speeds up, and turns back, with the scroll;    */
+/* - the weekly-goal widget ticks a session off, over and over;        */
+/* - the Live Activity taps +30s now and then, like a real rest.       */
+/* ------------------------------------------------------------------ */
+(() => {
+  "use strict";
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const hasIO = "IntersectionObserver" in window;
+
+  // Rest off screen
+  const live = document.querySelectorAll(".bento-tile, .privacy-orbit, .cta-icon, .hero-visual, .marquee");
+  if (hasIO) {
+    const restObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => entry.target.classList.toggle("is-offscreen", !entry.isIntersecting));
+    }, { rootMargin: "20% 0px" });
+    live.forEach((node) => restObserver.observe(node));
+  }
+
+  // Ticker with the scroll
+  const marquee = document.querySelector(".marquee");
+  const rows = marquee ? [...marquee.querySelectorAll(".marquee-row")] : [];
+  if (rows.length) {
+    let rate = 1;
+    let target = 1;
+    let lastY = window.scrollY;
+    let lastT = performance.now();
+    let frame = 0;
+    let visible = false;
+
+    const animations = () => rows.flatMap((row) => row.getAnimations());
+
+    const loop = () => {
+      frame = 0;
+      target += (1 - target) * 0.04;
+      rate += (target - rate) * 0.12;
+      animations().forEach((animation) => {
+        animation.playbackRate = rate;
+      });
+      if (Math.abs(rate - 1) > 0.01 || Math.abs(target - 1) > 0.01) frame = requestAnimationFrame(loop);
+    };
+
+    window.addEventListener("scroll", () => {
+      const now = performance.now();
+      const dy = window.scrollY - lastY;
+      const dt = Math.max(16, now - lastT);
+      lastY = window.scrollY;
+      lastT = now;
+      if (!visible || reducedMotion.matches) return;
+      // px per ms → a few times faster, the other way when scrolling up
+      const push = Math.max(-6, Math.min(7, (dy / dt) * 3.2));
+      target = Math.abs(push) > Math.abs(target - 1) ? 1 + push : target;
+      if (!frame) frame = requestAnimationFrame(loop);
+    }, { passive: true });
+
+    if (hasIO) {
+      new IntersectionObserver((entries) => {
+        visible = entries.some((entry) => entry.isIntersecting);
+      }).observe(marquee);
+    }
+  }
+
+  // Weekly goal: 2 of 4 → 3 of 4, again and again while it's in view
+  const goal = document.querySelector(".goal-widget");
+  if (goal && hasIO) {
+    const count = goal.querySelector(".goal-ring strong");
+    const label = goal.querySelector(".goal-text span");
+    const third = goal.querySelectorAll(".goal-days li")[2];
+    const ring = goal.querySelector(".goal-ring");
+    let timer = null;
+    let done = true;
+
+    const set = (complete) => {
+      done = complete;
+      goal.classList.toggle("is-behind", !complete);
+      count.textContent = complete ? "3/4" : "2/4";
+      label.textContent = complete ? "1 session to go" : "2 sessions to go";
+      third.classList.toggle("done", complete);
+      if (complete) {
+        third.classList.remove("is-pop");
+        void third.offsetWidth;
+        third.classList.add("is-pop");
+        ring.classList.remove("is-pop");
+        void ring.offsetWidth;
+        ring.classList.add("is-pop");
+      }
+    };
+
+    const cycle = () => {
+      set(!done);
+      timer = window.setTimeout(cycle, done ? 4200 : 1600);
+    };
+
+    new IntersectionObserver((entries) => {
+      const inView = entries.some((entry) => entry.isIntersecting);
+      if (inView && !timer && !reducedMotion.matches && document.documentElement.classList.contains("motion")) {
+        timer = window.setTimeout(cycle, 3200);
+      } else if (!inView && timer) {
+        window.clearTimeout(timer);
+        timer = null;
+        set(true);
+      }
+    }, { threshold: 0.6 }).observe(goal);
+
+    reducedMotion.addEventListener("change", () => {
+      if (!reducedMotion.matches) return;
+      window.clearTimeout(timer);
+      timer = null;
+      set(true);
+    });
+  }
+
+  // Live Activity: a tap on +30s every so often
+  const plus = document.querySelector(".island-controls span");
+  const clock = document.querySelector("[data-countdown]");
+  if (plus && clock && hasIO) {
+    let timer = null;
+    const press = () => {
+      plus.classList.remove("is-pressed");
+      void plus.offsetWidth;
+      plus.classList.add("is-pressed");
+      clock.dispatchEvent(new CustomEvent("marble:add-time", { detail: 30 }));
+      timer = window.setTimeout(press, 9000);
+    };
+    new IntersectionObserver((entries) => {
+      const inView = entries.some((entry) => entry.isIntersecting);
+      if (inView && !timer && !reducedMotion.matches) timer = window.setTimeout(press, 5200);
+      if (!inView && timer) {
+        window.clearTimeout(timer);
+        timer = null;
+      }
+    }, { threshold: 0.6 }).observe(plus);
+  }
+})();
+
+/* ------------------------------------------------------------------ */
+/* Product story: the phone stays pinned while the page scrolls, and   */
+/* each step of the track plays one moment of the app. Progress is     */
+/* scrubbed by the scroll, so it goes as fast or as slow as you do.    */
+/* Without JS the story is a plain list beside the first screen.       */
+/* ------------------------------------------------------------------ */
+(() => {
+  "use strict";
+
+  const story = document.querySelector("[data-story]");
+  if (!story) return;
+
+  const track = story.querySelector(".story-track");
+  const steps = [...story.querySelectorAll(".story-step")];
+  const tabs = [...story.querySelectorAll("[data-story-tab]")];
+  const tabBar = story.querySelector(".story-tabs");
+  const tabsInner = story.querySelector(".story-tabs-inner");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const count = steps.length;
+  const clamp = (v, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+
+  story.style.setProperty("--story-steps", String(count));
+  story.classList.add("is-pinned");
+
+  let active = -1;
+  let frame = 0;
+
+  function placePill() {
+    const current = tabs.find((tab) => tab.getAttribute("aria-current") === "true");
+    if (!current || !tabsInner) return;
+    tabsInner.style.setProperty("--pill-x", `${current.offsetLeft}px`);
+    tabsInner.style.setProperty("--pill-w", `${current.offsetWidth}px`);
+    tabBar.classList.add("is-ready");
+  }
+
+  function activate(index) {
+    if (index === active) return;
+    active = index;
+    story.dataset.step = String(index);
+    steps.forEach((step, i) => step.classList.toggle("is-active", i === index));
+    const chapter = steps[index].dataset.chapter;
+    tabs.forEach((tab) => tab.setAttribute("aria-current", String(tab.dataset.storyTab === chapter)));
+    placePill();
+  }
+
+  function render() {
+    frame = 0;
+    const rect = track.getBoundingClientRect();
+    const total = Math.max(1, rect.height - window.innerHeight);
+    const progress = clamp(-rect.top / total);
+    const position = progress * count;
+    const index = Math.min(count - 1, Math.floor(position));
+    const local = clamp(position - index);
+    activate(index);
+
+    story.style.setProperty("--sp", local.toFixed(4));
+    // step 0 reads the note; step 1 flies the parts into the review
+    const read = index === 0 ? ease(clamp((local - 0.15) / 0.55)) : 1;
+    const fly = index === 1 ? ease(clamp((local - 0.05) / 0.6)) : index > 1 ? 1 : 0;
+    const ring = index === 1 ? ease(clamp((local - 0.68) / 0.22))
+      : index === 2 ? Math.sin(clamp((local - 0.1) / 0.8) * Math.PI) : 0;
+    const draw = index === 3 ? ease(clamp((local - 0.05) / 0.55)) : index > 3 ? 1 : 0;
+    story.style.setProperty("--read", read.toFixed(4));
+    story.style.setProperty("--fly", (index === 1 ? fly : 0).toFixed(4));
+    story.style.setProperty("--ring", ring.toFixed(4));
+    story.style.setProperty("--draw", draw.toFixed(4));
+    // the review screen comes in as the first part lands
+    const screen = index === 1 ? (fly > 0.35 ? 1 : 0) : index;
+    story.dataset.screen = String(reducedMotion.matches && index === 1 ? 1 : screen);
+  }
+
+  const request = () => {
+    if (!frame) frame = requestAnimationFrame(render);
+  };
+
+  window.addEventListener("scroll", request, { passive: true });
+  window.addEventListener("resize", () => {
+    placePill();
+    request();
+  });
+  reducedMotion.addEventListener("change", request);
+
+  // a tab scrolls to the start of its chapter
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (event) => {
+      const first = steps.findIndex((step) => step.dataset.chapter === tab.dataset.storyTab);
+      if (first < 0) return;
+      event.preventDefault();
+      const rect = track.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const top = window.scrollY + rect.top + (total * (first + 0.02)) / count;
+      window.scrollTo({ top, behavior: reducedMotion.matches ? "auto" : "smooth" });
+    });
+  });
+
+  if (document.fonts?.ready) document.fonts.ready.then(placePill);
+  render();
+})();
+
+/* ------------------------------------------------------------------ */
+/* Product film: the hero link opens the film in a dialog instead of   */
+/* navigating to the MP4. It plays muted and loops; closing pauses it. */
+/* ------------------------------------------------------------------ */
+(() => {
+  "use strict";
+
+  const dialog = document.querySelector("[data-film]");
+  const openers = document.querySelectorAll("[data-film-open]");
+  if (!dialog || !openers.length || typeof dialog.showModal !== "function") return;
+
+  const video = dialog.querySelector("video");
+  const closeButton = dialog.querySelector("[data-film-close]");
+  let opener = null;
+
+  openers.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      // nothing downloads until someone asks for the film
+      if (!video.getAttribute("src")) {
+        video.poster = video.dataset.poster;
+        video.src = video.dataset.src;
+      }
+      dialog.showModal();
+      video.currentTime = 0;
+      const playing = video.play();
+      if (playing && typeof playing.catch === "function") playing.catch(() => {});
+    });
+  });
+
+  closeButton?.addEventListener("click", () => dialog.close());
+
+  // a click on the backdrop (outside the frame) closes it too
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  dialog.addEventListener("close", () => {
+    video.pause();
+    opener?.focus();
   });
 })();

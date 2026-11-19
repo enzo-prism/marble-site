@@ -2,24 +2,29 @@
 
 single-page marketing site for the marble fitness app.
 
-**Brand:** quiet, monochrome, in motion — the site mirrors the app's own white/black/gray design. System fonts only; no web fonts, no external assets, no accent color. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
+**Brand:** quiet, monochrome, in motion — the site mirrors the app's own white/black/gray design. System fonts only; no web fonts, no external assets, and no accent colour beyond the faint warm vein of the marble. Full light **and** dark mode: it follows the system by default, and a nav toggle overrides it (persisted in `localStorage` as `marble-theme`).
 
 ## design system
 
 - **Show, don't list.** Sections lead with a heading of a few words, one short line, and something visual: a phone screen, an icon, or a live widget. Longer detail lives on `/features/` and in the guides.
 - **Space.** Sections are separated by `--section-space`; content sits in `.container` (1120px). Don't add dividers where space already separates.
 - **Icons.** `icons.svg` is a sprite of 24 × 24 line icons drawn for this site. Use `<svg class="icon" aria-hidden="true"><use href="/icons.svg#i-name"/></svg>`; `.icon` sets the stroke, so symbols stay stroke-only unless a part is deliberately solid. Put an icon in `.icon-tile` for a soft rounded square, or in `.chip` for a pill. The validator fails on an id that isn't in the sprite.
-- **Components** (all in `styles.css`): floating glass nav with a phone menu sheet (`.nav-menu`), `.badge`, `.chip` / `.chips`, `.icon-tile`, `.device` (bezel around a screen), the Add / Log / Progress `.tour` carousel, the `.bento` of live iOS widgets, `.switch-list` link rows, `.marquee` of example notation, and the FAQ plus-to-cross toggle.
+- **Components** (all in `styles.css`): floating glass nav with a phone menu sheet (`.nav-menu`), `.badge`, `.chip` / `.chips`, `.icon-tile`, the pinned Add / Log / Progress `.story` (a phone bezel around real 2.7 screens), the `.bento` of live iOS widgets, `.switch-list` link rows, `.marquee` of example notation, and the FAQ plus-to-cross toggle.
 - **Motion.**
   - `data-reveal` fades an element in as it scrolls into view, using CSS scroll-driven animations. Browsers without them show it immediately, so nothing is ever hidden.
   - `data-animate` marks a one-shot widget (the weekly-goal ring). `scripts/site.js` adds `.is-in` when it's on screen; without JS it rests in its finished state.
-  - Loops (the ticker, Siri waveform, Quick log press, Spotlight typing, floating chips) are pure CSS. The rest timer (`data-countdown`) and the tour autoplay run in `scripts/site.js`, only while on screen and the tab is visible.
+  - **Motion tokens** (top of the motion section in `styles.css`): `--dur-1/2/3`, `--stagger`, `--rise`, `--blur-in`, and the springs `--ease-spring-snappy` / `--ease-spring-soft` (CSS `linear()` curves) plus `--ease-out-expo`. New motion should use these rather than its own timings.
+  - **Material:** layered shadows (`--shadow-*`), a warm `--vein` accent (P3 under `@media (color-gamut: p3)`, gold in dark mode), and a faint fixed grain on `body::before`. Numbers use tabular figures.
+  - Loops (the ticker, Siri waveform, Quick log press, Spotlight typing, floating chips) are pure CSS, and anything marked `.is-offscreen` by `scripts/site.js` pauses. The rest timer (`data-countdown`), the goal widget and the Live Activity's +30s press run in `scripts/site.js`, only while on screen and the tab is visible. The ticker follows scroll speed (and reverses on scroll up), then eases back.
+  - **Hero demo:** a note types itself, the recognised parts light up, and each one flies (Web Animations) into the review row it became. The examples are real notes with the review the 2.7 app shows for them, stored as JSON in `#demo-examples` on the home page; the **Try** chips jump to one and loop it. The review keeps the tallest example's height (`--review-h`, measured in JS) so nothing below moves.
+  - **Product story** (`#tour`, `data-story`): `site.js` adds `.is-pinned`, then one phone stays pinned through four chapters while you scroll: the note's parts are marked, fly into the review rows, the Add button rings, the set logger, then Progress draws in. JS only sets `--sp`, `--read`, `--fly`, `--ring`, `--draw`, `data-step` and `data-screen`; CSS does the rest. Overlay positions are percentages of the screen, measured with OCR from the captures. Without JS it is a plain list beside the first screen; the tabs scroll to each chapter.
+  - **Carved wordmark:** the footer `marble` is drawn by the marble shader in text mode (`data-marble-text`), masked by the word in the page's own font.
   - **Living marble** (`scripts/marble.js`): a small WebGL shader draws slowly drifting stone veins in any `<canvas class="marble-canvas" data-marble>`, used behind the home hero, the final call to action and every content-page title. Vein colour and strength come from `--marble-ink` / `--marble-strength` (set per theme, and overridable per canvas in CSS); `data-marble-seed` varies the pattern and `data-marble-host` on an ancestor is where a mouse moves the soft light. It renders below device resolution near 30 fps, only while on screen and the tab is visible, and fades in once ready, so without WebGL the CSS backdrop simply shows.
   - **Hero choreography:** the headline words (`.hero-title .hw`, each with `--w`) blur up in sequence, then the lede, button, chips and the demo. While the demo reads, a scan line sweeps the note and recognised parts (`.tok`) light up; the review button shines once.
   - **Pointer polish** (fine pointers only, from `scripts/site.js`): the demo tilts toward the cursor with a glare; `.bento-tile`, `.switch-list a`, `.feature-item` and `.guide-list a` get a spotlight and lit edge (`.spot-glow`); `.btn-large` leans toward the cursor and sweeps a sheen on hover.
   - **Scroll-driven** (CSS only, where supported): the hero backdrop recedes, bento tiles land in a stagger, gallery phones deal in from the right edge, the nav pill carries a reading-progress hairline, and the footer wordmark settles as it arrives.
-  - The privacy orbit (`.privacy-orbit`) and the floating app icon in the final call to action are pure CSS loops. Pages cross-fade with cross-document view transitions; the nav stays put.
-  - `prefers-reduced-motion: reduce` stops all of it: no autoplay, a still ticker, no typing demo, a single still marble frame, no tilt, spotlight, magnet or view transition.
+  - The privacy orbit (`.privacy-orbit`) and the floating app icon in the final call to action are pure CSS loops. Pages cross-fade with cross-document view transitions; the nav stays put, and a guide card's title morphs into that guide's page title (`view-transition-name: guide-<slug>` on both).
+  - `prefers-reduced-motion: reduce` stops all of it: no autoplay, a still ticker, no typing demo, a story that steps without flights, a single still marble frame, no tilt, spotlight, magnet or view transition.
 
 ## quick start
 
@@ -41,15 +46,15 @@ then open: http://127.0.0.1:5173
 
 ## structure
 
-- `index.html` home page: hero with a live "type a workout" demo, a ticker of notation marble reads, the Add / Log / Progress tour, live iOS widgets, screenshots, switching guides, privacy, what's new, FAQ
-- `icons.svg` the icon sprite; `scripts/site.js` theme, nav menu, typing demo, tour, rest timer and one-shot animations
+- `index.html` home page: hero with a live "type a workout" demo, a ticker of notation marble reads, the pinned Add / Log / Progress product story, live iOS widgets, screenshots, switching guides, privacy, what's new, FAQ
+- `icons.svg` the icon sprite; `scripts/site.js` theme, nav menu, hero demo, product story, rest timer and one-shot animations
 - `features/` every feature, grouped by the app's tabs
 - `guides/` search-intent guides (Hevy and Strong alternatives, Hevy/Strong import, Apple Notes, private offline tracker, sprint log, Apple Watch via Apple Health); shared styles in `pages.css`
 - `releases/` release notes, **generated**: one page per App Store version plus an index
 - `data/releases.json` the single source of truth for versions and release notes (the public App Store version history)
 - `data/app-store.json` the App Store listing: URL, listing name, App Store Connect provider token, and the last rating snapshot
 - `scripts/build-app-store.js` generates every App Store link, the home page rating line and its JSON-LD `aggregateRating`
-- `scripts/build-og.js` renders `images/og/<page>.png` share cards; `scripts/crop-screens.py` makes `images/app-store-<version>/screens/`
+- `scripts/build-og.js` renders `images/og/<page>.png` share cards; `scripts/crop-screens.py` makes `images/app-store-<version>/screens/` from App Store compositions; `scripts/prepare-screens.py` makes them from raw simulator captures (the 2.7 set)
 - `privacy/` privacy policy for the app and website
 - `styles.css` base styles and the home page; `pages.css` content pages; `releases/releases.css` release notes
 - `scripts/build-releases.js` generates `releases/` and the home page's latest-release block from `data/releases.json`
@@ -122,5 +127,7 @@ this project is static. deploy with vercel as a static site or any static host.
 ## assets
 
 - media is fully self-hosted: no CDNs or web fonts. The site uses Vercel Analytics.
-- screenshots are the live App Store set for the current version, in `images/app-store-<version>/` as complete 1320 × 2868 compositions. Pages don't show those directly: their baked-in headlines are unreadable at web sizes. `screens/` holds 600 px crops of just the phone (transparent rounded corners), rendered with `.phone-shot` inside `<picture>` (WebP source, PNG fallback), with the page's own heading or `figcaption` as the caption. The full compositions stay for JSON-LD `screenshot` and as the crop source.
+- **2.7 screens** (`images/app-store-2.7/`): `raw/` holds full-screen simulator captures (1320 × 2868, light mode, 9:41 status bar) from the app's own XCUITest screenshot suite at the released 2.7 source, with sample data. `python3 scripts/prepare-screens.py images/app-store-2.7` (Pillow) writes `screens/` at 720 px with rounded corners, PNG and WebP. Every page and share card uses these. To refresh them, rerun the app's `AppStoreScreenshotUITests` with `xcrun simctl status_bar <device> override --time 9:41` applied after the simulator boots, export the attachments with `xcrun xcresulttool export attachments`, copy them into `raw/` under the same names, and rerun the script. `s01-typed-note` and `s02-typed-review` came from two extra tests that aren't in the app repo: they type the home demo's Leg day note into Add and open its review. If the note or review screens change, re-measure the story overlay positions (`.story-mark`, `.story-fly`, `.story-land`, `.story-ring` and `.story-wipe` in `index.html` are percentages of the screen).
+- **Product film** (`videos/marble-film.mp4` and its poster): silent, 1920 × 1080, made with HyperFrames; the source project lives outside this repo at `~/Documents/Codex/Projects/marble-film`. The hero's "Watch the film" link opens it in a dialog and only then loads it; without JS the link is the MP4 itself.
+- The 2.5 App Store compositions, which JSON-LD `screenshot` still uses, are the live App Store set for that version, in `images/app-store-<version>/` as complete 1320 × 2868 compositions. Pages don't show those directly: their baked-in headlines are unreadable at web sizes. `screens/` holds 600 px crops of just the phone (transparent rounded corners), rendered with `.phone-shot` inside `<picture>` (WebP source, PNG fallback), with the page's own heading or `figcaption` as the caption. The full compositions stay for JSON-LD `screenshot` and as the crop source.
 - `images/og/` holds the share cards. Edit the card list in `scripts/build-og.js`, then run `npm run build:og`. `Opengraph.png` is the old card, kept so existing shares don't break.
