@@ -2,12 +2,27 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run validate",
   "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": true,
   "redirects": [
-    { "source": "/changelog", "destination": "/releases/", "permanent": true },
-    { "source": "/changelog/", "destination": "/releases/", "permanent": true },
+    {
+      "source": "/changelog",
+      "destination": "/releases/",
+      "permanent": true
+    },
+    {
+      "source": "/changelog/",
+      "destination": "/releases/",
+      "permanent": true
+    },
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.marble-fit.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.marble-fit.app"
+        }
+      ],
       "destination": "https://marble-fit.app/$1",
       "permanent": true
     }
@@ -15,10 +30,34 @@
   "headers": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<project>.*)\\.vercel\\.app"
+        }
+      ],
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
@@ -31,6 +70,19 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(llms|llms-full)\\.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }

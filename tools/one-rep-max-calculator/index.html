@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One-rep max calculator (1RM, Epley formula) | marble</title>
+    <meta name="description" content="Free 1RM calculator: estimate your one-rep max from a set of 1–12 reps with the Epley formula, then see training weights by percentage and by rep count." />
+    <link rel="canonical" href="https://marble-fit.app/tools/one-rep-max-calculator/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="application-name" content="marble" />
+    <meta name="author" content="Lorenzo Quaid Sison" />
+    <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="One-rep max calculator (1RM, Epley formula) | marble" />
+    <meta property="og:description" content="Free 1RM calculator: estimate your one-rep max from a set of 1–12 reps with the Epley formula, then see training weights by percentage and by rep count." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marble-fit.app/tools/one-rep-max-calculator/" />
+    <meta property="og:site_name" content="marble" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://marble-fit.app/images/og/tool-1rm.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="One-rep max calculator: weight × (1 + reps ÷ 30), from marble." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="One-rep max calculator (1RM, Epley formula) | marble" />
+    <meta name="twitter:description" content="Free 1RM calculator: estimate your one-rep max from a set of 1–12 reps with the Epley formula, then see training weights by percentage and by rep count." />
+    <meta name="twitter:image" content="https://marble-fit.app/images/og/tool-1rm.png" />
+    <meta name="twitter:image:alt" content="One-rep max calculator: weight × (1 + reps ÷ 30), from marble." />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0908" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("marble-theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://marble-fit.app/tools/one-rep-max-calculator/#webpage",
+            "url": "https://marble-fit.app/tools/one-rep-max-calculator/",
+            "name": "One-rep max calculator",
+            "description": "Estimate your one-rep max from a set of 1 to 12 reps with the Epley formula, with training weights by percentage and rep count.",
+            "inLanguage": "en",
+            "datePublished": "2026-11-24",
+            "dateModified": "2026-11-24",
+            "isPartOf": {
+              "@id": "https://marble-fit.app/#website"
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "One-repetition maximum",
+              "sameAs": "https://en.wikipedia.org/wiki/One-repetition_maximum"
+            },
+            "mainEntity": {
+              "@id": "https://marble-fit.app/tools/one-rep-max-calculator/#calculator"
+            },
+            "author": {
+              "@id": "https://marble-fit.app/about/#lorenzo"
+            },
+            "publisher": {
+              "@id": "https://marble-fit.app/#organization"
+            }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://marble-fit.app/tools/one-rep-max-calculator/#calculator",
+            "name": "marble one-rep max calculator",
+            "url": "https://marble-fit.app/tools/one-rep-max-calculator/",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript to recalculate; shows a worked example without it",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Epley one-rep max estimate",
+              "Kilograms or pounds",
+              "Training weights from 50% to 100% of 1RM",
+              "Target weight for 1 to 12 reps"
+            ],
+            "author": {
+              "@id": "https://marble-fit.app/about/#lorenzo"
+            },
+            "publisher": {
+              "@id": "https://marble-fit.app/#organization"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://marble-fit.app/about/#lorenzo",
+            "name": "Lorenzo Quaid Sison",
+            "url": "https://marble-fit.app/about/",
+            "jobTitle": "Independent iOS developer",
+            "sameAs": [
+              "https://github.com/enzo-prism"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://marble-fit.app/#organization",
+            "name": "marble",
+            "alternateName": "marble.fit",
+            "url": "https://marble-fit.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://marble-fit.app/images/icon-512.png",
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://marble-fit.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://marble-fit.app/tools/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "One-rep max calculator",
+                "item": "https://marble-fit.app/tools/one-rep-max-calculator/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://marble-fit.app/tools/one-rep-max-calculator/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a one-rep max?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your one-rep max (1RM) is the most weight you can lift for a single full repetition of an exercise with good form. An estimated 1RM (e1RM) predicts it from a lighter set you can do for several reps."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you calculate a one-rep max?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "With the Epley formula, multiply the weight by one plus the reps divided by 30: 1RM = weight × (1 + reps ÷ 30). For example, 100 kg for 5 reps estimates 116.7 kg."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How accurate is a 1RM calculator?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Estimates are closest for sets of about 1 to 10 reps taken near failure. They drift as reps climb, and they read low when a set stopped well short of failure. Treat the number as a trend to track, not a promise of what you can lift today."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which 1RM formula is best?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No formula fits everyone. Epley and Brzycki are the most common, and they give exactly the same estimate at 10 reps. Below 10 reps Epley reads slightly higher; above 10, Brzycki does. Using one formula consistently matters more than which one you pick."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does the calculator stop at 12 reps?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Rep-based formulas get unreliable past roughly 10 to 12 reps, because endurance starts to decide the set more than strength. marble leaves sets above 12 reps out of its estimates rather than forcing a number."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does marble calculate my one-rep max automatically?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Progress charts an estimated 1RM for each exercise from your best set each day, using the Epley formula and sets of 12 reps or fewer, and tells you whether the lift is progressing or holding. It runs on your iPhone, with no account."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+
+      window.va("beforeSend", function (event) {
+        if (!event || typeof event !== "object" || typeof event.url !== "string") return event;
+
+        try {
+          const url = new URL(event.url);
+          url.hash = "";
+          return { ...event, url: url.toString() };
+        } catch {
+          return event;
+        }
+      });
+
+      if (!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) {
+        const analyticsScript = document.createElement("script");
+        analyticsScript.defer = true;
+        analyticsScript.src = "/_vercel/insights/script.js";
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/pages.css" />
+    <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/marble.js" defer></script>
+    <script src="/scripts/tools.js" defer></script>
+  </head>
+  <body data-page="tool-1rm">
+    <a class="skip-link" href="#top">skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/" aria-label="marble home">
+          <img src="/Favicon%20large.png" alt="" width="26" height="26" />
+          <span>marble</span>
+        </a>
+        <nav class="nav-links" id="site-nav" aria-label="site">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_nav" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_nav" data-analytics-target="guides">Guides</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_nav" data-analytics-target="releases">What’s new</a>
+          <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_nav" data-analytics-target="faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="toggle light and dark mode"
+            data-analytics-event="Theme Toggle"
+            data-analytics-location="tool_1rm_header"
+            data-analytics-target="theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.4" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+            </svg>
+          </button>
+          <a
+            class="btn btn-small"
+            href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=tool-1rm-header&amp;mt=8"
+            data-analytics-event="App Store Click"
+            data-analytics-location="tool_1rm_header"
+            data-analytics-target="app_store"
+          >
+            Download
+          </a>
+          <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-menu"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <article class="guide">
+        <header class="page-hero" data-marble-host>
+          <div class="page-backdrop" aria-hidden="true"><canvas class="marble-canvas" data-marble data-marble-seed="1.21"></canvas></div>
+          <div class="container guide-container">
+            <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tools/">Tools</a></li><li><span aria-current="page">One-rep max calculator</span></li></ol></nav>
+            <p class="page-kicker">Calculator</p>
+            <h1>One-rep max calculator</h1>
+            <p class="guide-answer">Your estimated one-rep max (1RM) is the weight times one plus the reps divided by 30: <code>1RM = weight &times; (1 + reps &divide; 30)</code>. That is the Epley formula. Five reps at 100 kg estimates 116.7 kg, and five at 225 lb estimates 262.5 lb. Enter any set of 1 to 12 reps below.</p>
+            <p class="guide-meta">By <a href="/about/">Lorenzo Quaid Sison</a> &middot; Published <time datetime="2026-11-24">November 24, 2026</time></p>
+          </div>
+        </header>
+
+        <section class="section calc-section" aria-labelledby="calc-title">
+          <div class="container guide-container">
+            <form class="calc" data-calc="one-rep-max" novalidate>
+              <h2 id="calc-title" class="calc-title">Estimate your 1RM</h2>
+              <div class="calc-fields">
+                <label class="calc-field">
+                  <span>Weight lifted</span>
+                  <input type="number" name="weight" inputmode="decimal" min="0" step="any" value="100" required />
+                </label>
+                <label class="calc-field">
+                  <span>Unit</span>
+                  <select name="unit"><option value="kg" selected>kg</option><option value="lb">lb</option></select>
+                </label>
+                <label class="calc-field">
+                  <span>Reps (1&ndash;12)</span>
+                  <input type="number" name="reps" inputmode="numeric" min="1" max="12" step="1" value="5" required />
+                </label>
+              </div>
+              <div class="calc-result" aria-live="polite">
+                <p class="calc-label">Estimated one-rep max</p>
+                <p class="calc-value"><output name="result" data-out="value">116.7 kg</output></p>
+                <p class="calc-note" data-out="note">Epley: 100 &times; (1 + 5 &divide; 30)</p>
+              </div>
+            </form>
+
+            <div class="calc-tables">
+              <div class="table-wrap">
+                <table class="format-table calc-table">
+                  <caption>Training weights by percentage of 1RM</caption>
+                  <thead><tr><th scope="col">% of 1RM</th><th scope="col">Weight</th></tr></thead>
+                  <tbody data-out="percent">
+                  <tr><td>100%</td><td>116.7 kg</td></tr>
+                  <tr><td>95%</td><td>110.8 kg</td></tr>
+                  <tr><td>90%</td><td>105 kg</td></tr>
+                  <tr><td>85%</td><td>99.2 kg</td></tr>
+                  <tr><td>80%</td><td>93.3 kg</td></tr>
+                  <tr><td>75%</td><td>87.5 kg</td></tr>
+                  <tr><td>70%</td><td>81.7 kg</td></tr>
+                  <tr><td>65%</td><td>75.8 kg</td></tr>
+                  <tr><td>60%</td><td>70 kg</td></tr>
+                  <tr><td>55%</td><td>64.2 kg</td></tr>
+                  <tr><td>50%</td><td>58.3 kg</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-wrap">
+                <table class="format-table calc-table">
+                  <caption>Target weight for each rep count</caption>
+                  <thead><tr><th scope="col">Reps</th><th scope="col">Weight</th></tr></thead>
+                  <tbody data-out="reps">
+                  <tr><td>1</td><td>112.9 kg</td></tr>
+                  <tr><td>2</td><td>109.4 kg</td></tr>
+                  <tr><td>3</td><td>106.1 kg</td></tr>
+                  <tr><td>4</td><td>102.9 kg</td></tr>
+                  <tr><td>5</td><td>100 kg</td></tr>
+                  <tr><td>6</td><td>97.2 kg</td></tr>
+                  <tr><td>7</td><td>94.6 kg</td></tr>
+                  <tr><td>8</td><td>92.1 kg</td></tr>
+                  <tr><td>9</td><td>89.7 kg</td></tr>
+                  <tr><td>10</td><td>87.5 kg</td></tr>
+                  <tr><td>11</td><td>85.4 kg</td></tr>
+                  <tr><td>12</td><td>83.3 kg</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container guide-container guide-layout">
+          <div class="prose">
+            <h2>How the estimate works</h2>
+            <p>The calculator uses the Epley formula, the same one marble uses for the estimated 1RM in Progress:</p>
+            <pre class="format-example"><code>1RM = weight &times; (1 + reps &divide; 30)</code></pre>
+            <p>Each rep adds a thirtieth of the weight. The rep tables run the formula backwards, <code>weight = 1RM &divide; (1 + reps &divide; 30)</code>, to suggest a load for a target rep count.</p>
+
+            <h2>Epley and Brzycki compared</h2>
+            <p>Brzycki is the other common formula: <code>1RM = weight &times; 36 &divide; (37 &minus; reps)</code>. The two give exactly the same answer at 10 reps. Below 10 reps Epley reads a little higher, and above 10 Brzycki does.</p>
+            <div class="table-wrap">
+              <table class="format-table">
+                <thead><tr><th scope="col">Set</th><th scope="col">Epley</th><th scope="col">Brzycki</th></tr></thead>
+                <tbody>
+                  <tr><td>100 kg &times; 1</td><td>103.3 kg</td><td>100 kg</td></tr>
+                  <tr><td>100 kg &times; 2</td><td>106.7 kg</td><td>102.9 kg</td></tr>
+                  <tr><td>100 kg &times; 3</td><td>110 kg</td><td>105.9 kg</td></tr>
+                  <tr><td>100 kg &times; 4</td><td>113.3 kg</td><td>109.1 kg</td></tr>
+                  <tr><td>100 kg &times; 5</td><td>116.7 kg</td><td>112.5 kg</td></tr>
+                  <tr><td>100 kg &times; 6</td><td>120 kg</td><td>116.1 kg</td></tr>
+                  <tr><td>100 kg &times; 7</td><td>123.3 kg</td><td>120 kg</td></tr>
+                  <tr><td>100 kg &times; 8</td><td>126.7 kg</td><td>124.1 kg</td></tr>
+                  <tr><td>100 kg &times; 9</td><td>130 kg</td><td>128.6 kg</td></tr>
+                  <tr><td>100 kg &times; 10</td><td>133.3 kg</td><td>133.3 kg</td></tr>
+                  <tr><td>100 kg &times; 11</td><td>136.7 kg</td><td>138.5 kg</td></tr>
+                  <tr><td>100 kg &times; 12</td><td>140 kg</td><td>144 kg</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>What the estimate leaves out</h2>
+            <ul>
+              <li><strong>Effort.</strong> The formula assumes a hard set. Five reps that stopped well short of failure will read low. marble deliberately doesn&rsquo;t adjust its estimate for RPE, so a set you never rated isn&rsquo;t quietly inflated.</li>
+              <li><strong>High reps.</strong> Past about 12 reps, endurance decides the set more than strength. marble leaves those sets out of its estimates instead of forcing a number, and this calculator stops at 12.</li>
+              <li><strong>Singles.</strong> Applied as written, Epley adds a thirtieth even to one rep, so 300 &times; 1 reads 310. Some calculators return a single unchanged; this one and marble keep every rep count on the same scale.</li>
+              <li><strong>The lift itself.</strong> The same formula is used for every exercise. Machines, cables and bodyweight movements often estimate less reliably than squats, presses and deadlifts.</li>
+            </ul>
+
+            <h2>Track it without the math</h2>
+            <p>In <a href="/features/">marble</a>, every set you log or paste feeds Progress. For each exercise it charts an estimated 1RM from your best set each day, keeps your all-time best and the date you set it, and says whether the lift is progressing or holding. Pair it with your bodyweight and you also get a <a href="/tools/dots-calculator/">DOTS</a> line for relative strength. Not sure how to write a set down? See <a href="/guides/workout-notation/">workout notation explained</a>.</p>
+          </div>
+          <figure class="guide-shot">
+            <picture>
+              <source type="image/webp" srcset="/images/app-store-2.7/screens/05-strength-trends.webp" />
+              <img class="phone-shot" src="/images/app-store-2.7/screens/05-strength-trends.png" alt="marble Progress screen listing top exercises with their personal bests and dates" width="720" height="1564" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Progress keeps each lift&rsquo;s best. Details charts its estimated 1RM.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <section id="faq" class="section page-faq" aria-labelledby="faq-title">
+        <div class="container guide-container">
+          <h2 id="faq-title">Questions</h2>
+          <div class="page-faq-list">
+            <details class="page-faq-item">
+              <summary>What is a one-rep max?</summary>
+              <p>Your one-rep max (1RM) is the most weight you can lift for a single full repetition of an exercise with good form. An estimated 1RM (e1RM) predicts it from a lighter set you can do for several reps.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>How do you calculate a one-rep max?</summary>
+              <p>With the Epley formula, multiply the weight by one plus the reps divided by 30: 1RM = weight &times; (1 + reps &divide; 30). For example, 100 kg for 5 reps estimates 116.7 kg.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>How accurate is a 1RM calculator?</summary>
+              <p>Estimates are closest for sets of about 1 to 10 reps taken near failure. They drift as reps climb, and they read low when a set stopped well short of failure. Treat the number as a trend to track, not a promise of what you can lift today.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Which 1RM formula is best?</summary>
+              <p>No formula fits everyone. Epley and Brzycki are the most common, and they give exactly the same estimate at 10 reps. Below 10 reps Epley reads slightly higher; above 10, Brzycki does. Using one formula consistently matters more than which one you pick.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Why does the calculator stop at 12 reps?</summary>
+              <p>Rep-based formulas get unreliable past roughly 10 to 12 reps, because endurance starts to decide the set more than strength. marble leaves sets above 12 reps out of its estimates rather than forcing a number.</p>
+            </details>
+            <details class="page-faq-item">
+              <summary>Does marble calculate my one-rep max automatically?</summary>
+              <p>Yes. Progress charts an estimated 1RM for each exercise from your best set each day, using the Epley formula and sets of 12 reps or fewer, and tells you whether the lift is progressing or holding. It runs on your iPhone, with no account.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section page-cta">
+        <div class="container">
+          <h2>Start the record.</h2>
+          <div class="page-cta-actions">
+            <a
+              class="btn"
+              href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=tool-1rm-cta&amp;mt=8"
+              data-analytics-event="App Store Click"
+              data-analytics-location="tool_1rm_cta"
+              data-analytics-target="app_store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702" />
+              </svg>
+              Download on the App Store
+            </a>
+            <span class="fine">Free &middot; iPhone and iPad &middot; iOS 26 or later &middot; on the App Store as marble.fit</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section related-guides" aria-labelledby="related-title">
+        <div class="container">
+          <h2 id="related-title">Related</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="/tools/dots-calculator/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_related" data-analytics-target="tool_dots">
+                <strong>DOTS calculator</strong>
+                <span>Score a total against your bodyweight with the published DOTS coefficients.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/workout-notation/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_related" data-analytics-target="guide_notation">
+                <strong>Workout notation explained</strong>
+                <span>What 3x10, 5x5 @ 225, RPE 8 and AMRAP mean, with examples.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides/hevy-alternative/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_related" data-analytics-target="guide_hevy_alternative">
+                <strong>A Hevy alternative with no account</strong>
+                <span>Bring your Hevy history and keep tracking estimated 1RM on your iPhone.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>marble</span>
+        <div class="footer-links">
+          <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="features">Features</a>
+          <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="tools">Tools</a>
+          <a href="/about/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="about">About</a>
+          <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="releases">Release notes</a>
+          <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="tool_1rm_footer" data-analytics-target="privacy">Privacy</a>
+          <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="tool_1rm_footer" data-analytics-target="github_issues">Support</a>
+          <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=tool-1rm-footer&amp;mt=8" data-analytics-event="App Store Click" data-analytics-location="tool_1rm_footer" data-analytics-target="app_store">App Store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

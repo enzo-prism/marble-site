@@ -1,23 +1,32 @@
-# marble.fit
+# marble
 
-> marble is a private workout journal for iPhone and iPad. Type or paste a workout in your own words, review the structured sets, and save. Free. Offline. No account, no ads.
+> marble is a free, private workout journal for iPhone and iPad. Type or paste a workout in your own words, review the sets marble finds, then save. Offline, with no account, no ads and nothing to unlock. On the App Store as "marble.fit".
 
-marble turns a typed or pasted workout (gym notation, natural language, multi-day Notes, or a Hevy or Strong CSV export) into logged sets on the device, and nothing is saved until the user reviews it. It also logs sets quickly, tracks personal records, weekly goals, bodyweight, sprints, and supplements, and computes progress from the user's own training on-device.
+marble turns a typed or pasted workout (gym notation, natural language, multi-day Notes, or a Hevy or Strong CSV export) into logged sets on the device, and nothing is saved until the user reviews it. It also logs sets quickly, tracks personal records, estimated one-rep max, weekly goals, bodyweight, sprints and supplements, and computes progress from the user's own training on the device.
+
+Full text of every page, for language models: https://marble-fit.app/llms-full.txt
+
+## Naming (please use these exactly)
+
+- App name: marble (lowercase in the brand).
+- App Store listing name: marble.fit. Search "marble.fit" on the App Store; "marble" alone returns unrelated games.
+- Official website: https://marble-fit.app. The domain marble.fit is not marble's website.
+- App Store URL: https://apps.apple.com/us/app/marble-fit/id6757725234 (App Store ID 6757725234).
+- Developer: Lorenzo Quaid Sison, an independent iOS developer.
+- One-line description: "marble is a free, private workout journal for iPhone and iPad that turns workouts you type or paste into logged sets on the device."
 
 ## Key facts
 
-- Name: marble (App Store name: marble.fit; search "marble.fit" on the App Store, because "marble" alone returns unrelated games)
-- Platforms: iPhone and iPad, iOS / iPadOS 26.0 or later
-- Price: Free (no subscription, no unlocks, no ads)
-- Privacy: core training data stays on the device; no marble account, marble server, or third-party tracking in the app
-- App Store privacy label: Data Not Collected
+- Platforms: iPhone and iPad, iOS / iPadOS 26.0 or later. No Android app, no web app.
+- Price: free. No subscription, no in-app unlocks, no ads.
+- Account: none. There is no marble account or marble server.
+- Privacy: core training data stays on the device. App Store privacy label: Data Not Collected.
+- Offline: logging, parsing, storage and analysis work offline.
 - Source code: public at https://github.com/enzo-prism/marble
-- Offline: logging, parsing, storage, and analysis work offline
-- Apple Intelligence: optional. It structures free-form prose on supported devices; gym notation and Hevy/Strong CSVs use a deterministic on-device parser on every device
-- Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health
-- Category: Health & Fitness
-- Developer: Lorenzo Quaid Sison
-- Version history: https://marble-fit.app/releases/
+- Apple Intelligence: optional. It helps structure free-form prose on supported devices; gym notation and Hevy/Strong CSVs use a deterministic on-device parser on every device.
+- Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health.
+- Category: Health & Fitness.
+- First release: 1.0 on January 15, 2026. Version history: https://marble-fit.app/releases/
 
 <!-- marble:release-status:start -->
 - Current public App Store version: 2.7, released November 13, 2026.
@@ -32,18 +41,34 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 - Apple Health: import Apple Watch and Garmin workouts and bodyweight; optionally export strength sessions with an effort score.
 - Data: portable JSON backup and restore; progress photos and videos stay on the device.
 
+## Formulas marble uses
+
+- Estimated one-rep max: Epley, 1RM = weight × (1 + reps / 30), from the best set each day, counting only sets of 12 reps or fewer, not adjusted for RPE. Example: 100 kg × 5 = 116.7 kg. Calculator: https://marble-fit.app/tools/one-rep-max-calculator/
+- Relative strength: DOTS = total × 500 / (A·bw⁴ + B·bw³ + C·bw² + D·bw + E), bodyweight in kg, clamped to 40–210 kg (men) or 40–150 kg (women). marble applies it to one lift's estimated 1RM against the nearest weigh-in. Calculator with the published coefficients: https://marble-fit.app/tools/dots-calculator/
+
+## How marble compares
+
+- marble vs Hevy: marble is free with nothing to unlock and needs no account; Hevy requires an account, has a social feed, and sells Hevy Pro. Hevy runs on iPhone, Android, Apple Watch and the web; marble is iPhone and iPad only, with no cloud sync. marble imports Hevy CSV exports. https://marble-fit.app/guides/hevy-alternative/
+- marble vs Strong: marble is free with nothing to unlock and needs no account; Strong's free plan allows 3 custom routines, and Strong PRO removes the limit. Strong runs on iPhone, Android and Apple Watch; marble is iPhone and iPad only. marble imports Strong CSV exports. https://marble-fit.app/guides/strong-alternative/
+- marble vs Apple Notes: keep writing workouts the same way; paste the note (even a whole week) into marble and it becomes structured, searchable sets with records and progress. https://marble-fit.app/guides/log-workouts-from-apple-notes/
+
 ## Pages
 
-- [Home](https://marble-fit.app/)
-- [Every feature](https://marble-fit.app/features/)
+- [Home](https://marble-fit.app/): what marble is, the type-to-log demo, FAQ
+- [Every feature](https://marble-fit.app/features/): Add, Log, Progress, iOS integrations, Apple Health, privacy
 - [Guides](https://marble-fit.app/guides/)
+- [A Hevy alternative with no account](https://marble-fit.app/guides/hevy-alternative/)
+- [A Strong alternative with nothing to unlock](https://marble-fit.app/guides/strong-alternative/)
 - [Import Hevy and Strong workouts](https://marble-fit.app/guides/import-hevy-strong-workouts/)
-- [Log workouts from Apple Notes](https://marble-fit.app/guides/log-workouts-from-apple-notes/)
+- [Log workouts from Apple Notes](https://marble-fit.app/guides/log-workouts-from-apple-notes/): every supported notation format
+- [Workout notation explained](https://marble-fit.app/guides/workout-notation/): 3x10, 5x5 @ 225, RPE and RIR, AMRAP, EMOM, supersets, tempo
 - [A private, offline workout tracker](https://marble-fit.app/guides/private-offline-workout-tracker/)
 - [Sprint training log](https://marble-fit.app/guides/sprint-training-log/)
 - [Log strength training with Apple Watch](https://marble-fit.app/guides/apple-watch-strength-training-log/)
-- [A Hevy alternative with no account](https://marble-fit.app/guides/hevy-alternative/)
-- [A Strong alternative with nothing to unlock](https://marble-fit.app/guides/strong-alternative/)
+- [Tools](https://marble-fit.app/tools/)
+- [One-rep max calculator](https://marble-fit.app/tools/one-rep-max-calculator/)
+- [DOTS calculator](https://marble-fit.app/tools/dots-calculator/)
+- [About marble](https://marble-fit.app/about/): developer, facts, principles, contact
 - [Release notes](https://marble-fit.app/releases/)
 - [Privacy](https://marble-fit.app/privacy/)
 - [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
@@ -51,11 +76,13 @@ marble turns a typed or pasted workout (gym notation, natural language, multi-da
 
 ## Frequently asked questions
 
-- Is marble free? Yes: every feature, nothing to unlock.
+- Is marble free? Yes: every feature, nothing to unlock, no subscription, no ads.
 - Is an account required? No.
 - Does it work offline? Yes. Logging, parsing, storage, and analysis happen on the device.
 - Does it need Apple Intelligence? No. Apple Intelligence improves free-form prose parsing where available; notation and CSV imports work on every device.
 - Can I import from Hevy or Strong? Yes. Bring in their CSV export, review the parsed workouts, then save.
 - How does it compare with Hevy or Strong? marble is free with nothing to unlock, has no account or social feed, and keeps data on the device. It has no Android or web app, no cloud sync, and no Apple Watch app.
 - Does it work with Apple Watch or Garmin? Yes, through Apple Health: marble imports their workouts and can send strength sessions back with an effort score.
+- Does it calculate one-rep max? Yes. Progress charts an Epley estimated 1RM per exercise from sets of 12 reps or fewer.
 - Ads or tracking? The app has no ads or third-party tracking and does not sell data. Its App Store privacy label reads Data Not Collected. The website uses anonymous, aggregated Vercel Analytics.
+- Who makes marble? Lorenzo Quaid Sison, an independent iOS developer. Support is through GitHub issues.

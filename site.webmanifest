@@ -1,13 +1,28 @@
 {
-  "name": "marble — minimal workout journal",
+  "name": "marble — free, private workout log",
   "short_name": "marble",
-  "description": "A fast, minimal workout journal for iPhone. Sets, PRs, streaks, and trends — offline, private, free.",
+  "description": "Type or paste a workout and marble turns it into sets on your iPhone or iPad. Free, offline, no account.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#faf9f7",
   "theme_color": "#0a0908",
   "icons": [
-    { "src": "/favicon%20small.png", "sizes": "32x32", "type": "image/png" },
-    { "src": "/Favicon%20large.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
+    {
+      "src": "/favicon%20small.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

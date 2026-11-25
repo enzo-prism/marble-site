@@ -10,9 +10,10 @@
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
     <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="A private, offline workout tracker with no account | marble" />
     <meta property="og:description" content="marble is a free workout tracker for iPhone with no account, no ads and no third-party tracking. Here is what stays on your device and how to back it up." />
@@ -62,7 +63,7 @@
             "dateModified": "2026-11-06",
             "image": "https://marble-fit.app/images/og/guide-private.png",
             "author": {
-              "@id": "https://marble-fit.app/#organization"
+              "@id": "https://marble-fit.app/about/#lorenzo"
             },
             "publisher": {
               "@id": "https://marble-fit.app/#organization"
@@ -72,6 +73,29 @@
             },
             "isPartOf": {
               "@id": "https://marble-fit.app/#website"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://marble-fit.app/about/#lorenzo",
+            "name": "Lorenzo Quaid Sison",
+            "url": "https://marble-fit.app/about/",
+            "jobTitle": "Independent iOS developer",
+            "sameAs": [
+              "https://github.com/enzo-prism"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://marble-fit.app/#organization",
+            "name": "marble",
+            "alternateName": "marble.fit",
+            "url": "https://marble-fit.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://marble-fit.app/images/icon-512.png",
+              "width": 512,
+              "height": 512
             }
           },
           {
@@ -226,6 +250,7 @@
             <p class="page-kicker">Guide</p>
             <h1 style="view-transition-name: guide-private-offline-workout-tracker">A private, offline workout tracker for iPhone, with no account</h1>
             <p class="guide-answer">marble keeps your training on your iPhone or iPad. There is no sign-up, no marble account or server, no ads and no third-party tracking. Logging, parsing and analysis all work offline, and you keep your own copy with a JSON backup.</p>
+            <p class="guide-meta">By <a href="/about/">Lorenzo Quaid Sison</a> &middot; Updated <time datetime="2026-11-06">November 6, 2026</time></p>
           </div>
         </header>
 
@@ -359,6 +384,8 @@
         <div class="footer-links">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="tools">Tools</a>
+          <a href="/about/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="about">About</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="releases">Release notes</a>
           <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="guide_private_footer" data-analytics-target="privacy">Privacy</a>
           <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="guide_private_footer" data-analytics-target="github_issues">Support</a>

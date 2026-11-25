@@ -25,6 +25,8 @@ const root = path.resolve(__dirname, "..");
 const dataFile = path.join(root, "data", "releases.json");
 const releasesDir = path.join(root, "releases");
 const homeFile = path.join(root, "index.html");
+const aboutFile = path.join(root, "about", "index.html");
+const ABOUT_PATTERN = /<!-- marble:about-release:start -->[\s\S]*?<!-- marble:about-release:end -->/;
 
 const ORIGIN = "https://marble-fit.app";
 const { appStoreHref, loadAppStore } = require("./build-app-store");
@@ -296,9 +298,10 @@ function head({ title, description, pagePath, ogType, jsonLd, extraMeta = "" }) 
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
     <meta name="apple-itunes-app" content="app-id=${APP_ID}" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="${t}" />
     <meta property="og:description" content="${d}" />
@@ -387,6 +390,8 @@ function footer({ page, ct }) {
         <div class="footer-links">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="tools">Tools</a>
+          <a href="/about/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="about">About</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="releases">Release notes</a>
           <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="${page}_footer" data-analytics-target="privacy">Privacy</a>
           <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="${page}_footer" data-analytics-target="github_issues">Support</a>
@@ -408,6 +413,16 @@ function breadcrumb(pagePath, items) {
     })),
   };
 }
+
+// The publisher every page points at, so the reference resolves on the page.
+const ORGANIZATION = {
+  "@type": "Organization",
+  "@id": `${ORIGIN}/#organization`,
+  name: "marble",
+  alternateName: "marble.fit",
+  url: `${ORIGIN}/`,
+  logo: { "@type": "ImageObject", url: `${ORIGIN}/images/icon-512.png`, width: 512, height: 512 },
+};
 
 function webPage({ pagePath, name, description, extra = {} }) {
   return {
@@ -461,6 +476,7 @@ function renderIndex(releases) {
         },
       }),
       breadcrumb(pagePath, [["Home", "/"], ["Release notes", pagePath]]),
+      ORGANIZATION,
     ],
   };
 
@@ -561,6 +577,7 @@ function renderRelease(release, newer, older, isLatest) {
         extra: { datePublished: release.releasedAt },
       }),
       breadcrumb(pagePath, [["Home", "/"], ["Release notes", "/releases/"], [release.version, pagePath]]),
+      ORGANIZATION,
     ],
   };
   const extraMeta = `    <meta property="article:published_time" content="${release.releasedAt}" />\n`;
@@ -689,6 +706,19 @@ function buildOutputs() {
   const llmsPattern = /<!-- marble:release-status:start -->[\s\S]*?<!-- marble:release-status:end -->/;
   if (!llmsPattern.test(llms)) throw new Error("llms.txt is missing release-status markers");
   outputs.set(llmsFile, llms.replace(llmsPattern, `<!-- marble:release-status:start -->\n${status}\n<!-- marble:release-status:end -->`));
+  // About page: the "Latest version" and "First release" rows of its facts table.
+  if (fs.existsSync(aboutFile)) {
+    const about = fs.readFileSync(aboutFile, "utf8");
+    if (!ABOUT_PATTERN.test(about)) throw new Error("about/index.html is missing about-release markers");
+    const latest = releases[0];
+    const first = releases[releases.length - 1];
+    const rows = [
+      `                  <tr><th scope="row">Latest version</th><td><a href="${latest.path}">${escapeHtml(latest.version)}</a>, released <time datetime="${latest.releasedAt}">${latest.date}</time></td></tr>`,
+      `                  <tr><th scope="row">First release</th><td>${escapeHtml(first.version)}, <time datetime="${first.releasedAt}">${first.date}</time> &middot; ${releases.length} App Store versions so far</td></tr>`,
+    ].join("\n");
+    outputs.set(aboutFile, about.replace(ABOUT_PATTERN, `<!-- marble:about-release:start -->\n${rows}\n<!-- marble:about-release:end -->`));
+  }
+
   releases.forEach((release, index) => {
     outputs.set(
       path.join(releasesDir, release.slug, "index.html"),

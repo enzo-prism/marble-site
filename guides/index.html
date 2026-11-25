@@ -4,18 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guides: import, log and track workouts with marble | marble</title>
-    <meta name="description" content="Guides for marble: import Hevy and Strong workouts, log workouts from Apple Notes, keep a private offline log, track sprint times, and use Apple Watch." />
+    <meta name="description" content="Guides for marble: switch from Hevy or Strong, log workouts from Apple Notes, read workout notation, keep a private offline log, track sprints, use Apple Watch." />
     <link rel="canonical" href="https://marble-fit.app/guides/" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
     <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="Guides: import, log and track workouts with marble | marble" />
-    <meta property="og:description" content="Guides for marble: import Hevy and Strong workouts, log workouts from Apple Notes, keep a private offline log, track sprint times, and use Apple Watch." />
+    <meta property="og:description" content="Guides for marble: switch from Hevy or Strong, log workouts from Apple Notes, read workout notation, keep a private offline log, track sprints, use Apple Watch." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://marble-fit.app/guides/" />
     <meta property="og:site_name" content="marble" />
@@ -27,7 +28,7 @@
     <meta property="og:image:alt" content="Guides to importing, logging and tracking your training with marble." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Guides: import, log and track workouts with marble | marble" />
-    <meta name="twitter:description" content="Guides for marble: import Hevy and Strong workouts, log workouts from Apple Notes, keep a private offline log, track sprint times, and use Apple Watch." />
+    <meta name="twitter:description" content="Guides for marble: switch from Hevy or Strong, log workouts from Apple Notes, read workout notation, keep a private offline log, track sprints, use Apple Watch." />
     <meta name="twitter:image" content="https://marble-fit.app/images/og/guides.png" />
     <meta name="twitter:image:alt" content="Guides to importing, logging and tracking your training with marble." />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
@@ -74,10 +75,19 @@
             },
             "hasPart": [
               {
+                "@id": "https://marble-fit.app/guides/hevy-alternative/#article"
+              },
+              {
+                "@id": "https://marble-fit.app/guides/strong-alternative/#article"
+              },
+              {
                 "@id": "https://marble-fit.app/guides/import-hevy-strong-workouts/#article"
               },
               {
                 "@id": "https://marble-fit.app/guides/log-workouts-from-apple-notes/#article"
+              },
+              {
+                "@id": "https://marble-fit.app/guides/workout-notation/#article"
               },
               {
                 "@id": "https://marble-fit.app/guides/private-offline-workout-tracker/#article"
@@ -138,22 +148,41 @@
               {
                 "@type": "ListItem",
                 "position": 5,
+                "url": "https://marble-fit.app/guides/workout-notation/",
+                "name": "Workout notation explained"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
                 "url": "https://marble-fit.app/guides/private-offline-workout-tracker/",
                 "name": "A private, offline workout tracker"
               },
               {
                 "@type": "ListItem",
-                "position": 6,
+                "position": 7,
                 "url": "https://marble-fit.app/guides/sprint-training-log/",
                 "name": "Keep a sprint training log"
               },
               {
                 "@type": "ListItem",
-                "position": 7,
+                "position": 8,
                 "url": "https://marble-fit.app/guides/apple-watch-strength-training-log/",
                 "name": "Log strength training with Apple Watch"
               }
             ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://marble-fit.app/#organization",
+            "name": "marble",
+            "alternateName": "marble.fit",
+            "url": "https://marble-fit.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://marble-fit.app/images/icon-512.png",
+              "width": 512,
+              "height": 512
+            }
           }
         ]
       }
@@ -276,6 +305,12 @@
               </a>
             </li>
             <li>
+              <a href="/guides/workout-notation/" data-analytics-event="Nav Click" data-analytics-location="guides_index" data-analytics-target="guide_notation">
+                <strong>Workout notation explained</strong>
+                <span>What 3x10, 5x5 @ 225, RPE 8, AMRAP, EMOM and A1/A2 mean, with a glossary and examples.</span>
+              </a>
+            </li>
+            <li>
               <a href="/guides/private-offline-workout-tracker/" data-analytics-event="Nav Click" data-analytics-location="guides_index" data-analytics-target="guide_private">
                 <strong style="view-transition-name: guide-private-offline-workout-tracker">A private, offline workout tracker</strong>
                 <span>What stays on your iPhone, what leaves only when you choose, and how to keep a backup without an account.</span>
@@ -291,6 +326,25 @@
               <a href="/guides/apple-watch-strength-training-log/" data-analytics-event="Nav Click" data-analytics-location="guides_index" data-analytics-target="guide_watch">
                 <strong style="view-transition-name: guide-apple-watch-strength-training-log">Log strength training with Apple Watch</strong>
                 <span>Record the workout on Apple Watch or Garmin, log the sets in marble, and connect the two through Apple Health.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section related-guides" aria-labelledby="tools-title">
+        <div class="container">
+          <h2 id="tools-title">Calculators</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="/tools/one-rep-max-calculator/" data-analytics-event="Nav Click" data-analytics-location="guides_tools" data-analytics-target="tool_1rm">
+                <strong>One-rep max calculator</strong>
+                <span>Estimate a 1RM from any set of 1 to 12 reps, with training weights by percentage.</span>
+              </a>
+            </li>
+            <li>
+              <a href="/tools/dots-calculator/" data-analytics-event="Nav Click" data-analytics-location="guides_tools" data-analytics-target="tool_dots">
+                <strong>DOTS calculator</strong>
+                <span>Score a powerlifting total against bodyweight with the published coefficients.</span>
               </a>
             </li>
           </ul>
@@ -325,6 +379,8 @@
         <div class="footer-links">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="tools">Tools</a>
+          <a href="/about/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="about">About</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="releases">Release notes</a>
           <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="guides_footer" data-analytics-target="privacy">Privacy</a>
           <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="guides_footer" data-analytics-target="github_issues">Support</a>

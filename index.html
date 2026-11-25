@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>marble — type your workout, get logged sets | private workout journal for iPhone &amp; iPad</title>
+    <title>marble — free, private workout log for iPhone and iPad</title>
     <meta
       name="description"
-      content="Paste or type a workout in your own words or gym notation. marble turns it into sets on your iPhone or iPad and saves nothing until you review it. Free, private, and offline."
+      content="Type or paste a workout in your own words or gym notation, and marble turns it into sets on your iPhone or iPad. Review before saving. Free, offline, no account."
     />
     <link rel="canonical" href="https://marble-fit.app/" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="application-name" content="marble" />
     <meta name="author" content="Lorenzo Quaid Sison" />
     <meta name="apple-itunes-app" content="app-id=6757725234" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20small.png" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/Favicon%20large.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="/Favicon%20large.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="marble — type your workout, get logged sets" />
     <meta
@@ -63,15 +64,31 @@
             "@type": "Organization",
             "@id": "https://marble-fit.app/#organization",
             "name": "marble",
+            "alternateName": "marble.fit",
             "url": "https://marble-fit.app/",
-            "logo": "https://marble-fit.app/Favicon%20large.png",
-            "founder": { "@type": "Person", "name": "Lorenzo Quaid Sison" },
+            "description": "marble makes a free, private workout journal for iPhone and iPad.",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://marble-fit.app/images/icon-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "founder": { "@id": "https://marble-fit.app/about/#lorenzo" },
             "sameAs": ["https://apps.apple.com/us/app/marble-fit/id6757725234", "https://github.com/enzo-prism/marble"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://marble-fit.app/about/#lorenzo",
+            "name": "Lorenzo Quaid Sison",
+            "url": "https://marble-fit.app/about/",
+            "jobTitle": "Independent iOS developer",
+            "sameAs": ["https://github.com/enzo-prism"]
           },
           {
             "@type": "WebSite",
             "@id": "https://marble-fit.app/#website",
             "name": "marble",
+            "alternateName": ["marble.fit", "marble workout journal"],
             "url": "https://marble-fit.app/",
             "inLanguage": "en",
             "publisher": { "@id": "https://marble-fit.app/#organization" }
@@ -81,7 +98,15 @@
             "@id": "https://marble-fit.app/#app",
             "name": "marble",
             "alternateName": "marble.fit",
-            "operatingSystem": "iOS, iPadOS",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "Apple App Store ID",
+              "value": "6757725234"
+            },
+            "sameAs": ["https://apps.apple.com/us/app/marble-fit/id6757725234", "https://github.com/enzo-prism/marble"],
+            "operatingSystem": "iOS 26.0 or later, iPadOS 26.0 or later",
+            "softwareRequirements": "Requires iOS 26.0 or iPadOS 26.0 or later",
+            "availableOnDevice": "iPhone, iPad",
             "softwareVersion": "2.7",
             "applicationCategory": "HealthApplication",
             "applicationSubCategory": "Workout Journal",
@@ -121,9 +146,30 @@
             "offers": {
               "@type": "Offer",
               "price": "0",
-              "priceCurrency": "USD"
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://apps.apple.com/us/app/marble-fit/id6757725234"
             },
+            "isAccessibleForFree": true,
+            "datePublished": "2026-01-15",
+            "releaseNotes": "https://marble-fit.app/releases/",
+            "author": { "@id": "https://marble-fit.app/about/#lorenzo" },
             "publisher": { "@id": "https://marble-fit.app/#organization" }
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://marble-fit.app/#film",
+            "name": "marble in 25 seconds",
+            "description": "A silent product film: a workout typed in your own words becomes reviewed sets, then a log and progress, in marble for iPhone.",
+            "thumbnailUrl": "https://marble-fit.app/videos/marble-film-poster.jpg",
+            "contentUrl": "https://marble-fit.app/videos/marble-film.mp4",
+            "uploadDate": "2026-11-18T00:00:00-08:00",
+            "duration": "PT24S",
+            "width": 1920,
+            "height": 1080,
+            "inLanguage": "en",
+            "publisher": { "@id": "https://marble-fit.app/#organization" },
+            "about": { "@id": "https://marble-fit.app/#app" }
           },
           {
             "@type": "FAQPage",
@@ -885,8 +931,10 @@
         <div class="footer-links">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="tools">Tools</a>
+          <a href="/about/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="about">About</a>
           <a href="/releases/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="releases">Release notes</a>
-          <a href="/privacy/">Privacy</a>
+          <a href="/privacy/" data-analytics-event="Nav Click" data-analytics-location="home_footer" data-analytics-target="privacy">Privacy</a>
           <a href="https://github.com/enzo-prism/marble/issues" data-analytics-event="Support Click" data-analytics-location="home_footer" data-analytics-target="github_issues">Support</a>
           <a href="https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&amp;ct=home-footer&amp;mt=8" data-analytics-event="App Store Click" data-analytics-location="home_footer" data-analytics-target="app_store">App Store</a>
         </div>
