@@ -340,14 +340,24 @@ function header({ page, ct, current }) {
     <header class="nav">
       <div class="container nav-inner">
         <a class="brand" href="/" aria-label="marble home">
-          <img src="/Favicon%20large.png" alt="" width="26" height="26" />
+          <img src="/images/mark-80.webp" alt="" width="26" height="26" />
           <span>marble</span>
         </a>
         <nav class="nav-links" id="site-nav" aria-label="site">
           <a href="/features/" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="features">Features</a>
           <a href="/guides/" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="guides">Guides</a>
+          <a href="/tools/" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="tools">Tools</a>
           <a href="/releases/" aria-current="${current}" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="releases">What’s new</a>
           <a href="/#faq" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="faq">FAQ</a>
+          <a class="nav-sheet-only" href="/about/" data-analytics-event="Nav Click" data-analytics-location="${page}_nav" data-analytics-target="about">About</a>
+          <div class="nav-sheet-extra">
+            <button class="theme-toggle theme-row" type="button" aria-label="toggle light and dark mode" data-analytics-event="Theme Toggle" data-analytics-location="${page}_menu" data-analytics-target="theme">
+              <span class="theme-row-label"><span class="theme-row-dark">Dark mode</span><span class="theme-row-light">Light mode</span></span>
+              <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4" /><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" /></svg>
+            </button>
+            <a class="btn nav-sheet-cta" href="${appStoreUrl(`${ct}-menu`)}" data-analytics-event="App Store Click" data-analytics-location="${page}_menu" data-analytics-target="app_store">Download on the App Store</a>
+          </div>
         </nav>
         <div class="nav-actions">
           <button

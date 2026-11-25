@@ -399,5 +399,11 @@
     update();
   }
 
-  canvases.forEach(mount);
+  // The field is decoration: start it once the page has loaded and the main
+  // thread is idle, so it never competes with the words and the button.
+  const start = () => canvases.forEach(mount);
+  const idle = () =>
+    "requestIdleCallback" in window ? window.requestIdleCallback(start, { timeout: 1500 }) : setTimeout(start, 200);
+  if (document.readyState === "complete") idle();
+  else window.addEventListener("load", idle, { once: true });
 })();

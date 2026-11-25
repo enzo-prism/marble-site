@@ -4075,3 +4075,357 @@ body::before {
 @keyframes film-fade {
   from { opacity: 0; }
 }
+
+/* ================================================================== */
+/* phones, second pass: the menu sheet, a tighter hero, 44px targets,  */
+/* shorter gaps between sections, a shorter story track and a portrait */
+/* film. Kept together so the mobile layout reads in one place.        */
+/* ================================================================== */
+
+/* the sheet's extra rows exist only in the sheet */
+.nav-sheet-only,
+.nav-sheet-extra {
+  display: none;
+}
+
+.nav-menu,
+.theme-toggle {
+  touch-action: manipulation;
+}
+
+@media (max-width: 860px) {
+  /* the App Store button and the film link sit centred as a pair */
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 960px) {
+  /* five links still fit the pill beside the brand and the button */
+  .nav-links a {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* a scrim behind the open sheet; tapping it closes the sheet */
+  .nav::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(19, 18, 16, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .nav.is-open::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links {
+    max-height: calc(100svh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .nav-links .nav-sheet-only {
+    display: block;
+  }
+
+  .nav-sheet-extra {
+    display: grid;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .theme-toggle.theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--surface-2);
+    color: var(--ink);
+    font: inherit;
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  .theme-toggle.theme-row:hover,
+  .theme-toggle.theme-row:active {
+    transform: none;
+  }
+
+  .theme-toggle.theme-row::after {
+    inset: 0;
+  }
+
+  .theme-toggle.theme-row svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .theme-row-light,
+  :root[data-theme="dark"] .theme-row-dark {
+    display: none;
+  }
+
+  :root[data-theme="dark"] .theme-row-light {
+    display: inline;
+  }
+
+  .nav-sheet-cta {
+    width: 100%;
+    min-height: 52px;
+    font-size: 1rem;
+  }
+
+  .nav-actions .theme-toggle,
+  .nav-menu {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  /* the theme switch lives in the sheet, so the pill keeps room for the
+     brand and a one-line App Store button */
+  .nav-actions .theme-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --section-space: clamp(56px, 16vw, 68px);
+  }
+
+  .section-intro {
+    margin-bottom: 32px;
+  }
+
+  /* hero: the button is the width of the column, the facts are one quiet line */
+  .hero-home {
+    padding: 28px 0 56px;
+  }
+
+  .hero-home-grid {
+    gap: 40px;
+  }
+
+  .hero-home .badge {
+    font-size: 0.78rem;
+  }
+
+  .hero-copy h1 {
+    margin-top: 14px;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    row-gap: 14px;
+  }
+
+  .hero-actions .btn-large {
+    flex-basis: 100%;
+  }
+
+  .hero-facts {
+    margin-top: 20px;
+    gap: 4px 14px;
+  }
+
+  .hero-facts .chip {
+    padding: 0;
+    border: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  /* footer links: a 44px-tall row each */
+  .footer-links {
+    gap: 0 20px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    padding: 11px 0;
+  }
+
+  .footer-links a::after {
+    inset: 0 -6px;
+  }
+}
+
+@media (max-width: 380px) {
+  /* the badge and the button each stay on one line on the narrowest phones */
+  .hero-home .badge {
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  .hero-home .badge .icon-dot {
+    display: none;
+  }
+
+  .hero-actions .btn-large {
+    padding-inline: 16px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* phones get the words and the button fast; the long stagger is for desktops */
+@media (max-width: 860px) and (prefers-reduced-motion: no-preference) {
+  .hero-title .hw {
+    animation-duration: 0.8s;
+    animation-delay: calc(60ms + var(--w) * 45ms);
+  }
+
+  .hero-home .hero-lede {
+    animation: rise-in 0.6s var(--ease-out-expo) 0.18s both;
+  }
+
+  .hero-home .hero-actions {
+    animation: rise-in 0.6s var(--ease-out-expo) 0.24s both;
+  }
+
+  .hero-home .hero-facts .chip,
+  .hero-home .hero-facts .chip:nth-child(n) {
+    animation-duration: 0.6s;
+    animation-delay: 0.3s;
+  }
+
+  .hero-home .hero-visual {
+    animation-duration: 1s;
+    animation-delay: 0.15s;
+  }
+}
+
+/* touch: every control is at least 44px tall ------------------------- */
+@media (pointer: coarse) {
+  .try-chip {
+    min-height: 44px;
+    padding: 10px 15px;
+    font-size: 0.84rem;
+  }
+
+  .story-tab {
+    min-height: 44px;
+  }
+
+  .film-close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .crumbs a,
+  .release-crumbs a {
+    position: relative;
+  }
+
+  .crumbs a::after,
+  .release-crumbs a::after {
+    content: "";
+    position: absolute;
+    inset: -14px -4px;
+  }
+}
+
+/* the story on phones: a bigger phone, notes on its edges, a shorter track */
+@media (max-width: 560px) {
+  .story.is-pinned {
+    --phone-w: min(268px, 66vw, calc((100svh - 330px) / 2.17));
+  }
+
+  .story.is-pinned .story-track {
+    height: calc(var(--story-steps) * 80svh + 30svh);
+  }
+
+  .story.is-pinned .story-stage {
+    padding-top: 72px;
+  }
+
+  .story.is-pinned .story-grid {
+    gap: 18px;
+  }
+
+  .story.is-pinned .story-step .eyebrow {
+    display: none;
+  }
+
+  .story.is-pinned .story-step h3 {
+    font-size: 1.45rem;
+  }
+
+  .story.is-pinned .story-step p:not(.eyebrow) {
+    margin-top: 8px;
+    font-size: 0.95rem;
+  }
+
+  /* each note straddles the phone's top or bottom edge, centred */
+  .story-note.story-note-left,
+  .story-note.story-note-right {
+    right: 0;
+    left: 0;
+    width: max-content;
+    max-width: calc(100vw - 2 * var(--gutter));
+    margin-inline: auto;
+  }
+
+  .story-note.story-note-left {
+    top: 6% !important;
+  }
+
+  .story-note.story-note-right {
+    top: auto !important;
+    bottom: 8%;
+  }
+}
+
+/* the film: portrait on a portrait screen, the close button above it */
+.film.is-portrait {
+  width: min(calc(100vw - 32px), calc((100svh - 120px) * 9 / 16));
+}
+
+.film.is-portrait .film-video {
+  aspect-ratio: 9 / 16;
+}
+
+@media (max-width: 720px) {
+  .film-frame {
+    overflow: visible;
+  }
+
+  .film-video {
+    border-radius: inherit;
+  }
+
+  .film-close {
+    top: -54px;
+    right: 0;
+  }
+}
+
+/* small laptops and tablets in landscape: the right-hand notes stay on screen */
+@media (min-width: 861px) and (max-width: 1180px) {
+  .story-note-right {
+    right: -4%;
+  }
+}
