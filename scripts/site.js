@@ -498,8 +498,10 @@
   links.addEventListener("click", (event) => {
     if (event.target.closest("a")) setOpen(false);
   });
+  // a tap anywhere outside the pill and its sheet closes it, the scrim included
+  const inner = nav.querySelector(".nav-inner") || nav;
   document.addEventListener("click", (event) => {
-    if (nav.classList.contains("is-open") && !nav.contains(event.target)) setOpen(false);
+    if (nav.classList.contains("is-open") && !inner.contains(event.target)) setOpen(false);
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && nav.classList.contains("is-open")) {
@@ -932,8 +934,11 @@
       opener = link;
       // nothing downloads until someone asks for the film
       if (!video.getAttribute("src")) {
-        video.poster = video.dataset.poster;
-        video.src = video.dataset.src;
+        // a portrait screen gets the vertical cut, when there is one
+        const portrait = Boolean(video.dataset.srcPortrait) && window.matchMedia("(max-aspect-ratio: 4/5)").matches;
+        dialog.classList.toggle("is-portrait", portrait);
+        video.poster = portrait ? video.dataset.posterPortrait : video.dataset.poster;
+        video.src = portrait ? video.dataset.srcPortrait : video.dataset.src;
       }
       dialog.showModal();
       video.currentTime = 0;
@@ -954,3 +959,56 @@
     opener?.focus();
   });
 })();
+
+/* ------------------------------------------------------------------ */
+/* In-page nav (features): the section on screen is marked current,   */
+/* and on phones its chip scrolls into view in the sticky row.         */
+/* ------------------------------------------------------------------ */
+(() => {
+  "use strict";
+
+  const row = document.querySelector(".page-toc-bar .page-toc ul");
+  if (!row || !("IntersectionObserver" in window)) return;
+
+  const links = [...row.querySelectorAll('a[href^="#"]')];
+  const sections = links.map((link) => document.getElementById(link.hash.slice(1))).filter(Boolean);
+  if (!sections.length) return;
+
+  let current = null;
+  function mark(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach((link) => {
+      const on = link.hash === `#${id}`;
+      if (on) {
+        link.setAttribute("aria-current", "true");
+        const left = link.offsetLeft - (row.clientWidth - link.offsetWidth) / 2;
+        row.scrollTo({ left, behavior: "smooth" });
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  // a section counts once its top passes the upper third of the screen
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) mark(entry.target.id);
+      });
+    },
+    { rootMargin: "-30% 0px -65% 0px" }
+  );
+  sections.forEach((section) => observer.observe(section));
+
+  // the bar is stuck once the hero above it has scrolled under the nav
+  const bar = row.closest(".page-toc-bar");
+  const hero = bar.previousElementSibling;
+  if (hero) {
+    new IntersectionObserver(
+      ([entry]) => bar.classList.toggle("is-stuck", !entry.isIntersecting && entry.boundingClientRect.top < 0),
+      { rootMargin: "-59px 0px 0px 0px" }
+    ).observe(hero);
+  }
+})();
+

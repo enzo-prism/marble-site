@@ -114,6 +114,22 @@
   }
 }
 
+/* the features page keeps its in-page nav in a bar of its own after the
+   hero; on phones and small tablets the bar sticks under the nav pill */
+.page-hero:has(+ .page-toc-bar) {
+  padding-bottom: clamp(24px, 3vw, 32px);
+}
+
+.page-toc-bar {
+  position: relative;
+  z-index: 5;
+  padding-bottom: clamp(8px, 2vw, 24px);
+}
+
+.page-toc-bar .page-toc {
+  margin-top: 0;
+}
+
 /* features: groups ---------------------------------------------------- */
 
 .feature-group {
@@ -956,5 +972,89 @@
   .calc,
   .calc-tables {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* features on phones: a sticky row of sections, lighter feature rows ------ */
+
+@media (max-width: 860px) {
+  .page-toc-bar {
+    position: sticky;
+    top: 58px;
+    z-index: 20;
+    padding: 10px 0 14px;
+    background: linear-gradient(var(--bg) 72%, transparent);
+  }
+
+  /* once stuck, the band above the bar fills in behind the nav pill */
+  .page-toc-bar::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 58px;
+    background: var(--bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .page-toc-bar.is-stuck::before {
+    opacity: 1;
+  }
+
+  .page-toc ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 2px var(--gutter);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+  }
+
+  .page-toc ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-toc li {
+    flex: none;
+  }
+
+  .page-toc a[aria-current="true"] {
+    border-color: var(--ink);
+  }
+
+  .feature-group {
+    scroll-margin-top: 128px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-toc a {
+    min-height: 44px;
+  }
+
+  .feature-group-head .icon-tile-lg {
+    display: none;
+  }
+
+  .feature-group-shot {
+    display: block;
+    max-width: 200px;
+    margin: 28px auto 0;
+  }
+
+  .feature-list {
+    gap: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .feature-item {
+    padding: 16px 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    background: none;
   }
 }
