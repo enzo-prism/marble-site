@@ -486,7 +486,14 @@ function validateHtml(file, idCache) {
     attributes.get("property")?.toLowerCase().startsWith("og:"),
   );
   if (openGraphTags.length) {
-    for (const property of ["og:title", "og:description", "og:type", "og:url", "og:image", "og:image:alt"]) {
+    // A noindex page has no canonical URL, so it carries no og:url either.
+    const ogProperties = ["og:title", "og:description", "og:type", "og:image", "og:image:alt"];
+    if (!noindex) ogProperties.splice(3, 0, "og:url");
+    else {
+      const ogUrlTags = metaByProperty("og:url");
+      check(ogUrlTags.length === 0, file, source, ogUrlTags[0]?.match.index ?? 0, "noindex pages must not declare og:url");
+    }
+    for (const property of ogProperties) {
       const matches = metaByProperty(property);
       check(matches.length === 1, file, source, matches[0]?.match.index ?? 0, `must contain exactly one meta[property="${property}"]`);
       if (matches.length === 1) {
