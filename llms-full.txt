@@ -1,0 +1,1576 @@
+# marble
+
+> marble is a free, private workout journal for iPhone and iPad. Type or paste a workout in your own words, review the sets marble finds, then save. Offline, with no account, no ads and nothing to unlock. On the App Store as "marble.fit".
+
+marble turns a typed or pasted workout (gym notation, natural language, multi-day Notes, or a Hevy or Strong CSV export) into logged sets on the device, and nothing is saved until the user reviews it. It also logs sets quickly, tracks personal records, estimated one-rep max, weekly goals, bodyweight, sprints and supplements, and computes progress from the user's own training on the device.
+
+Full text of every page, for language models: https://marble-fit.app/llms-full.txt
+
+## Naming (please use these exactly)
+
+- App name: marble (lowercase in the brand).
+- App Store listing name: marble.fit. Search "marble.fit" on the App Store; "marble" alone returns unrelated games.
+- Official website: https://marble-fit.app. The domain marble.fit is not marble's website.
+- App Store URL: https://apps.apple.com/us/app/marble-fit/id6757725234 (App Store ID 6757725234).
+- Developer: Lorenzo Quaid Sison, an independent iOS developer.
+- One-line description: "marble is a free, private workout journal for iPhone and iPad that turns workouts you type or paste into logged sets on the device."
+
+## Key facts
+
+- Platforms: iPhone and iPad, iOS / iPadOS 26.0 or later. No Android app, no web app.
+- Price: free. No subscription, no in-app unlocks, no ads.
+- Account: none. There is no marble account or marble server.
+- Privacy: core training data stays on the device. App Store privacy label: Data Not Collected.
+- Offline: logging, parsing, storage and analysis work offline.
+- Source code: public at https://github.com/enzo-prism/marble
+- Apple Intelligence: optional. It helps structure free-form prose on supported devices; gym notation and Hevy/Strong CSVs use a deterministic on-device parser on every device.
+- Apple Watch: there is no watch app. Apple Watch and Garmin workouts import through Apple Health.
+- Category: Health & Fitness.
+- First release: 1.0 on January 15, 2026. Version history: https://marble-fit.app/releases/
+
+<!-- marble:release-status:start -->
+- Current public App Store version: 2.7, released November 13, 2026.
+<!-- marble:release-status:end -->
+
+## The app
+
+- Add: paste or type a workout (natural language, gym notation, multi-day Notes, Hevy or Strong CSV), review every workout, exercise match, set, date, RPE, rest, and note, then save. Scan a handwritten page or photo (from Log > Import Workouts) with on-device text recognition. Resume an interrupted review. Unitless weights follow the user's kg or lb preference; explicit units take precedence. Repeat a typed workout on another day with same-day duplicate protection. Stop a model reading and edit the text; model-assisted reviews are identified. Count-only drills preserve sets without adding missing reps or weight. Sprint efforts, distances, and exercise order are preserved. Review totals and original text; fix unrecognized lines or keep them as notes.
+- Log: fast set logging (weight, reps, distance, time, RPE, rest) with Log Again and Save + Next, personal-record cues while entering a set, focused workout sessions, workout history search, repeat a past workout as an editable draft with exercise and set order preserved, weekly split, sprint plans with tenths-precision targets and a stopwatch, calendar, supplements.
+- Progress: lifetime top five exercises with all-time best weights and dates (independent of the Details range), estimated 1RM trends, PR feed and rep records, weekly goal with forgiving flex-week streaks, monthly report, muscle-group coverage, bodyweight trends with per-lift DOTS, Daily Highlights end-of-day recap.
+- iOS: Home Screen and Lock Screen weekly-goal widgets, Siri and Shortcuts (log a set, repeat the last set, start or finish a workout), Shortcuts exercise queries (favorite status, last performed date, total sets, heaviest set, most reps, usual range), Spotlight, Control Center / Lock Screen / Action button quick log, rest timer Live Activity with Dynamic Island controls.
+- Apple Health: import Apple Watch and Garmin workouts and bodyweight; optionally export strength sessions with an effort score.
+- Data: portable JSON backup and restore; progress photos and videos stay on the device.
+
+## Formulas marble uses
+
+- Estimated one-rep max: Epley, 1RM = weight × (1 + reps / 30), from the best set each day, counting only sets of 12 reps or fewer, not adjusted for RPE. Example: 100 kg × 5 = 116.7 kg. Calculator: https://marble-fit.app/tools/one-rep-max-calculator/
+- Relative strength: DOTS = total × 500 / (A·bw⁴ + B·bw³ + C·bw² + D·bw + E), bodyweight in kg, clamped to 40–210 kg (men) or 40–150 kg (women). marble applies it to one lift's estimated 1RM against the nearest weigh-in. Calculator with the published coefficients: https://marble-fit.app/tools/dots-calculator/
+
+## How marble compares
+
+- marble vs Hevy: marble is free with nothing to unlock and needs no account; Hevy requires an account, has a social feed, and sells Hevy Pro. Hevy runs on iPhone, Android, Apple Watch and the web; marble is iPhone and iPad only, with no cloud sync. marble imports Hevy CSV exports. https://marble-fit.app/guides/hevy-alternative/
+- marble vs Strong: marble is free with nothing to unlock and needs no account; Strong's free plan allows 3 custom routines, and Strong PRO removes the limit. Strong runs on iPhone, Android and Apple Watch; marble is iPhone and iPad only. marble imports Strong CSV exports. https://marble-fit.app/guides/strong-alternative/
+- marble vs Apple Notes: keep writing workouts the same way; paste the note (even a whole week) into marble and it becomes structured, searchable sets with records and progress. https://marble-fit.app/guides/log-workouts-from-apple-notes/
+
+## Pages
+
+- [Home](https://marble-fit.app/): what marble is, the type-to-log demo, FAQ
+- [Every feature](https://marble-fit.app/features/): Add, Log, Progress, iOS integrations, Apple Health, privacy
+- [Guides](https://marble-fit.app/guides/)
+- [A Hevy alternative with no account](https://marble-fit.app/guides/hevy-alternative/)
+- [A Strong alternative with nothing to unlock](https://marble-fit.app/guides/strong-alternative/)
+- [Import Hevy and Strong workouts](https://marble-fit.app/guides/import-hevy-strong-workouts/)
+- [Log workouts from Apple Notes](https://marble-fit.app/guides/log-workouts-from-apple-notes/): every supported notation format
+- [Workout notation explained](https://marble-fit.app/guides/workout-notation/): 3x10, 5x5 @ 225, RPE and RIR, AMRAP, EMOM, supersets, tempo
+- [A private, offline workout tracker](https://marble-fit.app/guides/private-offline-workout-tracker/)
+- [Sprint training log](https://marble-fit.app/guides/sprint-training-log/)
+- [Log strength training with Apple Watch](https://marble-fit.app/guides/apple-watch-strength-training-log/)
+- [Tools](https://marble-fit.app/tools/)
+- [One-rep max calculator](https://marble-fit.app/tools/one-rep-max-calculator/)
+- [DOTS calculator](https://marble-fit.app/tools/dots-calculator/)
+- [About marble](https://marble-fit.app/about/): developer, facts, principles, contact
+- [Release notes](https://marble-fit.app/releases/)
+- [Privacy](https://marble-fit.app/privacy/)
+- [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234)
+- [Support](https://github.com/enzo-prism/marble/issues)
+
+## Frequently asked questions
+
+- Is marble free? Yes: every feature, nothing to unlock, no subscription, no ads.
+- Is an account required? No.
+- Does it work offline? Yes. Logging, parsing, storage, and analysis happen on the device.
+- Does it need Apple Intelligence? No. Apple Intelligence improves free-form prose parsing where available; notation and CSV imports work on every device.
+- Can I import from Hevy or Strong? Yes. Bring in their CSV export, review the parsed workouts, then save.
+- How does it compare with Hevy or Strong? marble is free with nothing to unlock, has no account or social feed, and keeps data on the device. It has no Android or web app, no cloud sync, and no Apple Watch app.
+- Does it work with Apple Watch or Garmin? Yes, through Apple Health: marble imports their workouts and can send strength sessions back with an effort score.
+- Does it calculate one-rep max? Yes. Progress charts an Epley estimated 1RM per exercise from sets of 12 reps or fewer.
+- Ads or tracking? The app has no ads or third-party tracking and does not sell data. Its App Store privacy label reads Data Not Collected. The website uses anonymous, aggregated Vercel Analytics.
+- Who makes marble? Lorenzo Quaid Sison, an independent iOS developer. Support is through GitHub issues.
+
+---
+
+# Full text of marble-fit.app
+
+Generated from the site's pages by scripts/build-llms-full.js. Each section is one page.
+
+---
+
+## marble — free, private workout log for iPhone and iPad
+
+URL: https://marble-fit.app/
+Summary: Type or paste a workout in your own words or gym notation, and marble turns it into sets on your iPhone or iPad. Review before saving. Free, offline, no account.
+
+Free workout journal for iPhone and iPad
+
+### Type your workout. marble logs it.
+
+Write it like a note. Check the sets. Save.
+
+- All features free
+- No account
+- Works offline
+- Data Not Collected
+
+Try
+
+#### Your workout, **ready to review.**
+
+#### Add. Log. Progress.
+
+Three tabs. Nothing else in the way.
+
+Add
+
+##### Write it like a note.
+
+Gym shorthand, plain sentences, or a whole week pasted from Notes. marble reads it on your iPhone.
+
+  - Apple Notes
+  - Hevy & Strong CSV
+  - Notebook photos
+
+Add
+
+##### Check every set first.
+
+Each line becomes exercises and sets you can fix. Nothing is saved until you tap Add.
+
+  - Resume a review
+  - Repeat a workout
+
+Log
+
+##### A set in seconds.
+
+Your last set and your best are right there. Save + Next keeps you moving.
+
+  - Records to beat
+  - Rest timer
+
+Progress
+
+##### Your records, at a glance.
+
+Your lifetime top lifts, all-time bests and when you set them.
+
+  - Estimated 1RM
+  - Weekly streaks
+  - Daily Highlights
+
+[See every feature](https://marble-fit.app/features/)
+
+#### Built into iOS.
+
+A set is never more than a glance away.
+
+##### Live Activity
+
+Rest, in the Dynamic Island.
+
+##### Widgets
+
+Your weekly goal, at a glance.
+
+##### Siri & Shortcuts
+
+Log a set by voice.
+
+##### Quick log
+
+Control Center or Action button.
+
+##### Apple Health
+
+Watch and Garmin workouts in.
+
+##### Spotlight
+
+Find any exercise.
+
+#### A closer look.
+
+More of the app, with sample data.
+
+#### Coming from Hevy, Strong or Notes?
+
+Bring your history. Check it once. Keep going.
+
+- [**From Hevy** No account, no subscription.](https://marble-fit.app/guides/hevy-alternative/)
+- [**From Strong** Every feature, nothing to unlock.](https://marble-fit.app/guides/strong-alternative/)
+- [**From Apple Notes** Paste a whole week at once.](https://marble-fit.app/guides/log-workouts-from-apple-notes/)
+- [**Step by step** What carries over, and what to check.](https://marble-fit.app/guides/import-hevy-strong-workouts/)
+
+#### Your training stays on your iPhone.
+
+- No account
+- No ads or tracking
+- Works offline
+- Your own backup
+
+App Store privacy label: **Data Not Collected**.
+
+[See the label](https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&ct=home-privacy&mt=8) [Read the code](https://github.com/enzo-prism/marble)
+
+#### What’s new
+
+marble 2.7 · November 13, 2026
+
+Marble 2.7 makes it easier to turn your workout notes into a complete training log.
+
+- Count-only drills keep every set without adding reps or weight you didn’t enter.
+- Sprint and distance workouts preserve each effort, its distance, and your exercise order.
+- Improved reading of everyday notes, circuits, set ladders, and light kg loads.
+- Review workout totals and your original text before saving. Fix unrecognized lines or keep them in your workout notes.
+
+[Read the 2.7 release notes](https://marble-fit.app/releases/2-7/)
+
+#### Questions.
+
+**Q: Is marble free?**
+Yes. Every feature is free, with no subscription, no ads, and nothing to unlock.
+
+**Q: Does marble work offline?**
+Yes. Logging, parsing, progress, and storage all run on your iPhone or iPad. There is no marble account or server to connect to.
+
+**Q: Does marble need Apple Intelligence?**
+No. Where Apple Intelligence is available, marble uses it on device to structure workouts written as prose. Gym notation such as “Squat 5x5 @ 225” and Hevy or Strong CSVs are read by an on-device parser on every supported device. Either way, you review everything before it is saved.
+
+**Q: Can I import my history from Hevy or Strong?**
+Yes. Bring in a Hevy or Strong CSV export through Add, then review each workout, exercise match, and set before anything is saved.
+
+**Q: Does marble work with Apple Watch or Garmin?**
+Yes, through Apple Health. marble imports Apple Watch workouts and Garmin workouts that sync to Health, and can optionally send your strength sessions back to Health with an effort score. There is no separate Apple Watch app.
+
+**Q: How do I find marble on the App Store?**
+Search for **marble.fit**, or use a Download button on this page. The App Store listing is called marble.fit; the app itself is marble. It needs iOS or iPadOS 26 or later.
+
+**Q: Is marble a good alternative to Hevy or Strong?**
+If you want a private journal rather than a social feed or a subscription, yes. Every feature is free, there is no account, and your Hevy or Strong CSV imports on your iPhone. There is no Android app, web app or cloud sync. See [switching from Hevy](https://marble-fit.app/guides/hevy-alternative/) and [switching from Strong](https://marble-fit.app/guides/strong-alternative/).
+
+**Q: Does marble sell my data or show ads?**
+No. The app has no ads, marble account, marble server, or third-party tracking, and your data is never sold. Its App Store privacy label reads Data Not Collected, and [the source code is public](https://github.com/enzo-prism/marble). This website uses anonymous, aggregated Vercel Analytics.
+
+#### Start the record.
+
+[Download on the App Store](https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&ct=home-download&mt=8) Free · iPhone and iPad · iOS 26 or later Search the App Store for **marble.fit**
+
+---
+
+## Every feature in marble, the private workout journal | marble
+
+URL: https://marble-fit.app/features/
+Summary: Every marble feature in one place: typed and pasted workouts, Hevy and Strong import, fast set logging, sprints, progress, widgets, Apple Health and backups.
+
+Features
+
+### Everything marble does.
+
+Three tabs, a few iOS hooks, and nothing to sign up for. Free, with no account and no ads.
+
+Add
+
+#### Write it your way. Review, then save.
+
+Typed, pasted, imported or scanned. Nothing is logged until you’ve checked it.
+
+##### Paste or type in your own words
+
+Gym notation like `Squat 5x5 @ 225`, everyday notes, circuits, or set ladders. Count-only drills keep your sets without inventing reps or weight.
+
+##### On-device parsing
+
+Notation and CSV parsing on every supported device. Apple Intelligence can help with prose on compatible devices, in supported languages, when available. Its readings are checked against your original notes before you review them.
+
+##### Your preferred units
+
+Weights without a written unit follow your kg or lb preference. Explicit units take precedence; check them in review.
+
+##### Repeat on another day
+
+Log the same typed workout on different days. Same-day duplicate protection keeps your draft available to edit.
+
+##### Multi-day Notes
+
+Paste a week. Dates, weekdays and `Day 1` labels split it into workouts.
+
+##### Hevy and Strong CSV
+
+RPE, notes, failure sets and session times come across. Warm-ups are skipped.
+
+##### Review before saving
+
+Check exercise matches, sets, workout totals, and your original text. Fix unrecognized lines or keep them in workout notes before saving.
+
+##### Drafts that wait for you
+
+An unfinished review survives relaunches, with your edits intact. Stop a workout reading to return to your text; model-assisted readings are identified in review.
+
+##### Scan handwritten pages
+
+Photograph a notebook page or choose a photo from Log › Import Workouts. Text recognition runs on device.
+
+##### History and repeat
+
+Search past sessions, and repeat one as an editable draft. Your exercise and set order stays intact, including each sprint effort and its distance.
+
+##### Shortcuts handoff
+
+Send text from Shortcuts straight into Add.
+
+Log
+
+#### Log without losing your flow.
+
+Weight, reps, distance, time, RPE and rest, with only the fields each exercise needs.
+
+##### Fast set logging
+
+Last time and your best, before you type anything.
+
+##### Log Again
+
+Repeat your last set with one tap.
+
+##### Save + Next
+
+Save a set and stay in the sheet for the next one.
+
+##### Personal-record cues
+
+The record to beat, and a New PR cue the moment you pass it.
+
+##### Workout sessions
+
+Start, log and finish a focused session.
+
+##### Weekly split
+
+Give each training day a plan.
+
+##### Sprints to the tenth
+
+Distance, reps and a target time, timed to 0.1 seconds.
+
+##### Rest timer
+
+A Live Activity with +30 s and End, and a rest-complete alert.
+
+##### Supplements
+
+Creatine, protein and daily habits beside your training.
+
+##### Calendar
+
+Training days, streaks and progress photos, month by month.
+
+##### Exercise library
+
+Search, favourite and edit exercises, each with its own icon.
+
+Progress
+
+#### Clear progress, computed on your phone.
+
+Top lifts up front. Goals, charts and reports one tap deeper.
+
+##### Top exercises
+
+Your five most-logged exercises across your whole history, with all-time best weights and dates. The range in Details doesn’t change this list.
+
+##### Estimated 1RM verdicts
+
+Progressing, holding or adapted, compared at matched effort. [How 1RM is estimated](https://marble-fit.app/tools/one-rep-max-calculator/).
+
+##### PR feed and rep records
+
+Every real record, and your best weight at each rep count.
+
+##### Progression hints
+
+A suggested next load, with the evidence behind it.
+
+##### Weekly goal and flex weeks
+
+Hit your target four weeks running to bank a flex week.
+
+##### Monthly report
+
+Sessions, volume and records, against the same point last month.
+
+##### Muscle coverage
+
+Weekly hard sets per muscle group, against the 10–20 set guide.
+
+##### Bodyweight and DOTS
+
+Track weigh-ins and compare each lift to your bodyweight. [How DOTS works](https://marble-fit.app/tools/dots-calculator/).
+
+##### Daily Highlights
+
+A private evening recap, on the days you train.
+
+iOS
+
+#### Reach marble from anywhere on iOS.
+
+A set is never more than a glance away.
+
+##### Widgets
+
+Your weekly goal on the Home and Lock Screen, with quick logging.
+
+##### Siri and Shortcuts
+
+Log a set, repeat it, or start and finish a workout by voice. Shortcuts can also read exercise favorites, last performed dates, total sets, best weights and reps, and usual ranges.
+
+##### Control Center and the Action button
+
+Quick logging from Control Center, the Lock Screen or the Action button.
+
+##### Live Activities
+
+Rest counts down in the Dynamic Island, with +30 s and End.
+
+##### Spotlight
+
+Find your exercises from system search.
+
+##### iPhone and iPad
+
+iOS and iPadOS 26 or later, in light and dark, with larger text.
+
+Apple Health
+
+#### Connected to Apple Health, only if you choose.
+
+Apple Watch and Garmin workouts come in through Health. marble has no Watch app of its own.
+
+##### Import workouts
+
+Apple Watch and Garmin sessions, with duration, calories and heart rate.
+
+##### Import bodyweight
+
+Weigh-ins from Health, for bodyweight trends and DOTS.
+
+##### Send sessions to Health
+
+Strength workouts with an effort score, so they count toward Training Load.
+
+##### An honest limit
+
+Health keeps workout summaries, not sets and reps. Those live in marble.
+
+Privacy and data
+
+#### Your training stays yours.
+
+No account, no marble server, no ads and no third-party tracking.
+
+##### On device
+
+Parsing, analysis and storage all run on the device, offline.
+
+##### JSON backup and restore
+
+A portable backup. A restore adds what’s missing and never deletes.
+
+##### Photos stay local
+
+Progress photos and videos are stored locally and excluded from JSON backups. Normal iOS device-backup settings still apply.
+
+##### Careful recovery
+
+If saved workouts can’t open, the original files are kept, with retry and recovery.
+
+##### Checkable claims
+
+The App Store privacy label reads Data Not Collected, and [the source code is public](https://github.com/enzo-prism/marble).
+
+##### Free
+
+Every feature, with no subscription and nothing to unlock.
+
+---
+
+## A Hevy alternative with no account | marble
+
+URL: https://marble-fit.app/guides/hevy-alternative/
+Updated: 2026-11-06
+Summary: Looking for a Hevy alternative? marble is a free, private workout log for iPhone and iPad. Import your Hevy CSV and train offline, with no account or subscription.
+
+Switching from Hevy
+
+### A Hevy alternative with no account
+
+If you like logging in Hevy but don’t want an account, a social feed or a Pro upgrade, marble is a private workout journal for iPhone and iPad. Export your Hevy history as a CSV, import it into marble, and check every workout before it’s saved. Every feature is free, and your training stays on your device.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated November 6, 2026
+
+#### marble and Hevy, side by side
+
+Hevy is a popular workout tracker with a social side. marble is a private journal. The Hevy details below come from its App Store listing and help centre, checked on November 6, 2026.
+
+|  | marble | Hevy |
+| --- | --- | --- |
+| Price | Free. Every feature, with nothing to unlock. | Free plan. Hevy Pro, a subscription or a lifetime purchase, lifts free-plan limits such as the number of routines. |
+| Account | None. | A Hevy account is required. |
+| Where workouts live | On your iPhone or iPad, with a JSON backup you control. | In your Hevy account, synced across devices. |
+| App Store privacy label | Data Not Collected. | Lists data linked to you, including contact info, purchases and usage data. |
+| Social | None. It’s a private journal. | A feed, followers and shared routines. |
+| Adding a workout | Type or paste it in your own words, import a file, or log set by set. | Log set by set, from a routine or an empty workout. |
+| Platforms | iPhone and iPad on iOS 26 or later. Apple Watch workouts come in through Apple Health. | iPhone, Android, Apple Watch and the web. |
+
+#### What you get with marble
+
+- **Write a workout the way you’d text it.** Type `Squat 5x5 @ 225`, or paste a whole week from Notes, and marble turns it into sets on your device.
+- **Nothing saves until you’ve checked it.** Review every exercise match, set, date, RPE and note first. A weak name match becomes a new exercise instead of merging into the wrong one.
+- **Set logging that keeps up.** Log Again repeats your last set, Save + Next keeps the sheet open, and the record to beat shows while you type.
+- **Progress worked out on your phone.** Lifetime Top Exercises with all-time bests and dates, estimated 1RM trends, weekly goals and a monthly report.
+- **Built into iOS.** Widgets, Siri and Shortcuts, a rest timer in the Dynamic Island, and Apple Health.
+- **Private by design.** No account, ads or marble server. The App Store privacy label reads Data Not Collected, and [the source code is public](https://github.com/enzo-prism/marble).
+
+#### What you give up
+
+marble does less than Hevy in a few places. Know them before you switch.
+
+- No feed, followers or shared routines.
+- No Android or web app. marble runs on iPhone and iPad.
+- No cloud sync. Each device keeps its own journal, and a JSON backup moves it between them.
+- No Apple Watch app. Watch workouts arrive through Apple Health, and you log sets on your phone.
+- The import goes one way. marble’s backup is a JSON file for marble, not a Hevy file.
+
+#### Bring your Hevy history
+
+1. **Export a CSV from Hevy.** Look for the export option in Hevy’s settings, and save the file to Files.
+2. **Open Add in marble** and tap Choose File, then pick the export.
+3. **Review the workouts.** Each Hevy workout becomes one marble workout, with RPE, notes, session times, drop sets and failure sets. Warm-up sets are skipped.
+4. **Choose what to add, then save.** Workouts already in your journal stay unselected, so a newer export can be imported later without duplicates.
+
+The [import guide](https://marble-fit.app/guides/import-hevy-strong-workouts/) lists exactly which Hevy columns come across and what to check.
+
+Hevy details from its [App Store listing](https://apps.apple.com/us/app/hevy-workout-tracker-gym-log/id1458862350) and [help centre](https://help.hevyapp.com/hc/en-us/articles/34462203494679-Login-Options-Explained-Email-Password-Google-and-Apple-Sign-In), checked November 6, 2026. Plans and prices change, so check there for the current details. marble isn’t affiliated with Hevy.
+
+Progress, worked out on your iPhone.
+
+#### Questions
+
+**Q: Is marble really free?**
+Yes. Every feature is free, with no subscription, no ads and nothing to unlock.
+
+**Q: Will my Hevy history come across?**
+Your workouts, sets, weights, reps, distances, durations, RPE, notes and session times come across from Hevy’s CSV export. Warm-up sets are skipped, and a superset becomes a set note.
+
+**Q: Can I try marble without leaving Hevy?**
+Yes. Import a CSV, use marble for a while, and import a newer export later. Workouts already in your journal stay unselected, so they aren’t added twice.
+
+**Q: Does marble have a social feed?**
+No. marble is a private journal. There is no profile, feed or follower list, and no marble account to create.
+
+---
+
+## A Strong alternative with nothing to unlock | marble
+
+URL: https://marble-fit.app/guides/strong-alternative/
+Updated: 2026-11-06
+Summary: Looking for a Strong app alternative? marble is a free, private workout log for iPhone and iPad. Import your Strong CSV and train offline with nothing to unlock.
+
+Switching from Strong
+
+### A Strong alternative with nothing to unlock
+
+If you like Strong’s plain, fast logging but don’t want an account or a PRO upgrade, marble is a private workout journal for iPhone and iPad. Export your Strong history as a CSV, import it into marble, and check every workout before it’s saved. Every feature is free, and your training stays on your device.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated November 6, 2026
+
+#### marble and Strong, side by side
+
+Strong is a long-running, no-frills workout log. marble is a private journal you can also type into. The Strong details below come from its App Store listing and help centre, checked on November 6, 2026.
+
+|  | marble | Strong |
+| --- | --- | --- |
+| Price | Free. Every feature, with nothing to unlock. | Free, with up to 3 custom routines. Strong PRO, a subscription or a one-time purchase, removes the limit and adds features. |
+| Account | None. | Strong prompts you to create an account; the account enables cloud sync and sharing. |
+| Where workouts live | On your iPhone or iPad, with a JSON backup you control. | On the device, with Strong Cloud sync when you use a Strong account. |
+| App Store privacy label | Data Not Collected. | Lists data linked to you, including health and fitness data, your email address and identifiers. |
+| Adding a workout | Type or paste it in your own words, import a file, or log set by set. | Log set by set, from a template or an empty workout. |
+| Platforms | iPhone and iPad on iOS 26 or later. Apple Watch workouts come in through Apple Health. | iPhone, Android and Apple Watch. |
+
+#### What you get with marble
+
+- **Write a workout the way you’d text it.** Type `Squat 5x5 @ 225`, or paste a whole week from Notes, and marble turns it into sets on your device.
+- **Nothing saves until you’ve checked it.** Review every exercise match, set, date, RPE and note first. A weak name match becomes a new exercise instead of merging into the wrong one.
+- **Set logging that keeps up.** Log Again repeats your last set, Save + Next keeps the sheet open, and the record to beat shows while you type.
+- **Progress worked out on your phone.** Lifetime Top Exercises with all-time bests and dates, estimated 1RM trends, weekly goals and a monthly report.
+- **Built into iOS.** Widgets, Siri and Shortcuts, a rest timer in the Dynamic Island, and Apple Health.
+- **Private by design.** No account, ads or marble server. The App Store privacy label reads Data Not Collected, and [the source code is public](https://github.com/enzo-prism/marble).
+
+#### What you give up
+
+marble does less than Strong in a few places. Know them before you switch.
+
+- No Android app. marble runs on iPhone and iPad.
+- No cloud sync. Each device keeps its own journal, and a JSON backup moves it between them.
+- No Apple Watch app. Watch workouts arrive through Apple Health, and you log sets on your phone.
+- The import goes one way. marble’s backup is a JSON file for marble, not a Strong file.
+
+#### Bring your Strong history
+
+1. **Export your data from Strong** as a CSV, and save the file to Files.
+2. **Open Add in marble** and tap Choose File, then pick the export.
+3. **Review the workouts.** The date, workout name, duration, set order, weight, reps, distance, seconds, notes and RPE come across. Squat (Barbell) and Squat (Dumbbell) stay separate exercises.
+4. **Choose what to add, then save.** Workouts already in your journal stay unselected, so a newer export can be imported later without duplicates.
+
+Exports in kilograms, with semicolons and decimal commas, work too. The [import guide](https://marble-fit.app/guides/import-hevy-strong-workouts/) has the details.
+
+Strong details from its [App Store listing](https://apps.apple.com/us/app/strong-workout-tracker-gym-log/id464254577) and [help centre](https://help.strongapp.io/article/143-strong-account), checked November 6, 2026. Plans and prices change, so check there for the current details. marble isn’t affiliated with Strong.
+
+Log Set, with last time and your best.
+
+#### Questions
+
+**Q: Is marble really free?**
+Yes. Every feature is free, with no subscription, no ads and nothing to unlock.
+
+**Q: Will my Strong history come across?**
+Yes. marble reads Strong’s CSV export: dates, workout names, durations, sets, weights, reps, distances, times, notes and RPE, including exports in kilograms.
+
+**Q: Do I need to create an account?**
+No. marble has no account and no server. Your journal stays on your iPhone or iPad, and you can export a JSON backup whenever you like.
+
+**Q: Can I try marble without leaving Strong?**
+Yes. Import a CSV, use marble for a while, and import a newer export later. Workouts already in your journal stay unselected, so they aren’t added twice.
+
+---
+
+## Import Hevy and Strong workouts into marble | marble
+
+URL: https://marble-fit.app/guides/import-hevy-strong-workouts/
+Updated: 2026-09-24
+Summary: How to import a Hevy or Strong CSV export into marble on iPhone: what carries over, what to check in review, and what stays behind. On-device, no account.
+
+Guide
+
+### How to import Hevy and Strong workouts into marble
+
+Export your workouts as a CSV from Hevy or Strong, open the Add tab in marble, tap Choose File, and review the workouts it finds before you save. The file is read by marble’s own parser on your iPhone. Nothing is uploaded, and you don’t need an account.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated September 24, 2026
+
+#### Before you start
+
+You need marble on an iPhone or iPad running iOS or iPadOS 26 or later, and a CSV export from Hevy or Strong saved somewhere the Files app can reach. Both apps can export your workout history as a CSV file. Look for the export option in each app’s settings.
+
+CSV import doesn’t use Apple Intelligence. These files are tables, so marble reads them with a deterministic parser that works the same way on every supported device.
+
+#### Steps
+
+1. **Export a CSV** from Hevy or Strong and save it to Files.
+2. **Open Add in marble** and tap Choose File. Pick the export. You can select more than one file, and if they have the same header row, marble merges them into one import. You can also paste the CSV text straight into the composer.
+3. **Let marble split it into workouts.** Each workout title and start time becomes one workout. A long history shows up as a list on Review Workouts, with counts of library matches, new exercises and weak matches for each one.
+4. **Check the exercise matches.** Exact and strong name matches link to exercises already in your library. Weak matches stay as suggestions and default to creating a new exercise, so a movement is never quietly merged into the wrong one.
+5. **Choose what to add, then save.** Workouts that are already in your journal stay unselected, so importing the same file twice doesn’t create duplicates. Until you confirm, nothing is logged.
+
+#### What carries over
+
+##### From Hevy
+
+- Weight from `weight_lbs` or `weight_kg`, reps, distance, and per-set duration.
+- RPE, the workout description, exercise notes and set notes. A `superset_id` becomes a set note.
+- Start and end times, so the session keeps its length.
+- Warm-up sets are skipped. Drop sets and failure sets are kept and tagged, including a failure set with zero reps.
+- If you logged the same lift twice in one workout, the two blocks stay separate instead of being mixed together.
+
+##### From Strong
+
+- Date, workout name, exercise name, set order, weight, reps, distance, seconds, notes, workout notes and RPE.
+- Workout duration written as `60m` or `1h 5m`.
+- European exports that use semicolons, decimal commas and a `Weight (kg)` column.
+- A plain `Distance` is read in kilometres or miles, following your preferred unit.
+- Equipment suffixes like “(Barbell)” are removed from the name, but Squat (Barbell) and Squat (Dumbbell) stay separate exercises.
+
+#### What the files look like
+
+marble recognises each app from the header row. For example:
+
+```
+title,start_time,end_time,exercise_title,set_index,set_type,weight_lbs,reps,rpe
+Push Day,"28 Mar 2025, 17:29","28 Mar 2025, 18:45",Bench Press,0,normal,185,8,8
+```
+
+```
+Date,Workout Name,Duration,Exercise Name,Set Order,Weight,Reps,Distance,Seconds,Notes,Workout Notes,RPE
+2025-01-15 18:00:00,Leg Day,60m,Squat,1,225,5,0,0,belt,Heavy day,7
+```
+
+If you shared a single workout as text rather than a file, paste that too. Lines such as `Set 1: 60 kg x 10` under an exercise name are read as sets.
+
+#### Limits worth knowing
+
+- File import accepts `.csv` and `.txt`. JSON workout files aren’t supported.
+- marble stores whole-number RPE, so a half step rounds up: 8.5 becomes 9.
+- A weight or rep value of zero is left empty rather than logged as zero.
+- The import is one way. marble’s own export is a JSON backup for restoring into marble, not a Hevy or Strong file.
+
+Review Workouts, after choosing a Hevy export.
+
+#### Questions
+
+**Q: Do I need Apple Intelligence to import a Hevy or Strong CSV?**
+No. CSV files are read by marble’s deterministic parser on every supported iPhone and iPad. Apple Intelligence is only used for free-form prose.
+
+**Q: What happens if I import the same export twice?**
+Workouts that are already in your journal are recognised and stay unselected in review, so they aren’t added a second time.
+
+**Q: Does marble upload my export anywhere?**
+No. The file is read on your device. marble has no account and no server to send it to.
+
+**Q: Are warm-up sets imported from Hevy?**
+No. Hevy warm-up sets are skipped. Drop sets and failure sets are kept and tagged so you can tell them apart.
+
+---
+
+## Log workouts from Apple Notes into a tracker | marble
+
+URL: https://marble-fit.app/guides/log-workouts-from-apple-notes/
+Updated: 2026-11-18
+Summary: Paste a workout from Apple Notes into marble and get structured sets: supported gym notation, multi-day notes, rest and RPE, and what needs Apple Intelligence.
+
+Guide
+
+### How to log workouts from Apple Notes
+
+Copy the note, paste it into the Add tab in marble, and review the sets it builds before you save. Gym shorthand like `Bench 3x8 @ 185` is read on every device. A note that covers several days is split into separate workouts.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated November 18, 2026
+
+#### Steps
+
+1. **Copy your workout** from Notes. It can be one session or a whole week.
+2. **Open Add in marble** and paste into Paste or type your workout. As you type or paste, a live preview lists each exercise with its set count.
+3. **Fix anything flagged.** A line marble can’t organize stays in review, never dropped. Edit it, for example into `Bench 3x8 @ 185`, and tap Try again, or tap Keep in workout notes. Nothing is added until every flagged line is handled.
+4. **Review.** Check each exercise match, set, date, RPE, rest and note, the workout’s totals, and your original text beside it. Exercises and sets keep the order you wrote them in. A multi-day note opens as a list of workouts that you can select one by one.
+5. **Save.** If you leave halfway, your draft is kept, and you can resume the review later with your edits intact.
+
+#### Notation marble understands
+
+Every example below is read on the device by marble’s parser, without Apple Intelligence. New to the shorthand? [Workout notation explained](https://marble-fit.app/guides/workout-notation/) covers what each part means.
+
+| You write | marble logs |
+| --- | --- |
+| `Squat 5x5` or `5×5` | 5 sets of 5 |
+| `Bench Press 3x8 @ 185` | 3 sets of 8 at 185 in your preferred kg or lb unit |
+| `Deadlift 3x3 @ 100 kg` | 3 sets of 3 at 100 kg |
+| `Bench 135x5 155x3 175x1` | 3 sets, one per pair |
+| `Bench 225x5/3/1` | 5, 3 and 1 reps at 225 |
+| `Bench 3x10-8-6` | 10, 8 and 6 reps |
+| `Pull ups 3x12` | 3 sets of 12, no weight |
+| `Plank 3x45s` or `3x1:00` | timed sets |
+| `Run 5k 25:00`, `Row 2000m 7:30` | distance and time |
+| `Sprints 4x20m` | 4 reps of 20 m |
+| `Sprints 2 sets, 50m each` | 2 efforts of 50 m each |
+| `Bounds (2 sets)` | 2 sets, with no reps or weight added |
+| `Bench 185 lb: 8, 7, 6 reps` | 8, 7 and 6 reps at 185 lb |
+| `Squat: two sets of five at 100kg` | 2 sets of 5 at 100 kg |
+| `3 rounds: 10 pushups + 15 squats` | 3 sets of each, in order |
+| `A1 Bench 3x8 @135` | 3 sets of 8 at 135; `A1` only marks the order |
+| `Bench Press 3x8 @ 185 rest 90s` | rest of 90 seconds on each set |
+| `Squat 5x5 @ 225 RPE 8` | RPE 8 on each set |
+| `Pushups 3xAMRAP` | 3 sets, no rep count |
+| `EMOM 10 min: 5 burpees` | 10 sets of 5 |
+
+A few more details: `3 rounds:` on its own line repeats the exercises below it. `rest 3` means three minutes, while `rest 90` means 90 seconds. `Calf raises 4x8-10` records the lower end of the range and keeps the range you wrote in the set note. `RPE 8`, `rpe9` and `@RPE 8` all set effort, but a bare `@ 8` is read as a weight.
+
+#### Units, repeat workouts and reading controls
+
+Weights without a unit use your preference in Settings › Units. For example, `Bench Press 3x8 @ 60` means 60 kg when kg is selected. Writing `60 kg` or `135 lb` takes precedence over that preference. Check the reviewed units before saving.
+
+You can log the same typed workout on different days. Same-day duplicate protection keeps the draft available to edit rather than silently adding it again. If a model reading is taking too long, tap Stop to return to your text. Review indicates when Apple Intelligence helped interpret it.
+
+#### Several days in one note
+
+marble starts a new workout at a line that is only a date or a label: `3/5`, `March 5`, `Monday`, `Yesterday`, `Day 1` or `Day 2: Legs`.
+
+```
+Monday — Push
+Bench 3x8 @ 185 lb
+Cable fly 3x12
+
+Wednesday — Pull
+Deadlift 3x5 @ 225 lb
+Pull ups 3x8
+```
+
+This becomes two workouts. A date on the same line as a set, like `3/5 Bench 3x8`, stays a set and doesn’t start a new day. A line like “felt strong today” is kept as a note.
+
+#### Limits worth knowing
+
+- Many everyday sentences are read on the device without Apple Intelligence, such as “ran 5 kilometers in 25 minutes, then did three planks of 45 seconds each”. Longer free-form prose may need Apple Intelligence, which requires compatible hardware, a supported language and available on-device models. Its readings are checked against your note: dates, titles and numbers must come from what you wrote. If prose can’t be read, rewrite it in gym notation.
+- Percentages like `at 85%` and tempo notes like `tempo 3-0-1` are ignored, not logged as weights.
+- Whatever you paste, you review it before anything is saved.
+
+An editable draft. Nothing is saved until you confirm.
+
+#### Questions
+
+**Q: Does marble read my notes automatically?**
+No. marble doesn’t read your Notes. You copy the workout and paste it into Add.
+
+**Q: Do I need Apple Intelligence?**
+Only for free-form sentences. Shorthand like `Squat 5x5 @ 225` is read by marble’s parser on every supported device.
+
+**Q: Can I paste a whole week at once?**
+Yes. Lines that are only a date, a weekday or a label like `Day 1` start a new workout, and you review each one before saving.
+
+**Q: Can I send text to marble from Shortcuts?**
+Yes. Shortcuts can hand text straight to Add. If a draft is already open, you choose whether to add to it, replace it or keep it.
+
+---
+
+## Workout notation explained: 3x10, 5x5, @, RPE, AMRAP | marble
+
+URL: https://marble-fit.app/guides/workout-notation/
+Updated: 2026-11-24
+Summary: What gym notation means: 3x10 and 5x5, weight after @, RPE and RIR, AMRAP, EMOM, supersets like A1/A2, rest and tempo, with examples and a glossary.
+
+Guide
+
+### Workout notation explained
+
+In gym notation, sets come before reps: `3x10` means 3 sets of 10 reps. A load follows `@`, so `Squat 5x5 @ 225` is five sets of five at 225. `RPE 8` rates effort out of 10, about two reps short of failure, and `AMRAP` means as many reps as possible.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Published November 24, 2026
+
+#### Sets and reps
+
+| Written | Means |
+| --- | --- |
+| `3x10` | 3 sets of 10 reps |
+| `5x5` | 5 sets of 5 reps |
+| `3x10-8-6` | 3 sets: 10 reps, then 8, then 6 |
+| `4x8-10` | 4 sets of 8 to 10 reps |
+| `225x5/3/1` | One weight, sets of 5, 3 and 1 |
+| `135x5 155x3 175x1` | Weight × reps pairs, one set each |
+
+The `x` is read as “by”. Sets × reps is the usual order, but some coaches write weight × reps, as in `135x5`. When one number is clearly a load, it is the weight.
+
+#### Weight, percentages and units
+
+A number after `@` is the load: `Bench 3x8 @ 185`. A unit makes it unambiguous, as in `@ 100 kg` or `@ 185 lb`. A percentage like `@ 85%` means 85% of your one-rep max, which you can estimate with the [one-rep max calculator](https://marble-fit.app/tools/one-rep-max-calculator/).
+
+#### Effort: RPE and RIR
+
+RPE (rating of perceived exertion) scores how hard a set was from 1 to 10. RIR (reps in reserve) counts the reps you had left, so RPE is roughly 10 minus RIR.
+
+| RPE | Reps left |
+| --- | --- |
+| `RPE 10` | None: a maximal set |
+| `RPE 9` | About 1 |
+| `RPE 8` | About 2 |
+| `RPE 7` | About 3 |
+
+#### Rest, time and distance
+
+- **Rest** is written `rest 90s` or `rest 2 min`, between sets.
+- **Timed sets** use seconds or minutes: `Plank 3x45s`, `3x1:00`.
+- **Distance and time** go together for cardio: `Run 5k 25:00`, `Row 2000m 7:30`.
+- **Repeated efforts** put the count first: `Sprints 4x20m` is four 20 m sprints.
+
+#### AMRAP, EMOM, rounds and supersets
+
+- **AMRAP**: as many reps as possible. `Pushups 3xAMRAP`.
+- **EMOM**: every minute on the minute. `EMOM 10 min: 5 burpees` is ten rounds of five, one at the start of each minute.
+- **Rounds**: a circuit repeated. `3 rounds: 10 pushups + 15 squats` is three passes through both.
+- **Supersets**: `A1` and `A2` alternate set for set, then `B1` starts the next pair.
+
+#### Tempo
+
+Tempo gives the seconds for each phase of a rep. In `tempo 3-0-1`, you lower for three seconds, don’t pause, and lift in one. A fourth number, as in `3-1-1-0`, adds a pause at the top, and `X` means as fast as possible.
+
+#### Glossary
+
+| Term | Meaning | Example |
+| --- | --- | --- |
+| Set | A group of reps done without rest. | `3x10` is 3 sets |
+| Rep | One full movement of an exercise. | `3x10` is 10 reps per set |
+| 1RM | One-rep max: the most you can lift once. | `@ 85%` means 85% of it |
+| RPE | Effort from 1 to 10; 10 is a maximal set. | `RPE 8` |
+| RIR | Reps in reserve; RPE is about 10 minus RIR. | `2 RIR` ≈ RPE 8 |
+| AMRAP | As many reps as possible. | `Pushups 3xAMRAP` |
+| EMOM | Every minute on the minute. | `EMOM 10 min: 5 burpees` |
+| Superset | Two exercises done back to back. | `A1`, `A2` |
+| Rounds | A circuit repeated a number of times. | `3 rounds: 10 pushups + 15 squats` |
+| Tempo | Seconds for each phase of a rep. | `tempo 3-0-1` |
+
+#### How marble reads it
+
+Paste notation like this into marble and it becomes sets you review before saving, on the device, without Apple Intelligence. A few specifics:
+
+- A weight without a unit uses your kg or lb preference. An explicit unit wins.
+- `RPE 8`, `rpe9` and `@RPE 8` set effort. A bare `@ 8` is read as a weight.
+- `rest 90` is 90 seconds, while `rest 3` is three minutes.
+- A range like `4x8-10` logs the lower end and keeps the range in the set note.
+- `A1` only sets the order. `EMOM 10 min: 5 burpees` logs 10 sets of 5.
+- Percentages such as `@ 85%` and tempo notes are ignored rather than logged as weights.
+
+The full list of supported formats, and how to paste a week of notes at once, is in [log workouts from Apple Notes](https://marble-fit.app/guides/log-workouts-from-apple-notes/).
+
+#### Questions
+
+**Q: What does 3x10 mean in a workout?**
+3x10 means 3 sets of 10 reps. Sets come first and reps second, so you do 10 reps, rest, and repeat that twice more.
+
+**Q: What does 5x5 mean?**
+5x5 means 5 sets of 5 reps, usually with the same weight on every set. It is a common strength format for squats, presses and rows.
+
+**Q: What does @ mean in a workout?**
+The @ sign introduces the load: `Squat 5x5 @ 225` means five sets of five at 225. When it is followed by RPE, as in `@RPE 8`, it gives the effort instead.
+
+**Q: What does RPE 8 mean?**
+RPE is the rating of perceived exertion on a 1 to 10 scale. RPE 8 means you could have done about two more reps; RPE 10 means you could not have done another.
+
+**Q: What does AMRAP mean?**
+AMRAP means as many reps as possible. `3xAMRAP` is three sets where you do as many good reps as you can each time.
+
+**Q: What does EMOM mean?**
+EMOM means every minute on the minute. `EMOM 10 min: 5 burpees` means starting 5 burpees at the top of each minute for 10 minutes, resting for whatever is left of the minute.
+
+**Q: What do A1 and A2 mean in a program?**
+Letters group exercises and numbers give their order. A1 and A2 are a superset: do one set of A1, then one of A2, and repeat before moving on to B1.
+
+---
+
+## A private, offline workout tracker with no account | marble
+
+URL: https://marble-fit.app/guides/private-offline-workout-tracker/
+Updated: 2026-11-06
+Summary: marble is a free workout tracker for iPhone with no account, no ads and no third-party tracking. Here is what stays on your device and how to back it up.
+
+Guide
+
+### A private, offline workout tracker for iPhone, with no account
+
+marble keeps your training on your iPhone or iPad. There is no sign-up, no marble account or server, no ads and no third-party tracking. Logging, parsing and analysis all work offline, and you keep your own copy with a JSON backup.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated November 6, 2026
+
+#### What “private” means here
+
+- **No account.** You open the app and start logging. There is no email, password or profile.
+- **No marble server.** Your sets, sessions, supplements, weigh-ins and plans are stored on the device.
+- **No ads or third-party tracking** in the app.
+- **Analysis runs on the device.** Estimated 1RM trends, records, the monthly report and Daily Highlights are all calculated from your own sets on the iPhone.
+- **Parsing runs on the device too.** Typed and pasted workouts, CSV files and scanned pages are read locally. When Apple Intelligence structures a sentence, it does that on device as well.
+
+#### How to check it
+
+You don’t have to take the claims above on trust. marble’s privacy label on the [App Store](https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&ct=guide-private-label&mt=8) reads **Data Not Collected**, which is the developer’s declaration to Apple that the app collects nothing. And the [app’s source code is public](https://github.com/enzo-prism/marble), so anyone can read what it does with your data.
+
+#### Set it up
+
+1. **Install marble** from the App Store. It’s free and has nothing to unlock.
+2. **Open it.** There’s no sign-up step, only a short onboarding.
+3. **Log.** Add a workout in your own words, or log set by set in Log. None of this needs a connection.
+4. **Decide about Apple Health.** It’s off until you connect it. You can import workouts and bodyweight, or send completed sessions to Health, or do neither.
+5. **Make a backup.** In Settings, open Data & Backups and tap Export Marble Backup. Save the JSON file wherever you like.
+
+#### Backups and moving to a new phone
+
+The backup file includes exercises, sets, supplements, workout sessions, weigh-ins and your split. To restore, use Restore From Backup in the same screen. A restore adds missing data without deleting anything. If a restore fails, it leaves no partial changes behind.
+
+Progress photos and videos stay on the device. They aren’t included in marble’s JSON backup files. Normal iOS device backups follow your system settings.
+
+#### The trade-offs
+
+- **No automatic sync.** marble doesn’t sync between devices. To move your history, export a backup and restore it on the other device.
+- **Your copy is your responsibility.** With no server, there’s no copy held by marble. Export a backup from time to time.
+- **Optional connections are yours to choose.** If you connect Apple Health, the data you send there is governed by Apple Health.
+- **This website is different from the app.** marble-fit.app uses anonymous, aggregated Vercel Analytics. The app does not.
+
+If marble ever can’t open its saved data, it keeps the original files and offers a retry and a recovery copy instead of quietly opening an empty journal.
+
+Data & Backups: your copy, in a file you control.
+
+#### Questions
+
+**Q: Does marble work without an internet connection?**
+Yes. Logging, parsing, analysis and storage all work offline on your device.
+
+**Q: Do I need to create an account?**
+No. There is no marble account and no sign-up.
+
+**Q: Does marble sync with iCloud or between devices?**
+No. marble doesn’t sync. To move your history, export a JSON backup and restore it on the other device.
+
+**Q: Does marble show ads or sell my data?**
+No. The app has no ads and no third-party tracking, and your training data stays on your device.
+
+---
+
+## Sprint training log: track sprint times to the tenth | marble
+
+URL: https://marble-fit.app/guides/sprint-training-log/
+Updated: 2026-11-18
+Summary: Track 100m and other sprint times in marble: reusable sprint plans with target times, a built-in stopwatch, tenth-of-a-second results and fastest-time records.
+
+Guide
+
+### How to track sprint times to the tenth of a second
+
+In marble, a sprint exercise holds plans with a distance, a rep count and a target time. Time each rep with the built-in stopwatch or type it in, for example `14.8`, and marble marks every rep as hit or missed and keeps your fastest time for each distance.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated November 18, 2026
+
+#### Set up a sprint plan
+
+1. **Open the Exercise Library.** Tap Manage in the exercise picker, or go to Settings, then Data & Backups, then Exercise Library. Add or edit an exercise.
+2. **Choose the Sprint tracking type.** Every rep then needs a distance and a time.
+3. **Add a plan.** Set the distance (for example 100 m), the number of reps (1 to 50), and either one target time (“14.5 s or faster”) or a range such as 19–21.5 s. Decimal seconds are fine.
+4. **Add more plans if you need them.** One exercise can hold several, such as a 60 m speed plan and a 150 m tempo plan.
+5. **Set the default recovery** between reps, then save.
+
+#### Log a session
+
+1. Tap Add Set on the sprint exercise. marble picks your most recent plan, locks the distance and starts at Rep 1 of 4. Use the Plan menu to switch plans.
+2. Start the stopwatch before the rep and stop it after, or type the time, such as `14.8`. Add RPE and rest if you like.
+3. Save. marble checks the time against the target, and the rest timer starts before the next rep.
+4. On the last rep, tap Save Final Rep. You’ll see how many reps hit the target, your best and average times, and the result for every rep.
+
+#### Reading your results
+
+- **Hit, missed or not scored.** Each rep in Log shows its time and target with a check or a cross. A rep with no time, or run at a different distance, is left unscored. The result is always written out, never shown by colour alone.
+- **Fastest times.** A rep that beats every earlier time for the same exercise and distance gets a Fastest badge.
+- **Trends.** In Progress, open Details to chart your best times at your most-logged distance, along with a weekly goal hit rate.
+- **A nudge to go faster.** Hit the target on at least 80% of scored reps in each of your last two sessions, and marble suggests a target 0.2 s faster.
+
+Every rep also stays a normal entry in your journal, so your sprints sit next to your lifting.
+
+#### Writing sprints as text
+
+In the Add tab, `Sprints 4x20m` becomes four 20 m reps, and `4x20meter accelerations at 85-90%` becomes four 20 m accelerations. The percentage is ignored, not read as a weight. Times from a typed line are added during review.
+
+Training notes work too. `Sprints, 2 sets, 50m each` becomes two 50 m efforts, and a note that lists drills before sprints, like `Straight Leg Speed Bounds (2 sets)`, keeps every set of each in the order you wrote them. Count-only drills get no invented reps or weight. Review shows the workout’s totals beside your original text, and Repeat later brings back the same efforts and distances.
+
+#### Limits worth knowing
+
+- Times are stored to the tenth of a second, not the hundredth.
+- The stopwatch is a hand-operated timer on the phone. marble doesn’t connect to timing gates or other sensors.
+- There is no Apple Watch app. If you record runs on a watch, the workout summary can come in through Apple Health, but the rep-by-rep sprint times are logged in marble.
+
+Rep 1 of 4, with a 14.0–16.0 s target.
+
+#### Questions
+
+**Q: Can marble track 100m sprint times?**
+Yes. Create a sprint plan with a 100 m distance, a rep count and a target time or range, then time each rep with the stopwatch or type it in to the tenth of a second.
+
+**Q: Can one exercise have more than one sprint plan?**
+Yes. For example, a 60 m speed plan and a 150 m tempo plan can live on the same sprint exercise. You switch between them from the Plan menu.
+
+**Q: Does marble record hundredths of a second?**
+No. Sprint times are stored in tenths of a second.
+
+**Q: Where do I see my sprint progress?**
+Each rep in Log shows whether it hit the target, the fastest reps get a badge, and Progress Details charts your best times and weekly hit rate.
+
+---
+
+## Log strength training with Apple Watch and Garmin | marble
+
+URL: https://marble-fit.app/guides/apple-watch-strength-training-log/
+Updated: 2026-09-24
+Summary: Record strength workouts on Apple Watch or Garmin, bring them into marble through Apple Health, and log sets and reps on your iPhone. No Watch app required.
+
+Guide
+
+### How to log strength training with Apple Watch, sets and reps included
+
+marble has no Apple Watch app. Instead, the Watch records the workout in Apple Health, and marble imports it with its time, calories and heart rate. You log the sets and reps in marble on your iPhone. Garmin workouts come in the same way, through Apple Health.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Updated September 24, 2026
+
+#### How the pieces fit
+
+Apple Health stores workout summaries: type, time, duration, calories and heart rate. It doesn’t store the weight and reps of each set. So the Watch records the workout, and marble records the sets. There are two ways to combine them.
+
+#### Option 1: record on the Watch, log sets in marble
+
+1. **Start a strength workout** on your Apple Watch as usual.
+2. **Log your sets in marble** on your iPhone. Start a workout session, then use Save + Next or Log Again to repeat your last set. The rest timer runs as a Live Activity on the Lock Screen and in the Dynamic Island.
+3. **Import the Watch workout.** In Log, open Import Workouts, connect Apple Health, choose a range (last 30 days, last 90 days or last year) and tap Load. Select the workout and import it.
+4. **Or turn on Auto-import new workouts.** Each time you open marble, workouts recorded after you turned it on are added automatically.
+
+Each imported workout shows where it came from, such as Apple Watch or Garmin, along with its duration, calories and heart rate.
+
+#### Option 2: log in marble, send it to Apple Health
+
+If you don’t record on the Watch, turn on Send sessions to Apple Health. marble saves your completed training days to Health as strength workouts, with an effort score based on the RPE you logged. That effort score is what lets the sessions count toward Apple’s Training Load. Sets that came from Apple Health in the first place are never sent back.
+
+Pick one option per session. marble never re-exports workouts it imported from Health, but it can’t tell that sets you typed in marble match a session your Watch also recorded. If you do both for the same session, Health will hold two workouts.
+
+#### Garmin strength workouts
+
+1. In the Garmin Connect app, turn on syncing to Apple Health. marble’s import screen has an Open Garmin Connect button to help.
+2. After Garmin Connect syncs, your Garmin workouts appear in marble’s Apple Health list with a Garmin badge.
+3. Import them, and log the sets in marble as above.
+
+Garmin keeps per-set strength detail in its own service, and it doesn’t pass through Apple Health. marble connects only through Apple Health and never asks for your Garmin password.
+
+#### Limits worth knowing
+
+- There is no marble app on Apple Watch. Sets and reps are logged on your iPhone or iPad. Quick logging is also available from the Lock Screen, Control Center, the Action button and Siri.
+- A strength workout imported from Health arrives as a duration entry with its summary, not as individual sets.
+- If nothing appears, check that marble can read workouts: Settings › Apps › Health › Data Access & Devices › Marble.
+
+Log the sets in marble while the Watch records.
+
+#### Questions
+
+**Q: Is there a marble app for Apple Watch?**
+No. The Watch records the workout in Apple Health and marble imports it. Sets and reps are logged in marble on your iPhone.
+
+**Q: Can marble import sets and reps from my Apple Watch or Garmin?**
+No. Apple Health carries workout summaries such as duration, calories and heart rate, not per-set weight and reps. You log the sets in marble.
+
+**Q: Do marble workouts count toward Apple’s Training Load?**
+They can. Turn on Send sessions to Apple Health, and completed training days are saved as strength workouts with an effort score from your logged RPE.
+
+**Q: How do Garmin workouts get into marble?**
+Turn on Apple Health syncing in the Garmin Connect app. Garmin workouts then appear in marble’s Apple Health import list with a Garmin badge.
+
+---
+
+## One-rep max calculator (1RM, Epley formula) | marble
+
+URL: https://marble-fit.app/tools/one-rep-max-calculator/
+Updated: 2026-11-24
+Summary: Free 1RM calculator: estimate your one-rep max from a set of 1–12 reps with the Epley formula, then see training weights by percentage and by rep count.
+
+Calculator
+
+### One-rep max calculator
+
+Your estimated one-rep max (1RM) is the weight times one plus the reps divided by 30: `1RM = weight × (1 + reps ÷ 30)`. That is the Epley formula. Five reps at 100 kg estimates 116.7 kg, and five at 225 lb estimates 262.5 lb. Enter any set of 1 to 12 reps below.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Published November 24, 2026
+
+*Training weights by percentage of 1RM*
+
+| % of 1RM | Weight |
+| --- | --- |
+| 100% | 116.7 kg |
+| 95% | 110.8 kg |
+| 90% | 105 kg |
+| 85% | 99.2 kg |
+| 80% | 93.3 kg |
+| 75% | 87.5 kg |
+| 70% | 81.7 kg |
+| 65% | 75.8 kg |
+| 60% | 70 kg |
+| 55% | 64.2 kg |
+| 50% | 58.3 kg |
+
+*Target weight for each rep count*
+
+| Reps | Weight |
+| --- | --- |
+| 1 | 112.9 kg |
+| 2 | 109.4 kg |
+| 3 | 106.1 kg |
+| 4 | 102.9 kg |
+| 5 | 100 kg |
+| 6 | 97.2 kg |
+| 7 | 94.6 kg |
+| 8 | 92.1 kg |
+| 9 | 89.7 kg |
+| 10 | 87.5 kg |
+| 11 | 85.4 kg |
+| 12 | 83.3 kg |
+
+#### How the estimate works
+
+The calculator uses the Epley formula, the same one marble uses for the estimated 1RM in Progress:
+
+```
+1RM = weight × (1 + reps ÷ 30)
+```
+
+Each rep adds a thirtieth of the weight. The rep tables run the formula backwards, `weight = 1RM ÷ (1 + reps ÷ 30)`, to suggest a load for a target rep count.
+
+#### Epley and Brzycki compared
+
+Brzycki is the other common formula: `1RM = weight × 36 ÷ (37 − reps)`. The two give exactly the same answer at 10 reps. Below 10 reps Epley reads a little higher, and above 10 Brzycki does.
+
+| Set | Epley | Brzycki |
+| --- | --- | --- |
+| 100 kg × 1 | 103.3 kg | 100 kg |
+| 100 kg × 2 | 106.7 kg | 102.9 kg |
+| 100 kg × 3 | 110 kg | 105.9 kg |
+| 100 kg × 4 | 113.3 kg | 109.1 kg |
+| 100 kg × 5 | 116.7 kg | 112.5 kg |
+| 100 kg × 6 | 120 kg | 116.1 kg |
+| 100 kg × 7 | 123.3 kg | 120 kg |
+| 100 kg × 8 | 126.7 kg | 124.1 kg |
+| 100 kg × 9 | 130 kg | 128.6 kg |
+| 100 kg × 10 | 133.3 kg | 133.3 kg |
+| 100 kg × 11 | 136.7 kg | 138.5 kg |
+| 100 kg × 12 | 140 kg | 144 kg |
+
+#### What the estimate leaves out
+
+- **Effort.** The formula assumes a hard set. Five reps that stopped well short of failure will read low. marble deliberately doesn’t adjust its estimate for RPE, so a set you never rated isn’t quietly inflated.
+- **High reps.** Past about 12 reps, endurance decides the set more than strength. marble leaves those sets out of its estimates instead of forcing a number, and this calculator stops at 12.
+- **Singles.** Applied as written, Epley adds a thirtieth even to one rep, so 300 × 1 reads 310. Some calculators return a single unchanged; this one and marble keep every rep count on the same scale.
+- **The lift itself.** The same formula is used for every exercise. Machines, cables and bodyweight movements often estimate less reliably than squats, presses and deadlifts.
+
+#### Track it without the math
+
+In [marble](https://marble-fit.app/features/), every set you log or paste feeds Progress. For each exercise it charts an estimated 1RM from your best set each day, keeps your all-time best and the date you set it, and says whether the lift is progressing or holding. Pair it with your bodyweight and you also get a [DOTS](https://marble-fit.app/tools/dots-calculator/) line for relative strength. Not sure how to write a set down? See [workout notation explained](https://marble-fit.app/guides/workout-notation/).
+
+Progress keeps each lift’s best. Details charts its estimated 1RM.
+
+#### Questions
+
+**Q: What is a one-rep max?**
+Your one-rep max (1RM) is the most weight you can lift for a single full repetition of an exercise with good form. An estimated 1RM (e1RM) predicts it from a lighter set you can do for several reps.
+
+**Q: How do you calculate a one-rep max?**
+With the Epley formula, multiply the weight by one plus the reps divided by 30: 1RM = weight × (1 + reps ÷ 30). For example, 100 kg for 5 reps estimates 116.7 kg.
+
+**Q: How accurate is a 1RM calculator?**
+Estimates are closest for sets of about 1 to 10 reps taken near failure. They drift as reps climb, and they read low when a set stopped well short of failure. Treat the number as a trend to track, not a promise of what you can lift today.
+
+**Q: Which 1RM formula is best?**
+No formula fits everyone. Epley and Brzycki are the most common, and they give exactly the same estimate at 10 reps. Below 10 reps Epley reads slightly higher; above 10, Brzycki does. Using one formula consistently matters more than which one you pick.
+
+**Q: Why does the calculator stop at 12 reps?**
+Rep-based formulas get unreliable past roughly 10 to 12 reps, because endurance starts to decide the set more than strength. marble leaves sets above 12 reps out of its estimates rather than forcing a number.
+
+**Q: Does marble calculate my one-rep max automatically?**
+Yes. Progress charts an estimated 1RM for each exercise from your best set each day, using the Epley formula and sets of 12 reps or fewer, and tells you whether the lift is progressing or holding. It runs on your iPhone, with no account.
+
+---
+
+## DOTS calculator for powerlifting (kg or lb) | marble
+
+URL: https://marble-fit.app/tools/dots-calculator/
+Updated: 2026-11-24
+Summary: Calculate your powerlifting DOTS score from bodyweight and total in kg or lb, with the published men’s and women’s coefficients, the formula and examples.
+
+Calculator
+
+### DOTS calculator
+
+A DOTS score is your total multiplied by 500, divided by a polynomial of your bodyweight in kilograms: `DOTS = total × 500 ÷ (A·bw⁴ + B·bw³ + C·bw² + D·bw + E)`. A man weighing 80 kg with a 500 kg total scores 344.8. A woman weighing 60 kg with a 300 kg total scores 332.6.
+
+By [Lorenzo Quaid Sison](https://marble-fit.app/about/) · Published November 24, 2026
+
+#### The formula
+
+Convert bodyweight and total to kilograms, clamp the bodyweight to the fitted range, then:
+
+```
+coefficient = 500 ÷ (A·bw⁴ + B·bw³ + C·bw² + D·bw + E)
+DOTS        = total × coefficient
+```
+
+| Coefficient | Men | Women |
+| --- | --- | --- |
+| A | `-0.0000010930` | `-0.0000010706` |
+| B | `0.0007391293` | `0.0005158568` |
+| C | `-0.1918759221` | `-0.1126655495` |
+| D | `24.0900756` | `13.6175032` |
+| E | `-307.75076` | `-57.96288` |
+| Bodyweight range | 40–210 kg | 40–150 kg |
+
+These are the published values, as implemented in [OpenPowerlifting’s reference code](https://github.com/sstangl/openpowerlifting/blob/main/crates/coefficients/src/dots.rs). A bodyweight outside the range is scored at the nearest limit.
+
+#### Worked examples
+
+| Lifter | Total | DOTS |
+| --- | --- | --- |
+| Man, 80 kg | 500 kg | 344.77 |
+| Man, 93 kg | 700 kg | 445.38 |
+| Woman, 60 kg | 300 kg | 332.56 |
+| Woman, 70 kg | 400 kg | 404.50 |
+
+#### Where DOTS comes from
+
+DOTS stands for Dynamic Objective Team Scoring. The German federation BVDK introduced it so lifters of every weight class, and of both sexes, could score points for one team. Its author is Tim Konertz. The IPF itself uses its own GL points, while Wilks is the older formula many lifters still know. OpenPowerlifting reports DOTS for meet results.
+
+#### DOTS for one lift
+
+DOTS was built for a three-lift total, so a score for one lift isn’t comparable with competition totals. It is still a useful way to see whether you are getting stronger relative to your size. marble does exactly that: in Progress, each lift’s [estimated 1RM](https://marble-fit.app/tools/one-rep-max-calculator/) is scored against the weigh-in nearest to it, and you choose men’s or women’s coefficients in Settings. Weigh-ins can come from Apple Health.
+
+#### Questions
+
+**Q: What is a DOTS score?**
+DOTS is a powerlifting score that adjusts a lifted total for bodyweight, so lifters of different sizes can be compared. It multiplies the total by 500 and divides by a fourth-degree polynomial of bodyweight in kilograms, with separate coefficients for men and women.
+
+**Q: What does DOTS stand for?**
+Dynamic Objective Team Scoring. It was introduced by the German powerlifting federation BVDK, and its author is Tim Konertz.
+
+**Q: How do I calculate DOTS in pounds?**
+Convert both numbers to kilograms first by dividing by 2.20462, then apply the formula. The calculator on this page does the conversion for you when you choose lb.
+
+**Q: What is a good DOTS score?**
+There is no official tier list. Scores depend on federation, equipment and experience, so compare yourself with lifters in your own class on OpenPowerlifting, or with your own past scores.
+
+**Q: Can I score a single lift with DOTS?**
+You can, but DOTS was designed for a three-lift total. A single-lift score is useful for tracking your own relative strength over time, not for comparing with competition totals. That is how marble uses it.
+
+**Q: What happens at very light or very heavy bodyweights?**
+The polynomial is only fitted to competitive bodyweights, so bodyweight is clamped first: 40 to 210 kg for men and 40 to 150 kg for women. Outside that range the score uses the nearest limit.
+
+---
+
+## About marble, the private workout journal for iPhone | marble
+
+URL: https://marble-fit.app/about/
+Updated: 2026-11-24
+Summary: marble is a free, private workout journal for iPhone and iPad by independent developer Lorenzo Quaid Sison, on the App Store as marble.fit. Facts and contact.
+
+About
+
+### About marble
+
+marble is a free workout journal for iPhone and iPad that turns workouts you type or paste into logged sets, on the device. It is made by independent developer Lorenzo Quaid Sison, listed on the App Store as **marble.fit**, and its source code is public.
+
+#### At a glance
+
+| Name | marble |
+| --- | --- |
+| App Store listing | [marble.fit](https://apps.apple.com/us/app/marble-fit/id6757725234?pt=127913515&ct=about-facts&mt=8) (Health & Fitness) |
+| Website | marble-fit.app |
+| Developer | Lorenzo Quaid Sison |
+| Devices | iPhone and iPad, iOS and iPadOS 26 or later |
+| Price | Free: no subscription, no ads, nothing to unlock |
+| Privacy label | Data Not Collected |
+| Account | None; training data stays on the device |
+| Latest version | [2.7](https://marble-fit.app/releases/2-7/), released November 13, 2026 |
+| First release | 1.0, January 15, 2026 · 18 App Store versions so far |
+| Source code | [github.com/enzo-prism/marble](https://github.com/enzo-prism/marble) |
+
+#### What it’s for
+
+Most people already write workouts down somewhere: a note, a whiteboard photo, a coach’s message. marble starts there. You type or paste the session in your own words, marble shows you the sets it found, and nothing is saved until you have checked it. From then on it is a fast logbook with personal records, estimated 1RM, weekly goals and sprint times.
+
+#### Principles
+
+- **Your words first.** Gym shorthand, sentences, a whole week of Notes, or a Hevy or Strong export all work.
+- **Review before save.** Every exercise match, set, date and note is shown to you before it becomes history.
+- **Private by default.** No account and no marble server. Apple Health and backups only happen when you choose them.
+- **Whole and free.** No paywall, no ads and no premium tier.
+- **Show the math.** The formulas behind the numbers are published, like the [one-rep max estimate](https://marble-fit.app/tools/one-rep-max-calculator/) and the [DOTS score](https://marble-fit.app/tools/dots-calculator/).
+
+#### How it’s built
+
+marble is a native SwiftUI app that stores your training with SwiftData on the device. Gym notation and Hevy or Strong CSV files are read by an on-device parser on every supported iPhone and iPad. Where Apple Intelligence is available, its on-device model helps structure free-form sentences, and its readings are checked against what you wrote. Apple Health, widgets, Siri and Shortcuts, and the rest-timer Live Activity use Apple’s own frameworks.
+
+#### History
+
+Version 1.0 reached the App Store on January 15, 2026. Every version since is listed with its notes in the [release notes](https://marble-fit.app/releases/).
+
+#### Contact
+
+For help, bug reports and feature requests, [open an issue on GitHub](https://github.com/enzo-prism/marble/issues). How the app and this website handle data is in the [privacy policy](https://marble-fit.app/privacy/).
+
+The Log tab: your training, on your phone.
+
+#### Questions
+
+**Q: Who makes marble?**
+marble is made by Lorenzo Quaid Sison, an independent iOS developer.
+
+**Q: Why is marble called marble.fit on the App Store?**
+Searching the App Store for “marble” returns marble games, so the listing is named marble.fit. The app itself is called marble, and its website is marble-fit.app.
+
+**Q: How do I get support or request a feature?**
+Open an issue on GitHub at github.com/enzo-prism/marble/issues. The app’s source code is public in the same repository.
+
+**Q: Is marble really free?**
+Yes. Every feature is free, with no subscription, no ads and nothing to unlock.
+
+---
+
+## Privacy policy | marble
+
+URL: https://marble-fit.app/privacy/
+Summary: marble’s privacy policy: no account, ads or third-party tracking, workouts stay on your device, Apple Health only with permission, and what this website measures.
+
+Effective July 15, 2026
+
+### Privacy Policy
+
+#### The short version.
+
+Marble has no account, ads, or third-party tracking. Your workout data stays on your device unless you choose to export it or share it with Apple Health.
+
+#### Information the app handles
+
+Marble stores the exercises, sets, workout sessions, sprint goals, supplements, notes, reminders, and preferences you enter. If you add progress photos or videos, those files also remain on your device. Marble does not send this information to us.
+
+#### Apple Health
+
+With your permission, Marble can read workout information from Apple Health so you can import Apple Watch workouts and workouts from services such as Garmin that sync through Apple Health. Marble can also write completed strength workouts and effort scores to Apple Health. This access is optional, used only for fitness features you request, and never used for advertising, marketing, or data mining.
+
+You can change Marble's Health access at any time in iOS Settings or the Health app. Data already written to Apple Health is controlled and deleted from the Health app.
+
+#### Device permissions
+
+Marble may request access to Photos or the camera when you choose progress media or scan a handwritten workout, and notifications when you create reminders or use the rest timer. Scanning and analysis happen on-device. You can revoke these permissions in iOS Settings.
+
+#### Exports, backups, and deletion
+
+Exporting a JSON backup creates a file you control and share through the system share sheet. Progress photos and videos are intentionally excluded. Restoring a backup reads only the file you select.
+
+You can delete individual records inside Marble. Deleting the app removes its local database and local progress media, subject to normal iOS backup behavior. Files you exported and data written to Apple Health must be deleted from the location where you saved them.
+
+#### Sharing and third parties
+
+Marble does not sell personal information or share workout or Health data with advertisers, analytics providers, or data brokers. Apple processes App Store, iCloud device-backup, notification, Siri, Shortcuts, and Health data under Apple's terms when you use those system services. If you open the GitHub support page or another external link, that service's privacy policy applies.
+
+#### This website
+
+The marble-fit.app website uses Vercel Web Analytics for anonymous, aggregated page and interaction counts. Vercel says these analytics are not tied to an individual or IP address. Do not include personal information in URL query parameters or support messages unless it is necessary.
+
+#### Changes and contact
+
+We may update this policy as Marble changes. The effective date above identifies the current version. Questions or deletion requests can be sent to [enzo@design-prism.com](mailto:enzo@design-prism.com).
+
+---
+
+## marble release notes
+
+URL: https://marble-fit.app/releases/
+Summary: What changed in each version of marble, the minimal workout journal for iPhone, from 1.0 to 2.7. Newest first.
+
+Release notes
+
+### What’s new in marble
+
+Every version on the App Store, newest first, in the words that shipped with it.
+
+#### [marble 2.7](https://marble-fit.app/releases/2-7/)
+
+Latest November 13, 2026
+
+Marble 2.7 makes it easier to turn your workout notes into a complete training log.
+
+#### [marble 2.6.1](https://marble-fit.app/releases/2-6-1/)
+
+October 30, 2026
+
+Marble 2.6.1 makes Top Exercises in Progress reflect your whole training history.
+
+#### [marble 2.6](https://marble-fit.app/releases/2-6/)
+
+October 10, 2026
+
+Marble 2.6 makes workout importing easier to review and more reliable.
+
+#### [marble 2.5](https://marble-fit.app/releases/2-5/)
+
+September 24, 2026
+
+Find past workouts, pick up an unfinished review, and see your lifting records at a glance.
+
+4 new · 3 improved · 4 fixed
+
+#### [marble 2.4](https://marble-fit.app/releases/2-4/)
+
+September 2, 2026
+
+Marble 2.4 makes adding a workout radically simpler.
+
+4 new · 3 improved
+
+#### [marble 2.3](https://marble-fit.app/releases/2-3/)
+
+August 19, 2026
+
+Marble 2.3 makes it easier to train, log, and see progress without extra tabs.
+
+4 new · 2 improved
+
+#### [marble 2.2](https://marble-fit.app/releases/2-2/)
+
+August 3, 2026
+
+Marble 2.2 brings your training goals, quick logging, and progress beyond the app while keeping your data private.
+
+6 new · 5 improved
+
+#### [marble 2.1](https://marble-fit.app/releases/2-1/)
+
+July 21, 2026
+
+Marble 2.1 makes it easier to plan a workout, stay in the flow, and keep your training history yours.
+
+5 new · 3 improved
+
+#### [marble 2.0](https://marble-fit.app/releases/2-0/)
+
+July 15, 2026
+
+Marble 2.0 turns Trends into a coach.
+
+8 new · 2 improved
+
+#### [marble 1.9](https://marble-fit.app/releases/1-9/)
+
+July 2, 2026
+
+Marble 1.9 adds workout import, handwritten workout scanning, rest-timer Live Activities, and major performance polish.
+
+4 new · 4 improved
+
+#### [marble 1.8](https://marble-fit.app/releases/1-8/)
+
+June 23, 2026
+
+Marble 1.8 is a big quality release: faster everywhere, smarter with long training histories, and better integrated with iOS.
+
+3 new · 7 improved · 2 fixed
+
+#### [marble 1.7](https://marble-fit.app/releases/1-7/)
+
+May 27, 2026
+
+Add custom supplement reminders with multiple times, weekday schedules, and confirmation before logging.
+
+#### [marble 1.6](https://marble-fit.app/releases/1-6/)
+
+May 8, 2026
+
+Attach progress photos and videos to calendar dates to track physique changes alongside training.
+
+#### [marble 1.5](https://marble-fit.app/releases/1-5/)
+
+April 23, 2026
+
+Search exercise titles to more easily add new sets
+
+#### [marble 1.4.1](https://marble-fit.app/releases/1-4-1/)
+
+February 5, 2026
+
+UI + UX enhancements
+
+#### [marble 1.4](https://marble-fit.app/releases/1-4/)
+
+January 27, 2026
+
+See what weight + reps for your previous set whenever logging a new one
+
+#### [marble 1.2](https://marble-fit.app/releases/1-2/)
+
+January 19, 2026
+
+Expanded workout categories: biceps, triceps, quads, hamstrings, calves
+
+#### [marble 1.0](https://marble-fit.app/releases/1-0/)
+
+January 15, 2026
+
+First release on the App Store.

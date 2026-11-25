@@ -378,10 +378,25 @@ function validateAnalyticsHtml(file, source, withoutComments) {
   }
 }
 
+// A page that opts out of indexing (only the 404 page) has no canonical URL,
+// isn't in the sitemap and needs no structured data.
+function isNoindex(source) {
+  return /<meta\s+name="robots"\s+content="[^"]*\bnoindex\b/i.test(source);
+}
+
+const TITLE_MAX = 70;
+const DESCRIPTION_MIN = 50;
+const DESCRIPTION_MAX = 165;
+
 function validateHtml(file, idCache) {
   const source = fs.readFileSync(file, "utf8");
   const withoutComments = source.replace(/<!--[\s\S]*?-->/g, "");
   const canonical = expectedCanonical(file);
+  const noindex = isNoindex(withoutComments);
+
+  if (relativeName(file) === "404.html") {
+    check(noindex, file, source, 0, "404.html must carry meta robots noindex");
+  }
 
   validateAnalyticsHtml(file, source, withoutComments);
 
@@ -393,7 +408,15 @@ function validateHtml(file, idCache) {
   const titles = [...withoutComments.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)];
   check(titles.length === 1, file, source, titles[0]?.index ?? 0, "must contain exactly one <title>");
   if (titles.length === 1) {
-    check(Boolean(visibleText(titles[0][1])), file, source, titles[0].index, "<title> must not be empty");
+    const title = visibleText(titles[0][1]);
+    check(Boolean(title), file, source, titles[0].index, "<title> must not be empty");
+    check(
+      title.length <= TITLE_MAX,
+      file,
+      source,
+      titles[0].index,
+      `<title> is ${title.length} characters; keep it to ${TITLE_MAX} so search results don't cut it off`,
+    );
   }
 
   const metaTags = tags(withoutComments, "meta").map((match) => ({
@@ -427,13 +450,29 @@ function validateHtml(file, idCache) {
     }
   }
 
+  const descriptions = metaByName("description");
+  if (descriptions.length === 1) {
+    const description = decodeHtml(descriptions[0].attributes.get("content") || "").replace(/\s+/g, " ").trim();
+    check(
+      description.length >= DESCRIPTION_MIN && description.length <= DESCRIPTION_MAX,
+      file,
+      source,
+      descriptions[0].match.index,
+      `meta description is ${description.length} characters; keep it between ${DESCRIPTION_MIN} and ${DESCRIPTION_MAX}`,
+    );
+  }
+
   const canonicalTags = tags(withoutComments, "link")
     .map((match) => ({ match, attributes: parseAttributes(match[0]) }))
     .filter(({ attributes }) =>
       (attributes.get("rel") || "").toLowerCase().split(/\s+/).includes("canonical"),
     );
-  check(canonicalTags.length === 1, file, source, canonicalTags[0]?.match.index ?? 0, "must contain exactly one canonical link");
-  if (canonicalTags.length === 1) {
+  if (noindex) {
+    check(canonicalTags.length === 0, file, source, canonicalTags[0]?.match.index ?? 0, "a noindex page must not declare a canonical URL");
+  } else {
+    check(canonicalTags.length === 1, file, source, canonicalTags[0]?.match.index ?? 0, "must contain exactly one canonical link");
+  }
+  if (!noindex && canonicalTags.length === 1) {
     check(
       canonicalTags[0].attributes.get("href") === canonical,
       file,
@@ -467,7 +506,7 @@ function validateHtml(file, idCache) {
     }
 
     const ogUrl = metaByProperty("og:url");
-    if (ogUrl.length === 1) {
+    if (ogUrl.length === 1 && !noindex) {
       check(ogUrl[0].attributes.get("content") === canonical, file, source, ogUrl[0].match.index, `og:url must match canonical URL ${canonical}`);
     }
 
@@ -521,7 +560,30 @@ function validateHtml(file, idCache) {
       fail(file, source, script.index, `JSON-LD does not parse: ${error.message}`);
     }
   }
-  check(jsonLdScripts.length > 0, file, source, 0, "must contain JSON-LD structured data");
+  if (!noindex) check(jsonLdScripts.length > 0, file, source, 0, "must contain JSON-LD structured data");
+
+  // Every @id a page points at must be described on the same page, so search
+  // engines can resolve the author, publisher and breadcrumbs without guessing.
+  const definedIds = new Set();
+  const referencedIds = [];
+  const collect = (node) => {
+    if (Array.isArray(node)) return node.forEach(collect);
+    if (!node || typeof node !== "object") return;
+    const keys = Object.keys(node);
+    if (node["@id"] && keys.length === 1) referencedIds.push(node["@id"]);
+    else if (node["@id"]) definedIds.add(node["@id"]);
+    for (const key of keys) if (key !== "@id") collect(node[key]);
+  };
+  for (const script of jsonLdScripts) {
+    try {
+      collect(JSON.parse(script[3]));
+    } catch {}
+  }
+  for (const id of new Set(referencedIds)) {
+    // The site-wide app, website and per-article ids are described on their own pages.
+    if (/#(app|website|article|webpage|breadcrumb|faq|film|calculator|glossary)$/.test(id)) continue;
+    check(definedIds.has(id), file, source, 0, `JSON-LD references ${id} but doesn't describe it on this page`);
+  }
 
   const baseUrl = canonical;
   const referenceAttributes = {
@@ -768,6 +830,11 @@ function validateSitemap(htmlFiles) {
 
   for (const file of htmlFiles) {
     const url = expectedCanonical(file);
+    const noindex = isNoindex(fs.readFileSync(file, "utf8"));
+    if (noindex) {
+      check(!listedUrls.has(url), sitemapFile, source, 0, `sitemap.xml lists a noindex page: ${url}`);
+      continue;
+    }
     check(listedUrls.has(url), sitemapFile, source, 0, `sitemap.xml is missing ${url}`);
   }
   for (const { url, index } of listed) {
@@ -785,6 +852,18 @@ function validateGeneratedReleases() {
   if (result.status !== 0) {
     const detail = `${result.stdout || ""}${result.stderr || ""}`.trim();
     fail(script, "", undefined, `generated release pages are out of date; run npm run build:releases\n${detail}`);
+  }
+}
+
+// llms-full.txt is the text of every page for language models; it must match
+// the pages it was built from.
+function validateGeneratedLlmsFull() {
+  const script = path.join(root, "scripts", "build-llms-full.js");
+  checkCount += 1;
+  const result = spawnSync(process.execPath, [script, "--check"], { cwd: root, encoding: "utf8" });
+  if (result.status !== 0) {
+    const detail = `${result.stdout || ""}${result.stderr || ""}`.trim();
+    fail(script, "", undefined, `llms-full.txt is out of date; run npm run build:llms\n${detail}`);
   }
 }
 
@@ -825,6 +904,7 @@ function main() {
   validateSitemap(htmlFiles);
   validateGeneratedReleases();
   validateGeneratedAppStore();
+  validateGeneratedLlmsFull();
 
   if (errors.length) {
     console.error(`\nSite validation failed with ${errors.length} error${errors.length === 1 ? "" : "s"}:\n`);

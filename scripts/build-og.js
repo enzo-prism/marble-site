@@ -38,6 +38,11 @@ const cards = [
   { id: "guide-watch", kicker: "Guide", title: "Log strength training with Apple Watch.", screen: "04-active-workout" },
   { id: "guide-hevy-alternative", kicker: "Switching from Hevy", title: "A Hevy alternative with no account.", screen: "05-strength-trends" },
   { id: "guide-strong-alternative", kicker: "Switching from Strong", title: "A Strong alternative with nothing to unlock.", screen: "03-fast-set-logger" },
+  { id: "guide-notation", kicker: "Guide", title: "Workout notation, explained.", screen: "s01-typed-note" },
+  { id: "tools", kicker: "Free tools", title: "Strength calculators that show the math.", screen: "05-strength-trends" },
+  { id: "tool-1rm", kicker: "Calculator", title: "One-rep max calculator.", screen: "05-strength-trends" },
+  { id: "tool-dots", kicker: "Calculator", title: "DOTS calculator.", screen: "05-strength-trends" },
+  { id: "about", kicker: "About marble", title: "A private workout journal, made independently.", screen: "01-journal" },
   { id: "releases", kicker: "Release notes", title: "What’s new in marble.", screen: "07-training-calendar" },
   { id: "privacy", kicker: "App Store privacy label", title: "Data Not Collected.", screen: "09-private-backup" },
 ];
